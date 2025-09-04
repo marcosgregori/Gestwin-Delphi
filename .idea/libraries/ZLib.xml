@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ZLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Backups/Versiones anteriores/9.5/Lib/ZLib/ZLBTestD4.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Backups/Versiones anteriores/9.5/Lib/ZLib/ZLBTestD5.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

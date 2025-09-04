@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="onceaday">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Tests/onceaday/d4demo.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Tests/onceaday/d5demo.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

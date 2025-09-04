@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DevExpress1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Tests/DevExpress1/DevExpress1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kbmMWClient">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lib/kbmMW/Java/jar/kbmMWClient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

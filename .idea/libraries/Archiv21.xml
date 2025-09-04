@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Archiv21">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lib/ZipForge/Source/ZLib32/Archiv21.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

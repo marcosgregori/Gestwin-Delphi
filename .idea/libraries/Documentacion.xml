@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Documentacion">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Documentacion/NexusDB_PDF.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Documentacion/NexusDBSQL_CHM.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

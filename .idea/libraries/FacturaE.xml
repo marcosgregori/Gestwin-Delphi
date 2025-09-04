@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="FacturaE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Documentacion/FacturaE/Facturae_2.0_Setup.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Documentacion/FacturaE/Facturae_2.0_Setup_05.07.2011.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Documentacion/FacturaE/BateriadePruebas.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
