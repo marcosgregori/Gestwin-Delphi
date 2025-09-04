@@ -1,0 +1,113 @@
+var  TextoLimites : String;                      
+     IVASoportado,
+     IVARepercutido,
+     PrecioCompraIVA,
+     PrecioVentaIVA : Double;
+
+procedure MasterData1OnBeforePrint(Sender: TfrxComponent);
+begin
+
+    IVASoportado := TipoIVASoportado( <Consulta."TipoIVA">, <Hoy> );
+    PrecioCompraIVA := <Consulta."Precio_Compra"> + ( ( <Consulta."Precio_Compra"> * IVASoportado ) / 100.0 );
+    IVARepercutido := TipoIVARepercutido( <Consulta."TipoIVA">, <Hoy> );
+    PrecioVentaIVA := <Consulta."Precio_Venta"> + ( ( <Consulta."Precio_Venta"> * IVARepercutido ) / 100.0 );  
+               
+    If   <IncluirObsoletos>
+    then If   <Consulta."Obsoleto">
+         then begin
+              Memo10.Font.Color := clGray;
+              Memo11.Font.Color := clGray;
+              end
+         else begin
+              Memo10.Font.Color := clBlack;
+              Memo11.Font.Color := clBlack;
+              end;
+end;
+
+procedure MasterData1OnAfterCalcHeight(Sender: TfrxComponent);
+begin
+    SubrayadoLine.Top := MasterData1.Height;
+end;
+
+procedure frxReportOnStartReport(Sender: TfrxComponent);
+begin
+  
+     SubrayadoLine.Visible    := <SubrayarLineas>;
+
+     PrecioCompraMemo.Visible := not <NoValorar>;
+     DtoCompraMemo.Visible    := not <NoValorar> and <MostrarDescuentos>;
+     PrecioVentaMemo.Visible  := not <NoValorar>;
+     DtoVentaMemo.Visible     := not <NoValorar> and <MostrarDescuentos>;
+
+     case <Seleccion> of
+       0 : TextoLimites := 'Desde el artículo : <' + <CodigoArticuloInicial> + '> hasta el <' + <CodigoArticuloFinal> + '>.';  
+       1 : TextoLimites := 'Desde la familia : <' + <CodigoFamiliaInicial> + '> hasta la <' + <CodigoFamiliaFinal> + '>.';
+       2 : TextoLimites := 'Desde el proveedor : <' + <ProveedorInicial> + '> hasta el <' + <ProveedorFinal> + '>.';
+       end;
+         
+     Consulta.SQL.Clear;
+     Consulta.SQL.Add( 'Select Articulo.Codigo, Articulo.Descripcion, Articulo.Precio_Compra, Articulo.Dto_Compra, Articulo.Precio_Venta, ' );                                     
+     Consulta.SQL.Add( 'Articulo.Dto_Venta, Articulo.TipoIVA, Articulo.Comision, Articulo.Obsoleto, Articulo.Familia, Articulo.CodigoProveedor ' );                                                                                                         
+
+     case <Seleccion> of
+       0 : ;                   
+       1 : Consulta.SQL.Add( ', Familia.Descripcion AS Familia_Descripcion ' );
+       2 : Consulta.SQL.Add( ', Proveedor.Nombre ' );            
+       end;
+         
+     Consulta.SQL.Add( 'From   Articulo ' );
+
+     case <Seleccion> of
+       0 : ;                   
+       1 : Consulta.SQL.Add( 'Left Join Familia On ( Familia.Codigo=Articulo.Familia ) ' );
+       2 : Consulta.SQL.Add( 'Left Join Proveedor On (Proveedor.Codigo=Articulo.CodigoProveedor ) ' );            
+       end;             
+       
+     // Selección 
+
+     case <Seleccion> of
+       0 : Consulta.SQL.Add( 'Where  Articulo.Codigo>=''' + <CodigoArticuloInicial> + ''' and Articulo.Codigo<=''' + <CodigoArticuloFinal> + '''' );
+       1 : Consulta.SQL.add( 'Where  Articulo.Familia>=''' + <CodigoFamiliaInicial> + ''' and Articulo.Familia<=''' + <CodigoFamiliaFinal> + '''' );
+       2 : Consulta.SQL.add( 'Where  Articulo.CodigoProveedor>=''' + <ProveedorInicial> + ''' and Articulo.CodigoProveedor<=''' + <ProveedorFinal> + '''' );   
+       end;
+         
+     If   not <IncluirObsoletos>
+     then Consulta.SQL.Add( ' AND ( Obsoleto IS NULL OR NOT Obsoleto ) ' );
+
+     case <Seleccion> of
+       0 : begin
+           If   <Ordenar>
+           then begin
+                Consulta.SQL.Add( 'Order by Articulo.Descripcion' );
+                GroupHeader1.Visible := True;
+                end                        
+           else Consulta.SQL.Add( 'Order by Articulo.Codigo' );
+           GroupHeader2.Visible := False;                                                  
+           GroupHeader2.Condition := 'True';
+           end;                     
+       1 : begin
+           Consulta.SQL.add( ' Order by Articulo.Familia' );
+           If   <Ordenar>
+           then Consulta.SQL.Add( ', Articulo.Descripcion' )
+           else Consulta.SQL.Add( ', Articulo.Codigo' );
+           GroupHeader2.Condition := '<Consulta."Familia">';               
+           end;
+       2 : begin
+           Consulta.SQL.Add( ' Order by Articulo.CodigoProveedor' );
+           If   <Ordenar>
+           then Consulta.SQL.Add( ', Articulo.Descripcion' )
+           else Consulta.SQL.Add( ', Articulo.Codigo' );
+           GroupHeader2.Condition := '<Consulta."CodigoProveedor">';               
+           end                        
+       end;    
+       
+end;
+
+begin
+
+end.
+
+Select Articulo.Codigo, Articulo.CodigoBarras, Articulo.Descripcion, Articulo.Precio_Compra, Articulo.Dto_Compra, Articulo.Precio_Venta, 
+Articulo.Dto_Venta, Articulo.Recargo_Venta, Articulo.TipoIVA, Articulo.Obsoleto, Articulo.Anotacion 
+From   Articulo 
+ AND ( Obsoleto IS NULL OR NOT Obsoleto ) 

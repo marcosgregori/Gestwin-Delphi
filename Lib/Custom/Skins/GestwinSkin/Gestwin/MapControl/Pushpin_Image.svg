@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" tag="Element">
+	<path d="M22, 2C14.8, 2 9, 7.6 9, 14.5C9, 23 13.1, 29.5 16.3, 34.7C17.6, 36.8 18.8, 38.7 19.5, 40.4C20, 41.5 21, 42 22, 42C23, 42 24, 41.5 24.5, 40.4C25.2, 38.7 26.4, 36.8 27.7, 34.7C30.9, 29.5 35, 23 35, 14.5C35, 7.6 29.2, 2 22, 2z" fill="#707070" class="st0" tag="st0"/>
+	<path d="M22, 4C15.9, 4 11, 8.6 11, 14.3C11, 25.9 19.3, 33.6 22, 40C24.7, 33.6 33, 25.9 33, 14.3C33, 8.6 28.1, 4 22, 4z" fill="#FFFFFF" class="st1" tag="st1"/>
+	<circle cx="22" cy="15" r="8" fill="#707070" class="st0" tag="st01"/>
+</svg>

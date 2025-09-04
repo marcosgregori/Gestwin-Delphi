@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<polygon points="0,0 0,64 64,64 64,60 4,60 4,0" fill="#AFAFAF" class="Mask"/>
+	<polygon points="4,0 64,0 64,64 60,64 60,40 20,4 4,4" fill="#AFAFAF" class="Mask"/>
+	<polygon transform="translate(40, 4)" points="16,2 18,2 8,18 2,10 4,10 8,14.2" fill="#707070" class="Paint"/>
+</svg>

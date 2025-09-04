@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Delphi.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{D1C80BA4-B49E-4CC6-B471-E0B5D102B7FE}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Delphi.Personality>
+		<Source>
+			<Source Name="MainSource">gdUpd.dpr</Source>
+		</Source>
+		<FileVersion>
+			<FileVersion Name="Version">7.0</FileVersion>
+		</FileVersion>
+		<Compiler>
+			<Compiler Name="A">1</Compiler>
+			<Compiler Name="B">0</Compiler>
+			<Compiler Name="C">1</Compiler>
+			<Compiler Name="D">1</Compiler>
+			<Compiler Name="E">0</Compiler>
+			<Compiler Name="F">0</Compiler>
+			<Compiler Name="G">1</Compiler>
+			<Compiler Name="H">1</Compiler>
+			<Compiler Name="I">1</Compiler>
+			<Compiler Name="J">1</Compiler>
+			<Compiler Name="K">0</Compiler>
+			<Compiler Name="L">1</Compiler>
+			<Compiler Name="M">0</Compiler>
+			<Compiler Name="N">1</Compiler>
+			<Compiler Name="O">1</Compiler>
+			<Compiler Name="P">0</Compiler>
+			<Compiler Name="Q">0</Compiler>
+			<Compiler Name="R">0</Compiler>
+			<Compiler Name="S">0</Compiler>
+			<Compiler Name="T">0</Compiler>
+			<Compiler Name="U">0</Compiler>
+			<Compiler Name="V">1</Compiler>
+			<Compiler Name="W">0</Compiler>
+			<Compiler Name="X">1</Compiler>
+			<Compiler Name="Y">1</Compiler>
+			<Compiler Name="Z">1</Compiler>
+			<Compiler Name="ShowHints">False</Compiler>
+			<Compiler Name="ShowWarnings">False</Compiler>
+			<Compiler Name="UnitAliases">WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</Compiler>
+			<Compiler Name="NamespacePrefix"></Compiler>
+			<Compiler Name="GenerateDocumentation">False</Compiler>
+			<Compiler Name="DefaultNamespace"></Compiler>
+			<Compiler Name="SymbolDeprecated">False</Compiler>
+			<Compiler Name="SymbolLibrary">False</Compiler>
+			<Compiler Name="SymbolPlatform">False</Compiler>
+			<Compiler Name="SymbolExperimental">True</Compiler>
+			<Compiler Name="UnitLibrary">False</Compiler>
+			<Compiler Name="UnitPlatform">False</Compiler>
+			<Compiler Name="UnitDeprecated">False</Compiler>
+			<Compiler Name="UnitExperimental">True</Compiler>
+			<Compiler Name="HResultCompat">False</Compiler>
+			<Compiler Name="HidingMember">False</Compiler>
+			<Compiler Name="HiddenVirtual">False</Compiler>
+			<Compiler Name="Garbage">False</Compiler>
+			<Compiler Name="BoundsError">False</Compiler>
+			<Compiler Name="ZeroNilCompat">False</Compiler>
+			<Compiler Name="StringConstTruncated">False</Compiler>
+			<Compiler Name="ForLoopVarVarPar">False</Compiler>
+			<Compiler Name="TypedConstVarPar">False</Compiler>
+			<Compiler Name="AsgToTypedConst">False</Compiler>
+			<Compiler Name="CaseLabelRange">False</Compiler>
+			<Compiler Name="ForVariable">False</Compiler>
+			<Compiler Name="ConstructingAbstract">False</Compiler>
+			<Compiler Name="ComparisonFalse">False</Compiler>
+			<Compiler Name="ComparisonTrue">False</Compiler>
+			<Compiler Name="ComparingSignedUnsigned">False</Compiler>
+			<Compiler Name="CombiningSignedUnsigned">False</Compiler>
+			<Compiler Name="UnsupportedConstruct">False</Compiler>
+			<Compiler Name="FileOpen">False</Compiler>
+			<Compiler Name="FileOpenUnitSrc">False</Compiler>
+			<Compiler Name="BadGlobalSymbol">False</Compiler>
+			<Compiler Name="DuplicateConstructorDestructor">False</Compiler>
+			<Compiler Name="InvalidDirective">False</Compiler>
+			<Compiler Name="PackageNoLink">False</Compiler>
+			<Compiler Name="PackageThreadVar">False</Compiler>
+			<Compiler Name="ImplicitImport">False</Compiler>
+			<Compiler Name="HPPEMITIgnored">False</Compiler>
+			<Compiler Name="NoRetVal">False</Compiler>
+			<Compiler Name="UseBeforeDef">False</Compiler>
+			<Compiler Name="ForLoopVarUndef">False</Compiler>
+			<Compiler Name="UnitNameMismatch">False</Compiler>
+			<Compiler Name="NoCFGFileFound">False</Compiler>
+			<Compiler Name="MessageDirective">False</Compiler>
+			<Compiler Name="ImplicitVariants">False</Compiler>
+			<Compiler Name="UnicodeToLocale">False</Compiler>
+			<Compiler Name="LocaleToUnicode">False</Compiler>
+			<Compiler Name="ImagebaseMultiple">False</Compiler>
+			<Compiler Name="SuspiciousTypecast">False</Compiler>
+			<Compiler Name="PrivatePropAccessor">False</Compiler>
+			<Compiler Name="UnsafeType">False</Compiler>
+			<Compiler Name="UnsafeCode">False</Compiler>
+			<Compiler Name="UnsafeCast">False</Compiler>
+			<Compiler Name="OptionTruncated">True</Compiler>
+			<Compiler Name="WideCharReduced">True</Compiler>
+			<Compiler Name="DuplicatesIgnored">True</Compiler>
+			<Compiler Name="UnitInitSeq">True</Compiler>
+			<Compiler Name="LocalPInvoke">True</Compiler>
+			<Compiler Name="CodePage"></Compiler>
+		</Compiler>
+		<Linker>
+			<Linker Name="MapFile">0</Linker>
+			<Linker Name="OutputObjs">0</Linker>
+			<Linker Name="ConsoleApp">1</Linker>
+			<Linker Name="DebugInfo">False</Linker>
+			<Linker Name="RemoteSymbols">False</Linker>
+			<Linker Name="GenerateDRC">False</Linker>
+			<Linker Name="MinStackSize">16384</Linker>
+			<Linker Name="MaxStackSize">1048576</Linker>
+			<Linker Name="ImageBase">4194304</Linker>
+			<Linker Name="ExeDescription"></Linker>
+			<Linker Name="GenerateHpps">False</Linker>
+		</Linker>
+		<Directories>
+			<Directories Name="OutputDir">F:\Gestwin_Update</Directories>
+			<Directories Name="UnitOutputDir"></Directories>
+			<Directories Name="PackageDLLOutputDir"></Directories>
+			<Directories Name="PackageDCPOutputDir"></Directories>
+			<Directories Name="SearchPath">F:\Source\Lib;F:\Source\Lib\NexusDB2;F:\Source\Lib\ZLib;F:\Source\GdPub</Directories>
+			<Directories Name="Packages">rtl;vcl;vcldb;dbrtl;vclx;xmlrtl;vclie;inet;inetdbbde;inetdbxpress;IndySystem;IndyCore;dclOfficeXP;IndyProtocols;bdertl;vclactnband;vclshlctrls;dsnap;TeeChart;cxLibraryD9;cxEditorsD9;dxThemeD9;cxDataD9;cxExtEditorsD9;cxPageControlD9;cxGridD9;dxmdsD9;VclSmp;NexusDB2;GLib;FastReport</Directories>
+			<Directories Name="Conditionals">NODBACCESS;NOREPORTS;NOTEECHART</Directories>
+			<Directories Name="DebugSourceDirs"></Directories>
+			<Directories Name="UsePackages">False</Directories>
+		</Directories>
+		<Parameters>
+			<Parameters Name="RunParams">Test</Parameters>
+			<Parameters Name="HostApplication"></Parameters>
+			<Parameters Name="Launcher"></Parameters>
+			<Parameters Name="UseLauncher">False</Parameters>
+			<Parameters Name="DebugCWD">F:\Gestwin_Update</Parameters>
+			<Parameters Name="RemoteHost"></Parameters>
+			<Parameters Name="RemotePath"></Parameters>
+			<Parameters Name="RemoteLauncher"></Parameters>
+			<Parameters Name="RemoteCWD"></Parameters>
+			<Parameters Name="RemoteDebug">False</Parameters>
+			<Parameters Name="Debug Symbols Search Path"></Parameters>
+			<Parameters Name="LoadAllSymbols">True</Parameters>
+			<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+		</Parameters>
+		<Language>
+			<Language Name="ActiveLang"></Language>
+			<Language Name="ProjectLang">$00000000</Language>
+			<Language Name="RootDir"></Language>
+		</Language>
+		<VersionInfo>
+			<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+			<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+			<VersionInfo Name="MajorVer">1</VersionInfo>
+			<VersionInfo Name="MinorVer">0</VersionInfo>
+			<VersionInfo Name="Release">0</VersionInfo>
+			<VersionInfo Name="Build">0</VersionInfo>
+			<VersionInfo Name="Debug">False</VersionInfo>
+			<VersionInfo Name="PreRelease">False</VersionInfo>
+			<VersionInfo Name="Special">False</VersionInfo>
+			<VersionInfo Name="Private">False</VersionInfo>
+			<VersionInfo Name="DLL">False</VersionInfo>
+			<VersionInfo Name="Locale">2058</VersionInfo>
+			<VersionInfo Name="CodePage">1252</VersionInfo>
+		</VersionInfo>
+		<VersionInfoKeys>
+			<VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+			<VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+			<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+			<VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+			<VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+			<VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+			<VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+			<VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+			<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+			<VersionInfoKeys Name="Comments"></VersionInfoKeys>
+		</VersionInfoKeys>
+	</Delphi.Personality>
+</BorlandProject>

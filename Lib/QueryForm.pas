@@ -1,0 +1,2821 @@
+
+{$R-}  // Es por la función SendMessage( Handle, WM_SETICON, ICON_BIG, Icon.Handle ).
+       // En Win32 LParam es un NativeInt y se producen errores de rango cuando el valor del handle es muy alto.
+
+unit QueryForm;
+
+interface
+
+uses
+  SysUtils, Windows, Messages, Classes, Graphics, Controls, Generics.Collections,
+  Forms, Dialogs, StdCtrls, Buttons, AppForms, ExtCtrls,
+
+  AppContainer,
+  DB, nxDB, nxDBBase, nxllBde,
+  Mask,
+
+  cxGraphics, cxMemo, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxControls, cxContainer,
+  cxEdit, cxStyles, cxGroupBox, cxRadioGroup, Menus, cxLookAndFeelPainters, cxButtons, dxSkinsCore, dxSkinsDefaultPainters,
+  cxGridCustomView, cxGridCustomTableView, cxGridDBTableView, cxGrid, cxClasses, cxGridTableView,
+  cxCalendar, cxDBEdit, cxLookAndFeels, cxLabel, cxTL, cxDBTL, cxTLData, cxSplitter,
+  DataManager,
+
+  LibUtils,
+  dxBar,
+  dxmdaset,
+  AppManager,
+  GridTableViewController,
+  QueryFormBar, dxUIAClasses;
+
+const HighPanel = 6;
+
+type
+  TDataEditEvent  = procedure( Target : TcxCustomEdit = nil ) of object;
+
+  TgQueryPanel = class;
+
+  TFieldPanelType = ( fpFixed, fpFocusedColumn, fpUser );
+
+  TFieldPanel = class( TcxGroupBox )
+    public
+    Column : TcxGridDBColumn;
+    SourceField : TField;
+    IsARange : Boolean;
+    FieldCtrl : array[ 0..1 ] of TcxCustomEdit;
+    DataField : array[ 0..1 ] of TField;
+    CloseButton : TcxButton;
+    FieldPanelType : TFieldPanelType;
+    end;
+
+  TFilterFrame = class(TFrame)
+    Data: TgxMemData;
+    DataHoy: TDateField;
+    DataSource: TDataSource;
+    BackPanel: TcxGroupBox;
+    DataFechaInicial: TDateField;
+    DataFechaFinal: TDateField;
+    Panel1: TcxGroupBox;
+    DataPanel: TgxEditPanel;
+    ButtonsPanel: TcxGroupBox;
+    OkButton: TgBitBtn;
+    CancelButton: TgBitBtn;
+    CaptionPanel: TcxGroupBox;
+    CaptionLabel: TcxLabel;
+    FieldsButton: TcxButton;
+    procedure OkButtonClick(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure FrameExit(Sender: TObject);
+    procedure RemoveFieldPanel( FieldPanel : TFieldPanel );
+  private
+
+    FFocusingFieldPanel : Boolean;
+    FFilterFieldsPopupMenu : TdxBarPopupMenu;
+    FDatasetInitialized : Boolean;
+
+    procedure DoFilterMenuItemOnClick( Sender : TObject );
+
+    function SetupFieldPanel( AColumn : TcxGridDBColumn; AFieldPanelType : TFieldPanelType; Field0 : TField = nil; Field1 : TField = nil ) : TFieldPanel;
+    function SetupFieldPanelFromFieldName( FieldName : String; AFieldPanelType : TFieldPanelType; Field0 : TField = nil; Field1 : TField = nil ) : TFieldPanel;
+    procedure UpdateFilterPopupChecks;
+    procedure UpdateFrameHeight;
+    procedure FocusFieldPanel( FieldPanel : TFieldPanel );
+    procedure ClearGridFilter;
+    procedure AddGridFilterItem(AFieldPanel: TFieldPanel);
+    function SetupDatasetFilter( OnlyFixed : Boolean = False ) : Boolean;
+    procedure UpdateFixedRangePanelData;
+    function GetPanelByFieldName(Value: String): TFieldPanel;
+    function GetFieldPanelHeight: Integer;
+    function GetSourceFieldName( Field : TField ) : String;
+
+  protected
+
+    BottomMargin : SmallInt;
+
+    procedure DoOnDateValidate( Sender: TcxCustomEdit; var DisplayValue: TcxEditValue; var ErrorText: TCaption; var Error: Boolean );
+    procedure DoOnDateQueryRequest( Sender: TcxCustomEdit );
+
+  public
+
+    FOwnerForm : TgxForm;
+    FQueryPanel : TgQueryPanel;
+    // FGridQueryFilter,
+    FHasDateRange : Boolean;
+    FFieldPanelList : TList< TFieldPanel >;
+    FSQLString,
+    FSQLWhere : String;
+    FFromPos,
+    FWherePos : SmallInt;
+    FFiltered,
+    FGridFiltered,
+    FComplexSQLSentence : Boolean;
+
+    FieldValuesArray : TFieldValuesArray;
+
+    // FOnSelected  : TSwitchEvent;
+    FButtonPressed : Boolean;
+    FFixedRangePanel,
+    FFocusedColumnFieldPanel,
+    FFirstFieldPanel : TFieldPanel;
+
+    constructor Create( QueryPanel : TgQueryPanel {; OnSelected : TSwitchEvent } ); reintroduce;
+    destructor Destroy; override;
+
+    procedure SetupFrame;
+    procedure ShowFrame( FirstTime : Boolean );
+    procedure HideFrame( SaveState : Boolean );
+    procedure ButtonPressed( IsOkButton : Boolean );
+    procedure SaveFilterState;
+    procedure ReadFilterState;
+    procedure SetupFilterFieldsPopup;
+    procedure CancelFilter;
+    procedure RemoveFilterPanels;
+
+    property HasDateRange : Boolean read FHasDateRange;
+    property FieldPanelHeight : Integer read GetFieldPanelHeight;
+  end;
+
+  TgQueryPanel = class( TcxGroupBox )
+    private
+      FOwnerForm,
+      FSourceForm : TgxForm;
+      FBarManager : TdxBarmanager;
+      FQueryFormBarFrame : TQueryFormBarFrame;
+      FSyncDataButton,
+      FInitSearchButton,
+      FSaveButton,
+      FStandAloneButton : TcxButton;
+      FSetupColumnsButton : TcxButton;
+      FInitSearchQuery : Boolean;
+      FGridTableView : TcxGridDBTableView;
+      FLockedColumn,
+      FSearchColumn : TcxGridDBColumn;
+      FTreeList : TcxDBTreeList;
+      FRecordButtonLink : TRecordButtonLink;
+      FLockControl : TcxCustomEdit;
+      FLockRange : Boolean;
+      FDescriptionField,
+      FSourceField,
+      FSearchField,
+      FFixedRangeField : TField;
+      FLockRangeField : TField;
+      FTargetControl : TcxCustomEdit;
+      FSourceQuery : TnxeQuery;
+      FSourceTable : TnxeTable;
+      FSourceDataset : TDataset;
+      FLinked,
+      FDetached : Boolean;
+      FTargetTable : TnxeTable;
+      FEditingValue : Variant;
+      FQueryBeforeOpen : TDataSetNotifyEvent;  // Guarda el evento original del FSourceQuery
+      FQueryFieldsPopupMenu : TdxBarPopupMenu;
+      FSettingTargetValue : Boolean;
+      FFilterFrame : TFilterFrame;
+      FSpliter : TcxSplitter;
+      FSettingUp,
+      FUsesSourceField,
+      FFilterFrameVisible,
+      FStaticSourceValue,
+      FFormWidthAdjusted : Boolean;
+      FInitialState : TQueryGridInitialState;
+      FBarPopupMenu : TdxBarPopupMenu;
+      FCustomQueryFormWidth : Boolean;        // Indica que el usuario a modificado y guardado una anchura personalizada de la ventana
+      FMinQueryFormWidth : Integer;
+      FColumVisibilityChanged : Boolean;
+      FDateSelection : TDateSelection;
+      FDateStart,
+      FDateEnd : TDateTime;
+      FNewTarget : Boolean;
+      FVisibleFieldList,
+      FFilterFieldList,
+      FValueList : TStringList;
+      FLockConnectorText,
+      FLockEmptyText : String;
+
+      FOnFormShow : TNotifyEvent;
+      FOnFormReport,
+      FOnUserSelection,
+      FOnSQLSetup,
+      FOnColumnsSetup,
+      FAfterReadQueryState : TSimpleEvent;
+      FOnDataSelected : TDataEditEvent;
+      FOnColumVisibilityChanged : TColumVisibilityChangedEvent;
+
+      function IsLineSelected : Boolean;
+      procedure SetInitSearchQuery( const Value : Boolean );
+
+      procedure DoOnQueryBeforeOpen( Sender : TDataset );
+      procedure DoOnUserSelection;
+      procedure DoExpandGroups( Sender : TObject );
+      procedure DoCollapseGroups( Sender : TObject );
+      procedure DoTreeListFocusedNodeChanged(Sender: TcxCustomTreeList; APrevFocusedNode, AFocusedNode: TcxTreeListNode);
+      procedure DoTreeListDblClick(Sender: TObject);
+
+    protected
+
+      procedure DoSynchronizeDataClick( Sender : TObject );
+      procedure DoInitSearchClick( Sender : TObject );
+      procedure DoSaveClick( Sender : TObject );
+      procedure DoStandAloneClick( Sender : TObject );
+
+      procedure DoGridTableViewFocusedRecordChanged( Sender : TcxCustomGridTableView; aPrevFocusedRecord, aFocusedRecord : TcxCustomGridRecord; aNewItemRecordFocusingChanged : Boolean );
+      procedure DoGridTableViewCellClick( Sender: TcxCustomGridTableView; ACellViewInfo : TcxGridTableDataCellViewInfo; AButton: TMouseButton; AShift: TShiftState; var AHandled: Boolean );
+      procedure DoGridTableViewCellDblClick( Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton; AShift: TShiftState; var AHandled: Boolean );
+      procedure DoControlKeyDown( Sender : TObject; var Key : Word; Shift : TShiftState );
+      procedure DoGridTableViewFocusedItemChanged( Sender : TcxCustomGridTableView; APrevFocusedItem, AFocusedItem : TcxCustomGridTableItem );
+      procedure DoGridDBTableViewColumnHeaderClick( Sender : TcxGridTableView; AColumn : TcxGridColumn );
+      procedure DoGridTableViewColumnSizeChanged( Sender : TcxGridTableView; AColumn : TcxGridColumn );
+
+      procedure DoOnGridEnter( Sender : TObject );
+      procedure DoOnGridExit( Sender : TObject );
+
+      procedure DoQueryMenuItemOnClick( Sender : TObject );
+
+
+      procedure Notification( AComponent : TComponent;Operation  : TOperation );  override;
+
+      procedure SetQueryFormWidth( ResetFormWidth : Boolean = False );
+      procedure SetGridTableView( const Value : TcxGridDBTableView );
+      procedure SetTreeList( const Value : TcxDBTreeList );
+      procedure SetupQueryFieldsPopup;
+      procedure SetSourceField( const Value : TField );
+      procedure SetLinked( const Value : Boolean );
+      procedure SetDetached( const Value : Boolean );
+      procedure SetSourceQuery( const Value : TnxeQuery );
+      // procedure SetupQueryParams;
+      procedure DataSelected;
+      procedure ReadQueryState;
+
+      procedure DoOnFormClose(Sender: TObject; var Action: TCloseAction);
+      procedure DoOnFormActivate(Sender: TObject);
+      procedure DoOnFormDeactivate(Sender: TObject);
+      procedure DoOnFormDestroy(Sender: TObject);
+      procedure DoOnFormKeyDown( Sender : TObject; var Key : Word; Shift : TShiftState );
+      procedure DoOnFormKeyPress( Sender : TObject; var Key : Char);
+      procedure DoOnFormResize( Sender : TObject );
+
+      procedure DoOnColumnsSetup;
+
+    public
+
+      constructor Create( AOwner : TComponent ); override;
+      destructor Destroy; override;
+      procedure Loaded; override;
+
+      procedure SaveQueryState( Notify : Boolean = False );
+      procedure DeleteQueryState;
+      procedure Setup( LockRangeField : TField; EditControl : TcxCustomEdit; InitialState : TQueryGridInitialState = qgsNormal; ADateSelection : TDateSelection = dsFrom30DaysAgo; ADateStart : TDateTime = 0; ADateEnd : TdateTime = 0 );
+      procedure UpdateSearchColumn( InvalidateForCustomization : Boolean = True );
+      procedure UpdateTargetControl( EditControl : TcxCustomEdit );
+      procedure SyncData;
+      function  LinkToTarget : Boolean;
+      procedure ShowFilterFrame( Setup : Boolean = False );
+      procedure CancelFilter;
+      // procedure DoOnFilterFrameProcess( const Accepted : Boolean );
+      procedure DoOnSQLSetup;
+      procedure DoOnFormReport;
+
+      property BarManager : TdxBarmanager read FBarManager;
+      property EditingValue : Variant read FEditingValue write FEditingValue;
+      property DateSelection : TDateSelection read FDateSelection;
+      property DateStart : TDateTime read FDateStart;
+      property DateEnd : TDateTime read FDateEnd;
+      property FilterFrame : TFilterFrame read FFilterFrame;
+      property QueryFieldsPopupMenu : TdxBarPopupMenu read FQueryFieldsPopupMenu;
+      property MinQueryFormWidth : Integer read FMinQueryFormWidth write FMinQueryFormWidth;
+      property InitSearchQuery : Boolean read FInitSearchQuery write SetInitSearchQuery;
+      property TargetControl : TcxCustomEdit  read FTargetControl write FTargetControl;
+      property Linked : Boolean read FLinked  write SetLinked;
+      property LockedColumn : TcxGridDBColumn read FLockedColumn;
+      property LockRange : Boolean read FLockRange write FLockRange;
+      property Detached : Boolean read FDetached write SetDetached;
+      property CustomQueryFormWidth : Boolean read FCustomQueryFormWidth write FCustomQueryFormWidth;
+
+      property OwnerForm : TgxForm read FOwnerForm;
+      property SourceForm : TgxForm read FSourceForm;
+      property UsesSourceField : Boolean read FUsesSourceField;
+      property QueryFormBarFrame : TQueryFormBarFrame read FQueryFormBarFrame;
+
+      property SyncDataButton : TcxButton read FSyncDataButton;
+      property InitSearchButton : TcxButton read FInitSearchButton;
+      property SaveButton : TcxButton read FSaveButton;
+      property StandAloneButton : TcxButton read FStandAloneButton;
+
+      property VisibleFieldList : TStringList read FVisibleFieldList;
+      property FilterFieldList : TStringList read FFilterFieldList;
+      property SourceDataset : TDataset read FSourceDataset;
+      property ValueList : TStringList read FValueList;
+
+    published
+
+      property GridTableView : TcxGridDBTableView read FGridTableView write SetGridTableView;
+      property TreeList : TcxDBTreeList read FTreeList write SetTreeList;
+      property SearchField : TField read FSearchField write FSearchField;
+      property DescriptionField : TField read FDescriptionField write FDescriptionField;
+      property SourceField : TField read FSourceField write SetSourceField;
+      property StaticSourceValue : Boolean read FStaticSourceValue write FStaticSourceValue default False;
+      property FilterFrameVisible : Boolean read FFilterFrameVisible write FFilterFrameVisible default True;
+      property FixedRangeField : TField read FFixedRangeField write FFixedRangeField;
+      property SourceQuery : TnxeQuery read FSourceQuery write SetSourceQuery;
+      property SourceTable : TnxeTable read FSourceTable write FSourceTable;
+      property LockConnectorText : String read FLockConnectorText write FLockConnectorText;
+      property LockEmptyText : String read FLockEmptyText write FLockEmptyText;
+
+      property OnDataSelected : TDataEditEvent read FOnDataSelected write FOnDataSelected;
+      property OnFormShow : TNotifyEvent read FOnFormShow write FOnFormShow;
+      property OnColumnsSetup : TSimpleEvent read FOnColumnsSetup write FOnColumnsSetup;
+      property OnSQLSetup : TSimpleEvent read FOnSQLSetup write FOnSQLSetup;
+      property OnColumVisibilityChanged : TColumVisibilityChangedEvent read FOnColumVisibilityChanged write FOnColumVisibilityChanged;
+      property OnUserSelection : TSimpleEvent read FOnUserSelection write FOnUserSelection;
+      property OnFormReport : TSimpleEvent read FOnFormReport write FOnFormReport;
+
+      property AfterReadQueryState : TSimpleEvent read FAfterReadQueryState write FAfterReadQueryState;
+      end;
+
+    TcxQueryDBDateEdit = class( TcxDBDateEdit )
+      private
+        FFieldPanel : TFieldPanel;
+      public
+        property FieldPanel : TFieldPanel read FFieldPanel write FFieldPanel;
+      end;
+
+procedure CreateQueryForm( FormClass : TgxFormClass; var Reference; LockRangeField : TField; EditControl : TcxCustomEdit; InitialState     : TQueryGridInitialState = qgsNormal; DateSelection : TDateSelection = dsFrom30DaysAgo; DateStart : TDateTime = 0; DateEnd : TDateTime = 0 ); overload;
+procedure CreateQueryForm( FormClass : TgxFormClass; var Reference; EditControl : TcxCustomEdit; InitialState : TQueryGridInitialState = qgsNormal; DateSelection : TDateSelection = dsFrom30DaysAgo; DateStart : TDateTime = 0; DateEnd : TDateTime = 0 ); overload;
+procedure CreateQueryForm( FormClass : TgxFormClass; var Reference ); overload;
+procedure PlaceQueryForm( AQueryPanel : TgQueryPanel; ToFront : Boolean = True );
+
+
+var  ActiveQueryPanel : TgQueryPanel = nil;
+
+implementation
+
+{$R *.dfm}
+
+uses   Variants,
+       DateUtils,
+
+       dxDPIAwareUtils,
+       cxCheckBox,
+       cxFilter,
+       cxFilterDialog,
+       cxFindPanel,
+       cxDisplayButtonEdit,
+       dxTokenEdit,
+       dxDBTokenEdit,
+
+       b_msg;
+
+resourceString
+       RsMsg1   = 'Campos de búsqueda';
+       RsMsg3   = 'Ningún registro coincide con el filtro indicado.';
+       RsMsg4   = 'Los valores introducidos en el filtro no son válidos.';
+       RsMsg5   = 'Vuelva a introducir el filtro verificando la sintaxis.';
+       RsMsg6   = '¿Está seguro de que desea cerrar la ventana de consulta?';
+       //
+       RsMsg8   = 'Campos opcionales';
+       RsMsg9   = 'Unable to open table';  // No traducir
+       RsMsg10  = 'Expandir';
+       RsMsg11  = 'Mostrar las lineas de los grupos';
+       RsMsg12  = 'Colapsar';
+       RsMsg13  = 'Ocultar las lineas de los grupos';
+       RsMsg14  = 'Se ha guardado la configuración de la ventana de consulta';
+       RsMsg15  = 'Utilice la opción de borrado para restituir el diseño a su configuración por defecto.';
+
+       HintMsg2 = 'Sincronizar datos : actualizar automáticamente la ventana destino.'#13'Teclas [Ctrl]+[D]';
+       HintMsg3 = 'Permite mostrar u ocultar otros campos de la consulta.'#13'Teclas [Ctrl]+[C]';
+       HintMsg4 = 'Iniciar siempre la consulta indicando un'#13'filtro o texto de búsqueda.'#13'Teclas [Ctrl]+[L]';
+       HintMsg5 = 'Guardar la estructura de consulta para su uso posterior.'#13'Teclas [Ctrl]+[S]';
+       HintMsg6 = 'Hacer que la ventana sea permanente.'#13'La ventana de consulta no se cerrará cuando'#13'seleccione un registro y el estado actual se'#13'conservará en la próxima consulta.';
+       HintMsg7 = 'Añadir o quitar campos adicionales de filtrado.'#13'Tecla [Ctrl]+[T].';
+       HintMsg8 = 'No hay ninguna línea seleccionada.';
+       HintMsg9 = 'Para poder emitir el impreso debe seleccionar primero la línea del registro.';
+
+
+const DefaultFieldPanelHeight = 28;
+
+procedure CreateQueryForm(     FormClass        : TgxFormClass;
+                           var Reference;
+                               LockRangeField   : TField;
+                               EditControl      : TcxCustomEdit;
+                               InitialState     : TQueryGridInitialState = qgsNormal;
+                               DateSelection    : TDateSelection = dsFrom30DaysAgo;
+                               DateStart        : TDateTime = 0;
+                               DateEnd          : TDateTime = 0 );
+var  OwnerForm,
+     TargetForm : TgxForm;
+     Instance : TComponent;
+     QueryPanel : TgQueryPanel;
+
+procedure FindQueryPanel( AOwner : TComponent );
+begin
+     QueryPanel := TgQueryPanel( FindComponentByClass( AOwner, TgQueryPanel ) );
+end;
+
+begin
+
+     If   Assigned( EditControl )
+     then TargetForm := LinkedFormsList.FindForm( GetParentForm( EditControl ), FormClass )
+     else TargetForm := nil;
+
+     If   Assigned( TargetForm )
+     then begin
+          With TargetForm do
+            begin
+            FindQueryPanel( TargetForm );
+            If   Assigned( QueryPanel )
+            then QueryPanel.UpdateTargetControl( EditControl );
+            Visible := True;
+            BringToFront;
+            SetFocus;
+            end;
+          end
+     else try
+            OwnerForm := nil;
+            Instance := TComponent( FormClass.NewInstance );
+            TComponent( Reference ) := Instance;
+            try
+              Instance.Create( Application.MainForm );
+              FindQueryPanel( Instance );
+              OwnerForm := TgxForm( Instance );
+              OwnerForm.FormType := fmQuery;
+              OwnerForm.Visible := False;
+              OwnerForm.AdjustScale;
+              If   Assigned( QueryPanel )
+              then QueryPanel.Setup( LockRangeField, EditControl, InitialState, DateSelection, DateStart, DateEnd );
+
+            except On E : exception do
+              begin
+              If   Assigned( Instance )
+              then With Instance do
+                     If   not ( csDestroying in ComponentState )
+                     then Free;
+              If   E is EnxDatabaseError
+              then begin
+
+                   // Estoy intentando averiguar si es un error de 'tabla inexistente'
+
+                   With EnxDatabaseError( E ) do
+                     If   ErrorCode=DBIERR_NX_UNKNOWNEXCP
+                     then If   Pos( RsMsg9, ErrorString )<>0
+                          then raise EnxDatabaseError.nxCreate( DBIERR_INVALIDTABLENAME );
+
+                   end
+              else ShowException( E, nil );
+              Abort;
+              end;
+            end;
+          finally
+            CleanFormValues;
+            If   Assigned( OwnerForm )
+            then OwnerForm.Visible := True;
+            end;
+end;
+
+procedure CreateQueryForm(     FormClass     : TgxFormClass;
+                           var Reference;
+                               EditControl   : TcxCustomEdit;
+                               InitialState  : TQueryGridInitialState = qgsNormal;
+                               DateSelection : TDateSelection = dsFrom30DaysAgo;
+                               DateStart     : TDateTime = 0;
+                               DateEnd       : TDateTime = 0 );
+begin
+     CreateQueryForm( FormClass, Reference, nil, EditControl, InitialState, DateSelection, DateStart, DateEnd );
+end;
+
+procedure CreateQueryForm(     FormClass   : TgxFormClass;
+                           var Reference );
+begin
+     CreateQueryForm( FormClass, Reference, nil );
+end;
+
+procedure PlaceQueryForm( AQueryPanel : TgQueryPanel;
+                          ToFront     : Boolean = True );
+
+var   X,h   : SmallInt;
+      DesktopWidth : Integer;
+      Form : TForm;
+
+begin
+     If   not AQueryPanel.Detached
+     then begin
+          Form := AQueryPanel.OwnerForm;
+          If   Form.WindowState=wsNormal
+          then begin
+
+               DesktopWidth := GetDesktopWidth;
+               If   Form.Width>DesktopWidth
+               then Form.Width := DesktopWidth;
+
+               If   ApplicationContainer.PosQueryFormsAtLeft
+               then X := 0
+               else begin
+                    X := Application.MainForm.ClientWidth - Form.Width;
+                    If   not ApplicationContainer.TDI
+                    then X := X - 4;
+                    end;
+
+               H := GetDesktopHeight;
+
+               With Application.MainForm do
+                 begin
+                 If   GetWindowLong( ClientHandle, GWL_STYLE ) and WS_VSCROLL<> 0
+                 then X := X - GetSystemMetrics( SM_CXVSCROLL );
+                 If   GetWindowLong( ClientHandle, GWL_STYLE ) and WS_HSCROLL<> 0
+                 then H := H - GetSystemMetrics( SM_CYHSCROLL );
+                 end;
+
+               Form.SetBounds( X, 0, Form.Width, H );
+               end;
+
+          If   ToFront
+          then Form.BringToFront;
+          end;
+end;
+
+{ TFilterFrame --------------------------------------------------------------- }
+
+const MinFrameHeight = 60;
+      MinQueryFormWidthWithDateRange = 335;
+
+procedure TFilterFrame.CancelButtonClick(Sender: TObject);
+begin
+     ButtonPressed( False );
+end;
+
+constructor TFilterFrame.Create( QueryPanel : TgQueryPanel );
+
+var  Rect : TRect;
+
+begin
+     FQueryPanel := QueryPanel;
+     FOwnerForm := FQueryPanel.OwnerForm;
+
+     inherited Create( FOwnerForm );
+     Parent := FOwnerForm;
+     FFieldPanelList := TList< TFieldPanel >.Create;
+     FFilterFieldsPopupMenu := TdxBarPopupMenu.Create( FOwnerForm );
+
+     FFilterFieldsPopupMenu.BarManager := QueryPanel.BarManager;
+
+     TabOrder := 0;
+     BottomMargin := 14;
+
+     If   ApplicationContainer.AppUseSkins
+     then try
+            // Algunas pieles viejas parece que dan problemas
+            Rect := ApplicationContainer.AppSkinPainter.GroupBoxBorderSize( True, cxgpTop );
+            BottomMargin := ( Rect.Top + Rect.Bottom ) + 8;
+          except
+            end;
+
+end;
+
+destructor TFilterFrame.Destroy;
+begin
+     FFieldPanelList.Free;
+     inherited;
+end;
+
+procedure TFilterFrame.SaveFilterState;
+
+var I : SmallInt;
+    FieldPanel : TFieldPanel;
+
+begin
+     With FQueryPanel do
+       If   not StaticSourceValue
+       then begin
+
+            For FieldPanel in FFieldPanelList do
+              If   FieldPanel.FieldPanelType=fpUser
+              then FilterFieldList.Add( GetSourceFieldName( FieldPanel.SourceField ) );
+
+            If   Assigned( ValueList )
+            then If   FHasDateRange
+                 then begin
+                      AddValueList( DataHoy, ValueList );
+                      AddValueList( DataFechaInicial, ValueList );
+                      AddValueList( DataFechaFinal, ValueList );
+                      end;
+            end;
+end;
+
+procedure TFilterFrame.FrameExit(Sender: TObject);
+begin
+     If   FOwnerForm.ActiveControl is TcxGridSite
+     then If   not FButtonPressed // and TabKey
+          then ButtonPressed( True );
+     Visible := False;
+     FQueryPanel.FSpliter.Visible := False;
+end;
+
+procedure TFilterFrame.ButtonPressed( IsOkButton : Boolean );
+
+var  Inx,
+     SearchFieldCount : SmallInt;
+     FInvalidEdit : TcxCustoMEdit;
+
+begin
+     try
+       FButtonPressed := True;
+       If   IsOkButton
+       then begin
+            FInvalidEdit := DataPanel.ValidateEditControls( False, True );
+            If   Assigned( FInvalidEdit )
+            then begin
+                 FInvalidEdit.SetFocus;
+                 ShowHintMsg( RsgMsg396, '', FInvalidEdit );
+                 Exit;
+                 end;
+            If   SetupDatasetFilter  // El filtro es correcto y se han encontrado registros
+            then HideFrame( IsOkButton )
+            else begin
+                 FocusFieldPanel( FFirstFieldPanel );
+                 Exit;
+                 end;
+            end;
+
+       If   Assigned( FQueryPanel.GridTableView )
+       then FQueryPanel.GridTableView.Site.Container.SetFocus
+       else If   Assigned( FQueryPanel.TreeList )
+            then FQueryPanel.TreeList.SetFocus;
+
+     finally
+       FButtonPressed := False;
+       If   Assigned( ApplicationContainer.MainTopBar )
+       then ApplicationContainer.MainTopBar.LockUpdate := False;  // Al darle el focus directamente al grid puede quedarse el TopBar desactivado
+       end;
+
+end;
+
+procedure TFilterFrame.RemoveFilterPanels;
+
+var  FIndex : SmallInt;
+     FieldPanel : TFieldPanel;
+
+begin
+     For FIndex := FFieldPanelList.Count - 1 downto 0 do
+       begin
+       FieldPanel := FFieldPanelList[ FIndex ];
+       If   FieldPanel.FieldPanelType<>fpFixed
+       then RemoveFieldPanel( FieldPanel );
+       end;
+end;
+
+procedure TFilterFrame.CancelFilter;
+begin
+     RemoveFilterPanels;
+     SetupDatasetFilter( True );
+     HideFrame( False );
+     ApplicationContainer.EnableRecordButtons( True, True );
+end;
+
+procedure TFilterFrame.ClearGridFilter;
+begin
+     If   Assigned( FQueryPanel.GridTableView )
+     then With FQueryPanel.GridTableView.DataController, Filter.Root do
+            begin
+            Filter.Active := False;
+            Clear;   // Limpio los posibles filtros existentes en la rejilla
+            Criteria.Options := [ fcoCaseInsensitive, fcoSoftNull, fcoSoftCompare, fcoIgnoreNull ];
+            BoolOperatorKind := fboAnd;
+            FGridFiltered := False;
+            end;
+end;
+
+procedure TFilterFrame.AddGridFilterItem( AFieldPanel : TFieldPanel );
+
+var  ItemList : TcxFilterCriteriaItemList;
+
+procedure AddLikeFilter( Column    : TcxGridDBColumn;
+                         SearchStr : String );
+
+var  I : SmallInt;
+     SubString : String;
+     Conn : String;
+     FilterCriteriaItem :TcxFilterCriteriaItem;
+
+begin
+     With ItemList do
+       begin
+
+       If   Pos( '%', SearchStr )=0
+       then BoolOperatorKind := fboAnd
+       else BoolOperatorKind := fboOr;
+
+       I := 1;
+       While ( I<=Length( SearchStr ) ) do
+         begin
+         SubString := ExtractSubString( SearchStr, I, ' ' );
+         If   SubString<>''
+         then begin
+              If   Pos( '%', SubString )=0
+              then SubString := '%' + SubString + '%';
+              AddItem( Column, foLike, SubString, SubString );
+              end;
+         end;
+
+       end;
+end;
+
+begin
+     If   Assigned( FQueryPanel.GridTableView )
+     then With AFieldPanel, FQueryPanel.GridTableView.DataController.Filter.Root do
+            If   not ( ValueIsEmpty( DataField[ 0 ].Value ) ) and not( IsARange and ValueIsEmpty( DataField[ 1 ].Value ) )
+            then begin
+                 ItemList := AddItemList( fboAnd );
+                 With ItemList do
+                   If   IsARange
+                   then begin
+                        AddItem( Column, foGreaterEqual, DataField[ 0 ].Value, DataField[ 0 ].AsString );
+                        AddItem( Column, foLessEqual, DataField[ 1 ].Value, DataField[ 1 ].AsString );
+                        end
+                   else AddLikeFilter( Column, DataField[ 0 ].AsString );
+                 FGridFiltered := True;
+                 end;
+end;
+
+function TFilterFrame.GetSourceFieldName( Field : TField ) : String;
+begin
+     If   Field.Origin=''
+     then Result := Field.FieldName
+     else Result := Field.Origin;
+end;
+
+function TFilterFrame.SetupDatasetFilter( OnlyFixed : Boolean = False ) : Boolean;
+
+var  Inx : Integer;
+     FieldName,
+     FilterStr,
+     CurrentSQLString,
+     CurrentSQLWhere,
+     SearchStr1,
+     SearchStr2 : String;
+     FieldPanel : TFieldPanel;
+     MaxLength : SmallInt;
+
+function GetLikeExpression( FieldName : String;
+                            SearchStr : String ) : String;
+
+var  I : SmallInt;
+     SubString : String;
+     Conn : String;
+
+begin
+
+     // Si el usuario introduce un caracter % en la expresión se utiliza el conector OR en lugar de AND porque las
+     // expresiones del tipo '43% 45%' solo pueden significar que empiecen por 43 o 45, puesto que no pueden empezar
+     // por ambos. Otras combinaciones son menos jugosas pero creo que el concepto sigue siendo válido.
+
+     Result := '';
+     If   Pos( '%', SearchStr )=0
+     then Conn := ' AND '
+     else Conn := ' OR ';
+     I := 1;
+     While ( I<=Length( SearchStr ) ) do
+       begin
+       SubString := ExtractSubString( SearchStr, I, ' ' );
+       If   SubString<>''
+       then begin
+            If   Result<>''
+            then Result := Result + Conn;
+            If   Pos( '%', SubString )=0
+            then SubString := QuotedStr( '%' + SubString + '%' )
+            else SubString := QuotedStr( SubString );
+            Result := Result + FieldName + ' LIKE ' + SubString + ' IGNORE CASE ';
+            end;
+       end;
+end;
+
+function ExtractValidStr( Value : String ) : String;
+begin
+     Result := StringReplace( Value, '''', '''''', [ rfReplaceAll ] );
+end;
+
+procedure AddStrField( Value : String );
+begin
+     If   FilterStr<>''
+     then StrAdd( FilterStr, ' AND ' );
+     StrAdd( FilterStr, Value );
+end;
+
+begin
+
+     Result := False;
+
+     With FQueryPanel do
+       begin
+
+       If   Assigned( GridTableView )
+       then GridTableView.BeginUpdate;
+
+       ClearGridFilter;
+
+       FilterStr := '';
+       FFiltered := False;
+       FGridFiltered := False;                                                 
+
+       // En algunas consultas utilizo una tabla como primera fuente de los datos para evitar leer todos los registros con el query
+
+       try
+
+         If   FSettingUp and Assigned( FSourceTable )
+         then begin
+
+              FSourceDataset := FSourceTable;
+
+              GridTableView.DataController.DataSource.DataSet := FSourceTable;
+
+              With FSourceTable do
+                begin
+
+                try
+                  
+                  DisableControls;
+
+                  Open;
+
+                  If   not ShiftKey and
+                       Assigned( TargetControl ) and
+                       ( IndexFieldCount=1 ) and
+                       ( TargetControl.Properties is TcxCustomTextEditProperties )
+                  then begin
+                       MaxLength := TcxCustomTextEditProperties( TargetControl.Properties ).MaxLength;
+                       If   Length( FEditingValue )<MaxLength
+                       then SetRange( [ FEditingValue ], [ FEditingValue + HighStrCode ] );
+                       end;
+
+                finally
+                  EnableControls;
+                  end;
+
+                end;
+
+              end
+         else If   Assigned( FSourceQuery  )
+              then With FSourceQuery do
+                     try
+
+                       {
+                       ReadOnly := True;
+                       RequestLive := False;
+                       }
+
+                       FSourceDataset := FSourceQuery;
+
+                       DisableControls;
+
+                       try
+
+                         Close;
+
+                         CurrentSQLString := FSQLString;
+
+                         // El campo de bloqueo limita la consulta a los valores del campo (de momento solo admito strings)
+
+                         If   Assigned( FLockRangeField ) and FLockRange
+                         then AddStrField( GetSourceFieldName( FLockRangeField ) + '=' + QuotedStr( ExtractValidStr( FLockRangeField.AsString ) ) );
+
+                         // En las consultas con SELECTS anidados se espera que el primer WHERE permita fijar el rango del parámetro fijo y
+                         // para el resto se utiliza el filtro de la rejilla
+
+                         For FieldPanel in FFieldPanelList do
+                           With FieldPanel do
+                             If   not ( OnlyFixed and ( FieldPanelType<>fpFixed ) )
+                             then begin
+
+                                  If   ( SourceField.FieldKind=fkData ) and
+                                       ( not FComplexSQLSentence or ( FComplexSQLSentence and ( FieldPanelType=fpFixed ) ) )
+                                  then begin
+
+                                       FieldName := GetSourceFieldName( SourceField );
+                                       SearchStr1 := ExtractValidStr( DataField[ 0 ].AsString );
+                                       If   IsARange
+                                       then begin
+                                            case SourceField.DataType of
+                                              ftSmallInt,
+                                              ftInteger,
+                                              ftFloat,
+                                              ftCurrency,
+                                              ftBCD      : begin
+                                                           SearchStr2 := ExtractValidStr( DataField[ 1 ].AsString );
+                                                           If   ( SearchStr1<>'' ) and ( SearchStr2<>'' )
+                                                           then AddStrField( ' ( ' + FieldName + ' BETWEEN ' + SearchStr1 + ' AND ' + SearchStr2 + ' ) ' );
+                                                           end;
+                                              ftDate     : AddStrField( ' ( ' + FieldName + ' BETWEEN ' + SQLDateString( FieldCtrl[ 0 ].EditValue ) + ' AND ' + SQLDateString( FieldCtrl[ 1 ].EditValue ) + ' ) ' );
+                                              ftDateTime : AddStrField( ' ( ' + FieldName + ' BETWEEN ' + SQLDateTimeString( FieldCtrl[ 0 ].EditValue ) + ' AND ' + SQLDateTimeString( FieldCtrl[ 1 ].EditValue ) + ' ) ' );
+                                              end;
+                                            end
+                                       else If   SearchStr1<>''
+                                            then If   SourceField.DataType in [ ftString, ftWideString ]
+                                                 then AddStrField( GetLikeExpression( FieldName, SearchStr1 ) )
+                                                 else AddStrField( FieldName + '=' + SearchStr1 );
+
+                                       end
+                                  else AddGridFilterItem( FieldPanel );
+                                  FFiltered := FFiltered or ( FieldPanelType<>fpFixed );
+                                  end;
+
+                              CurrentSQLWhere := '';
+                              If   FSQLWhere=''
+                              then begin
+                                   If   FilterStr<>''
+                                   then CurrentSQLWhere := FilterStr;
+                                   end
+                              else begin
+                                   CurrentSQLWhere := FSQLWhere;
+                                   If   FilterStr<>''
+                                   then CurrentSQLWhere := CurrentSQLWhere + ' AND ' + FilterStr;
+                                   end;
+
+                              If   CurrentSQLWhere<>''
+                              then System.Insert( ' WHERE ' + CurrentSQLWhere, CurrentSQLString, FWherePos );
+
+                         SQL.Text := CurrentSQLString;
+
+                         Open;
+
+                         {
+                         If   Eof
+                         then begin
+                              ShowNotification( ntStop, RsMsg3, '' );
+                              FFiltered := False;
+                              Exit;
+                              end;
+                         }
+                         // FFiltered := FilterStr<>'';
+
+                         First;
+
+                       except on E : Exception do
+                         begin
+                         ShowNotification( ntStop, RsMsg4, RsMsg5 );
+                         ClearGridFilter;
+                         FFiltered := False;
+                         Exit;
+                         end;
+                       end;
+
+                     finally
+                       EnableControls;
+                       end
+              else If   Assigned( GridTableView )  // Un caso muy especial en el que se utiliza un TgxMemData como fuente
+                   then begin
+                        var DataSet := GridTableView.DataController.DataSet;
+                        If   Assigned( DataSet ) and ( Dataset is TgxMemData )
+                        then FSourceDataset := Dataset as TgxMemData;
+                        end;
+
+         If   Assigned( GridTableView )
+         then If   FGridFiltered
+              then With FQueryPanel.GridTableView.DataController do
+                     begin
+                     Filter.Active := True;
+                     DataModeController.GridMode := False;
+                     end;
+
+         FDatasetInitialized := True;
+         Result := True;
+
+
+       finally
+         If   Assigned( GridTableView )
+         then GridTableView.EndUpdate;
+         end;
+
+       end;
+
+end;
+
+procedure TFilterFrame.OkButtonClick(Sender: TObject);
+begin
+     ButtonPressed( True );
+end;
+
+procedure TFilterFrame.SetupFrame;
+
+var  DaysFrom,
+     DaysTo : Double;
+     Inx,
+     MaxLength : Integer;
+     FieldPanel : TFieldPanel;
+     UCSQLString : String;
+     WhereStart,
+     WhereEnd,
+     WhereLength,
+     NextCommandPos,
+     AsCommandPos,
+     SelectPos,
+     Ds,
+     De : SmallInt;
+
+begin
+
+     With FQueryPanel do
+       begin
+
+       If   Assigned( FSourceQuery )
+       then begin
+
+            //* 11.07.2010  He añadido un delimitador del comando WHERE principal para evitar errores en sentencias complejas
+            //              Hay que utilizar { y } para delimitar la expresión condicional de la siguiente forma (ejemplo) :
+            //              SELECT * FROM Fichero WHERE{ Codigo=:Codigo } ORDER BY Nombre
+
+            DoOnSQLSetup;
+
+            FSQLString := StringReplace( FSourceQuery.SQL.Text, #13#10, ' ', [ rfReplaceAll, rfIgnoreCase ] );
+            UCSQLString := AnsiUpperCase( FSQLString );
+            FSQLWhere := '';
+
+            Ds := Pos( 'WHERE{', FSQLString );
+            If   Ds<>0
+            then begin
+                 De := Pos( '}', FSQLString );
+                 FWherePos := Ds;
+                 WhereLength := De - Ds;
+                 FSQLWhere := Trim( Copy( FSQLString, Ds + 6, WhereLength - 6 ) );
+                 System.Delete( FSQLString, Ds, WhereLength + 1 );
+                 FComplexSQLSentence := True;
+                 end
+            else begin
+
+                 // Intentando delimitar el área de la expresión WHERE
+
+                 FFromPos :=  Pos( 'FROM ', UCSQLString );
+                 FWherePos := Pos( 'WHERE ', UCSQLString );
+
+                 NextCommandPos := Pos( 'GROUP BY ', UCSQLString );
+                 If   NextCommandPos=0
+                 then begin
+                      NextCommandPos := Pos( 'HAVING ', UCSQLString );
+                      If   NextCommandPos=0
+                      then NextCommandPos := Pos( 'ORDER BY ', UCSQLString );
+                      end;
+
+                 AsCommandPos := Pos( ') AS ', UCSQLString );
+                 If   ( AsCommandPos<>0 ) and ( AsCommandPos>FFromPos ) and( AsCommandPos<NextCommandPos )
+                 then NextCommandPos := AsCommandPos;
+
+                 If   FWherePos=0  // No hay comando WHERE
+                 then begin
+                      If   NextCommandPos=0
+                      then FWherePos := Length( FSQLString ) + 1
+                      else FWherePos := NextCommandPos - 1;
+                      end
+                 else begin
+                      WhereStart := FWherePos;
+                      If   NextCommandPos=0
+                      then WhereEnd := Length( FSQLString ) + 1
+                      else WhereEnd := NextCommandPos - 1;
+                      WhereLength := WhereEnd - WhereStart;
+                      FSQLWhere := Trim( Copy( FSQLString, WhereStart + 6, WhereLength - 6 ) );
+                      System.Delete( FSQLString, WhereStart, WhereLength );
+                      end;
+
+                 SelectPos := Pos( 'SELECT ', UCSQLString ) + 7;
+                 FComplexSQLSentence := Pos( 'SELECT ', Copy( UCSQLString, SelectPos, Length( UCSQLString ) ) )<>0;
+                 end;
+
+            end;
+
+       If   not FStaticSourceValue
+       then begin
+
+            If   not Assigned( FixedRangeField ) and
+                 Assigned( SourceField )
+            then FixedRangeField := SourceField;
+
+            If   Assigned( FQueryPanel.GridTableView )
+            then If   Assigned( FixedRangeField )
+                 then With FixedRangeField do
+                        If   DataType in [ ftDate, ftDateTime ]
+                        then FFixedRangePanel := SetupFieldPanelFromFieldName( FieldName, fpFixed, DataFechaInicial, DataFechaFinal )
+                        else FFixedRangePanel := SetupFieldPanelFromFieldName( FieldName, fpFixed );
+
+            end;
+
+       FieldsButton.DropDownMenu := FFilterFieldsPopupMenu;
+       FieldsButton.Hint := HintMsg7;
+
+       SetupFilterFieldsPopup;
+
+       UpdateFixedRangePanelData;
+
+       If   not ( (  Assigned( FSourceQuery ) and FInitSearchQuery ) or FHasDateRange )
+       then SetupDatasetFilter;
+
+       end;
+
+end;
+
+procedure TFilterFrame.UpdateFixedRangePanelData;
+
+var  DaysFrom,
+     DaysTo : Double;
+     MaxLength : Integer;
+
+procedure DefaultDatesRange;
+begin
+     With FQueryPanel do
+       case DateSelection of
+         dsFrom30DaysAgo   : begin
+                             DataFechaInicial.Value := ApplicationContainer.Today30DaysAgoDate;
+                             DataFechaFinal.Value   := ApplicationContainer.TodayDate;
+                             end;
+         dsFromOneYearAgo  : begin
+                             DataFechaInicial.Value := IncYear( ApplicationContainer.TodayDate, - 1 );
+                             DataFechaFinal.Value   := ApplicationContainer.TodayDate;
+                             end;
+         dsToLastDayOfYear : begin
+                             DataFechaInicial.Value := ApplicationContainer.TodayDate;
+                             DataFechaFinal.Value := ApplicationContainer.LastDayOfYearDate;
+                             end;
+         end;
+end;
+
+begin
+
+     Data.Edit;
+
+     If   Assigned( FFixedRangePanel )
+     then With FQueryPanel do
+            begin
+
+            FFixedRangePanel.TabOrder := 0;
+            FFixedRangePanel.Top := 0;
+            FHasDateRange := Assigned( FFixedRangePanel ) and ( FFixedRangePanel.SourceField.DataType in [ ftDate, ftDateTime ] );
+            If   FHasDateRange
+            then begin
+
+                 MinQueryFormWidth := MinQueryFormWidthWithDateRange;
+
+                 If   DateSelection=dsFixed
+                 then begin
+                      DataFechaInicial.Value := DateStart;
+                      DataFechaFinal.Value := DateEnd;
+                      end
+                 else If   DataFechaInicial.IsNull
+                      then DefaultDatesRange
+                      else With FFixedRangePanel do
+                             begin
+                             // En este caso se supone que se han guardado los parámetros previamente
+                             DaysFrom := DataHoy.Value - DataFechaInicial.Value;
+                             DaysTo := DataFechaFinal.Value - DataHoy.Value;
+                             If   ( DaysFrom>=0 ) and ( DaysFrom<=MaxDaysRange ) and
+                                  ( DaysTo>=0 ) and ( DaysTo<=MaxDaysRange )
+                             then begin
+                                  DataFechaInicial.Value := ApplicationContainer.TodayDate - DaysFrom;
+                                  DataFechaFinal.Value := ApplicationContainer.TodayDate + DaysTo;
+                                  end
+                             else DefaultDatesRange;
+                             end;
+
+                 {
+                 DataFechaInicial.OnValidate := DoOnDateValidate;
+                 DataFechaFinal.OnValidate := DoOnDateValidate;
+                 }
+
+                 end
+            else If   FFixedRangePanel.SourceField.DataType in [ ftString, ftWideString ]
+                 then begin
+                      If   Assigned( TargetControl )
+                      then begin
+                           If   EditingValue<>''
+                           then begin
+                                MaxLength := TcxCustomTextEditProperties( TcxDBTextEdit( TargetControl ).Properties ).MaxLength;
+                                With FFixedRangePanel.DataField[ 0 ] do
+                                  If   ( Length( EditingValue )<MaxLength ) and not ShiftKey
+                                  then Value := EditingValue + '%';
+                                end;
+                           end;
+                      end
+                 else If   FFixedRangePanel.SourceField.DataType in [ ftSmallInt, ftInteger ]
+                      then With FFixedRangePanel do
+                             begin
+                             DataField[ 0 ].Value := GetMinFieldValue( SourceField );
+                             DataField[ 1 ].Value := GetMaxFieldValue( SourceField );
+                             end;
+
+            end;
+
+end;
+
+function TFilterFrame.GetPanelByFieldName( Value : String ) : TFieldPanel;
+
+var  FieldPanel : TFieldPanel;
+
+begin
+     Result := nil;
+     For FieldPanel in FFieldPanelList do
+       If   FieldPanel.SourceField.FieldName=Value
+       then begin
+            Result := FieldPanel;
+            Break;
+            end;
+end;
+
+procedure TFilterFrame.ShowFrame( FirstTime : Boolean );
+
+var  DaysFrom,
+     DaysTo : Double;
+     Inx : Integer;
+     FieldPanel : TFieldPanel;
+     FocusedColumn : TcxgridDBColumn;
+     FieldName : String;
+     PrevFocusedColumnPanel : TFieldPanel;
+     RecordCount : LongInt;
+
+begin
+
+     RecordCount := 0;
+     If   Assigned( FQueryPanel.GridTableView )
+     then RecordCount := FQueryPanel.GridTableView.ViewData.RecordCount;
+
+     With FQueryPanel do
+       If   ( FSourceDataset=FSourceTable ) and
+            Assigned( GridTableView ) and
+            ( GridTableView.DataController.DataSource.DataSet=FSourceTable )
+       then begin
+            FSourceTable.Close;
+            GridTableView.DataController.DataSource.DataSet := FSourceQuery;
+            GridTableView.DataController.UpdateItems( True );
+            FSourceDataset := FSourceQuery;
+            end;
+
+     FieldPanel := nil;
+     PrevFocusedColumnPanel := FFocusedColumnFieldPanel;
+     FFocusedColumnFieldPanel := nil;
+     FocusedColumn := nil;
+     FieldName := '';
+
+     If   FirstTime
+     then begin
+          If   FQueryPanel.FInitSearchQuery and Assigned( FQueryPanel.SearchField )
+          then FieldName := FQueryPanel.SearchField.FieldName;
+          end
+     else If   Assigned( FQueryPanel.GridTableView )
+          then If   RecordCount>0
+               then begin
+                    FocusedColumn := TcxGridDBColumn( FQueryPanel.GridTableView.Controller.FocusedColumn );
+                    If   Assigned( FocusedColumn )
+                    then FieldName := FocusedColumn.DataBinding.FieldName;
+                    end;
+
+     // Si el usuario pulsa <Shift> mientras solicita el acceso al panel del filtro la consulta se realiza sobre el dataset
+
+     If   FieldName<>''
+     then begin
+
+          FieldPanel := GetPanelByFieldName( FieldName );
+
+          If   not Assigned( FieldPanel )
+          then If   FirstTime
+               then FieldPanel := SetupFieldPanelFromFieldName( FieldName, fpUser )
+               else { If   not Assigned( FFixedRangePanel ) // or ( RecordCount>1 )  // Si hay solo un registro no tiene sentido filtrar por otro campo (creo)
+                    then } FieldPanel := SetupFieldPanel( FocusedColumn, fpFocusedColumn );
+
+          If   not ShiftKey and Assigned( PrevFocusedColumnPanel ) and ( PrevFocusedColumnPanel<>FieldPanel ) and ( PrevFocusedColumnPanel.FieldPanelType=fpFocusedColumn )
+          then RemoveFieldPanel( PrevFocusedColumnPanel );
+
+          FFocusedColumnFieldPanel := FieldPanel;
+          end;
+         
+     Data.Edit;
+
+     UpdateFrameHeight;
+
+     Top := 100;   // Para evitar que esté encima de la barra de botones en modo detached
+     Visible := True;
+
+     FQueryPanel.FSpliter.Top := Top + Height + 10;
+     FQueryPanel.FSpliter.Visible := True;
+
+     FOwnerForm.ActiveControl := Self;
+
+     FFirstFieldPanel := nil;
+
+     If   FirstTime and FHasDateRange
+     then FFirstFieldPanel := FFixedRangePanel
+     else FFirstFieldPanel := FieldPanel;
+
+     UpdateFilterPopupChecks;
+
+     FocusFieldPanel( FFirstFieldPanel );
+end;
+
+procedure TFilterFrame.FocusFieldPanel( FieldPanel : TFieldPanel );
+begin
+     If   Visible
+     then try
+            FFocusingFieldPanel := True;
+            If   not Assigned( FieldPanel ) and ( FFieldPanelList.Count>0 )
+            then FieldPanel := FFieldPanelList[ 0 ];
+            If   Assigned( FieldPanel )
+            then With FieldPanel.FieldCtrl[ 0 ] do
+                   begin
+                   FOwnerForm.Visible := True;
+                   FOwnerForm.ActiveControl := FieldPanel.FieldCtrl[ 0 ]; // SetFocus;
+                   If   Visible
+                   then SetFocus;
+                   SelectAll;
+                   end;
+          finally
+            FFocusingFieldPanel := False;
+            end;
+end;
+
+function TFilterFrame.GetFieldPanelHeight : Integer;
+begin
+     Result := ScaledToCurrent( DefaultFieldPanelHeight );
+end;
+
+procedure TFilterFrame.UpdateFrameHeight;
+
+var  FrameHeight : SmallInt;
+
+begin
+     FrameHeight := ( ( FFieldPanelList.Count  ) * FieldPanelHeight ) + CaptionPanel.Height + BottomMargin;
+     If   FrameHeight<MinFrameHeight
+     then FrameHeight := MinFrameHeight;
+     Height := FrameHeight;
+end;
+
+procedure TFilterFrame.HideFrame( SaveState : Boolean );
+begin
+     If   ShiftKey
+     then ApplicationContainer.DeleteWindowState( FQueryPanel.OwnerForm )  // Se borra simplemente pulsando <Shift> cuando se cierra la ventana
+     else If   SaveState
+          then DataHoy.Value := ApplicationContainer.TodayDate;
+     Visible := False;
+     FQueryPanel.FSpliter.Visible := False;
+end;
+
+procedure TFilterFrame.DoOnDateValidate( Sender: TcxCustomEdit; var DisplayValue: TcxEditValue; var ErrorText: TCaption; var Error: Boolean );
+
+var FieldPanel : TFieldPanel;
+    FechaInicial,
+    FechaFinal : TcxEditValue;
+
+
+begin
+     FieldPanel := TcxQueryDBDateEdit( Sender ).FieldPanel;
+     BlockDateOutRange( Sender, DisplayValue, FieldPanel.FieldCtrl[ 0 ], FieldPanel.FieldCtrl[ 1 ], ErrorText );
+end;
+
+procedure TFilterFrame.DoOnDateQueryRequest( Sender: TcxCustomEdit );
+begin
+     TcxDBDateEdit( Sender ).DroppedDown := True;
+end;
+
+function TFilterFrame.SetupFieldPanel( AColumn         : TcxGridDBColumn;
+                                       AFieldPanelType : TFieldPanelType;
+                                       Field0          : TField = nil;
+                                       Field1          : TField = nil ) : TFieldPanel;
+
+var  FieldPanel : TFieldPanel;
+     FieldLabel : TcxLabel;
+     CtrlWidth,
+     CurrentLeft : Integer;
+     DatasetActive : Boolean;
+     Exceso : SmallInt;
+
+function CreateControl( FieldPanel : TFieldPanel )  : TcxCustomEdit;
+
+var  CheckBox : TcxDBCheckBox;
+     DateEdit : TcxQueryDBDateEdit;
+
+begin
+     case FieldPanel.SourceField.DataType of
+       ftSmallInt,
+       ftInteger   : Result := TcxDBSpinEdit.Create( Self );
+       ftBoolean   : begin
+                     CheckBox := TcxDBCheckBox.Create( Self );
+                     CheckBox.Transparent := True;
+                     Result := CheckBox;
+                     end;
+       ftDate,
+       ftDateTime  : begin
+                     DateEdit := TcxQueryDBDateEdit.Create( Self );
+                     DateEdit.Properties.Required := True;
+                     DateEdit.Properties.OnQueryRequest := DoOnDateQueryRequest;
+                     DateEdit.Properties.OnValidate := DoOnDateValidate;
+                     DateEdit.FieldPanel := FieldPanel;
+                     Result := DateEdit;
+                     end;
+       ftTime      : Result := TcxDBTimeEdit.Create( Self );
+       else          Result := TcxDBTextEdit.Create( Self );
+       end;
+     If   Assigned( Result )
+     then Result.Parent := FieldPanel;
+end;
+
+function GetDefaultWidth : SmallInt;
+begin
+     case FieldPanel.SourceField.DataType of
+       ftBoolean  : Result := ScaledToCurrent( 12 );
+       ftSmallInt : Result := ScaledToCurrent( 60 );
+       else         Result := ScaledToCurrent( 110 );
+       end;
+end;
+
+procedure CreateField( FieldIndex : SmallInt );
+
+var  TargetField : TField;
+
+begin
+     case FieldPanel.SourceField.DataType of
+         ftSmallInt : TargetField := TSmallIntField.Create( Self );
+         ftInteger  : TargetField := TIntegerField.Create( Self );
+         ftFloat    : TargetField := TFloatField.Create( Self );
+         ftBoolean  : TargetField := TBooleanField.Create( Self );
+         ftDate,
+         ftDateTime : TargetField := TDateField.Create( Self );
+         ftTime     : TargetField := TTimeField.Create( Self );
+         else         TargetField := TStringField.Create( Self );
+         end;
+
+     With FieldPanel do
+       begin
+       DataField[ FieldIndex ] := TargetField;
+       DataField[ FieldIndex ].FieldName := Format( 'Field%d', [ Data.FieldCount ] );
+       If   FieldPanel.SourceField.DataType in [ ftString, ftWideString ]
+       then DataField[ FieldIndex ].Size := 255;
+       DataField[ FieldIndex ].DataSet := Data;
+       end;
+
+end;
+
+begin
+     Result := nil;
+     DatasetActive := Data.Active;
+     If   DatasetActive
+     then FieldValuesArray := GetRecordFieldValues( Data );
+     Data.Active := False;
+     try
+       FieldPanel := TFieldPanel.Create( Self );
+       If   Assigned( FieldPanel )
+       then begin
+
+            FieldPanel.Parent := DataPanel;
+             
+            FieldPanel.PanelStyle.Active := True;
+            FieldPanel.Style.BorderStyle := ebsNone;
+            If   ApplicationContainer.AppUseSkins
+            then begin
+                 FieldPanel.Style.TransparentBorder := False;
+                 FieldPanel.Transparent := True;
+                 end;
+            
+            FieldPanel.Top := DataPanel.Height + 10;
+            FieldPanel.Height := ScaledToCurrent( DefaultFieldPanelHeight );
+            FieldPanel.Align := alTop;
+            FieldPanel.Visible := False;
+
+            FieldPanel.Column := AColumn;
+            FieldPanel.SourceField := FieldPanel.Column.DataBinding.Field;
+            FieldPanel.FieldPanelType := AFieldPanelType;
+
+            FieldLabel := TcxLabel.Create( Self );
+            FieldLabel.Parent := FieldPanel;
+
+            FieldLabel.AutoSize := False;
+            FieldLabel.Caption := ' ' + AColumn.Caption;
+            FieldLabel.Transparent := True;
+            FieldLabel.Width := ScaledToCurrent( 100 );
+            FieldLabel.Align := alLeft;
+
+            If   Assigned( Field0 )
+            then FieldPanel.DataField[ 0 ] := Field0
+            else CreateField( 0 );
+
+            FieldPanel.FieldCtrl[ 0 ] := CreateControl( FieldPanel );
+
+            With TcxDBEditDataBinding( FieldPanel.FieldCtrl[ 0 ].DataBinding ) do
+              begin
+              DataSource := Self.DataSource;
+              DataField := FieldPanel.DataField[ 0 ].FieldName;
+              end;
+
+            If   FieldPanel.SourceField.DataType in [ ftString, ftWideString, ftBoolean ]  // No tienen rango
+            then begin
+                 If   FieldPanel.SourceField.DataType= ftBoolean
+                 then TcxDBCheckBox( FieldPanel.FieldCtrl[ 0 ] ).ActiveProperties.NullStyle := nssUnchecked;
+                 FieldPanel.FieldCtrl[ 0 ].Align := alClient;
+                 end
+            else begin
+
+                 FieldPanel.IsARange := True;
+
+                 FieldPanel.FieldCtrl[ 0 ].Width := GetDefaultWidth;
+                 FieldPanel.FieldCtrl[ 0 ].Left := FieldLabel.Width;
+                 FieldPanel.FieldCtrl[ 0 ].Align := alLeft;
+
+                 // CurrentLeft := FieldPanel.FieldCtrl[ 0 ].Left + FieldPanel.FieldCtrl[ 0 ].Width + 4;
+
+                 If   Assigned( Field1 )
+                 then FieldPanel.DataField[ 1 ] := Field1
+                 else CreateField( 1 );
+
+                 FieldPanel.FieldCtrl[ 1 ] := CreateControl( FieldPanel );
+
+                 FieldPanel.FieldCtrl[ 1 ].Left := FieldLabel.Width + FieldPanel.FieldCtrl[ 0 ].Width; // CurrentLeft;
+                 // FieldPanel.FieldCtrl[ 1 ].Top := 1;
+                 FieldPanel.FieldCtrl[ 1 ].Width := GetDefaultWidth;
+                 FieldPanel.FieldCtrl[ 1 ].AlignWithMargins := True;
+                 FieldPanel.FieldCtrl[ 1 ].Margins.SetBounds( 2, 0, 0, 0 );
+                 FieldPanel.FieldCtrl[ 1 ].Align := alLeft;
+
+                 With TcxDBEditDataBinding( FieldPanel.FieldCtrl[ 1 ].DataBinding ) do
+                   begin
+                   DataSource := Self.DataSource;
+                   DataField := FieldPanel.DataField[ 1 ].FieldName;
+                   end;
+
+                 end;
+
+            {
+            If   AFieldPanelType<>fpFixed
+            then begin
+                 CloseButton := TcxButton.Create( Self );
+                 With CloseButton do
+                   begin
+                   Parent := FieldPanel;
+                   Anchors := [ akTop, akRight ];
+                   Top := 2;
+                   Left := FieldPanel.Width - 24;
+                   Width := 22;
+                   Height := 22;
+                   ApplicationContainer.ButtonImageList.GetImage( 5, Glyph );
+                   end;
+                 end;
+            }
+
+            FFieldPanelList.Add( FieldPanel );
+
+            FieldPanel.Visible := True;
+
+            Result := FieldPanel;
+            end;
+
+     finally
+       Data.Active := DatasetActive;
+       If   DatasetActive
+       then SetRecordFieldValues( Data, FieldValuesArray );
+       {
+       If   FieldPanel.SourceField.DataType  in [ ftSmallInt, ftInteger ]
+       then case FieldIndex of
+              0 : DataField[ FieldIndex ].Value := GetMinFieldValue( FieldPanel.SourceField );
+              1 : DataField[ FieldIndex ].Value := GetMaxFieldValue( FieldPanel.SourceField );
+              end;
+       }
+     end;
+
+end;
+
+function TFilterFrame.SetupFieldPanelFromFieldName( FieldName       : String;
+                                                    AFieldPanelType : TFieldPanelType;
+                                                    Field0          : TField = nil;
+                                                    Field1          : TField = nil ) : TFieldPanel;
+
+var  Column : TcxGridDBColumn;
+
+begin
+     Result := nil;
+     Column := FQueryPanel.GridTableView.GetColumnByFieldName( FieldName );
+     If   Assigned( Column )
+     then Result := SetupFieldPanel( Column, AFieldPanelType, Field0, Field1 );
+end;
+
+procedure TFilterFrame.UpdateFilterPopupChecks;
+
+var  I, Inx : Integer;
+
+begin
+     With FFilterFieldsPopupMenu.ItemLinks do
+       begin
+       BeginUpdate;
+       try
+         For I := 0 to Count - 1 do
+           If   Items[ I ].Item is TdxBarButton
+           then With TdxBarButton( Items[ I ].Item ) do
+                  Down := Assigned( GetPanelByFieldName( Hint ) );  // En Hint está el FieldName
+       finally
+         EndUpdate;
+         end;
+       end;
+
+end;
+
+procedure TFilterFrame.ReadFilterState;
+
+var  I : Integer;
+     FieldName : String;
+
+begin
+
+     With FQueryPanel, FFilterFieldsPopupMenu.ItemLinks do
+       begin
+       BeginUpdate;
+       try
+         For I := 1 to Count - 1 do
+           If   Items[ I ].Item is TdxBarButton
+           then With TdxBarButton( Items[ I ].Item ) do
+                  begin
+                  FieldName := Hint;
+                  Down := FQueryPanel.FilterFieldList.IndexOf( FieldName )<>-1;
+                  If   Down
+                  then SetupFieldPanelFromFieldName( FieldName, fpUser );
+                  end;
+       finally
+         EndUpdate;
+         end;
+       end;
+
+     {  Desactivado hasta que averigue que función tenía originalmente (en serio, no lo recuerdo)
+
+     With FQueryPanel do
+       begin
+       Data.Edit;
+       SetDatasetValues( Data, ValueList, OwnerForm );
+       end;
+     }
+
+end;
+
+procedure TFilterFrame.SetupFilterFieldsPopup;
+
+var I : SmallInt;
+    MenuItem : TdxBarButton;
+    ColumnField : TField;
+
+begin
+     With FQueryPanel do
+       begin
+       // FilterFieldsPopupMenu.Font.Size := GetScaledMenuFontSize;
+       If   Assigned( GridTableView )
+       then With GridTableView do
+              For I := 0 to ColumnCount - 1 do
+                begin
+                ColumnField := Columns[ I ].DataBinding.Field;
+                If   Assigned( ColumnField )
+                then If   Assigned( Columns[ I ] ) and ( ColumnField<>FixedRangeField ) and not( ColumnField.DataType in [ ftBlob, ftMemo, ftGraphic, ftWideMemo ] )
+                     then begin
+                          MenuItem := BarManager.AddButton;
+                          If   Columns[ I ].HeaderHint<>''
+                          then MenuItem.Caption := Columns[ I ].HeaderHint
+                          else MenuItem.Caption := Columns[ I ].Caption;
+                          MenuItem.ButtonStyle := bsChecked;
+                          MenuItem.Hint := Columns[ I ].DataBinding.FieldName;
+                          MenuItem.Down := False;
+                          MenuItem.OnClick := DoFilterMenuItemOnClick;
+                          FFilterFieldsPopupMenu.ItemLinks.Add( MenuItem );
+                          end;
+                end;
+       end;
+end;
+
+procedure TFilterFrame.RemoveFieldPanel( FieldPanel : TFieldPanel );
+begin
+     If   Assigned( FieldPanel )
+     then begin
+          FFieldPanelList.Remove( FieldPanel );
+          FieldPanel.Free;
+          If   FFirstFieldPanel=FieldPanel
+          then FFirstFieldPanel := nil;
+          end;
+end;
+
+procedure TFilterFrame.DoFilterMenuItemOnClick( Sender : TObject );
+begin
+     If   Sender is TdxBarButton
+     then With Sender as TdxBarButton do
+            begin
+            RemoveFieldPanel( GetPanelByFieldName( Hint ) );  // Por si acaso
+            If   Down
+            then FocusFieldPanel( SetupFieldPanelFromFieldName( Hint, fpUser ) );
+            end;
+     UpdateFrameHeight;
+end;
+
+{ TgQueryPanel ------------------------------------------------------- }
+
+constructor TgQueryPanel.Create( AOwner : TComponent );
+begin
+     inherited;
+     //..
+end;
+
+procedure TgQueryPanel.Loaded;
+
+var MenuItem : TdxBarButton;
+
+procedure CreateFlatButton( var AButton  : TcxButton;
+                                ImgIndex : SmallInt );
+begin
+     AButton := TcxButton.Create( FOwnerForm );
+     If   Assigned( AButton )
+     then With AButton do
+            begin
+            Parent := Self;
+            Width := 32;
+            Align := alRight;
+            AlignWithMargins := True;
+            Margins.SetBounds( 6, 0, 0, 0 );
+            SpeedButtonOptions.CanBeFocused := False;
+            SpeedButtonOptions.Flat := True;
+            SpeedButtonOptions.Transparent := True;
+            AllowAllUp := True;
+            ShowHint := True;
+
+            ApplicationForms.ControlsImageList.GetImage( ImgIndex, Glyph );
+            Glyph.SourceHeight := 24;
+            Glyph.SourceWidth := 24;
+            NumGlyphs := 1;
+            end;
+end;
+
+begin
+     inherited;
+
+     // Opciones de apariencia por defecto
+
+     PanelStyle.Active := True;
+     Style.BorderStyle := ebsNone;
+     Align := alBottom;
+     Height := 36;
+     Caption := '';
+     BevelOuter := bvLowered;
+
+     FVisibleFieldList := TStringList.Create;
+     FFilterFieldList := TStringList.Create;
+     FValueList := TStringList.Create;
+     FMinQueryFormWidth := ScaledToCurrent( 270 );
+     FFilterFrameVisible := True;
+     FStaticSourceValue := False;
+     FFormWidthAdjusted := False;
+
+     If   not IsDesignTime
+     then begin
+
+          If   Owner is TgxForm
+          then FOwnerForm :=  Owner as TgxForm
+          else raise Exception.Create( 'Los TgQueryPanel solo se pueden situar sobre un TgxForm.' );
+
+          FOwnerForm.BorderIcons := [ biSystemMenu ];  // Solo close
+
+          FBarManager := TdxBarmanager.Create( Self );
+
+          FFilterFrame := TFilterFrame.Create( Self { , DoOnFilterFrameProcess } );
+          FFilterFrame.Align := alTop;
+
+          FSpliter := TcxSplitter.Create( FOwnerForm );
+          FSpliter.AlignSplitter := salTop;
+          FSpliter.Visible := False;
+          FSpliter.Parent := FOwnerForm;
+          FSpliter.Align := alTop;
+
+          FQueryFieldsPopupMenu := TdxBarPopupMenu.Create( FOwnerForm );
+          FQueryFieldsPopupMenu.BarManager := BarManager;
+          With FQueryFieldsPopupMenu do
+            begin
+            MenuItem := BarManager.AddButton;
+            MenuItem.Caption := RsMsg8;
+            MenuItem.Enabled := False;
+            ItemLinks.Add( MenuItem );
+            end;
+
+          With FOwnerForm do
+            begin
+
+            KeyPreview := True;
+            Constraints.MinWidth := ScaledToCurrent( 300 );
+
+            Icon := ApplicationForms.QueryIcon.Picture.Icon;
+            SendMessage( Handle, WM_SETICON, ICON_BIG, Icon.Handle );
+
+            OnKeyDown := DoOnFormKeyDown;
+            OnKeyPress := DoOnFormKeyPress;
+
+            OnClose := DoOnFormClose;
+            OnActivate := DoOnFormActivate;
+            OnDeactivate := DoOnFormDeactivate;
+            OnDestroy := DoOnFormDestroy;
+            OnResize := DoOnFormResize;
+
+            end;
+
+          FSetupColumnsButton := TcxButton.Create( Self );
+          With FSetupColumnsButton do
+            begin
+            Parent := Self;
+            Width := 47;
+            Align := alLeft;
+            GroupIndex := 0;
+            Kind := cxbkOfficeDropDown;
+            Visible := False;
+            Hint := HintMsg3;
+            ApplicationForms.ControlsImageList.GetImage( 3, Glyph );
+            Glyph.SourceHeight := 24;
+            Glyph.SourceWidth := 24;
+            OptionsImage.Margin := 2;
+            SpeedButtonOptions.Flat := True;
+            SpeedButtonOptions.Transparent := True;
+            DropDownMenu := FQueryFieldsPopupMenu;
+            CanBeFocused := False;
+            end;
+
+          //* 24.01.2010  Nuevos botones para manejar las consultas independientes
+
+          CreateFlatButton( FSaveButton, 7 );
+          With FSaveButton do
+            begin
+            Visible := False;
+            Hint := HintMsg5;
+            OnClick := DoSaveClick;
+            end;
+
+          CreateFlatButton( FStandAloneButton, 19 );
+          With FStandAloneButton do
+            begin
+            Visible := False;
+            Hint := HintMsg6;
+            OnClick := DoStandAloneClick;
+            end;
+
+          CreateFlatButton( FInitSearchButton, 2 );
+          With FInitSearchButton do
+            begin
+            GroupIndex := 3;
+            Hint := HintMsg4;
+            OnClick := DoInitSearchClick;
+            end;
+
+          CreateFlatButton( FSyncDataButton, 1  );
+          With FSyncDataButton do
+            begin
+            GroupIndex := 2;
+            Hint := HintMsg2;
+            OnClick := DoSynchronizeDataClick;
+            end;
+
+          ActiveQueryPanel := Self;
+
+          end;
+end;
+
+destructor TgQueryPanel.Destroy;
+begin
+     ActiveQueryPanel := nil;
+     FVisibleFieldList.Free;
+     FFilterFieldList.Free;
+     FValueList.Free;
+     inherited;
+end;
+
+procedure TgQueryPanel.Notification( AComponent : TComponent; Operation : TOperation );
+begin
+     inherited Notification( AComponent, Operation );
+     If   Operation=opRemove
+     then If   AComponent=FGridTableView
+          then FGridTableView := nil
+               else If   AComponent=FTreeList
+                    then FTreeList := nil
+                    else If   AComponent=FDescriptionField
+                         then FDescriptionField := nil
+                         else If   AComponent=FSourceField
+                              then FSourceField := nil
+                              else If   AComponent=FSearchField
+                                   then FSearchField := nil
+                                   else If   AComponent=FFixedRangeField
+                                        then FFixedRangeField := nil
+                                        else If   AComponent=FSourceQuery
+                                             then FSourceQuery := nil
+                                             else If   AComponent=FSourceTable
+                                                  then FSourceTable := nil;
+end;
+
+procedure TgQueryPanel.SetGridTableView( const Value : TcxGridDBTableView );
+begin
+     If   Assigned( FGridTableView )
+     then With FGridTableView do
+            begin
+            OnDblClick := nil;
+            OnFocusedRecordChanged := nil;
+            OnKeyDown := nil;
+            end;
+
+     FGridTableView := Value;
+
+     If   Assigned( FGridTableView )
+     then With FGridTableView do
+            begin
+
+            FRecordButtonLink := TRecordButtonLink.Create( Self );
+            LinkedComponent := FRecordButtonLink;
+            FilterBox.Visible := fvNever;
+
+            OptionsSelection.CellSelect := True;
+            DataController.DataModeController.GridMode := True;   // La situación cambia cuando se aplica un filtro
+            DataController.DataModeController.SyncMode := True;
+            OptionsCustomize.ColumnFiltering := False;
+            OptionsCustomize.ColumnSorting := False;
+            OptionsBehavior.HotTrack := True;
+            OnCellClick := DoGridTableViewCellClick;
+            OnCellDblClick := DoGridTableViewCellDblClick;
+            OnFocusedRecordChanged := DoGridTableViewFocusedRecordChanged;
+            OnKeyDown := DoControlKeyDown;
+            OnFocusedItemChanged  := DoGridTableViewFocusedItemChanged;
+            OnColumnHeaderClick := DoGridDBTableViewColumnHeaderClick;
+            OnColumnSizeChanged := DoGridTableViewColumnSizeChanged;
+
+            If   Site.Container is TcxGrid
+            then With TcxGrid( Site.Container ) do
+                   begin
+                   OnEnter := DoOnGridEnter;
+                   OnExit := DoOnGridExit;
+                   end;
+
+            If   not Assigned( ApplicationContainer.AppSkinPainter )
+            then Styles.ContentEven := ApplicationContainer.QueryContentEvenStyle;
+
+            end;
+end;
+
+procedure TgQueryPanel.SetTreeList( const Value : TcxDBTreeList );
+begin
+
+     If   Assigned( FTreeList )
+     then With FTreeList do
+            begin
+            OnDblClick := nil;
+            OnFocusedNodeChanged := nil;
+            OnKeyDown := nil;
+            end;
+
+     FTreeList := Value;
+
+     If   Assigned( FTreeList )
+     then With FTreeList do
+            begin
+
+            FRecordButtonLink := TRecordButtonLink.Create( Self );
+
+            OptionsSelection.CellSelect := True;
+            OptionsData.Editing := False;
+
+            OnFocusedNodeChanged := DoTreeListFocusedNodeChanged;
+            OnDblClick := DoTreeListDblClick;
+            OnKeyDown := DoControlKeyDown;
+
+            If   not Assigned( ApplicationContainer.AppSkinPainter )
+            then Styles.ContentEven := ApplicationContainer.QueryContentEvenStyle;
+
+            end;
+end;
+
+procedure TgQueryPanel.DoTreeListFocusedNodeChanged( Sender            : TcxCustomTreeList;
+                                                     APrevFocusedNode,
+                                                     AFocusedNode      : TcxTreeListNode);
+begin
+     SyncData;
+end;
+
+procedure TgQueryPanel.DoTreeListDblClick( Sender : TObject );
+begin
+     DataSelected;
+end;
+
+procedure TgQueryPanel.DoGridDBTableViewColumnHeaderClick( Sender  : TcxGridTableView;
+                                                           AColumn : TcxGridColumn);
+begin
+
+     // Inicialmente la rejilla está en modo GridMode (para acelerar la aparición de la primera ventana)
+     // Si el usuario intenta ordenar una columna quito el modo GridMode para permitir la ordenación
+
+     With FGridTableView do
+       begin
+       DataController.DataModeController.GridMode := False;
+       OptionsCustomize.ColumnFiltering := True;
+       OptionsCustomize.ColumnSorting := True;
+       end;
+
+end;
+
+procedure TgQueryPanel.DoOnGridEnter( Sender : TObject );
+begin
+     ApplicationContainer.EnableRecordButtons( True, True, FilterFrame.FFiltered or FilterFrame.FGridFiltered );
+end;
+
+procedure TgQueryPanel.DoOnGridExit( Sender : TObject );
+begin
+     ApplicationContainer.EnableRecordButtons( False );
+end;
+
+procedure TgQueryPanel.DoGridTableViewColumnSizeChanged( Sender  : TcxGridTableView;
+                                                         AColumn : TcxGridColumn );
+begin
+     //..
+end;
+
+procedure TgQueryPanel.SyncData;
+begin
+     If   MDIChildFormExists( FSourceForm )
+     then begin
+          If   FSyncDataButton.Down and Assigned( FSourceDataset )
+          then With FTargetTable do
+                 try
+                   SaveRange;
+                   CancelRange;
+                   If   FSourceDataset is TnxDataset
+                   then SetToDatasetPos( TnxDataset( FSourceDataset ) );
+                 finally
+                   RestoreRange;
+                   end;
+          end
+     else With FSyncDataButton do
+            begin
+            Down := False;
+            Visible := False;
+            end;
+end;
+
+procedure TgQueryPanel.SetQueryFormWidth( ResetFormWidth : Boolean = False );
+
+var  GridWidth : Integer;
+     CxBorder, I : SmallInt;
+
+begin
+
+     If   not FCustomQueryFormWidth or ResetFormWidth
+     then begin
+
+          GridWidth := 0;
+
+          If  Assigned( FGridTableView )
+          then With FGridTableView do
+                 begin
+                 DoOnColumnsSetup;
+                 For I := 0 to ColumnCount - 1 do
+                   If   Columns[ I ].Visible
+                   then GridWidth := GridWidth + Columns[ I ].Width;
+                 end
+          else If   Assigned( FTreeList )
+               then With FTreeList do
+                      begin
+                      For I := 0 to ColumnCount - 1 do
+                        If   Columns[ I ].Visible
+                        then GridWidth := GridWidth + Columns[ I ].Width;
+                      end;
+
+          GridWidth := Trunc( GridWidth * 1.1 );
+
+          If   GridWidth <MinQueryFormWidth
+          then GridWidth := MinQueryFormWidth
+          else If   GridWidth>GetDesktopWidth
+               then GridWidth := GetDesktopWidth;
+
+          FOwnerForm.Width := ScaledToCurrent( GridWidth );
+
+          PlaceQueryForm( Self, False );
+
+          end;
+
+     FFormWidthAdjusted := True;
+end;
+
+procedure TgQueryPanel.SetupQueryFieldsPopup;
+
+var I : SmallInt;
+    MenuItem : TdxBarButton;
+    ColumnField : TField;
+
+begin
+     If   Assigned( FGridTableView )
+     then With FGridTableView do
+            For I := 0 to ColumnCount - 1 do
+              If   Assigned( Columns[ I ] ) and ( ( ( Columns[ I ].VisibleForCustomization ) or ( FGridTableView.Preview.Column=Columns[ I ] ) ) )
+              then begin
+                   ColumnField := Columns[ I ].DataBinding.Field;
+                   If    ( ColumnField<>FSourceField ) and
+                         // ( ColumnField<>FSearchField ) and
+                         ( ColumnField<>FFixedRangeField )
+                   then begin
+                        MenuItem := BarManager.AddButton;
+
+                        // En ocasiones el título de la columna no es descriptivo por el poco espacio disponible.
+                        // En esos casos se puede poner una descripción más completa en HeaderHint
+
+                        If   Columns[ I ].HeaderHint<>''
+                        then MenuItem.Caption := Columns[ I ].HeaderHint
+                        else MenuItem.Caption := Columns[ I ].Caption;
+
+                        MenuItem.ButtonStyle := bsChecked;
+                        MenuItem.Hint := Columns[ I ].DataBinding.FieldName;
+                        MenuItem.Down := Columns[ I ].Visible; // False;
+                        MenuItem.OnClick := DoQueryMenuItemOnClick;
+                        FQueryFieldsPopupMenu.ItemLinks.Add( MenuItem );
+                        FSetupColumnsButton.Visible := True;
+                        end;
+                   end;
+
+end;
+
+procedure TgQueryPanel.DoQueryMenuItemOnClick( Sender : TObject );
+
+var Column : TcxGridDBColumn;
+
+begin
+     If   Sender is TdxBarButton
+     then With Sender as TdxBarButton do
+            begin
+            Column := FGridTableView.GetColumnByFieldName( Hint );
+            If   Assigned( Column )
+            then begin
+                 Column.Visible := Down;
+                 If   FGridTableView.Preview.Column=Column
+                 then FGridTableView.Preview.Visible := Down;
+                 If   not FOwnerForm.Maximized
+                 then SetQueryFormWidth( { ResetFormWidth } True );
+                 FColumVisibilityChanged := True;
+                 If   Assigned( FOnColumVisibilityChanged )
+                 then FOnColumVisibilityChanged( Column );
+                 end;
+            end;
+end;
+
+procedure TgQueryPanel.DoOnColumnsSetup;
+begin
+     If   Assigned( FOnColumnsSetup )
+     then FOnColumnsSetup;
+end;
+
+procedure TgQueryPanel.DoOnSQLSetup;
+begin
+     If   Assigned( FOnSQLSetup )
+     then FOnSQLSetup;
+end;
+
+procedure TgQueryPanel.UpdateSearchColumn( InvalidateForCustomization : Boolean = True );
+begin
+     FSearchColumn := nil;
+     If   Assigned( FGridTableView )
+     then With FGridTableView do
+            If   Assigned( FSearchField )
+            then begin
+                 FSearchColumn := GetColumnByFieldName( FSearchField.FieldName );                   
+                 If   Assigned( FSearchColumn ) and InvalidateForCustomization
+                 then FSearchColumn.VisibleForCustomization := False;                   
+                 end;
+end;
+
+procedure TgQueryPanel.Setup( LockRangeField   : TField;
+                              EditControl      : TcxCustomEdit;
+                              InitialState     : TQueryGridInitialState = qgsNormal;
+                              ADateSelection   : TDateSelection = dsFrom30DaysAgo;
+                              ADateStart       : TDateTime = 0;
+                              ADateEnd         : TDateTime = 0 );
+begin
+
+     FSettingUp := True;
+     FInitialState := InitialState;
+     FLockRangeField := LockRangeField;
+     FLockRange := False;
+
+     try
+
+       If   Assigned( EditControl )
+       then begin
+            FSourceForm := GetParentForm( EditControl ) as TgxForm;
+            LinkedFormsList.Add( FSourceForm, FOwnerForm );
+            UpdateTargetControl( EditControl );   // Antes de asignar Linked, porque necesita FTargetControl
+            end;
+
+       If   Assigned( LockRangeField ) and Assigned( FSourceForm )
+       then begin
+            If   Assigned( FSourceForm.FormManager ) and ( FSourceForm.FormManager.Model=fmEditForm ) and Assigned( FSourceForm.FormManager.LockRangeButton )
+            then FLockRange := FSourceForm.FormManager.RangeLocked
+            else FLockRange := not ValueIsEmpty( LockRangeField.Value );
+            FLockControl := GetEditControlByFieldName( FSourceForm, LockRangeField.FieldName );
+            FLockRange := FLockRange and not ShiftKey;
+            end;
+
+       Linked := InitialState in [ qgsLinked, qgsDetached ];
+
+       FStandAloneButton.Visible := Linked and Assigned( FOnUserSelection );
+       FInitSearchButton.Visible := not FStaticSourceValue and not Assigned( FTreeList );
+
+       FDateSelection := ADateSelection;
+       FDateStart := ADateStart;
+       FDateEnd := ADateEnd;
+
+       UpdateSearchColumn;
+       SetupQueryFieldsPopup;
+       ReadQueryState;
+
+       FilterFrame.SetupFrame;
+
+       If   Assigned( FGridTableView )
+       then With FGridTableView do
+              begin
+              If   Assigned( FOwnerForm )
+              then FOwnerForm.ActiveControl := Site.Container;
+              If   Assigned( FSearchColumn )
+              then Controller.FocusedColumn := FSearchColumn
+              else If   Assigned( OptionsBehavior.IncSearchItem )
+                   then Controller.FocusedColumn := Columns[ OptionsBehavior.IncSearchItem.Index ];
+              end;
+
+       SetQueryFormWidth;
+
+       If   Assigned( FTreeList )
+       then FTreeList.FullExpand;
+
+       If   FInitialState=qgsDetached
+       then Detached := True;
+
+       With FFilterFrame do
+         If   FInitSearchQuery or HasDateRange
+         then ShowFilterFrame( True );
+
+     finally
+       FSettingUp := False;
+       end;
+end;
+
+procedure TgQueryPanel.UpdateTargetControl( EditControl : TcxCustomEdit );
+begin
+     FTargetControl := EditControl;
+     FEditingValue := FTargetControl.DisplayingValue;
+     FNewTarget := True;
+end;
+
+procedure TgQueryPanel.ShowFilterFrame( Setup : Boolean = False );
+begin
+     If   FFilterFrameVisible and Assigned( FSourceQuery ) and Assigned( FFilterFrame ) and Assigned( FGridTableView )
+     then FFilterFrame.ShowFrame( Setup );
+end;
+
+procedure TgQueryPanel.CancelFilter;
+begin
+     If   Assigned( FFilterFrame )
+     then begin
+          FFilterFrame.CancelFilter;
+          If   Assigned( FGridTableView )
+          then FGridTableView.Site.Container.SetFocus;
+          end;
+end;
+
+{
+procedure TgQueryPanel.DoOnFilterFrameProcess( const Accepted : Boolean );
+begin
+     If   Assigned( FSourceQuery )
+     then FGridTableView.Site.Container.SetFocus;
+end;
+}
+
+procedure TgQueryPanel.SaveQueryState( Notify : Boolean = False );
+
+var  I : SmallInt;
+     BarButton : TdxBarButton;
+
+begin
+     VisibleFieldList.Clear;
+     FilterFieldList.Clear;
+     ValueList.Clear;
+     With FQueryFieldsPopupMenu.ItemLinks do
+       For I := 1 to Count - 1 do
+         If   Items[ I ].Item is TdxBarButton
+         then begin
+              BarButton := TdxBarButton( Items[ I ].Item );
+              If   BarButton.Down
+              then VisibleFieldList.Add( BarButton.Hint );  // En Hint está el nombre del campo
+              end;
+     FFilterFrame.SaveFilterState;
+     ApplicationContainer.SaveQueryConfig( Self );
+     If   Notify
+     then ShowHintMsg( RsMsg14, RsMsg15, nil, ntCorrect );
+     FColumVisibilityChanged := False;
+end;
+
+procedure TgQueryPanel.ReadQueryState;
+
+var  I : SmallInt;
+     Column : TcxGridDBColumn;
+
+begin
+
+     If   ApplicationContainer.ReadQueryConfig( Self )
+     then begin
+
+          With FQueryFieldsPopupMenu.ItemLinks do
+            try
+              BeginUpdate;
+              For I := 1 to Count - 1 do
+                If   Items[ I ].Item is TdxBarButton
+                then With TdxBarButton( Items[ I ].Item ) do
+                       begin
+                       Down := FVisibleFieldList.IndexOf( Hint )<>-1;
+                       Column := FGridTableView.GetColumnByFieldName( Hint );
+                       If   Assigned( Column )
+                       then begin
+                            Column.Visible := Down;
+                            If   FGridTableView.Preview.Column=Column
+                            then FGridTableView.Preview.Visible := Down;
+                            end;
+                       end;
+            finally
+              EndUpdate;
+            end;
+
+          FFilterFrame.ReadFilterState;
+
+          end;
+
+     If   Assigned( FAfterReadQueryState )
+     then FAfterReadQueryState;
+
+     If   Assigned( FLockRangeField ) and FLockRange
+     then begin
+
+          With FOwnerForm do
+            begin
+            Caption := Caption + ' ' + FLockConnectorText + ' ' + IfThen( ValueIsEmpty( FLockRangeField.Value ), FLockEmptyText, FLockRangeField.AsString );
+            Hint := Caption;
+            ShowHint := True;
+            end;
+
+          FLockedColumn := FGridTableView.GetColumnByFieldName( FLockRangeField.FieldName );
+          If   Assigned( FLockedColumn )
+          then FLockedColumn.Visible := False;
+
+          end;
+
+     FColumVisibilityChanged := False;
+
+end;
+
+procedure TgQueryPanel.DeleteQueryState;
+begin
+     ApplicationContainer.DeleteWindowState( ActiveQueryPanel.OwnerForm, ctCamposConsulta );
+     FColumVisibilityChanged := False;
+     FOwnerForm.Close;
+end;
+
+procedure TgQueryPanel.DoOnFormClose(Sender: TObject; var Action: TCloseAction);
+begin
+     If   FColumVisibilityChanged   // Solo si cambia la lista de columnas visibles. El estado de la ventana debe guardarse manualmente.
+     then SaveQueryState;
+     Action := caFree;
+end;
+
+procedure TgQueryPanel.DoOnFormActivate(Sender: TObject);
+begin
+     If   Assigned( FGridTableView )
+     then begin
+
+          ActiveRecordButtonLink := FRecordButtonLink;
+
+          With FFilterFrame do
+            If   not FDetached and FNewTarget and not FFocusingFieldPanel
+            then If   FInitSearchQuery or HasDateRange
+                 then ShowFilterFrame( True );
+
+          With ApplicationContainer do
+            If   Assigned( FormReportButton )
+            then FormReportButton.Enabled := ( OwnerForm.FormType=fmGrid ) and Assigned( FOnFormReport );
+
+          ApplicationContainer.EnableRecordButtons( True );
+          end;
+
+     FNewTarget := False;
+end;
+
+procedure TgQueryPanel.DoOnFormDeactivate(Sender: TObject);
+begin
+
+     If   ( Screen.ActiveCustomForm.ClassType<>TcxFilterDialog ) and
+          not( ( Screen.ActiveCustomForm<>FOwnerForm ) and
+          not Assigned( Screen.ActiveCustomForm.Owner ) )
+     then begin
+
+          With ApplicationContainer do
+            FormReportButton.Enabled := False;
+
+          ApplicationContainer.EnableRecordButtons( False );
+
+          If   Assigned( FGridTableView )
+          then ActiveRecordButtonLink := nil;
+
+          If   not ( csDestroying in OwnerForm.ComponentState ) and    // Ya se está cerrando
+               not FDetached and
+               not FSettingTargetValue
+          then FOwnerForm.Close;
+
+          end;
+end;
+
+procedure TgQueryPanel.DoOnFormDestroy(Sender: TObject);
+begin
+     LinkedFormsList.Remove( FSourceForm, FOwnerForm );
+end;
+
+procedure TgQueryPanel.DoExpandGroups( Sender : TObject );
+begin
+     FGridTableView.ViewData.Expand( True );
+end;
+
+procedure TgQueryPanel.DoCollapseGroups( Sender : TObject );
+begin
+     FGridTableView.ViewData.Collapse( True );
+end;
+
+procedure TgQueryPanel.DoSynchronizeDataClick( Sender : TObject );
+begin
+     SyncData;
+end;
+
+procedure TgQueryPanel.DoInitSearchClick( Sender : TObject );
+begin
+     FInitSearchQuery := FInitSearchButton.Down;
+     SaveQueryState;
+end;
+
+procedure TgQueryPanel.DoSaveClick( Sender : TObject );
+begin
+     //
+end;
+
+procedure TgQueryPanel.DoStandAloneClick( Sender : TObject );
+begin
+     Detached := True;
+end;
+
+procedure TgQueryPanel.DoGridTableViewFocusedRecordChanged( Sender                        : TcxCustomGridTableView;
+                                                            APrevFocusedRecord,
+                                                            AFocusedRecord                : TcxCustomGridRecord;
+                                                            ANewItemRecordFocusingChanged : Boolean );
+begin
+     If   not IsDesignTime
+     then SyncData;
+end;
+
+procedure TgQueryPanel.SetSourceField( const Value : TField );
+
+var  SourceColumn : TcxGridDBColumn;
+
+procedure SetContentStyle( aStyle : TcxStyle );
+begin
+     If   Assigned( FSourceField ) and Assigned( FGridTableView )
+     then With FGridTableView do
+            begin
+            SourceColumn := GetColumnByFieldName( FSourceField.FieldName );
+            If   Assigned( SourceColumn )
+            then begin
+                 SourceColumn.Styles.Content := AStyle;
+                 SourceColumn.VisibleForCustomization := False;
+                 end;
+            end;
+end;
+
+begin
+     If   FSourceField<>Value
+     then begin
+          SetContentStyle( nil );
+          FSourceField := Value;
+          SetContentStyle( ApplicationContainer.QueryContentSourceColumnStyle );
+          end;
+end;
+
+procedure TgQueryPanel.SetLinked( const Value : Boolean );
+begin
+     FLinked := Value;
+     FTargetTable := nil;
+     If   FLinked
+     then If   Assigned( FTargetControl )
+          then With FTargetControl do
+                 If   DataBinding is TcxDBEditDataBinding
+                 then With TcxDBEditDataBinding( DataBinding ) do
+                        If   Assigned( DataSource ) and ( DataSource.Dataset is TnxeTable )
+                        then FTargetTable := TnxeTable( DataSource.Dataset );
+     FSyncDataButton.Enabled := Assigned( FTargetTable );
+end;
+
+procedure TgQueryPanel.SetDetached( const Value : Boolean );
+
+var  MenuItem : TdxBarButton;
+
+begin
+     If   Value and not FDetached   // No se puede convertir un grid separado del form (Detached) a su estado por defecto
+     then begin
+
+          FDetached := Value;
+
+          FInitSearchButton.Visible := False;
+          FStandAloneButton.Visible := False;
+          FSaveButton.Visible := False; // True;    De momento no está implementado
+
+          FQueryFormBarFrame := TQueryFormBarFrame.Create( FOwnerForm, FGridTableView );
+          FQueryFormBarFrame.Align := alTop;
+          FQueryFormBarFrame.Top := 0;
+          FQueryFormBarFrame.Parent := FOwnerForm;
+          FQueryFormBarFrame.Visible := True;
+          FQueryFormBarFrame.UpdateScale;
+
+          With FGridTableView do
+            begin
+
+            OptionsView.GroupByBox := True;
+
+            {  No parece mucho más efectivo que el sistema actual (como solo funciona en GridMode es igualmente lento con gran cantidad de registros)
+
+            FindPanel.DisplayMode := fpdmAlways;
+            FindPanel.FocusViewOnApplyFilter := True;
+
+            DataController.DataModeController.GridMode := False;
+            }
+
+            With OptionsCustomize do
+              begin
+              ColumnGrouping := True;
+              ColumnMoving := True;
+              ColumnFiltering := True;
+              ColumnSorting := True;
+              end;
+
+            FBarPopupMenu := TdxBarPopupMenu.Create( OwnerForm );
+            FBarPopupMenu.BarManager := FQueryFormBarFrame.BarManager;
+            With FBarPopupMenu do
+              begin
+              MenuItem := FQueryFormBarFrame.BarManager.AddButton;
+              MenuItem.Caption := RsMsg10;
+              MenuItem.Hint := RsMsg11;
+              MenuItem.OnClick := DoExpandGroups;
+              ApplicationForms.ControlsImageList.GetImage( 8, MenuItem.Glyph );
+              ItemLinks.Add( MenuItem );
+
+              MenuItem := FQueryFormBarFrame.BarManager.AddButton;
+              MenuItem.Caption := RsMsg12;
+              MenuItem.Hint := RsMsg13;
+              MenuItem.OnClick := DoCollapseGroups;
+              ApplicationForms.ControlsImageList.GetImage( 9, MenuItem.Glyph );
+              ItemLinks.Add( MenuItem );
+              end;
+
+            PopupMenu := FBarPopupMenu;
+            end;
+
+          // FBarManager := FQueryFormBarFrame.BarManager;
+
+          // FilterFrame.FFilterFieldsPopupMenu.BarManager :=
+
+          // LinkedFormsList.Remove( FSourceForm, FOwnerForm );
+
+          With OwnerForm do
+            begin
+            FormType := fmGrid;  // Al cambiar el tipo de Forma a fmGrid se convierte en persistente (no se destruye al perder el focus)
+
+            If   ApplicationContainer.CurrentMDILayout=mdiNone
+            then Maximize;
+
+            Visible := True;
+            BringToFront;
+            DoOnFormActivate( nil );  // Como ya está activada no se produce el evento
+            end;
+
+          UpdateMDILayout( ApplicationContainer.CurrentMDILayout );
+          end;
+end;
+
+procedure TgQueryPanel.SetSourceQuery( const Value : TnxeQuery );
+begin
+     If   Value<>FSourceQuery
+     then begin
+          If   Assigned( FSourceQuery )
+          then FSourceQuery.BeforeOpen := FQueryBeforeOpen;
+          FSourceQuery := Value;
+          If   Assigned( FSourceQuery )
+          then begin
+               FQueryBeforeOpen := FSourceQuery.BeforeOpen;
+               FSourceQuery.BeforeOpen := DoOnQueryBeforeOpen;
+               end;
+          end;
+end;
+
+procedure TgQueryPanel.SetInitSearchQuery( const Value : Boolean );
+begin
+     FInitSearchQuery := Value;
+     FInitSearchButton.Down := FInitSearchQuery;
+end;
+
+procedure TgQueryPanel.DoOnQueryBeforeOpen( Sender : TDataset );
+begin
+     // SetupQueryParams;
+     If   Assigned( FQueryBeforeOpen )
+     then FQueryBeforeOpen( Sender );
+end;
+
+procedure TgQueryPanel.DoGridTableViewCellClick(     Sender        : TcxCustomGridTableView;
+                                                     ACellViewInfo : TcxGridTableDataCellViewInfo;
+                                                     AButton       : TMouseButton;
+                                                     AShift        : TShiftState;
+                                                 var AHandled      : Boolean );
+begin
+     If   ApplicationContainer.AppTouchMode and
+          ACellViewInfo.WasFocusedBeforeClick
+     then begin
+          DataSelected;
+          AHandled := True;
+          end;
+end;
+
+procedure TgQueryPanel.DoGridTableViewCellDblClick(     Sender        : TcxCustomGridTableView;
+                                                        ACellViewInfo : TcxGridTableDataCellViewInfo;
+                                                        AButton       : TMouseButton;
+                                                        AShift        : TShiftState;
+                                                    var AHandled      : Boolean );
+
+begin
+     DataSelected;
+     AHandled := True;
+end;
+
+function TgQueryPanel.LinkToTarget : Boolean;
+begin
+     Result := False;
+     If   Assigned( FTargetTable )
+     then With FTargetTable do
+            try
+              DisableControls;
+              SaveRange;
+              CancelRange;     // Si no se desactivan los controles CancelRange provoca un deDataSetChange
+              If   FSourceDataset is TnxDataset
+              then SetToDatasetPos( TnxDataset( FSourceDataset ) );
+              Result := True;
+            finally
+              RestoreRange;
+              EnableControls;
+              end;
+end;
+
+procedure TgQueryPanel.DoOnUserSelection;
+begin
+     If   Assigned( FOnUserSelection )
+     then FOnUserSelection;
+end;
+
+procedure TgQueryPanel.DoOnFormReport;
+begin
+     If   ApplicationContainer.FormReportButton.Enabled and Assigned( FOnFormReport )
+     then If   IsLineSelected
+          then FOnFormReport
+          else ShowHintMsg( HintMsg8, HintMsg9 );
+end;
+
+function TgQueryPanel.IsLineSelected : Boolean;
+begin
+     Result := ( Assigned( FGridTableView ) and ( FGridTableView.Controller.SelectedRowCount=1 ) ) or
+               ( Assigned( FTreeList ) and ( FTreeList.SelectionCount>0 ) )
+end;
+
+procedure TgQueryPanel.DataSelected;
+begin
+
+     If   FDetached
+     then begin
+          DoOnUserSelection;
+          Exit;
+          end;
+
+     //* Que por lo menos haya una línea y esté seleccionada
+
+     If   IsLineSelected
+     then try
+            If   Assigned( FOnDataSelected )
+            then FOnDataSelected( FTargetControl )
+            else If   not LinkToTarget
+                 then If   Assigned( FSourceField ) and
+                           Assigned( FTargetControl )
+                      then try
+                             FSettingTargetValue := True;
+                             try
+                               If   Assigned( FLockControl ) and
+                                    not FLockRange and
+                                    Assigned( FLockRangeField ) and
+                                    not FLockRangeField.IsIndexField   // Solo se actualiza el campo de bloqueo si no pertenece a la clave de un mantenimiento
+                                                                       // es decir, listados, procesos y otros campos complementarios dentro de un mantenimiento
+                               then FLockControl.PostEditValue( FSourceDataset.FieldValues[ FLockRangeField.FieldName ] );
+
+                               var Value := FSourceDataset.FieldValues[ FSourceField.FieldName ];   // Puede ser la tabla o el query
+
+                               If   ( TargetControl is TdxTokenEdit ) or ( TargetControl is TdxDBTokenEdit )
+                               then If   not ValueIsEmpty( TargetControl.EditingValue )
+                                    then Value := TargetControl.EditingValue + ';' + Value;
+
+                               TargetControl.PostEditValue( Value );
+
+                               TargetControl.SetFocus;
+                             finally
+                               ModifiedAfterEnter := True;
+                               end;
+                            finally
+                              FSettingTargetValue := False;
+                              end;
+          except
+            end;
+
+     If   Assigned( TargetControl )
+     then SelectEditControl( TargetControl );
+
+     If   not FDetached and not ( csDestroying in FOwnerForm.ComponentState )
+     then FOwnerForm.Close;
+
+end;
+
+procedure TgQueryPanel.DoGridTableViewFocusedItemChanged( Sender            : TcxCustomGridTableView;
+                                                          APrevFocusedItem,
+                                                          AFocusedItem      : TcxCustomGridTableItem);
+begin
+     FGridTableView.OptionsBehavior.IncSearchItem := AFocusedItem;
+end;
+
+procedure TgQueryPanel.DoControlKeyDown(     Sender : TObject;
+                                         var Key    : Word;
+                                             Shift  : TShiftState );
+
+procedure ClickButton( AButton : TcxButton );
+begin
+     With AButton do
+       begin
+       Down := not Down;
+       Click;
+       end;
+     Key := 0;
+end;
+
+begin
+     case Key of
+       VK_F4     : If   ( Shift=[] ) or ( ssShift in Shift ) or ( ( ssCtrl in Shift ) and ( ssAlt  in Shift ) )   // <F4>, <Shift>+<F4> ó <Alt Gr>+<F4>
+                   then ShowFilterFrame;
+
+       VK_F7     : DoOnFormReport;
+
+       VK_SPACE,
+       VK_RETURN : DataSelected;
+       VK_ESCAPE : FOwnerForm.Close;
+       VK_BACK   : If   ( ( ssCtrl in Shift ) and ( ssAlt  in Shift ) )
+                   then FRecordButtonLink.RecordBtnPressed( sbnCancelSrchRec );           // <Alt gr>+<Back>
+
+       $43       : If   ssCtrl in Shift  // [Ctrl] + C
+                   then ClickButton( FSetupColumnsButton );
+       $44       : If   ssCtrl in Shift  // [Ctrl] + D
+                   then ClickButton( FSyncDataButton );
+       $4C       : If   ssCtrl in Shift  // [Ctrl] + L
+                   then ClickButton( FInitSearchButton );
+       $53       : If   ssCtrl in Shift  // [Ctrl] + S
+                   then ClickButton( FSaveButton );
+       end;
+end;
+
+procedure TgQueryPanel.DoOnFormKeyPress(     Sender : TObject;
+                                         var Key    : Char);
+begin
+     case Key of
+       #$D  : Key := #0;    // Evitando el molesto Beep
+       end;
+end;
+
+procedure TgQueryPanel.DoOnFormResize( Sender : TObject );
+begin
+     //..
+end;
+
+procedure TgQueryPanel.DoOnFormKeyDown(     Sender : TObject;
+                                        var Key    : Word;
+                                            Shift  : TShiftState );
+begin
+     If   Assigned( FFilterFrame ) and FFilterFrame.Visible
+     then With FFilterFrame do
+            case Key of
+              VK_RETURN : ButtonPressed( True );
+              VK_ESCAPE : If   FDatasetInitialized
+                          then ButtonPressed( False )
+                          else FOwnerForm.Close;
+              $54       : If   ssCtrl in Shift  // [Ctrl] + T
+                          then FieldsButton.Click;
+              end
+     else case Key of
+              VK_ESCAPE : If   FDetached
+                          then begin
+                               If   ShowNotification( ntQuestionWarning, RsMsg6 )<>mrYes
+                               then Key := 0;
+                               end
+                          else FOwnerForm.Close;
+              end;
+end;
+
+initialization
+
+  RegisterClasses( [ TgQueryPanel ] );
+
+end.
+
+

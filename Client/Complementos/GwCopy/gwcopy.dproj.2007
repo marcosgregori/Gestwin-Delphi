@@ -1,0 +1,68 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{23e60755-2f1b-4595-8bea-27d9a31daa0d}</ProjectGuid>
+    <MainSource>gwcopy.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>F:\Gestwin\gwcopy.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_OpenStringParams>False</DCC_OpenStringParams>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>F:\Gestwin</DCC_ExeOutput>
+    <DCC_DcuOutput>F:\Source\Instalador</DCC_DcuOutput>
+    <DCC_ObjOutput>F:\Source\Instalador</DCC_ObjOutput>
+    <DCC_HppOutput>F:\Source\Instalador</DCC_HppOutput>
+    <DCC_DcpOutput>F:\Source\Instalador</DCC_DcpOutput>
+    <DCC_UnitSearchPath>F:\Source\Lib;F:\Source\Lib\NexusDB2;F:\Source\Lib\TeeChart\Sources;F:\Source\Lib\FastReport 3\Source;F:\Source\Lib\FastReport 3\FastScript;F:\Source\Lib\FastReport 3\Source\ExportPack</DCC_UnitSearchPath>
+    <DCC_ResourcePath>F:\Source\Lib;F:\Source\Lib\NexusDB2;F:\Source\Lib\TeeChart\Sources;F:\Source\Lib\FastReport 3\Source;F:\Source\Lib\FastReport 3\FastScript;F:\Source\Lib\FastReport 3\Source\ExportPack</DCC_ResourcePath>
+    <DCC_ObjPath>F:\Source\Lib;F:\Source\Lib\NexusDB2;F:\Source\Lib\TeeChart\Sources;F:\Source\Lib\FastReport 3\Source;F:\Source\Lib\FastReport 3\FastScript;F:\Source\Lib\FastReport 3\Source\ExportPack</DCC_ObjPath>
+    <DCC_IncludePath>F:\Source\Lib;F:\Source\Lib\NexusDB2;F:\Source\Lib\TeeChart\Sources;F:\Source\Lib\FastReport 3\Source;F:\Source\Lib\FastReport 3\FastScript;F:\Source\Lib\FastReport 3\Source\ExportPack</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_OpenStringParams>False</DCC_OpenStringParams>
+    <DCC_ExeOutput>F:\Gestwin</DCC_ExeOutput>
+    <DCC_DcuOutput>F:\Source\Instalador</DCC_DcuOutput>
+    <DCC_ObjOutput>F:\Source\Instalador</DCC_ObjOutput>
+    <DCC_HppOutput>F:\Source\Instalador</DCC_HppOutput>
+    <DCC_DcpOutput>F:\Source\Instalador</DCC_DcpOutput>
+    <DCC_UnitSearchPath>F:\Source\GdPub</DCC_UnitSearchPath>
+    <DCC_ResourcePath>F:\Source\GdPub</DCC_ResourcePath>
+    <DCC_ObjPath>F:\Source\GdPub</DCC_ObjPath>
+    <DCC_IncludePath>F:\Source\GdPub</DCC_IncludePath>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="DebugCWD">F:\Gestwin</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters>  <Parameters Name="RunParams">"F:\Distribucion\ContableComercial"</Parameters>
+    </Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">3082</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys></VersionInfoKeys><Excluded_Packages>
+      
+      <Excluded_Packages Name="c:\archivos de programa\borland\bds\3.0\Bin\dcltee90.bpl">TeeChart Components</Excluded_Packages>
+    </Excluded_Packages><Source><Source Name="MainSource">gwcopy.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="gwcopy.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\GdPub\dm_ftp.pas">
+      <Form>ftpModule</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\Lib\files.pas" />
+    <DCCReference Include="b_cop.pas">
+      <Form>InstallForm</Form>
+    </DCCReference>
+    <DCCReference Include="f_ins.pas" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+
+L2_EMI Tipo de Factura Emitidas
+---------------------------------
+
+Factura
+Factura Simplificada (ticket)
+Factura emitida en sustitución de facturas simplificadas facturadas y declaradas
+Asiento resumen de facturas
+Factura Rectificativa (Error fundado en derecho y Art. 80 Uno Dos y Seis LIVA)
+Factura Rectificativa (Art. 80.3)
+Factura Rectificativa (Art. 80.4)
+Factura Rectificativa (Resto)
+Factura Rectificativa en facturas simplificadas
+
+L3.1 Clave de régimen especial o trascendencia en facturas expedidas
+--------------------------------------------------------------------
+
+Operación de régimen general
+Exportación
+Operaciones a las que se aplique el régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección
+Régimen especial del oro de inversión
+Régimen especial de las agencias de viajes
+Régimen especial grupo de entidades en IVA (Nivel Avanzado)
+Régimen especial del criterio de caja
+Operaciones sujetas al IPSI / IGIC (Impuesto sobre la Producción, los Servicios y la Importación / Impuesto General Indirecto Canario)
+Facturación de las prestaciones de servicios de agencias de viaje que actúan como mediadoras en nombre y por cuenta ajena (D.A.4ª RD1619/2012)
+Cobros por cuenta de terceros de honorarios profesionales o de derechos derivados de la propiedad industrial, de autor u otros por cuenta de sus socios, asociados o colegiados efectuados por sociedades, asociaciones, colegios profesionales u otras entidades que realicen estas funciones de cobro
+Operaciones de arrendamiento de local de negocio sujetas a retención
+Operaciones de arrendamiento de local de negocio no sujetos a retención
+Operaciones de arrendamiento de local de negocio sujetas y no sujetas a retención
+Factura con IVA pendiente de devengo en certificaciones de obra cuyo destinatario sea una Administración Pública
+Factura con IVA pendiente de devengo en operaciones de tracto sucesivo
+Primer semestre 2017
+
+
+L2_RECI  Tipo de Factura Recibidas
+----------------------------------
+
+Factura
+Factura Simplificada (ticket)
+Factura emitida en sustitución de facturas simplificadas facturadas y declaradas
+Asiento resumen de facturas
+Importaciones (DUA)
+Justificantes contables
+Factura Rectificativa (Error fundado en derecho y Art. 80 Uno Dos y Seis LIVA)
+Factura Rectificativa (Art. 80.3)
+Factura Rectificativa (Art. 80.4)
+Factura Rectificativa (Resto)
+Factura Rectificativa en facturas simplificadas
+
+L3.2 Clave de régimen especial o trascendencia en facturas recibidas
+--------------------------------------------------------------------
+
+Operación de régimen general
+Operaciones por las que los empresarios satisfacen compensaciones en las adquisiciones a personas acogidas al Régimen especial de la agricultura, ganaderia y pesca
+Operaciones a las que se aplique el régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección
+Régimen especial del oro de inversión
+Régimen especial de las agencias de viajes
+Régimen especial grupo de entidades en IVA (Nivel Avanzado)
+Régimen especial del criterio de caja
+Operaciones sujetas al IPSI / IGIC (Impuesto sobre la Producción, los Servicios y la Importación / Impuesto General Indirecto Canario)
+Adquisiciones intracomunitarias de bienes y prestaciones de servicios
+Operaciones de arrendamiento de local de negocio
+Factura correspondiente a una importación (informada sin asociar a un DUA)
+Primer semestre 2017
+

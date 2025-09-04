@@ -1,0 +1,21 @@
+Library Path
+
+$(BDSLIB)\$(Platform)\release;$(BDSUSERDIR)\Imports;$(BDS)\Imports;$(BDSCOMMONDIR)\Dcp\$(Platform);$(BDS)\include;$(Source)\Lib;$(Source)\Lib\Custom\NexusDB4;$(Source)\Lib\SecureBlackBox\Sources;$(Source)\Lib\KbmMemTable\Source;$(Source)\Lib\KbmMW\Source;$(Source)\Lib\NexusDB4;$(Source)\Lib\NexusDB4\NxRoScript;$(Source)\Lib\NexusDB4\.Net;$(Source)\Lib\ScroogeXHTML\Source;$(Source)\Lib\ZipForge\Source;$(Source)\Lib\FMX;$(Source)\Lib\FMX\TMS;$(Source)\Server\Lib
+
+Browsing Path
+
+$(BDS)\OCX\Servers;$(BDS)\SOURCE\VCL;$(BDS)\source\rtl\common;$(BDS)\SOURCE\RTL\SYS;$(BDS)\source\rtl\win;$(BDS)\source\ToolsAPI;$(BDS)\SOURCE\IBX;$(BDS)\source\Internet;$(BDS)\SOURCE\PROPERTY EDITORS;$(BDS)\source\soap;$(BDS)\SOURCE\XML;$(BDS)\source\Indy10\Core;$(BDS)\source\Indy10\System;$(BDS)\source\Indy10\Protocols;$(BDS)\source\fmx;$(BDS)\source\databinding\components;$(BDS)\source\databinding\engine;$(BDS)\source\databinding\graph;$(BDS)\source\data;$(BDS)\source\data\ado;$(BDS)\source\data\bde;$(BDS)\source\data\cloud;$(BDS)\source\data\dbx;$(BDS)\source\data\dsnap;$(BDS)\source\data\Test;$(BDS)\source\data\vclctrls;$(BDS)\source\DataExplorer;$(BDS)\source\DUnit\src;$(BDS)\source\indy\implementation;$(BDS)\source\LiveTile;$(BDS)\source\Property Editors\Indy10;$(BDS)\source\soap\wsdlimporter;$(BDS)\source\Visualizers;$(BDS)\source\data\rest;$(BDS)\source\tethering;$(BDS)\SOURCE\VCL;$(BDS)\source\rtl\common;$(BDS)\SOURCE\RTL\SYS;$(BDS)\source\rtl\win;$(BDS)\source\ToolsAPI;$(BDS)\SOURCE\IBX;$(BDS)\source\Internet;$(BDS)\SOURCE\PROPERTY EDITORS;$(BDS)\source\soap;$(BDS)\SOURCE\XML;$(BDS)\source\fmx;$(BDS)\source\databinding\components;$(BDS)\source\databinding\engine;$(BDS)\source\databinding\graph;$(BDS)\source\data;$(BDS)\source\data\ado;$(BDS)\source\data\bde;$(BDS)\source\data\cloud;$(BDS)\source\data\dbx;$(BDS)\source\data\dsnap;$(BDS)\source\data\Test;$(BDS)\source\data\vclctrls;$(DXVCL)\ExpressVerticalgrid\Sources;$(BDSLIB)\Win32\release;$(BDSLIB)\Win32\debug
+
+Environment variables override
+
+Source
+
+F:\V11.0\Source
+
+App
+
+F:\V11.0\Gestwin
+
+Path
+
+C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin;F:\V11.0\Gestwin

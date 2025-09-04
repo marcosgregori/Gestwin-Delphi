@@ -1,0 +1,47 @@
+{
+  "configurable_product_options": [
+    {
+      "attribute_id": "547",
+      "label": "Colour",
+      "position": 0,
+      "values": [
+        {
+          "value_index": 205
+        }
+      ]
+    },
+    {
+      "attribute_id": "580",
+      "label": "Size",
+      "position": 0,
+      "values": [
+        {
+          "value_index": 1033
+        },
+        {
+          "value_index": 1039
+        },
+        {
+          "value_index": 1042
+        },
+        {
+          "value_index": 1045
+        },
+        {
+          "value_index": 1048
+        },
+        {
+          "value_index": 1099
+        }
+      ]
+    }
+  ],
+  "configurable_product_links": [
+    23125,
+    23128,
+    23131,
+    23134,
+    23137,
+    23140
+  ]
+}

@@ -1,0 +1,90 @@
+package ExtControls;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DevExpress - ExtControls'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  vclie,
+  IndySystem,
+  IndyProtocols,
+  IndyCore;
+
+contains
+
+  // ExpressCommon Library
+
+  dxRgKeya,
+  dxRegEd,
+  dxCommon,
+
+  // ExpressCore Library
+
+  dxCore,
+  dxEncoding,
+  dxGenerics,
+  dxThreading,
+  dxDPIAwareUtils,
+  dxHash,
+  dxHashUtils,
+  dxCrypto,
+  dxCryptoApi,
+  dxX509Certificate,
+  dxCoreClasses,
+  dxCoreGraphics,
+  cxGeometry,
+  dxMessages,
+  dxTypeInfo,
+  dxTypeHelpers,
+  dxCustomTree,
+  dxBase64,
+  dxXMLDoc,
+  dxXMLClasses,
+  dxXMLReader,
+  dxXMLWriter,
+  dxCharacters,
+  dxStringHelper,
+  dxUriRecord,
+
+ // ExpressGDI+ Library
+
+  dxGDIPlusAPI,
+  dxGDIPlusClasses,
+  dxSmartImage;
+
+end.
+

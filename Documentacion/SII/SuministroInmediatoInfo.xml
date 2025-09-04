@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:siiLR="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroLR.xsd" xmlns:sii="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInformacion.xsd" xmlns:siiR="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/RespuestaSuministro.xsd" xmlns:siiLRC="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/ConsultaLR.xsd" xmlns:siiLRRC="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/RespuestaConsultaLR.xsd" xmlns:siiWdsl="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInmediatoInfo.wsdl" targetNamespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInmediatoInfo.wsdl">
+	<wsdl:types>
+		<xs:schema targetNamespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInmediatoInfo.wsdl" elementFormDefault="qualified" xmlns:siiWdsl="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInmediatoInfo.wsdl" xmlns:sii="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInformacion.xsd" xmlns:siiLR="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroLR.xsd" xmlns:siiLRC="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/ConsultaLR.xsd" xmlns:siiLRRC="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/RespuestaConsultaLR.xsd">
+			<xs:import namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInformacion.xsd" schemaLocation="SuministroInformacion.xsd"/>
+			<xs:import namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroLR.xsd" schemaLocation="SuministroLR.xsd"/>
+			<xs:import namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/ConsultaLR.xsd" schemaLocation="ConsultaLR.xsd"/>
+			<xs:import namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/RespuestaConsultaLR.xsd" schemaLocation="RespuestaConsultaLR.xsd"/>
+			<xs:import namespace="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/RespuestaSuministro.xsd" schemaLocation="RespuestaSuministro.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="EntradaSuministroLRFacturasEmitidas">
+		<wsdl:part name="SuministroLRFacturasEmitidas" element="siiLR:SuministroLRFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaAnulacionLRFacturasEmitidas">
+		<wsdl:part name="AnulacionLRFacturasEmitidas" element="siiLR:BajaLRFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaLRFacturasEmitidas">
+		<wsdl:part name="ConsultaLRFacturasEmitidas" element="siiLRC:ConsultaLRFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRFacturasRecibidas">
+		<wsdl:part name="SuministroLRFacturasRecibidas" element="siiLR:SuministroLRFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaAnulacionLRFacturasRecibidas">
+		<wsdl:part name="AnulacionLRFacturasRecibidas" element="siiLR:BajaLRFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaLRFacturasRecibidas">
+		<wsdl:part name="ConsultaLRFacturasRecibidas" element="siiLRC:ConsultaLRFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRBienesInversion">
+		<wsdl:part name="SuministroLRBienesInversion" element="siiLR:SuministroLRBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaAnulacionLRBienesInversion">
+		<wsdl:part name="AnulacionLRBienesInversion" element="siiLR:BajaLRBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaLRBienesInversion">
+		<wsdl:part name="ConsultaLRBienesInversion" element="siiLRC:ConsultaLRBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRCobrosMetalico">
+		<wsdl:part name="SuministroLRCobrosMetalico" element="siiLR:SuministroLRCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaAnulacionLRCobrosMetalico">
+		<wsdl:part name="AnulacionLRCobrosMetalico" element="siiLR:BajaLRCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaLRCobrosMetalico">
+		<wsdl:part name="ConsultaLRCobrosMetalico" element="siiLRC:ConsultaLRCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRDetOperacionIntracomunitaria">
+		<wsdl:part name="SuministroLRDetOperacionIntracomunitaria" element="siiLR:SuministroLRDetOperacionIntracomunitaria"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaAnulacionLRDetOperacionIntracomunitaria">
+		<wsdl:part name="AnulacionLRDetOperacionIntracomunitaria" element="siiLR:BajaLRDetOperacionIntracomunitaria"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaLRDetOperacionesIntracomunitarias">
+		<wsdl:part name="ConsultaLRDetOperIntracomunitarias" element="siiLRC:ConsultaLRDetOperIntracomunitarias"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRCobrosEmitidas">
+		<wsdl:part name="SuministroLRCobrosEmitidas" element="siiLR:SuministroLRCobrosEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaCobrosEmitidas">
+		<wsdl:part name="ConsultaCobrosEmitidas" element="siiLRC:ConsultaCobros"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaSuministroLRPagosRecibidas">
+		<wsdl:part name="SuministroLRPagosRecibidas" element="siiLR:SuministroLRPagosRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="EntradaConsultaPagosRecibidas">
+		<wsdl:part name="ConsultaPagosRecibidas" element="siiLRC:ConsultaPagos"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRFacturasEmitidas">
+		<wsdl:part name="RespuestaSuministroLRFacturasEmitidas" element="siiR:RespuestaLRFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaAnulacionLRFacturasEmitidas">
+		<wsdl:part name="RespuestaLAnulacionRFacturasEmitidas" element="siiR:RespuestaLRBajaFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaLRFacturasEmitidas">
+		<wsdl:part name="RespuestaConsultaLRFacturasEmitidas" element="siiLRRC:RespuestaConsultaLRFacturasEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRFacturasRecibidas">
+		<wsdl:part name="RespuestaSuministroLRFacturasRecibidas" element="siiR:RespuestaLRFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaAnulacionLRFacturasRecibidas">
+		<wsdl:part name="RespuestaLAnulacionRFacturasRecibidas" element="siiR:RespuestaLRBajaFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaLRFacturasRecibidas">
+		<wsdl:part name="RespuestaConsultaLRFacturasRecibidas" element="siiLRRC:RespuestaConsultaLRFacturasRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRBienesInversion">
+		<wsdl:part name="RespuestaSuministroLRBienesInversion" element="siiR:RespuestaLRBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaAnulacionLRBienesInversion">
+		<wsdl:part name="RespuestaAnulacionLRBienesInversion" element="siiR:RespuestaLRBajaBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaLRBienesInversion">
+		<wsdl:part name="RespuestaConsultaLRBienesInversion" element="siiLRRC:RespuestaConsultaLRBienesInversion"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRDetOperacionesIntracomunitarias">
+		<wsdl:part name="RespuestaSuministroLRDetOperacionesIntracomunitarias" element="siiR:RespuestaLRDetOperacionesIntracomunitarias"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaAnulacionLRDetOperacionesIntracomunitarias">
+		<wsdl:part name="RespuestaAnulacionLRDetOperacionesIntracomunitarias" element="siiR:RespuestaLRBajaDetOperacionesIntracomunitarias"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaLRDetOperacionesIntracomunitarias">
+		<wsdl:part name="RespuestaConsultaLRDetOperacionesIntracomunitarias" element="siiLRRC:RespuestaConsultaLRDetOperIntracomunitarias"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRCobrosMetalico">
+		<wsdl:part name="RespuestaSuministroLRCobrosMetalico" element="siiR:RespuestaLRCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaAnulacionLRCobrosMetalico">
+		<wsdl:part name="RespuestaAnulacionLRCobrosMetalico" element="siiR:RespuestaLRBajaCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaLRCobrosMetalico">
+		<wsdl:part name="RespuestaConsultaLRCobrosMetalico" element="siiLRRC:RespuestaConsultaLRCobrosMetalico"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRCobrosEmitidas">
+		<wsdl:part name="RespuestaSuministroLRCobrosEmitidas" element="siiR:RespuestaLRCobrosEmitidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaCobrosEmitidas">
+		<wsdl:part name="RespuestaConsultaCobrosEmitidas" element="siiLRRC:RespuestaConsultaCobros"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaSuministroLRPagosRecibidas">
+		<wsdl:part name="RespuestaSuministroLRPagosRecibidas" element="siiR:RespuestaLRPagosRecibidas"/>
+	</wsdl:message>
+	<wsdl:message name="RespuestaConsultaPagosRecibidas">
+		<wsdl:part name="RespuestaConsultaPagosRecibidas" element="siiLRRC:RespuestaConsultaPagos"/>
+	</wsdl:message>
+	<wsdl:portType name="siiSOAP">
+		<wsdl:operation name="SuministroLRFacturasEmitidas">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRFacturasEmitidas"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRFacturasEmitidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRFacturasEmitidas">
+			<wsdl:input message="siiWdsl:EntradaAnulacionLRFacturasEmitidas"/>
+			<wsdl:output message="siiWdsl:RespuestaAnulacionLRFacturasEmitidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRFacturasEmitidas">
+			<wsdl:input message="siiWdsl:EntradaConsultaLRFacturasEmitidas"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaLRFacturasEmitidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRFacturasRecibidas">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRFacturasRecibidas"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRFacturasRecibidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRFacturasRecibidas">
+			<wsdl:input message="siiWdsl:EntradaAnulacionLRFacturasRecibidas"/>
+			<wsdl:output message="siiWdsl:RespuestaAnulacionLRFacturasRecibidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRFacturasRecibidas">
+			<wsdl:input message="siiWdsl:EntradaConsultaLRFacturasRecibidas"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaLRFacturasRecibidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRBienesInversion">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRBienesInversion"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRBienesInversion"/>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRBienesInversion">
+			<wsdl:input message="siiWdsl:EntradaAnulacionLRBienesInversion"/>
+			<wsdl:output message="siiWdsl:RespuestaAnulacionLRBienesInversion"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRBienesInversion">
+			<wsdl:input message="siiWdsl:EntradaConsultaLRBienesInversion"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaLRBienesInversion"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRCobrosMetalico">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRCobrosMetalico"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRCobrosMetalico"/>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRCobrosMetalico">
+			<wsdl:input message="siiWdsl:EntradaAnulacionLRCobrosMetalico"/>
+			<wsdl:output message="siiWdsl:RespuestaAnulacionLRCobrosMetalico"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRCobrosMetalico">
+			<wsdl:input message="siiWdsl:EntradaConsultaLRCobrosMetalico"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaLRCobrosMetalico"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRDetOperacionIntracomunitaria">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRDetOperacionIntracomunitaria"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRDetOperacionesIntracomunitarias"/>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRDetOperacionIntracomunitaria">
+			<wsdl:input message="siiWdsl:EntradaAnulacionLRDetOperacionIntracomunitaria"/>
+			<wsdl:output message="siiWdsl:RespuestaAnulacionLRDetOperacionesIntracomunitarias"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRDetOperacionIntracomunitaria">
+			<wsdl:input message="siiWdsl:EntradaConsultaLRDetOperacionesIntracomunitarias"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaLRDetOperacionesIntracomunitarias"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRCobrosEmitidas">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRCobrosEmitidas"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRCobrosEmitidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRCobrosEmitidas">
+			<wsdl:input message="siiWdsl:EntradaConsultaCobrosEmitidas"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaCobrosEmitidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRPagosRecibidas">
+			<wsdl:input message="siiWdsl:EntradaSuministroLRPagosRecibidas"/>
+			<wsdl:output message="siiWdsl:RespuestaSuministroLRPagosRecibidas"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRPagosRecibidas">
+			<wsdl:input message="siiWdsl:EntradaConsultaPagosRecibidas"/>
+			<wsdl:output message="siiWdsl:RespuestaConsultaPagosRecibidas"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="siiBinding" type="siiWdsl:siiSOAP">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SuministroLRFacturasEmitidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRFacturasEmitidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRFacturasEmitidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRFacturasRecibidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRFacturasRecibidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRFacturasRecibidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRBienesInversion">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRBienesInversion">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRBienesInversion">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRCobrosMetalico">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRCobrosMetalico">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRCobrosMetalico">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRDetOperacionIntracomunitaria">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AnulacionLRDetOperacionIntracomunitaria">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRDetOperacionIntracomunitaria">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRCobrosEmitidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRCobrosEmitidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SuministroLRPagosRecibidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaLRPagosRecibidas">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="siiService">
+		<wsdl:port name="SuministroFacturas" binding="siiWdsl:siiBinding">
+			<soap:address location="xxxxxxxxxxxx"/>
+		</wsdl:port>
+		<wsdl:port name="SuministroFacturasPruebas" binding="siiWdsl:siiBinding">
+			<soap:address location="https://www1.agenciatributaria.gob.es/wlpl/SSII-FACT/ws/SiiFactV1PSOAP"/>
+		</wsdl:port>
+	</wsdl:service>
+	<!-- ALTAS -->
+	<!-- Llamada al xsd de entrada -->
+	<!-- Definición del metodo y de los xsd a los que llama para ejecutarse-->
+	<!-- Ejecución del WS -->
+	<!-- Definicion de la clase java a la que llama el WS -->
+</wsdl:definitions>

@@ -1,0 +1,52 @@
+package gdm60;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdm10,
+  gdm30,
+  ExtControlsNC;
+
+contains
+  gdm60Frm in 'gdm60Frm.pas' {gds60Frm: TFrame},
+  a_pg60 in 'a_pg60.pas' {mntPg60Form},
+  b_ddd in 'b_ddd.pas' {boxDddForm},
+  b_cdd in 'b_cdd.pas',
+  dm_rde in 'dm_rde.pas',
+  gdm60Dm in 'gdm60Dm.pas',
+  a_rdd in 'a_rdd.pas',
+  Gim60Fields in '..\..\Interface\Gim60\Gim60Fields.pas';
+
+end.

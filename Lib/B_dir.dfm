@@ -1,0 +1,149 @@
+object DirectoryForm: TDirectoryForm
+  Left = 581
+  Top = 277
+  HelpContext = 106
+  ActiveControl = ShellTreeView
+  Caption = 'Navegador de directorios'
+  ClientHeight = 464
+  ClientWidth = 465
+  Color = clBtnFace
+  Constraints.MinHeight = 250
+  Constraints.MinWidth = 350
+  DoubleBuffered = True
+  DoubleBufferedMode = dbmRequested
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poMainFormCenter
+  TextHeight = 17
+  object Panel1: TPanel
+    Left = 0
+    Top = 428
+    Width = 465
+    Height = 36
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object Button1: TgBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 85
+      Height = 30
+      Align = alLeft
+      Caption = '&Red ...'
+      Enabled = True
+      OptionsImage.ImageIndex = 24
+      OptionsImage.Images = ApplicationContainer.ButtonImageList
+      OptionsImage.Margin = 4
+      OptionsImage.Spacing = 5
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 0
+      OnClick = Button1Click
+      GlyphBitmap = gmNetwork
+    end
+    object CloseButton: TgBitBtn
+      AlignWithMargins = True
+      Left = 377
+      Top = 3
+      Width = 85
+      Height = 30
+      Align = alRight
+      Cancel = True
+      Caption = '&Cerrar'
+      Enabled = True
+      ModalResult = 2
+      OptionsImage.ImageIndex = 7
+      OptionsImage.Images = ApplicationContainer.ButtonImageList
+      OptionsImage.Margin = 4
+      OptionsImage.Spacing = 5
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 1
+      GlyphBitmap = gmClose
+    end
+    object OkButton: TgBitBtn
+      AlignWithMargins = True
+      Left = 286
+      Top = 3
+      Width = 85
+      Height = 30
+      Align = alRight
+      Caption = '&Aceptar'
+      Default = True
+      Enabled = True
+      ModalResult = 1
+      OptionsImage.ImageIndex = 2
+      OptionsImage.Images = ApplicationContainer.ButtonImageList
+      OptionsImage.Margin = 4
+      OptionsImage.Spacing = 5
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 2
+      GlyphBitmap = gmOk
+    end
+  end
+  object Panel2: TgxEditPanel
+    AlignWithMargins = True
+    Left = 5
+    Top = 5
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 0
+    Align = alClient
+    PanelStyle.Active = True
+    ParentBackground = False
+    ParentColor = False
+    Style.BorderStyle = ebsSingle
+    Style.Color = cl3DLight
+    TabOrder = 1
+    PanelKind = epInputPanel
+    Height = 423
+    Width = 455
+    object ShellTreeView: TcxShellTreeView
+      Left = 2
+      Top = 2
+      Width = 451
+      Height = 359
+      Align = alClient
+      AutoExpand = True
+      Indent = 19
+      Options.ShowNonFolders = False
+      RightClickSelect = True
+      ShowInfoTips = True
+      Style.LookAndFeel.NativeStyle = True
+      StyleDisabled.LookAndFeel.NativeStyle = True
+      StyleFocused.LookAndFeel.NativeStyle = True
+      StyleHot.LookAndFeel.NativeStyle = True
+      TabOrder = 0
+      OnChange = ShellTreeViewChange
+    end
+    object cxGroupBox1: TcxGroupBox
+      Left = 2
+      Top = 361
+      Align = alBottom
+      Caption = 'Directorio seleccionado'
+      Style.Edges = [bLeft, bTop, bRight, bBottom]
+      Style.TextStyle = [fsBold]
+      TabOrder = 1
+      Height = 60
+      Width = 451
+      object PathLabel: TcxLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 22
+        Margins.Left = 8
+        Margins.Top = 0
+        Align = alClient
+        Style.TextColor = clInfoText
+        Properties.WordWrap = True
+        Transparent = True
+        Width = 436
+      end
+    end
+  end
+end

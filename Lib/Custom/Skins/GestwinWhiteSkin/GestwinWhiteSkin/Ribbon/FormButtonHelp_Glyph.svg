@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="&quot;http://www.w3.org/1999/xlink&quot;">
+	<g>
+		<polygon points="3,2 3,3 6,3 6,4 4,4 4,6 5,6 5,5 7,5 7,2  " fill="#707070" class="Mask" tag="Mask0"/>
+		<rect x="4" y="7" width="1" height="1" rx="0" ry="0" fill="#707070" class="Mask" tag="Mask1"/>
+		<path d="M0, 0L0, 10L10, 10L10, 0L0, 0zM9, 9L1, 9L1, 1L9, 1L9, 9z" fill="#707070" class="Mask" tag="Mask2"/>
+	</g>
+	<g transform="translate(0, 10)">
+		<polygon points="3,2 3,3 6,3 6,4 4,4 4,6 5,6 5,5 7,5 7,2  " fill="#707070" class="Mask2" tag="Mask0"/>
+		<rect x="4" y="7" width="1" height="1" rx="0" ry="0" fill="#707070" class="Mask2" tag="Mask1"/>
+		<path d="M0, 0L0, 10L10, 10L10, 0L0, 0zM9, 9L1, 9L1, 1L9, 1L9, 9z" fill="#707070" class="Mask2" tag="Mask2"/>
+	</g>
+</svg>

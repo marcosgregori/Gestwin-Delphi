@@ -1,0 +1,305 @@
+package ExtControlsNC;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DevExpress - ExtControls'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  vclie,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  ExtControls,
+  ExtControlsEE;
+
+contains
+
+  // ExpressPageControl (2)
+
+  cxPCdxBarPopupMenu,
+
+  // Express OfficeCore Library
+
+  dxAuthorizationAgents,
+  dxAuthorizationAgentsStrs,
+  dxCloudStorage,
+  dxCloudStorageGoogleDriveProvider,
+  dxCloudStorageMicrosoftOneDriveProvider,
+  dxCloudStorageStrs,
+  dxWebFileTransferManager,
+  dxWinInet,
+
+  // Express Skins
+
+  dxSkinsLookAndFeelPainter,
+
+  // Ribbon
+
+  dxRibbonFormCaptionHelper,
+  dxRibbonGroupLayoutCalculator,
+  dxRibbonBackstageView,
+  dxRibbonForm,
+  dxRibbon,
+  dxRibbonGallery,
+  dxRibbonBackstageViewGalleryControl,
+  dxSkinsdxRibbonPainter,
+  dxRibbonSkins,
+  dxRibbonSkins2019,
+  dxRibbonSkins2016,
+  dxRibbonSkins2013,
+  dxRibbonSkins2010,
+  dxRibbonSkins2007,
+  dxRibbonSkinsOffice365,
+
+  dxRibbonMiniToolbar,
+  dxRibbonStatusBar,
+  dxRibbonRadialMenu,
+
+   // ExpressBars
+
+  dxBarConverter,
+  dxBarSkinConsts,
+  dxBarAccessibility,
+  dxBarPopupMenuEd,
+  dxBarItemEd,
+  dxBarAddGroupItemsEd,
+  dxBarCustForm,
+  dxBarNameEd,
+  dxBar,
+  dxBarPainters,
+  dxSkinsdxBarPainter,
+  dxBarCustomCustomizationForm,
+  dxBarStrs,
+
+  dxBarApplicationMenu,
+  dxStatusBar,
+  dxSkinsdxStatusBarPainter,
+  dxSkinsForm,
+  dxSkinsDefaultPainters,
+  dxBarSkin,
+  dxBarSkinnedCustForm,
+  dxBarBuiltInMenu,
+  cxBarEditItemValueEditor,
+  cxBarEditItem,
+
+  dxTabbedMDI,
+  dxTabbedMDIStrs,
+
+  dxSkinChooserGallery,
+  dxOfficeSearchBox,
+
+  dxBarExtItems,
+
+  dxBarExtDBItems,
+
+  dxBarDBNavStrs,
+  dxBarDBNav,
+
+   // Docking
+
+  dxDockPanel,
+  dxDockControl,
+  dxDockConsts,
+  dxDockControlNETView,
+  dxDockControlXPView,
+  dxDockControlOfficeView,
+  dxSkinsdxDockControlPainter,
+  dxDockStyleVS2005,
+  dxDockZones,
+
+  // ExpressMemData
+
+  dxmdaset,
+
+  // Server mode (ExtControlsPS lo incluye, aunque yo no lo utilice)
+
+  dxServerModeClasses,
+  dxServerModeData,
+  dxServerModeHelpers,
+  dxServerModeUtils,
+  dxServerModeSQLAdapters,
+  dxServerModeConsts,
+  // dxServerModeFireDACDataSource,
+  // dxServerModeNexusDBDataSource,
+
+  // SpreadSheet Core
+
+  dxSpreadSheetCore,
+  dxSpreadSheetCoreHelpers,
+  dxSpreadSheetCoreHistory,
+  dxSpreadSheetCoreDialogsStrs,
+  dxExpressionEditor,
+  cxDataControllerSpreadSheetExpressionProvider,
+  dxExpressionRichEdit,
+  dxExpressionEditorHelpers,
+  cxDataControllerSpreadSheetDataProvider,
+
+  dxSpreadSheetConditionalFormatting,
+  dxSpreadSheetConditionalFormattingRules,
+  dxSpreadSheetConditionalFormattingIconSet,
+  dxSpreadSheetClasses,
+  dxSpreadSheetNumberFormat,
+  dxSpreadSheetNumberFormatCore,
+  dxSpreadSheetNumberFormatParser,
+  dxSpreadSheetCoreStrs,
+  dxSpreadSheetUtils,
+  dxSpreadSheetCoreStyles,
+  dxSpreadSheetCoreFormulas,
+  dxSpreadSheetCoreFormulasParser,
+  dxSpreadSheetCoreFormulasHelpers,
+  dxSpreadSheetCoreFormulasTokens,
+  dxSpreadSheetStyles,
+  dxSpreadSheetFunctions,
+  dxSpreadSheetFunctionsStrs,
+  dxSpreadSheetFunctionsCompatibility,
+  dxSpreadSheetFunctionsDateTime,
+  dxSpreadSheetFunctionsFinancial,
+  dxSpreadSheetFunctionsInformation,
+  dxSpreadSheetFunctionsLogical,
+  dxSpreadSheetFunctionsLookup,
+  dxSpreadSheetFunctionsMath,
+  dxSpreadSheetFunctionsStatistical,
+  dxSpreadSheetFunctionsText,
+  dxSpreadSheetGraphics,
+  dxSpreadSheetTypes,
+  cxDataControllerConditionalFormatting,
+
+  // SpreadSheet
+
+  dxSpreadSheet,
+  dxSpreadSheetContainers,
+  dxSpreadSheetSelection,
+  dxSpreadSheetAutoFilling,
+  dxSpreadSheetClipboard,
+  dxSpreadSheetClipboardFormats,
+  dxSpreadSheetFormulas,
+  dxSpreadSheetPrinting,
+  dxSpreadSheetStrs,
+  dxSpreadSheetPopupMenu,
+  dxSpreadSheetHyperlinks,
+  dxSpreadSheetEditHyperlinkDialog,
+  dxSpreadSheetFormatBinary,
+  dxSpreadSheetFormatCSV,
+  dxSpreadSheetFormatTXT,
+  dxSpreadSheetFormatHTML,
+  dxSpreadSheetFormatXML,
+  dxSpreadSheetFormatXMLSS,
+  dxSpreadSheetFormatUtils,
+  dxSpreadSheetFormatODS,
+  dxSpreadSheetFormatODSFormulas,
+  dxSpreadSheetFormatODSHelpers,
+  dxSpreadSheetFormatODSReader,
+  dxSpreadSheetFormatODSTags,
+  dxSpreadSheetFormatXLS,
+  dxSpreadSheetFormatXLSReader,
+  dxSpreadSheetFormatXLSWriter,
+  dxSpreadSheetFormatXLSTypes,
+  dxSpreadSheetFormatXLSProtection,
+  dxSpreadSheetFormatXLSFormulas,
+  dxSpreadSheetFormatXLSDrawing,
+  dxSpreadSheetFormatXLSX,
+  dxSpreadSheetFormatXLSXReader,
+  dxSpreadSheetFormatXLSXReaderConditionalFormatting,
+  dxSpreadSheetFormatXLSXReaderDrawing,
+  dxSpreadSheetFormatXLSXReaderComments,
+  dxSpreadSheetFormatXLSXWriterConditionalFormatting,
+  dxSpreadSheetFormatXLSXWriterDrawing,
+  dxSpreadSheetFormatXLSXWriterComments,
+  dxSpreadSheetFormatXLSXTags,
+  dxSpreadSheetFormatXLSXWriter,
+  dxSpreadSheetPackedFileFormatCore,
+  dxSpreadSheetTextFileFormatCore,
+  dxSpreadSheetPasteSpecialDialog,
+  dxSpreadSheetDialogStrs,
+  dxSpreadSheetFindAndReplaceDialog,
+  dxSpreadSheetFormatCellsDialog,
+  dxSpreadSheetCellsModificationDialog,
+  dxSpreadSheetContainerCustomizationDialog,
+  dxSpreadSheetContainerCustomizationDialogHelpers,
+  dxSpreadSheetUnhideSheetDialog,
+  dxSpreadSheetPasswordDialog,
+  dxSpreadSheetActions,
+  dxSpreadSheetActionsStrs,
+  dxSpreadSheetCoreReferences,
+
+  dxSpreadSheetCellStyleEditDialogController,
+  dxSpreadSheetPageSetupHeaderFooterDialog,
+  dxSpreadSheetFormulasHelpers,
+  dxSpreadSheetPageSetupDialog,
+  dxSpreadSheetCellStyleEditDialog,
+  dxSpreadSheetCellStyleEditDialogHelpers,
+  dxSpreadSheetInplaceEdit,
+
+  dxSpreadSheetProtection,
+  dxSpreadSheetProtectWorkbookDialog,
+  dxSpreadSheetProtectSheetDialog,
+
+  dxSpreadSheetDefinedNameManagerDialog,
+  dxSpreadSheetReferenceEditDialog,
+  dxSpreadSheetDefinedNameEditDialog,
+  dxSpreadSheetDefinedNamesCreateFromSelectionDialog,
+  dxSpreadSheetFormatXLSXUtils,
+  dxSpreadSheetFormattedTextUtils,
+  dxSpreadSheetFormatXLSXReaderStyles,
+
+  // -- SpreadSheetConditionalFormattingDialog
+
+  dxSpreadSheetConditionalFormattingRulesActions,
+  dxSpreadSheetConditionalFormattingDataBarRuleStyleEditDialog,
+  dxSpreadSheetConditionalFormattingRuleEditDialog,
+  dxSpreadSheetConditionalFormattingRuleEditDialogHelpers,
+  dxSpreadSheetConditionalFormattingRulesManagerDialog,
+  dxSpreadSheetConditionalFormattingRulesManagerDialogHelpers,
+  cxDataControllerConditionalFormattingRulesManagerDialog,
+
+  dxSpreadSheetInsertFunctionDialog,
+  dxSpreadSheetFormulaBar,
+
+  dxSpreadSheetReportDesignerActions,
+  dxSpreadSheetReportDesigner,
+
+  // ExpressQuantumTreeList
+
+  cxTL,
+  cxTLStrs,
+  cxTLData,
+  cxDBTL,
+  cxTLdxBarBuiltInMenu,
+  cxTLStyleSheetPreview;
+
+end.
+

@@ -1,0 +1,637 @@
+
+  // dxComn
+
+    dxRgKeya,
+    dxRegEd,
+    dxCommon,
+      
+  // dxCore
+  
+    dxCore,
+    dxThreading,
+    dxHashUtils,
+    dxCoreClasses,
+    dxCoreGraphics,
+    cxGeometry,
+    dxMessages,
+    dxTypeHelpers,
+    dxCustomTree,
+    dxXMLDoc,
+    
+  // dxTheme
+  
+    dxThemeConsts,
+    dxThemeManager,
+    dxUxTheme,
+  
+  // cxData
+  
+    cxCustomData,  
+    cxData,
+    cxDataConsts,  
+    cxDataStorage, 
+    cxDataUtils,   
+    cxDB,          
+    cxDBData,      
+    cxFilter,      
+    cxDBFilter,
+    cxFilterConsts,
+    cxLike,
+    cxVariants,    
+    
+  // dxServerMode
+  
+    dxServerModeClasses,
+    dxServerModeData,
+    dxServerModeHelpers,
+    dxServerModeUtils,
+    dxServerModeSQLAdapters,
+    dxServerModeConsts,
+  
+  // dxGDIPlus
+  
+    dxGDIPlusAPI,
+    dxGDIPlusClasses,
+  
+  // cxLibrary
+  
+    cxClasses,
+    cxControls,
+    cxGraphics,
+    cxLookAndFeelPainters,
+    cxLookAndFeels,
+    cxStorage,
+    cxStyles,
+    cxScrollBar,
+    cxStyleSheetEditor,
+    cxContainer,
+    cxLibraryStrs,
+    cxPropertiesStore,
+    cxConverterUtils,
+    cxCustomConverter,
+    cxDrawTextUtils,
+    dxDrawRichTextUtils,
+    cxAccessibility,
+    cxDateUtils,
+    dxCalendarUtils,
+    cxFormats,
+    cxDWMApi,
+    cxLibraryConsts,
+    dxAnimation,
+    dxCustomHint,
+    dxScreenTip,
+    dxFading,
+    dxOffice11,
+    dxSkinInfo,
+    dxSkinsCore,
+    dxSkinsStrs,
+    dxTouch,
+    cxLocalization,
+    dxHooks,
+    dxShadowWindow,
+    dxBuiltInPopupMenu,
+    dxGallery,
+    dxZIPUtils,
+    dxOLEDocument,
+    dxShapeTransformations,
+    dxShapePrimitives,
+    dxShapeReaders,
+    dxShapeBrushes,
+    dxCompositeShape,
+  
+  // dxSkinsCore
+  
+    dxSkinsDefaultPainters,
+    dxSkinsLookAndFeelPainter,
+    dxSkinsForm,
+  
+  // dxmds
+    
+    dxmdaset,
+    
+  // dxtrmd
+    
+    dxtrprds,
+  
+  // dxdbtr
+  
+    dxtree,
+    dxdbtrel,
+    dxdbtree,
+    
+  // dxBar
+  
+    dxBarStrs,
+    dxBarAddGroupItemsEd,
+    dxBarApplicationMenu,
+    dxBarCustomCustomizationForm,
+    dxBarCustForm,
+    dxBarItemEd,
+    dxBarNameEd,
+    dxBarPopupMenuEd,
+    dxStatusBar,
+    dxBar,
+    dxBarConverter,
+    dxBarSkinConsts,
+    dxBarSkin,
+    dxBarAccessibility,
+    dxBarBuiltInMenu,
+    
+  // dxBarExtItems
+  
+    dxBarExtItems,
+
+  // dxSkinsdxBarPainter
+  
+    dxSkinsdxBarPainter,
+    dxSkinsdxStatusBarPainter,
+          
+  // cxEditors
+  
+    cxBlobEdit,
+    cxButtonEdit,
+    cxButtons,
+    cxCalc,
+    cxCalendar,
+    cxCheckBox,
+    cxCurrencyEdit,
+    cxDBEdit,
+    cxDBEditRepository,
+    cxDBLookupEdit,
+    cxEdit,
+    cxEditConsts,
+    cxEditDataRegisteredRepositoryItems,
+    cxEditDBRegisteredRepositoryItems,
+    cxEditRegisteredRepositoryItems,
+    cxEditUtils,
+    cxHyperLinkEdit,
+    cxImage,
+    cxImageComboBox,
+    cxLookupDBGrid,
+    cxLookupEdit,
+    cxLookupGrid,
+    cxMaskEdit,
+    cxNavigator,
+    cxMemo,
+    cxMRUEdit,
+    cxRegExpr,
+    cxSpinEdit,
+    cxTimeEdit,
+    cxDropDownEdit,
+    cxEditPaintUtils,
+    cxTextEdit,
+    cxStandardMask,
+    cxEditMaskEditor,
+    cxDBLookupComboBox,
+    cxRadioGroup,
+    cxListBox,
+    cxFilterControl,
+    cxFilterControlUtils,
+    cxFilterControlStrs,
+    cxFilterControlDialog,
+    cxEditRepositoryItems,
+    cxDBNavigator,
+    cxDBFilterControl,
+    cxPropertiesConverters,
+    cxGroupBox,
+    cxInplaceContainer,
+    cxCheckListBox,
+    cxProgressBar,
+    cxLabel,
+    cxTrackBar,
+    cxFontNameComboBox,
+    cxColorComboBox,
+    cxExtEditUtils,
+    cxCheckComboBox,
+    cxTreeView,
+    cxSplitter,
+    cxDBColorComboBox,
+    cxDBProgressBar,
+    cxDBLabel,
+    cxDBTrackBar,
+    cxHint,
+    cxMCListBox,
+    cxListView,
+    cxHeader,
+    cxDBCheckListBox,
+    cxDBCheckComboBox,
+    cxExtEditConsts,
+    cxSpinButton,
+    cxDBFontNameComboBox,
+    cxShellComboBox,
+    cxShellCommon,
+    cxShellControls,
+    cxShellListView,
+    cxShellTreeView,
+    cxDBShellComboBox,
+    cxShellBrowser,
+    cxShellBrowserDialog,
+    cxShellDlgs,
+    cxExtEditRepositoryItems,
+    cxShellEditRepositoryItems,
+    cxCheckGroup,
+    cxDBCheckGroup,
+    cxRichEdit,
+    cxDBRichEdit,
+    cxRichEditUtils,
+    cxScrollBox,
+    dxAlertWindow,
+    dxBevel,
+    dxShellBreadcrumbEdit,
+    dxTaskbarProgress,
+    dxBreadcrumbEdit,
+    dxDBBreadcrumbEdit,
+    dxGalleryControl,
+    dxColorGallery,
+    dxDBColorGallery,
+    dxColorEdit,
+    dxDBColorEdit,
+    dxImageSlider,
+    dxZoomTrackBar,
+    dxDBZoomTrackBar,
+    dxCheckGroupBox,
+    dxDBCheckGroupBox,
+    dxColorPicker,
+    dxColorDialog,
+    dxColorDialogForm,
+    dximctrl,
+    dxMediaUtils,
+    dxCameraControl,
+    dxCameraDialog,
+    dxToggleSwitch,
+    
+  // dxNavBar
+  
+    dxNavBar,
+    dxNavBarStyles,
+    dxNavBarCollns,
+    dxNavBarViewsFact,
+    dxNavBarVSToolBoxViews,
+    dxNavBarXPViews,
+    dxNavBarExplorerViews,
+    dxNavBarOfficeViews,
+    dxNavBarBaseViews,
+    dxNavBarConsts,
+    dxNavBarBase,
+    dxNavBarGraphics,
+    dxNavBarOffice11Views,
+    dxNavBarOffice12Views,
+    dxNavBarVistaViews,
+    dxNavBarCustomPainters,
+    dxNavBarSkinBasedViews,
+    dxNavBarGroupItems,
+    dxNavBarCustomization,
+    dxNavBarAccessibility,
+    
+  // dxNavBarAdvancedCustomizeForm
+  
+    dxNavBarAdvancedCustomization,
+  
+  // dxSkinsdxNavBarPainter
+  
+    dxSkinsdxNavBarPainter,
+    
+  // cxBarEditItem
+  
+    cxBarEditItemValueEditor,
+    cxBarEditItem,
+  
+  // dxRibbon
+  
+    dxRibbon,
+    dxRibbonForm,
+    dxRibbonFormCaptionHelper,
+    dxRibbonGallery,
+    dxRibbonGroupLayoutCalculator,
+    dxRibbonSkins,
+    dxRibbonMiniToolbar,
+    dxRibbonBackstageView,
+    dxRibbonBackstageViewGalleryControl,
+    dxRibbonStatusBar,
+    dxRibbonRadialMenu,
+    dxSkinChooserGallery,
+        
+  // dxSkinsdxRibbonPainter
+  
+    dxSkinsdxRibbonPainter,
+  
+  // cxPageControl
+    
+    cxPC,
+    cxPCConsts,
+    cxPCGoDialog,
+    cxPCPainters,
+    cxPCPaintersFactory,
+    
+  // cxPageControldxBarPopupMenu
+  
+    cxPCdxBarPopupMenu,
+    
+  // dxSkinscxPCPainter
+    
+    dxSkinscxPCPainter,
+
+  // dxSkinsdxBarSkinnedCustomizationForm
+  
+    dxBarSkinnedCustForm,
+    
+  // dxDocking
+  
+    dxDockPanel,
+    dxDockControl,
+    dxDockConsts,
+    dxDockControlNETView,
+    dxDockControlXPView,
+    dxDockControlOfficeView,
+    dxDockStyleVS2005,
+    dxDockZones,
+    
+  // dxSkinsdxDLPainter
+  
+    dxSkinsdxDockControlPainter,
+    
+  // dxLayoutControl
+  
+    dxLayoutLookAndFeels,
+    dxLayoutControl,
+    dxLayoutPainters,
+    dxLayoutStrs,
+    dxLayoutContainer,
+    dxLayoutControlAdapters,
+    dxLayoutCustomizeForm,
+    dxLayoutEditForm,
+    dxLayoutDragAndDrop,
+    dxLayoutSelection,
+    dxLayoutCommon,
+    dxLayoutcxEditAdapters,
+    
+  // dxTileControl
+  
+    dxCustomTileControl,
+    dxTileControl,
+  
+  // cxExport
+  
+    cxExport,
+    cxHtmlXmlTxtExport,
+    cxXLSExport,
+    dxXLSXExport,
+    cxExportStrs,
+    
+  // cxGrid
+  
+    cxGridLevel,
+    cxDBExtLookupComboBox,
+    cxGridExportLink,
+    cxFilterDialog,
+    cxGrid,
+    cxGridBandedTableView,
+    cxGridCardView,
+    cxGridChartView,
+    cxGridCommon,
+    cxGridCustomPopupMenu,
+    cxGridCustomTableView,
+    cxGridCustomView,
+    cxGridCustomLayoutView,
+    cxGridDBBandedTableView,
+    cxGridDBCardView,
+    cxGridDBChartView,
+    cxGridDBDataDefinitions,
+    cxGridDBTableView,
+    cxGridDetailsSite,
+    cxGridFilterHelpers,
+    cxGridFooterPopupMenuItems,
+    cxGridHeaderPopupMenuItems,
+    cxGridGroupRowPopupMenuItems,
+    cxGridMenuOperations,
+    cxGridPopupMenu,
+    cxGridPopupMenuConsts,
+    cxGridRows,
+    cxGridStdPopupMenu,
+    cxGridStrs,
+    cxGridStyleSheetsPreview,
+    cxGridTableView,
+    cxGridUIBandedTableHelper,
+    cxGridUICardHelper,
+    cxGridUICustomTableHelper,
+    cxGridUIHelper,
+    cxGridLayoutView,
+    cxGridDBLayoutView,
+    cxGridLayoutViewCarouselMode,
+    cxGridLayoutViewCustomizationForm,
+    cxGridServerModeDataDefinitions,
+    cxGridServerModeTableView,
+    cxGridServerModeBandedTableView,
+    cxGridUITableHelper,
+    cxGridViewLayoutContainer,
+    cxGridViewLayoutCustomizationForm,
+    cxGridTableViewInplaceEditFormCustomizationForm,
+    cxGridInplaceEditForm,
+   
+  // cxVerticalGrid
+  
+    cxDBVGrid,
+    cxOI,
+    cxVGrid,
+    cxVGridConsts,
+    cxVGridStyleSheetPreview,
+    cxVGridUtils,
+    cxVGridViewInfo,
+    cxOIPictureEd,
+    cxOIStringsEd,
+    cxVGridNewCategory,
+    cxExportVGLink,
+    cxOICollectionEd,
+
+  // cxPivotGrid
+  
+    cxCustomPivotGrid,
+    cxPivotGrid,
+    cxDBPivotGrid,
+    cxPivotGridStrs,
+    cxPivotGridCustomization,
+    cxExportPivotGridLink,
+    cxPivotGridStyleSheetsPreview,
+    cxPivotGridCustomDataSet,
+    cxPivotGridSummaryDataSet,
+    cxPivotGridAdvancedCustomization,
+    cxPivotGridDrillDownDataSet,
+  
+  // cxPivotGridOLAP
+    
+    cxPivotGridOLAPDataSource,
+    cxPivotGridOLAPQueryBuilder,
+    cxPivotGridOLAPConnectionDesigner,
+    
+  // cxPivotGridChart
+  
+    cxPivotGridChartConnection,
+  
+  // cxTreeList
+  
+    cxTL,
+    cxTLStrs,
+    cxTLStyleSheetPreview,
+    cxDBTL,
+    cxTLExportLink,
+    cxTLData
+  
+  // cxTreeListdxBarPopupMenu
+  
+    cxTLdxBarBuiltInMenu,
+    
+  // cxScheduler
+  
+    cxScheduler,
+    cxSchedulerAggregateStorage,
+    cxSchedulerCustomControls,
+    cxSchedulerCustomResourceView,
+    cxSchedulerDateNavigator,
+    cxSchedulerDayView,
+    cxSchedulerDBStorage,
+    cxSchedulerDialogs,
+    cxSchedulerEventEditor,
+    cxSchedulerGoToDateDialog,
+    cxSchedulerRecurrenceEditor,
+    cxSchedulerRecurrenceSelectionDialog,
+    cxSchedulerResourcesLayoutEditor,
+    cxSchedulerRecurrence,
+    cxSchedulerRecurrenceHolidayEditor,
+    cxSchedulerStorage,
+    cxSchedulerStrs,
+    cxSchedulerUtils,
+    cxExportSchedulerLink,
+    cxSchedulerOutlookExchange,
+    cxDateNavigator,
+    cxSchedulerReminderWindow,
+    cxSchedulerTimeGridView,
+    cxSchedulerYearView,
+    cxSchedulerWeekView,
+    cxSchedulerGanttView,
+    cxSchedulerHolidaysLocationHolidayEditor,
+    cxSchedulerHolidays,
+    cxSchedulerHolidaysEditor,
+    cxSchedulerHolidaysLocationEditor,
+    cxSchedulerICalendar,
+    cxSchedulerTaskDependencyEditor,
+    cxSchedulerEditorFormManager,
+    
+  // cxSchedulerTreeBrowser
+  
+    cxSchedulerTreeListBrowser,
+  
+  // cxSchedulerRibbonStyleEventEditor
+  
+    cxSchedulerRibbonStyleEventEditor,
+    
+  // dxSkinscxSchedulerPainter
+  
+    dxSkinscxSchedulerPainter,
+         
+  // dxMapControl
+  
+    dxBingMapImageryDataService,
+    dxBingMapLocationDataService,
+    dxBingMapRESTService,
+    dxBingMapRESTServiceStrs,
+    dxBingMapRouteDataService,
+    dxCustomMapItemLayer,
+    dxDbfFileInfo,
+    dxKmlElements,
+    dxKmlTokens,
+    dxMapControl,
+    dxMapControlBingImageryServiceInfo,
+    dxMapControlBingMapImageryDataProvider,
+    dxMapControlBingMapInformationProviders,
+    dxMapControlCacheOptions,
+    dxMapControlDiskCache,
+    dxMapControlElementViewInfo,
+    dxMapControlGeometry,
+    dxMapControlHttpRequest,
+    dxMapControlImageTileProvider,
+    dxMapControlInformationProvider,
+    dxMapControlKmlFileLoader,
+    dxMapControlMultiScaleTile,
+    dxMapControlOpenStreetMapImageryDataProvider,
+    dxMapControlProjections,
+    dxMapControlShapeFileLoader,
+    dxMapControlTypes,
+    dxMapControlViewInfo,
+    dxMapImageTileLayer,
+    dxMapItem,
+    dxMapItemFileLayer,
+    dxMapItemLayer,
+    dxMapItemStyle,
+    dxMapLayer,
+    dxMapUnitConverter,
+    dxRESTService,
+    dxShapeFileInfo,
+           
+  // dxSpreadSheet
+  
+    dxSpreadSheet,
+    dxSpreadSheetClasses,
+    dxSpreadSheetCore,
+    dxSpreadSheetCoreHelpers,
+    dxSpreadSheetFormulas,
+    dxSpreadSheetPrinting,
+    dxSpreadSheetGraphics,
+    dxSpreadSheetNumberFormat,
+    dxSpreadSheetNumberFormatProviders,
+    dxSpreadSheetStrs,
+    dxSpreadSheetTypes,
+    dxSpreadSheetUtils,
+    dxSpreadSheetPopupMenu,
+    dxSpreadSheetFormatBinary,
+    dxSpreadSheetFormatCSV,
+    dxSpreadSheetFormatUtils,
+    dxSpreadSheetFormatODS,
+    dxSpreadSheetFormatODSFormulas,
+    dxSpreadSheetFormatODSHelpers,
+    dxSpreadSheetFormatODSReader,
+    dxSpreadSheetFormatODSTags,
+    dxSpreadSheetFormatXLS,
+    dxSpreadSheetFormatXLSTypes,
+    dxSpreadSheetFormatXLSFormulas,
+    dxSpreadSheetFormatXLSDrawing,
+    dxSpreadSheetFormatXLSX,
+    dxSpreadSheetFormatXLSXReader,
+    dxSpreadSheetFormatXLSXTags,
+    dxSpreadSheetFormatXLSXWriter,
+    dxSpreadSheetPackedFileFormatCore,
+    dxSpreadSheetDialogStrs,
+    dxSpreadSheetFormatCellsDialog,
+    dxSpreadSheetFormatCellsDialogHelpers,
+    dxSpreadSheetCellsModificationDialog,
+    dxSpreadSheetContainerCustomizationDialog,
+    dxSpreadSheetContainerCustomizationDialogHelpers,
+    dxSpreadSheetFunctions,
+    dxSpreadSheetFunctionsCompatibility,
+    dxSpreadSheetFunctionsDateTime,
+    dxSpreadSheetFunctionsFinancial,
+    dxSpreadSheetFunctionsInformation,
+    dxSpreadSheetFunctionsLogical,
+    dxSpreadSheetFunctionsLookup,
+    dxSpreadSheetFunctionsMath,
+    dxSpreadSheetFunctionsStatistical,
+    dxSpreadSheetFunctionsText,
+    dxSpreadSheetFunctionsParamInfoCompatibility,
+    dxSpreadSheetFunctionsParamInfoDateTime,
+    dxSpreadSheetFunctionsParamInfoInformation,
+    dxSpreadSheetFunctionsParamInfoFinancial,
+    dxSpreadSheetFunctionsParamInfoLogical,
+    dxSpreadSheetFunctionsParamInfoLookup,
+    dxSpreadSheetFunctionsParamInfoMath,
+    dxSpreadSheetFunctionsParamInfoStatistical,
+    dxSpreadSheetFunctionsParamInfoText,
+    dxSpreadSheetUnhideSheetDialog,
+      
+  // dxWizardControl
+  
+    dxCustomWizardControl,
+    dxWizardControl,
+    dxWizardControlForm,
+    dxWizardControlStrs,
+    dxWizardControlViewStyleAero,
+    dxWizardControlViewStyleWizard97,
+      

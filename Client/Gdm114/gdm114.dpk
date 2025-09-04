@@ -1,0 +1,60 @@
+package gdm114;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdlib,
+  gdm30,
+  ExtControlsNC;
+
+contains
+  a_dcm114 in 'a_dcm114.pas' {MntDcm114Form: TgxForm},
+  a_fab114 in 'a_fab114.pas' {MntFab114Form: TgxForm},
+  a_nav114 in 'a_nav114.pas' {MntNav114Form: TgxForm},
+  cx_dcm114 in 'cx_dcm114.pas' {CxDcmForm: TgxForm},
+  cx_fab114 in 'cx_fab114.pas' {CxFab114Form: TgxForm},
+  cx_nav114 in 'cx_nav114.pas' {CxNav114Form: TgxForm},
+  dm_dcm114 in 'dm_dcm114.pas' {DocumentoControlMercanciasModule: TDataModule},
+  dm_fab114 in 'dm_fab114.pas' {FabricaModule: TDataModule},
+  dm_nav114 in 'dm_nav114.pas' {NavieraModule: TDataModule},
+  f_dcm114 in 'f_dcm114.pas' {DCMFunctionsModule: TDataModule},
+  gdm114Dm in 'gdm114Dm.pas' {DataModule114: TDataModule},
+  l_dcm114 in 'l_dcm114.pas' {RptFdvForm: TgxForm},
+  l_fab114 in 'l_fab114.pas' {RptFab114Form: TgxForm},
+  l_nav114 in 'l_nav114.pas' {RptNav114Form: TgxForm},
+  dmi_dcm114 in '..\..\Interface\Gim114\dmi_dcm114.pas',
+  Gim114Fields in '..\..\Interface\Gim114\Gim114Fields.pas';
+
+end.

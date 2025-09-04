@@ -1,0 +1,46 @@
+{
+  "customer": {
+    "id": 7820,
+    "groupId": 85,
+    "websiteId": 1,
+    "email": "iursa@fcc.es",
+    "firstname": "FCC MEDIO AMBIENTE, S.A.U.",
+    "lastname": ".",
+    "taxvat": "A28541639",
+    "disableAutoGroupChange": 1,
+    "addresses": [
+      {
+        "id": 6917,
+        "customerId": 7820,
+        "countryId": "ES",
+        "firstname": "FCC MEDIO AMBIENTE, S.A.U.",
+        "lastname": ".",
+        "company": "FCC MEDIO AMBIENTE, S.A.U.",
+        "street": [
+          "C/FEDERICO SALMON, 13"
+        ],
+        "city": "MADRID",
+        "postcode": "28016",
+        "region": "Madrid",
+        "telephone": "917.872.800",
+        "defaultBilling": true
+      },
+      {
+        "id": 6918,
+        "customerId": 7820,
+        "countryId": "ES",
+        "firstname": "FCC MEDIO AMBIENTE, S.A.",
+        "lastname": ".",
+        "company": "FCC MEDIO AMBIENTE, S.A.",
+        "street": [
+          "POL. IND. PATADA DEL CID - C/RIU MAGRE, 6"
+        ],
+        "city": "QUART DE POBLET",
+        "postcode": "46930",
+        "region": "Valencia",
+        "telephone": "917.872.800",
+        "defaultShipping": true
+      }
+    ]
+  }
+}

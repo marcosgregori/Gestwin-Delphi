@@ -1,0 +1,192 @@
+{
+  "id": 3386,
+  "sku": "SH2017C",
+  "name": "SH2017 Chaqueta unisex - Outdoor jacket (C)",
+  "attribute_set_id": 4,
+  "price": 0,
+  "status": 1,
+  "visibility": 4,
+  "type_id": "configurable",
+  "created_at": "2025-02-17 07:03:41",
+  "updated_at": "2025-02-17 07:06:23",
+  "weight": 0,
+  "extension_attributes": {
+    "website_ids": [
+      1
+    ],
+    "category_links": [
+      {
+        "position": 0,
+        "category_id": "89"
+      },
+      {
+        "position": 0,
+        "category_id": "95"
+      }
+    ],
+    "stock_item": {
+      "item_id": 5986,
+      "product_id": 3386,
+      "stock_id": 1,
+      "qty": 0,
+      "is_in_stock": false,
+      "is_qty_decimal": false,
+      "show_default_notification_message": false,
+      "use_config_min_qty": true,
+      "min_qty": 0,
+      "use_config_min_sale_qty": 1,
+      "min_sale_qty": 1,
+      "use_config_max_sale_qty": true,
+      "max_sale_qty": 10000,
+      "use_config_backorders": true,
+      "backorders": 0,
+      "use_config_notify_stock_qty": true,
+      "notify_stock_qty": 1,
+      "use_config_qty_increments": true,
+      "qty_increments": 0,
+      "use_config_enable_qty_inc": true,
+      "enable_qty_increments": false,
+      "use_config_manage_stock": true,
+      "manage_stock": true,
+      "low_stock_date": null,
+      "is_decimal_divided": false,
+      "stock_status_changed_auto": 0
+    },
+    "configurable_product_options": [
+      {
+        "id": 1897,
+        "attribute_id": "139",
+        "label": "TALLA",
+        "position": 0,
+        "values": [
+          {
+            "value_index": 182
+          },
+          {
+            "value_index": 179
+          },
+          {
+            "value_index": 178
+          },
+          {
+            "value_index": 177
+          },
+          {
+            "value_index": 181
+          },
+          {
+            "value_index": 183
+          },
+          {
+            "value_index": 156
+          },
+          {
+            "value_index": 162
+          },
+          {
+            "value_index": 168
+          },
+          {
+            "value_index": 174
+          }
+        ],
+        "product_id": 3386
+      }
+    ],
+    "configurable_product_links": [
+      3387,
+      3388,
+      3389,
+      3390,
+      3391,
+      3392,
+      3393,
+      3394,
+      3395,
+      3396
+    ]
+  },
+  "product_links": [],
+  "options": [],
+  "media_gallery_entries": [
+    {
+      "id": 2261,
+      "media_type": "image",
+      "label": null,
+      "position": 2,
+      "disabled": false,
+      "types": [
+        "image",
+        "small_image",
+        "thumbnail"
+      ],
+      "file": "\/s\/h\/sh2017_1_2.png"
+    }
+  ],
+  "tier_prices": [],
+  "custom_attributes": [
+    {
+      "attribute_code": "image",
+      "value": "\/s\/h\/sh2017_1_2.png"
+    },
+    {
+      "attribute_code": "featured",
+      "value": "0"
+    },
+    {
+      "attribute_code": "small_image",
+      "value": "\/s\/h\/sh2017_1_2.png"
+    },
+    {
+      "attribute_code": "thumbnail",
+      "value": "\/s\/h\/sh2017_1_2.png"
+    },
+    {
+      "attribute_code": "options_container",
+      "value": "container2"
+    },
+    {
+      "attribute_code": "url_key",
+      "value": "sh2017-chaqueta-unisex-outdoor-jacket-c-sh2017c"
+    },
+    {
+      "attribute_code": "msrp_display_actual_price_type",
+      "value": "0"
+    },
+    {
+      "attribute_code": "gift_message_available",
+      "value": "0"
+    },
+    {
+      "attribute_code": "discount_rate",
+      "value": "0.00"
+    },
+    {
+      "attribute_code": "required_options",
+      "value": "1"
+    },
+    {
+      "attribute_code": "has_options",
+      "value": "1"
+    },
+    {
+      "attribute_code": "tax_class_id",
+      "value": "4"
+    },
+    {
+      "attribute_code": "category_ids",
+      "value": [
+        "89",
+        "95"
+      ]
+    },
+    {
+      "attribute_code": "short_description",
+      "value": "Chaqueta outdoor Shell para mujer y hombre, fabricada en material impermeable y transpirable. Con cuello alto, capucha enrollable y extraíble con botones de presión. Cierre frontal con cremallera oculta, dos prácticos bolsillos. Zonas reflectantes y ribetes para una mejor visibilidad.\r\n\r\nCalidad: 75% poliéster reciclado \/ 25% poliéster convencional"
+    },
+    {
+      "attribute_code": "description",
+      "value": "Chaqueta outdoor Shell para mujer y hombre, fabricada en material impermeable y transpirable. Con cuello alto, capucha enrollable y extraíble con botones de presión. Cierre frontal con cremallera oculta, dos prácticos bolsillos. Zonas reflectantes y ribetes para una mejor visibilidad.\r\n\r\nCalidad: 75% poliéster reciclado \/ 25% poliéster convencional"
+    }
+  ]
+}

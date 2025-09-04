@@ -1,0 +1,1318 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{752efe00-2115-44a5-b39e-412fac6a43c4}</ProjectGuid>
+        <MainSource>WebSockets.dpk</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>C:\Users\Public\Documents\RAD Studio\5.0\Bpl\sgcWebSocketsD2007.bpl</DCC_DependencyCheckOutputName>
+        <ProjectVersion>20.3</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Base>True</Base>
+        <AppType>Package</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <ProjectName Condition="'$(ProjectName)'==''">WebSockets</ProjectName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
+        <Base_Win64x>true</Base_Win64x>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>WebSockets</SanitizedProjectName>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1027</VerInfo_Locale>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DCC_DependencyCheckOutputName>C:\Users\Public\Documents\RAD Studio\14.0\Bpl\sgcWebSocketsD10.bpl</DCC_DependencyCheckOutputName>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Description>WebSockets</DCC_Description>
+        <GenPackage>true</GenPackage>
+        <GenDll>true</GenDll>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DcpOutput>$(Source)\Lib</DCC_DcpOutput>
+        <DCC_BplOutput>$(App)</DCC_BplOutput>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <DCC_DcuOutput>$(Source)\Lib\Bin</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_Description>SGC WebSockets</DCC_Description>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters/>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1027</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">WebSockets.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+                <Platform value="Win64x">False</Platform>
+            </Platforms>
+            <Deployment Version="5">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\sgcWebSocketsD12.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDefV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-anydpi-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-anydpi-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV31">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_AdaptiveIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-anydpi-v26</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-anydpi-v26</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_AdaptiveIconBackground">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_AdaptiveIconForeground">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_AdaptiveIconMonochrome">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_AdaptiveIconV33">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-anydpi-v33</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-anydpi-v33</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_ColorsDark">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-night-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-night-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon192">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_VectorizedNotificationIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-anydpi-v24</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-anydpi-v24</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_VectorizedSplash">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_VectorizedSplashDark">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-night-anydpi-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-night-anydpi-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_VectorizedSplashV31">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-anydpi-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-anydpi-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_VectorizedSplashV31Dark">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-night-anydpi-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-night-anydpi-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iOS_AppStore1024">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon152">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_AppIcon167">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_SpotLight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_AppIcon180">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark2x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_LaunchDark3x">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification40">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Notification60">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting58">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Setting87">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight120">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Spotlight80">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="vclx.dcp"/>
+        <DCCReference Include="vclimg.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="inet.dcp"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcJSON.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket_Protocol_Base.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket_Protocol_Dataset_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket_Protocol_sgc_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIWWebSocket_Protocols.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocols.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_HTTP2.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_CustomClient.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_CustomServer.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Extensions.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Extension_Base.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Extension_DeflateFrame.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Extension_PerMessage_Deflate.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_HTTPResponse.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_Proxy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Resources.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Client_WinHTTP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_WinHTTP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_WinAPI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_HTTPAPI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_HTTPAPI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_HTTPAPI_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_HTTPAPI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_SRWLock.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Bitfinex.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Blockchain.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Pusher.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_SignalR.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_Threads.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_SocketIO.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Binance.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Bitstamp.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_APIs.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSTOMP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_ActiveMQ_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Broker_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_RabbitMQ_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_Sockets.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_Base.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcTCP_Classes_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Engine.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Bybit.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Bybit.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Classes_OpenSSL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Huobi.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_WorkOpThread.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth2_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Cex.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_AppRTC_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Bitmex.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_SyncObjs.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Classes_Queues.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_SignalRCore.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Kraken.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcBase_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcBase_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcBase_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcTCP_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcBase_Sync.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_ICE_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcTCP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_ICE_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Coinbase.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT_MQTT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT_Amazon_MQTT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIoT_Azure_MQTT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Coinbase.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_FXCM.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_SChannel.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_SChannel_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_WinSSPI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Amazon_AWS.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Amazon_SQS.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Amazon_AWS_Signature.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Discord.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Binance.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Google_Cloud.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Google_PubSub.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_Google_Calendar.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Kraken.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_Telegram.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_Telegram_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Classes_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Frame.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_HPACK.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP2_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth2_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcUDP_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcUDP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_ICE_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcUDP_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcUDP_Classes_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Amazon.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSocket_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSocket_Classes_Indy.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSocket_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_MultipartFormData.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_STUN_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_STUN_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_STUN_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_STUN_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_STUN_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_TURN_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_TURN_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_TURN_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_TURN_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_TURN_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_OpenAI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_EC.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_RCON_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Cryptohopper.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLibs.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_HMAC.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_ES.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_RSA.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_JWT_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_ThreeCommas.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_ThreeCommas.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_API_RTCMultiConnection.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_API_Base.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_API_SocketIO.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_APIs.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Bitmex.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_Kucoin.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Kucoin.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OpenAPI_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Google.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Microsoft.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth2_Client_Google.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth2_Client_Microsoft.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_WhatsApp.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_WhatsApp_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcLib_WhatsApp_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_OKX.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_XTB.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_RTCPeerConnection.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Server.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_DTLS.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcP2P_SDP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_EPOLL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_EPOLL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL_EPOLL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_Scheduler_IO.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcEPOLL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL_EPOLL.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_IOCP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL_IOCP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_IOCP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL_IOCP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_UDP.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_Groups.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_OAuth_Types.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_WebPush.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcSSL_HKDF.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Server_API_WebPush.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_AudioPlayer.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_AudioPlayer_MCI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_AudioRecorder.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_AudioRecorder_MCI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_OpenAI.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_OpenAI_Audio.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_OpenAI_Audio_ChatBot.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_OpenAI_Audio_Translator.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_SpeechToText.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_TextToSpeech.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_TextToSpeech_Amazon.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_TextToSpeech_Google.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_TextToSpeech_System.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_OpenAI_Embeddings.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_DB_Vector.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_DB_Vector_File.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Pinecone.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHelper_WebBrowser.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_DB_Vector_Pinecone.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAI_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP1_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Client.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Helpers.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Const.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP1_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP_ReadWrite.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcHTTP_API_Bitstamp.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcByte_Classes.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Frames.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Descriptors.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcWebSocket_API_CexPlus.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Message.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcAMQP1_Session.pas"/>
+        <DCCReference Include="sgcWebSockets\Source\sgcDebug.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

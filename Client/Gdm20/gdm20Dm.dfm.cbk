@@ -1,0 +1,32 @@
+object DataModule20: TDataModule20
+  OldCreateOrder = True
+  OnDestroy = DataModuleDestroy
+  Height = 252
+  Width = 263
+  object Dictionary: TnxeDatabaseDictionary
+    ActiveDesigntime = True
+    OnStateTransChanged = DictionaryStateTransChanged
+    Session = MainDataModule.MainSession
+    AliasPath = 'F:\Gestwin\dm20'
+    Left = 50
+    Top = 16
+  end
+  object ArqueoTable: TgTable
+    Dictionary = Dictionary
+    TableName = 'Arqueo'
+    FileName = 'Arqueo'
+    TableModel = tmDataFile
+    Temporal = False
+    Left = 50
+    Top = 68
+  end
+  object LineaArqueoTable: TgTable
+    Dictionary = Dictionary
+    TableName = 'LineaArqueo'
+    FileName = 'LineaArqueo'
+    TableModel = tmDataFile
+    Temporal = False
+    Left = 50
+    Top = 122
+  end
+end

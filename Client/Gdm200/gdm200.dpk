@@ -1,0 +1,51 @@
+package gdm200;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdlib,
+  rtl,
+  gdm30,
+  gdm10,
+  ExtControlsNC;
+
+contains
+  gdm200Dm in 'gdm200Dm.pas',
+  f_fco in 'f_fco.pas' {FcoFrame: TFrame},
+  dm_fce in 'dm_fce.pas' {FacturaElectronicaDataModule: TDataModule},
+  b_rfe in 'b_rfe.pas' {BoxRfeForm: TgxForm},
+  b_ife in 'b_ife.pas' {BoxIfeForm: TgxForm};
+
+end.

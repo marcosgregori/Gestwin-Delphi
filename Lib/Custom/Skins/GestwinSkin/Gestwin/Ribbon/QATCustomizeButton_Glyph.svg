@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g>
+		<polygon points="5,7 8,4 2,4  " fill="#707070" class="Mask" tag="Mask"/>
+	</g>
+	<g transform="translate(0, 10)">
+		<polygon points="9,5 6,2 6,8  " fill="#707070" class="Mask" tag="Mask"/>
+		<polygon points="5,5 2,2 2,8  " fill="#707070" class="Mask" tag="Mask1"/>
+	</g>
+</svg>

@@ -1,0 +1,86 @@
+package MainServerLib;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE SERVERAPP}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  vclx,
+  IndyProtocols,
+  Remote,
+  DBEngine,
+  MainLib,
+  Reports,
+  WebSockets;
+
+contains
+  nxdmServer in '..\Server\Lib\nxdmServer.pas' {dmServer: TDataModule},
+  BaseSessionData in '..\Server\Lib\BaseSessionData.pas' {BaseSessionDataModule: TDataModule},
+  nxServerSettings in '..\Server\Lib\nxServerSettings.pas',
+  BaseServerContainer in '..\Server\Lib\BaseServerContainer.pas' {BaseServerContainerModule: TDataModule},
+  nxServiceApp in '..\Server\Lib\nxServiceApp.pas' {WindowsService: TService},
+  MainData in '..\Server\Lib\MainData.pas' {MainDataModule},
+  SectionData in '..\Server\Lib\SectionData.pas' {SectionDataModule: TDataModule},
+  ServerDataModule in '..\Server\Lib\ServerDataModule.pas',
+  EnterpriseData in '..\Server\Lib\EnterpriseData.pas' {EnterpriseDataModule: TSectionDataModule},
+  nxAdminWebServerServiceSettings in '..\Server\Lib\nxAdminWebServerServiceSettings.pas',
+  nxFileServiceSettings in '..\Server\Lib\nxFileServiceSettings.pas',
+  nxRPCServicesSettings in '..\Server\Lib\nxRPCServicesSettings.pas',
+  nxWebServerServiceSettings in '..\Server\Lib\nxWebServerServiceSettings.pas',
+  ServerUtils in '..\Server\Lib\ServerUtils.pas',
+
+  // ScroogeHTML
+
+  ScroogeXHTML,
+  SxMain,
+  SxWriter,
+  SxDocument,
+  SxReader,
+  SxLanguage,
+  SxOutputWriter,
+  SxDocumentParagraph,
+  SxDocumentText,
+  SxBase,
+  SxFormatter,
+  SxUnicode,
+  SxPlatform,
+  SxHtmlTranslator,
+  SxXHtmlTranslator,
+  SxCustomTranslator,
+  SxInterfaces,
+  SxSimpleDomInterfaces,
+  SxDocumentNode,
+  SxOptions,
+  SxEmbeddedPicture,
+  SxTypes;
+
+end.
+
+

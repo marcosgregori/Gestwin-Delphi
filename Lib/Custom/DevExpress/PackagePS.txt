@@ -1,0 +1,139 @@
+// dxPSCore
+  
+    dxWrap,
+    dxBkGnd,
+    dxBrhDlg,
+    dxExtCtrls,
+    dxExtCtrlsStrs,
+    dxFEFDlg,
+    dxfmChFN,
+    dxfmClr,
+    dxfmDfnStl,
+    dxfmDTFmt,
+    dxfmMnPg,
+    dxfmPNFmt,
+    dxfmZoom,
+    dxPcPrVw,
+    dxPgsDlg,
+    dxPSHFLibrary,
+    dxPpAttr,
+    dxPreVw,
+    dxPrnDev,
+    dxPrnDlg,
+    dxPrnPg,
+    dxPSfmFootnotes,
+    dxPSAutoHFTextMnuBld,
+    dxPSCompsProvider,
+    dxPSCore,
+    dxPSCPDsg,
+    dxPSEdgePatterns,
+    dxPSEngn,
+    dxPSESys,
+    dxPSEvnt,
+    dxPSExcelEdgePatterns,
+    dxPSExcelFillPatterns,
+    dxPSFillPatterns,
+    dxPSfmAutoHFTextFmt,
+    dxPSfmCompositionAdd,
+    dxPSfmCompositionDsg,
+    dxPSfmEditDesc,
+    dxPSfmLnkAdd,
+    dxPSfmTtl,
+    dxPSForm,
+    dxPSGlbl,
+    dxPSGraphicLnk,
+    dxPSHFToolBarBld,
+    dxPSImgs,
+    dxPSPgsMnuBld,
+    dxPSPopupMan,
+    dxPSPrVw,
+    dxPSPrVwOpt,
+    dxPSPrVwStd,
+    dxPSRes,
+    dxPSSngltn,
+    dxPSUtl,
+    dxBase,
+    dxPSBaseGridLnk,
+    dxPSContainerLnk,
+    dxPSDBBasedXplorer,
+    dxPSExtDlgs,
+    dxPSFileBasedXplorer,
+    dxPSfmReportProperties,
+    dxPSShapes,
+    dxPSTextLnk,
+    dxPSStandardFillPatterns,
+    dxPSXplorerTreeView,
+    dxPSPDFStrings,
+    dxPSPDFExport,
+    dxPSReportRenderCanvas,
+    dxPSPDFExportCore,
+    dxPSPDFCrypt,
+    dxPSPDFFonts,
+    dxPSTrueTypeFont,
+    dxPSPDFMetaFileParser,
+    dxPSPDFExportDialog,
+    
+  // dxPSLnks
+  
+    dxPSGrLnks,
+    dxPSImgLnk,
+    dxPSLbxLnk,
+    dxPSChLbxLnk,
+    dxPSRELnk,
+    dxPSStdGrLnk,
+    dxPSTVLnk,
+    dxPSDBCtrlLnks,
+    dxPSDBCtrlProducers,
+    dxPSLVLnk,
+      
+  // dxPScxCommon
+  
+    dxPScxCommon,
+    dxPScxDBEditorLnks,
+    dxPScxEditorLnks,
+    dxPScxEditorProducers,
+    dxPScxImgLnk,
+    dxPScxListBoxLnk,
+      
+  // dxPScxExtCommon
+  
+    dxPScxCheckListBoxLnk,
+    dxPScxExtComCtrlsLnk,
+    dxPScxExtCommon,
+    dxPScxExtDBEditorLnks,
+    dxPScxExtEditorProducers,
+    dxPScxMCListBoxLnk,
+  
+  // dxPScxTLLnk
+  
+    dxPScxTLLnk,
+     
+  // dxPScxGridLnk
+    
+    dxPScxGridLnk,
+    dxPScxGridLayoutViewLnk,
+  
+  // dxPSdxSpreadSheetLnk
+  
+    dxPSdxSpreadSheetLnk,   
+    
+  // dxPScxSchedulerLnk
+  
+    dxPScxSchedulerLnk,
+  
+  // dxPScxPivotGridLnk
+  
+    dxPScxPivotGridLnk,
+  
+  // dxPScxPCProd
+  
+    dxPScxPageControlProducer,
+    
+  // dxPSPrVwRibbon
+  
+    dxPSPrVwRibbon,
+    
+  // dxPsPrVwAdv
+  
+    dxPSPrVwAdv;
+  

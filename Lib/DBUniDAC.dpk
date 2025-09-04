@@ -1,0 +1,152 @@
+package DBUniDAC;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IFNDEF POSIX}
+{$IMAGEBASE $400000}
+{$ENDIF}
+{$DESCRIPTION 'UniDAC'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vclx,
+  vcl,
+  rtl,
+  dbrtl,
+  vclimg,
+  vclwinx,
+  vcldb,
+  DBEngine;
+
+contains
+
+  // DAC
+
+  CRTypes,
+  CRProps,
+  CRFunctions,
+  CRAccess,
+  DALoader,
+  DAAlerter,
+  DADump,
+  DAScript,
+  CRParser,
+  CRServerEnumerator,
+  DAConsts,
+  DBMonitorMessages,
+  DBMonitorClient,
+  DASQLMonitor,
+  DBAccess,
+  MemData,
+  MemDS,
+  VirtualTable,
+  VirtualDataSet,
+  CLRClasses,
+  MemUtils,
+  CRBatchMove,
+  CRTimer,
+  CRThread,
+  CRConnectionPool,
+  CRXml,
+  CRVio,
+  CRVioSocket,
+  CRVioTcp,
+  CRVioUdp,
+  CRSecureConnection,
+  CRBase64,
+  CRBigInteger,
+  CRNumeric,
+  CRTimeStamp,
+  CRDataBuffer,
+  CRHttp,
+  CRVioHttp,
+  CRVioTcpSSL,
+  CRDataTypeMap,
+  CRCipher,
+  CRCryptoTransformIntf,
+  CRDECUtil,
+  CREncryption,
+  CRHash,
+  CRHashAlgorithm,
+  CRHMAC,
+  CRRNG,
+  CRSymmetricAlgorithm,
+  CRConnectionString,
+  CRSspi,
+  DASQLGenerator,
+  MTSCall,
+
+  // UniDAC
+
+  UniProvider,
+  Uni,
+  UniConsts,
+  UniScript,
+  UniLoader,
+  UniDump,
+  UniAlerter,
+  UniSQLMonitor,
+  UniConnectionString,
+
+  // UniDAC VCL
+
+  UniDacVcl,
+  UniConnectForm,
+
+  // NexusDB Provider
+
+  NexusClassesUni,
+  NexusPropsUni,
+  NexusConnectionPoolUni,
+  NexusConstsUni,
+  NexusErrorUni,
+  NexusParserUni,
+  NexusDataTypeMapUni,
+  NexusServicesUni,
+  NexusSQLGeneratorUni,
+  NexusConnectionStringUni,
+
+  // Virtual data access components
+
+  CRVirtualConsts,
+  CRVirtualData,
+  CRVirtualQuery,
+  VirtualDataTypeMap,
+  VirtualQuery,
+  LiteClassesVirtual,
+  LiteDataTypeMapVirtual,
+  LiteConstsVirtual,
+  LiteCallVirtual,
+  LiteStaticCallVirtual,
+  LiteErrorVirtual,
+  LiteParserVirtual,
+  LitePropsVirtual,
+  LiteFunctionVirtual,
+  LiteCollationVirtual,
+
+  // Controis
+
+  CRGrid;
+
+end.
+

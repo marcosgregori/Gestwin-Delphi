@@ -1,0 +1,239 @@
+	Crystal Report Professional v14.0 (32-bit) - Report Definition
+
+1.0 File Information
+
+	Report File: 
+	Version: 8.0
+
+2.0 Record Sort Fields
+
+3.0 Group Sort Fields
+
+4.0 Formulas
+
+4.1 Record Selection Formula
+	{RelacionMateriales.CodigoComponente} in {@CodigoInicial} to {@CodigoFinal}
+
+4.2 Group Selection Formula
+	
+
+4.3 Other Formulas
+
+	Name: {@CabeceraEmpresa}
+	Formula: {@Empresa_Codigo} + ' - '  + {@Empresa_Nombre} + ' - ' + ToText( {@Ejercicio},0 ) 
+
+	Name: {@Hora}
+	Formula: CurrentTime
+
+	Name: {@Usuario_Codigo}
+	Formula: '02'
+
+	Name: {@Informe_Titulo}
+	Formula: ''
+
+	Name: {@TituloClaseA}
+	Formula: ''
+
+	Name: {@TituloClaseB}
+	Formula: ''
+
+	Name: {@TituloClaseC}
+	Formula: ''
+
+	Name: {@TextoLimites}
+	Formula: ': desde el código ['+ {@CodigoInicial} + '] hasta el [' + {@CodigoFinal} + '].';
+
+5.0 Sectional Information
+
+5.1 Page Header Section
+	Visible, Keep Together
+
+	{@CabeceraEmpresa}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together
+
+
+	PrintDate
+		Date, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Windows Default Type: Not Using Windows Defaults, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: Long, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ', '
+
+
+	{@Hora}
+		Time, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Time Base: 24 Hour, AM/PM Type: AM/PM After, Hour Type: Numeric, Minute Type: Numeric, Second Type: None, AM String: ' AM', PM String: ' PM', Hour Minute Separator: ':', Minute  Second Separator: ':'
+
+
+	{@Usuario_Codigo}
+		String, Visible, Right Alignment, Top Alignment, 
+		Keep Together
+
+
+	Código
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Descripción
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{@Informe_Titulo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TituloClaseA}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TituloClaseB}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TituloClaseC}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	Proc.
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cantidad
+		String, Visible, Horizontal Centre Alignment, Top Alignment, 
+		Keep Together
+
+
+
+5.2 Page Footer Section
+	Visible, New Page After, Print At Bottom of Page
+
+	GESTWIN
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Página
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	PageNumber
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, No Leading Zero, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.3 Report Header Section
+	Visible, New Page Before
+
+	Criterios
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Lìmites
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{@TextoLimites}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.4 Report Footer Section
+	Visible, New Page After
+
+5.5 Group Header Section
+	Visible
+
+	{RelacionMateriales.CodigoComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.ClaseAComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.ClaseBComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.ClaseCComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Componente.Descripcion}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.6 Group Footer Section
+	Visible
+
+5.7 Details Section
+	Visible
+
+	Subsection.1 
+		Visible
+
+	{RelacionMateriales.CodigoArticulo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.CodigoClaseA}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.CodigoClaseB}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.CodigoClaseC}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Articulo.Descripcion}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{RelacionMateriales.Proceso}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	{RelacionMateriales.Cantidad}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 2 Decimal Places, Rounding: 0.01, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecComponentes}
+		Rounding Type: {@DecComponentes}
+		

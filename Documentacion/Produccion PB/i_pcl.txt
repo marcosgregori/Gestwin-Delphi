@@ -1,0 +1,250 @@
+	Crystal Report Professional v14.0 (32-bit) - Report Definition
+
+1.0 File Information
+
+	Report File: 
+	Version: 8.0
+
+2.0 Record Sort Fields
+
+3.0 Group Sort Fields
+
+4.0 Formulas
+
+4.1 Record Selection Formula
+	
+
+4.2 Group Selection Formula
+	
+
+4.3 Other Formulas
+
+	Name: {@Hora}
+	Formula: CurrentTime
+
+	Name: {@Usuario_Codigo}
+	Formula: '02'
+
+	Name: {@Empresa_Nombre}
+	Formula: 'Empresa de Demostración, S.L.'
+
+5.0 Sectional Information
+
+5.1 Page Header Section
+	Visible
+
+	PrintDate
+		Date, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Windows Default Type: Not Using Windows Defaults, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: Long, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ', '
+
+
+	{@Hora}
+		Time, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Time Base: 24 Hour, AM/PM Type: AM/PM After, Hour Type: Numeric, Minute Type: Numeric, Second Type: None, AM String: ' AM', PM String: ' PM', Hour Minute Separator: ':', Minute  Second Separator: ':'
+
+
+	{@Usuario_Codigo}
+		String, Visible, Right Alignment, Top Alignment, 
+		Keep Together
+
+
+	Relación de artículos a servir de almacén ('Picking list')
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{@Empresa_Nombre}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.2 Page Footer Section
+	Visible, New Page After, Print At Bottom of Page
+
+	GESTWIN
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Página
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	PageNumber
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, No Leading Zero, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.3 Report Header Section
+	Hidden, New Page Before
+
+5.4 Report Footer Section
+	Visible, New Page After
+
+5.5 Group Header Section
+	Visible
+
+	Nº de operación
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Header.CodigoEntero}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Fecha
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Header.Fecha1}
+		Date, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Windows Default Type: Use Windows Long Date, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: Long, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ' '
+
+
+5.6 Group Footer Section
+	Visible
+
+5.7 Details Section
+	Visible
+
+	Subsection.1 
+		Visible
+
+		Format Formulas
+
+		Visible: not {Lines.Logico1}
+		
+	Subsection.2 
+		Visible, Keep Together
+
+		Format Formulas
+
+		Visible: {Lines.Logico1}
+		
+	{Lines.ValorTexto5}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.Descripcion2}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	Nº pedido
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cliente
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Lines.ValorEntero1}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Artículo
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Lines.ValorTexto1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.ValorTexto2}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.ValorTexto3}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.Descripcion1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	Servir
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Lines.ValorNumerico2}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 2 Decimal Places, Rounding: 0.01, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Lote
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Alm.
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cantidad
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Ubicación
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Lines.ValorTexto1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.ValorTexto2}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.Descripcion1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Lines.ValorNumerico1}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 2 Decimal Places, Rounding: 0.01, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+

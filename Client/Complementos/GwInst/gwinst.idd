@@ -1,0 +1,31 @@
+
+; Fichero de configuración del instalador de aplicaciones GESTWIN
+;                  © 1996, Winstation, S.L.
+;          Realizado por Marcos Gregori Forestier.
+
+; Application | Demo | Module, App number, Version, release
+
+&Params,Demo, 102, 1, 0
+
+; source file name,
+; [ AppRoot, AppVersion, AppReports, Windows, System ] target file name,
+; overwrite        [ False, True ],
+; Install option   [ All, None, Local, Client, Server ]
+;
+
+#1
+
+pg32.dl_,                      [AppRoot]pg32.dll,                     True,  All
+u2ftext.dll,                   [AppRoot]u2ftext.dll,                  True,  All
+u2fwks.dll,                    [AppRoot]u2fwks.dll,                   True,  All
+u2fwordw.dll,                  [AppRoot]u2fwordw.dll,                 True,  All
+u2ddisk.dll,                   [AppRoot]u2ddisk.dll,                  True,  All
+u2fxls.dll,                    [AppRoot]u2fxls.dll,                   True,  All
+co2c40en.dll,                  [System]co2c40en.dll,                  False, All
+implode.dll,                   [System]implode.dll,                   False, All
+
+&JOIN,[AppRoot]CRPE32.DLL,3
+
+&DDE,[CreateGroup(Aplicaciones GESTWIN)]
+&DDE,[AddItem(%sGESTWIN\N102.EXE,"GESTWIN Modulo 102",%sGESTWIN\N102.EXE)]
+

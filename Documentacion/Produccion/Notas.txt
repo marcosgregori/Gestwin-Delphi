@@ -1,0 +1,11 @@
+
+Apuntes de producción
+
+· Cuando se asigna una maquina a una operación se mantiene el turno inicial en todas las tareas posteriores de la misma operación
+    
+    Es decir, que si se asigna, por ejemplo, una tarea el día 02.02.2022 a la máquina M1, en el turno de la mañana (1), aunque esa 
+    máquina esté disponible en el turno de la tarde (2) no se cambiará el turno de la producción y se asignará la siguiente tarea 
+    al turno de la mañana del día 03.02.2022.
+    Este comportamiento podría ser configurable (puede que a algún cliente le interesa repartir las operaciones entre turnos).
+
+· 

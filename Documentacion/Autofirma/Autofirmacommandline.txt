@@ -1,0 +1,3 @@
+autofirmacommandline sign -i C\factura.XML -o C:\FacturaFirmada.xml -store windows -alias "ALIAS DEL CERTIFICADO" -format facturae -config signatureProductionCity=MADRID\nsignatureProductionProvince= MADRID\nsignatureProductionPostalCode= 28070\nsignatureProductionCountry= ESPAÑA
+
+autofirmacommandline sign -i F:\Desktop\Gestwin\doc_001\Facturas de venta\2023\FacturaE Firmada\fv2023__8.xml -o F:\Desktop\Gestwin\doc_001\Facturas de venta\2023\FacturaE Firmada\fv2023__8.xml -store windows -alias "18933122M_MARCO_MANUEL_GREGORI__R:_B12406989_" -format facturae -config signatureProductionCity=Benicarló\nsignatureProductionProvince=Castellón\nsignatureProductionPostalCode=580\nsignatureProductionCountry=España'

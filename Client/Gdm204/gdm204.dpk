@@ -1,0 +1,51 @@
+package gdm204;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdlib,
+  gdm30,
+  gdm10,
+  ExtControlsNC;
+
+contains
+  f_cnf204 in 'f_cnf204.pas' {ExportacionModule: TDataModule},
+  gdm204Dm in 'gdm204Dm.pas' {DataModule204: TDataModule},
+  i_pck in 'i_pck.pas',
+  Gim204Fields in '..\..\Interface\Gim204\Gim204Fields.pas',
+  b_roi in 'b_roi.pas' {BoxRolForm: TgxForm};
+
+end.
+

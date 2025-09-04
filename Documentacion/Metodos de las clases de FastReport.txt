@@ -1,0 +1,140 @@
+
+
+Clase           : TfrxDataSet
+-------------------------------------------------------------------------------------
+Metodos         : procedure Open
+                  procedure Close
+                  procedure First
+                  procedure Next
+                  procedure Prior
+                  function Eof: Boolean
+                  function FieldsCount: Integer
+                  function HasField(const fName: String): Boolean
+                  function IsBlobField(const fName: String): Boolean
+                  function RecordCount: Integer
+                  procedure GetFieldList(List: TStrings)
+Propiedades     : RecNo : Integer
+                  DisplayText : String
+                  DisplayWidth: Integer
+                  FieldType : TfrxFieldType
+                  Value : Variant
+
+Clase           : TfrxComponent
+-------------------------------------------------------------------------------------
+Métodos         : procedure Clear
+                  function FindObject(s: String): TfrxComponent
+                  procedure LoadFromStream(Stream: TStream)
+                  procedure SaveToStream(Stream: TStream; SaveChildren: Boolean = True)
+                  procedure SetBounds(ALeft, ATop, AWidth, AHeight: Extended)
+Propiedades     : Objects : TList
+                  AllObjects : TList
+                  Parent : TfrxComponent
+                  Page : TfrxPage
+                  AbsLeft : Extended
+                  AbsTop : Extended
+
+Clase           : TfrxDialogControl
+-------------------------------------------------------------------------------------
+Métodos         : procedure SetFocus
+
+Clase           : TfrxStretcheable
+-------------------------------------------------------------------------------------
+Métodos         : function CalcHeight: Extended
+
+Clase           : TfrxCustomMemoView
+-------------------------------------------------------------------------------------
+Métodos         : function CalcWidth: Extended
+Propiedades     : Text : String
+                  Lines : TStrings
+                  Value : Variant
+
+Clase           : TfrxCustomMemoView
+-------------------------------------------------------------------------------------
+Métodos         : 
+    with AddClass(TfrxPictureView, 'TfrxView') do
+      AddMethod('procedure LoadFromFile(filename: String)', CallMethod);
+    AddClass(TfrxSubreport, 'TfrxView');
+    with AddClass(TfrxBand, 'TfrxReportComponent') do
+      AddProperty('Overflow', 'Boolean', GetProp, nil);
+    AddClass(TfrxDataBand, 'TfrxBand');
+    AddClass(TfrxHeader, 'TfrxBand');
+    AddClass(TfrxFooter, 'TfrxBand');
+    AddClass(TfrxMasterData, 'TfrxDataBand');
+    AddClass(TfrxDetailData, 'TfrxDataBand');
+    AddClass(TfrxSubDetailData, 'TfrxDataBand');
+    AddClass(TfrxDataBand4, 'TfrxDataBand');
+    AddClass(TfrxDataBand5, 'TfrxDataBand');
+    AddClass(TfrxDataBand6, 'TfrxDataBand');
+    AddClass(TfrxPageHeader, 'TfrxBand');
+    AddClass(TfrxPageFooter, 'TfrxBand');
+    AddClass(TfrxColumnHeader, 'TfrxBand');
+    AddClass(TfrxColumnFooter, 'TfrxBand');
+    AddClass(TfrxGroupHeader, 'TfrxBand');
+    AddClass(TfrxGroupFooter, 'TfrxBand');
+    AddClass(TfrxReportTitle, 'TfrxBand');
+    AddClass(TfrxReportSummary, 'TfrxBand');
+    AddClass(TfrxChild, 'TfrxBand');
+    AddClass(TfrxOverlay, 'TfrxBand');
+    AddClass(TfrxPage, 'TfrxComponent');
+    AddClass(TfrxReportPage, 'TfrxPage');
+    with AddClass(TfrxDialogPage, 'TfrxPage') do
+      AddProperty('ModalResult', 'Integer', GetProp, SetProp);
+    AddClass(TfrxDMPPage, 'TfrxReportPage');
+    AddClass(TfrxEngineOptions, 'TPersistent');
+    AddClass(TfrxPrintOptions, 'TPersistent');
+    AddClass(TfrxPreviewOptions, 'TPersistent');
+    AddClass(TfrxReportOptions, 'TPersistent');
+    AddClass(TfrxVariable, 'TCollectionItem');
+    with AddClass(TfrxVariables, 'TCollection') do
+    begin
+      AddDefaultProperty('Variables', 'String', 'Variant', CallMethod);
+    end;
+    with AddClass(TfrxReport, 'TfrxComponent') do
+    begin
+      AddMethod('function Calc(const Expr: String): Variant', CallMethod);
+      AddMethod('function GetDataset(const Alias: String): TfrxDataset', CallMethod);
+      AddMethod('function LoadFromFile(const FileName: String): Boolean', CallMethod);
+      AddMethod('procedure SaveToFile(const FileName: String)', CallMethod);
+      AddMethod('procedure ShowReport', CallMethod);
+      AddProperty('Terminated', 'Boolean', GetProp, SetProp);
+    end;
+    with AddClass(TfrxCustomEngine, 'TPersistent') do
+    begin
+      AddMethod('procedure AddAnchor(const Text: String)', CallMethod);
+      AddMethod('procedure NewPage', CallMethod);
+      AddMethod('procedure NewColumn', CallMethod);
+      AddMethod('procedure ShowBand(Band: TfrxBand)', CallMethod);
+      AddMethod('procedure StopReport', CallMethod);
+      AddMethod('function FreeSpace: Extended', CallMethod);
+      AddMethod('function GetAnchorPage(const Text: String): Integer', CallMethod);
+    end;
+    AddClass(TfrxEngine, 'TfrxCustomEngine');
+    with AddClass(TfrxCustomOutline, 'TPersistent') do
+    begin
+      AddMethod('procedure AddItem(const Text: String)', CallMethod);
+      AddMethod('procedure LevelRoot', CallMethod);
+      AddMethod('procedure LevelUp', CallMethod);
+    end;
+    AddClass(TfrxOutline, 'TfrxCustomOutline');
+
+    AddMethod('function DayOf(Date: TDateTime): Integer', CallMethod, 'ctDate');
+    AddMethod('function MonthOf(Date: TDateTime): Integer', CallMethod, 'ctDate');
+    AddMethod('function YearOf(Date: TDateTime): Integer', CallMethod, 'ctDate');
+
+    { note: these functions don't have implementation here. They are implemented
+      in the frxClass.pas unit }
+    AddMethod('function IIF(Expr: Boolean; TrueValue, FalseValue: Variant): Variant',
+      nil, 'ctOther');
+    AddMethod('function SUM(Expr: Variant; Band: Variant = 0; Flags: Integer = 0): Variant',
+      nil, 'ctAggregate');
+    AddMethod('function AVG(Expr: Variant; Band: Variant = 0; Flags: Integer = 0): Variant',
+      nil, 'ctAggregate');
+    AddMethod('function MIN(Expr: Variant; Band: Variant = 0; Flags: Integer = 0): Variant',
+      nil, 'ctAggregate');
+    AddMethod('function MAX(Expr: Variant; Band: Variant = 0; Flags: Integer = 0): Variant',
+      nil, 'ctAggregate');
+    AddMethod('function COUNT(Band: Variant = 0; Flags: Integer = 0): Variant',
+      nil, 'ctAggregate');
+
+    AddedBy := nil;
+  end;

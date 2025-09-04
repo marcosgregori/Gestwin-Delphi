@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "attribute_group_id": "7",
+      "attribute_group_name": "Product Details",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "13",
+      "attribute_group_name": "Content",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "19",
+      "attribute_group_name": "Bundle Items",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "10",
+      "attribute_group_name": "Images",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "9",
+      "attribute_group_name": "Search Engine Optimization",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "8",
+      "attribute_group_name": "Advanced Pricing",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "11",
+      "attribute_group_name": "Design",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "14",
+      "attribute_group_name": "Schedule Design Update",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "12",
+      "attribute_group_name": "Autosettings",
+      "attribute_set_id": 4
+    },
+    {
+      "attribute_group_id": "20",
+      "attribute_group_name": "Gift Options",
+      "attribute_set_id": 4
+    }
+  ],
+  "search_criteria": {
+    "filter_groups": [
+      {
+        "filters": [
+          {
+            "field": "attribute_set_id",
+            "value": "4",
+            "condition_type": "eq"
+          }
+        ]
+      }
+    ],
+    "page_size": 20
+  },
+  "total_count": 10
+}

@@ -1,0 +1,75 @@
+Tipo de fichero Norma 19-14 - Presentación de adeudos
+
+Se han detectado errores en el proceso de validación del fichero: 
+-Línea 1 en la posición 116: Fecha posterior a la máxima permitida
+-Línea 2 en la posición 11: Error en el formato de identificación. Debe empezar con código país (dos caracteres), dos dígitos de control válidos, tres dígitos para un sufijo y el resto de dígitos para el identificador (por ejemplo, el NIF o NIE).
+-Línea 2 en la posición 46: Fecha incorrecta
+-Línea 2 en la posición 264: País desconocido
+-Línea 2 en la posición 266: País desconocido
+-Línea 3 en la posición 81: Valor no previsto para esta posición
+-Línea 3 en la posición 89: Número incorrecto
+-Línea 3 en la posición 100: Fecha incorrecta
+-Línea 3 en la posición 119: Dato obligatorio
+-Línea 4 en la posición 81: Valor no previsto para esta posición
+-Línea 4 en la posición 89: Número incorrecto
+-Línea 4 en la posición 100: Fecha incorrecta
+-Línea 4 en la posición 119: Dato obligatorio
+-Línea 5 en la posición 81: Valor no previsto para esta posición
+-Línea 5 en la posición 89: Número incorrecto
+-Línea 5 en la posición 100: Fecha incorrecta
+-Línea 5 en la posición 119: Dato obligatorio
+-Línea 6 en la posición 81: Valor no previsto para esta posición
+-Línea 6 en la posición 89: Número incorrecto
+-Línea 6 en la posición 100: Fecha incorrecta
+-Línea 6 en la posición 119: Dato obligatorio
+-Línea 7 en la posición 81: Valor no previsto para esta posición
+-Línea 7 en la posición 89: Número incorrecto
+-Línea 7 en la posición 100: Fecha incorrecta
+-Línea 7 en la posición 119: Dato obligatorio
+-Línea 8 en la posición 81: Valor no previsto para esta posición
+-Línea 8 en la posición 89: Número incorrecto
+-Línea 8 en la posición 100: Fecha incorrecta
+-Línea 8 en la posición 119: Dato obligatorio
+-Línea 9 en la posición 81: Valor no previsto para esta posición
+-Línea 9 en la posición 89: Número incorrecto
+-Línea 9 en la posición 100: Fecha incorrecta
+-Línea 9 en la posición 119: Dato obligatorio
+-Línea 10 en la posición 81: Valor no previsto para esta posición
+-Línea 10 en la posición 89: Número incorrecto
+-Línea 10 en la posición 100: Fecha incorrecta
+-Línea 10 en la posición 119: Dato obligatorio
+-Línea 10 en la posición 46: Referencia del mandato duplicada.
+-Línea 11 en la posición 81: Valor no previsto para esta posición
+-Línea 11 en la posición 89: Número incorrecto
+-Línea 11 en la posición 100: Fecha incorrecta
+-Línea 11 en la posición 119: Dato obligatorio
+-Línea 12 en la posición 81: Valor no previsto para esta posición
+-Línea 12 en la posición 89: Número incorrecto
+-Línea 12 en la posición 100: Fecha incorrecta
+-Línea 12 en la posición 119: Dato obligatorio
+-Línea 12 en la posición 46: Referencia del mandato duplicada.
+-Línea 13 en la posición 81: Valor no previsto para esta posición
+-Línea 13 en la posición 89: Número incorrecto
+-Línea 13 en la posición 100: Fecha incorrecta
+-Línea 13 en la posición 119: Dato obligatorio
+-Línea 14 en la posición 81: Valor no previsto para esta posición
+-Línea 14 en la posición 89: Número incorrecto
+-Línea 14 en la posición 100: Fecha incorrecta
+-Línea 14 en la posición 119: Dato obligatorio
+-Línea 14 en la posición 46: Referencia del mandato duplicada.
+-Línea 15 en la posición 3: Identificador del acreedor diferente del que consta en el registro de cabecera del bloque acreedor-fecha.
+-Línea 15 en la posición 38: Fecha incorrecta
+-Línea 15 en la posición 38: Fecha de cobro diferente de la que consta en el registro de cabecera del bloque acreedor-fecha.
+-Línea 15 en la posición 63: Dato obligatorio
+-Línea 15 en la posición 71: Dato obligatorio
+-Línea 15 en la posición 46: Total importe incorrecto
+-Línea 15 en la posición 71: Número de registros incorrecto
+-Línea 15 en la posición 63: Núm. recibos del ordenante incorrecto
+-Línea 16 en la posición 3: Identificador del acreedor diferente del que consta en el registro de cabecera del bloque acreedor-fecha.
+-Línea 16 en la posición 55: Dato obligatorio
+-Línea 16 en la posición 63: Dato obligatorio
+-Línea 16 en la posición 38: Total importe incorrecto
+-Línea 16 en la posición 63: Número de registros incorrecto
+-Línea 16 en la posición 55: Núm. recibos del ordenante incorrecto
+-Línea 17 en la posición 3: Total importe incorrecto
+-Línea 17 en la posición 28: Número de registros incorrecto

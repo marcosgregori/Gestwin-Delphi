@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g transform="translate(0, 0)">
+		<rect x="0" y="0" width="9" height="9" rx="0" ry="0" fill="#707070" class="st1" tag="st02"/>
+		<polygon points="7,4 5,4 5,2 4,2 4,4 2,4 2,5 4,5 4,7 5,7 5,5 7,5  " fill="#707070" id="Mask" class="st0" tag="st00"/>
+		<path d="M0, 0L0, 9L9, 9L9, 0L0, 0zM8, 8L1, 8L1, 1L8, 1L8, 8z" fill="#707070" class="st0" tag="st01"/>
+	</g>
+	<g transform="translate(0, 10)">
+		<rect x="0" y="0" width="9" height="9" rx="0" ry="0" fill="#707070" class="st1" tag="st02"/>
+		<rect x="2" y="4" width="5" height="1" rx="0" ry="0" fill="#707070" class="st0" tag="st00"/>
+		<path d="M0, 0L0, 9L9, 9L9, 0L0, 0zM8, 8L1, 8L1, 1L8, 1L8, 8z" fill="#707070" class="st0" tag="st01"/>
+	</g>
+	<g transform="translate(0, 20)">
+		<rect x="0" y="0" width="9" height="9" rx="0" ry="0" fill="#707070" class="st1" tag="st02"/>
+		<polygon points="7,4 5,4 5,2 4,2 4,4 2,4 2,5 4,5 4,7 5,7 5,5 7,5  " fill="#707070" id="Mask" class="st0" tag="st00"/>
+		<path d="M0, 0L0, 9L9, 9L9, 0L0, 0zM8, 8L1, 8L1, 1L8, 1L8, 8z" fill="#707070" class="st0" tag="st01"/>
+	</g>
+	<g transform="translate(0, 30)">
+		<rect x="0" y="0" width="9" height="9" rx="0" ry="0" fill="#707070" class="st1" tag="st02"/>
+		<rect x="2" y="4" width="5" height="1" rx="0" ry="0" fill="#707070" class="st0" tag="st00"/>
+		<path d="M0, 0L0, 9L9, 9L9, 0L0, 0zM8, 8L1, 8L1, 1L8, 1L8, 8z" fill="#707070" class="st0" tag="st01"/>
+	</g>
+</svg>

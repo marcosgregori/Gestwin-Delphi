@@ -1,0 +1,120 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{57fb643c-d760-4f16-83d9-5c1bd4c60153}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="GdPub\gdPub.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GdUpd\GdUpd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Instalar\Instalar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GwCopy\GwCopy.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GwInst\GwInst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GwExport\GwExport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GwRestore\GwRestore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GwMigrate\GwMigrate.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="gdPub">
+        <MSBuild Projects="GdPub\gdPub.dproj"/>
+    </Target>
+    <Target Name="gdPub:Clean">
+        <MSBuild Projects="GdPub\gdPub.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdPub:Make">
+        <MSBuild Projects="GdPub\gdPub.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GdUpd">
+        <MSBuild Projects="GdUpd\GdUpd.dproj"/>
+    </Target>
+    <Target Name="GdUpd:Clean">
+        <MSBuild Projects="GdUpd\GdUpd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GdUpd:Make">
+        <MSBuild Projects="GdUpd\GdUpd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Instalar">
+        <MSBuild Projects="Instalar\Instalar.dproj"/>
+    </Target>
+    <Target Name="Instalar:Clean">
+        <MSBuild Projects="Instalar\Instalar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Instalar:Make">
+        <MSBuild Projects="Instalar\Instalar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GwCopy">
+        <MSBuild Projects="GwCopy\GwCopy.dproj"/>
+    </Target>
+    <Target Name="GwCopy:Clean">
+        <MSBuild Projects="GwCopy\GwCopy.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GwCopy:Make">
+        <MSBuild Projects="GwCopy\GwCopy.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GwInst">
+        <MSBuild Projects="GwInst\GwInst.dproj"/>
+    </Target>
+    <Target Name="GwInst:Clean">
+        <MSBuild Projects="GwInst\GwInst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GwInst:Make">
+        <MSBuild Projects="GwInst\GwInst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GwExport">
+        <MSBuild Projects="GwExport\GwExport.dproj"/>
+    </Target>
+    <Target Name="GwExport:Clean">
+        <MSBuild Projects="GwExport\GwExport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GwExport:Make">
+        <MSBuild Projects="GwExport\GwExport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GwRestore">
+        <MSBuild Projects="GwRestore\GwRestore.dproj"/>
+    </Target>
+    <Target Name="GwRestore:Clean">
+        <MSBuild Projects="GwRestore\GwRestore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GwRestore:Make">
+        <MSBuild Projects="GwRestore\GwRestore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GwMigrate">
+        <MSBuild Projects="GwMigrate\GwMigrate.dproj"/>
+    </Target>
+    <Target Name="GwMigrate:Clean">
+        <MSBuild Projects="GwMigrate\GwMigrate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GwMigrate:Make">
+        <MSBuild Projects="GwMigrate\GwMigrate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="gdPub;GdUpd;Instalar;GwCopy;GwInst;GwExport;GwRestore;GwMigrate"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="gdPub:Clean;GdUpd:Clean;Instalar:Clean;GwCopy:Clean;GwInst:Clean;GwExport:Clean;GwRestore:Clean;GwMigrate:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="gdPub:Make;GdUpd:Make;Instalar:Make;GwCopy:Make;GwInst:Make;GwExport:Make;GwRestore:Make;GwMigrate:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,1167 @@
+<html xmlns:tns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<script id="ASW_status">window.status=' WIGEXSLT Plantilla xslt de facturas '</script>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+			function mostrarCapa(capa)
+			{
+				var datos = document.getElementById(capa).style.display;
+				if (datos != "none")
+				{
+					document.getElementById(capa + "Link").innerHTML = "Mostrar más datos";
+					document.getElementById(capa).style.display="none";
+				}
+				else
+				{
+					document.getElementById(capa + "Link").innerHTML = "Ocultar";
+					document.getElementById(capa).style.display="";
+				}
+			}
+			function mostrarFactura(numFactura)
+			{
+				var datos = document.getElementById(numFactura).style.display;
+				if (datos != "none")
+				{
+					document.getElementById("lote").style.display="";
+					document.getElementById("importesLote").style.display="";
+					if (document.getElementById("tercero")!=null)
+					{
+						document.getElementById("tercero").style.display="";
+					}
+					document.getElementById("listadoFacturas").style.display="";
+					document.getElementById("factura" + numFactura).style.display="none";
+					document.getElementById(numFactura).style.display="none";
+				}
+				else
+				{
+					document.getElementById("lote").style.display="none";
+					document.getElementById("importesLote").style.display="none";
+					if (document.getElementById("tercero")!=null)
+					{
+						document.getElementById("tercero").style.display="none";
+					}
+					document.getElementById("listadoFacturas").style.display="none";
+					document.getElementById("factura" + numFactura).style.display="";
+					document.getElementById(numFactura).style.display="";
+				}
+			}
+			function mostrarDetalle(numFactura,desDetalle)
+			{
+				var datos = document.getElementById(numFactura + "_" +
+				desDetalle).style.display;
+				if (datos != "none")
+				{
+					document.getElementById("emisor").style.display="";
+					document.getElementById("receptor").style.display="";
+					if (document.getElementById("cesionario")!=null)
+					{
+						document.getElementById("cesionario").style.display="";
+					}
+					document.getElementById("factura" + numFactura).style.display="";
+					document.getElementById(numFactura).style.display="";
+					document.getElementById(numFactura + "_" +
+					desDetalle).style.display="none";
+				}
+				else
+				{
+					document.getElementById("lote").style.display="none";
+					document.getElementById("importesLote").style.display="none";
+					document.getElementById("emisor").style.display="none";
+					document.getElementById("receptor").style.display="none";
+					if (document.getElementById("tercero")!=null)
+					{
+						document.getElementById("tercero").style.display="none";
+					}
+					if (document.getElementById("cesionario")!=null)
+					{
+						document.getElementById("cesionario").style.display="none";
+					}
+					document.getElementById("listadoFacturas").style.display="none";
+					document.getElementById("factura" + numFactura).style.display="none";
+					document.getElementById(numFactura).style.display="none";
+					document.getElementById(numFactura + "_" +
+					desDetalle).style.display="";
+				}
+			}
+		</script>
+<title>Resumen del lote de facturas</title>
+<style>
+		/* CSS de Facturae */ 
+		body {mso-style-parent:Normal; color:#135b8a; font-family:Arial; font-size:8.0pt; font-weight:normal; margin:0mm; margin-bottom:.0001pt; mso-pagination:widow-orphan; mso-bidi-font-size:12.0pt; mso-fareast-font-family:"Times New Roman"; mso-bidi-font-family:"Times New Roman";}
+		h3 {mso-style-parent:Normal; color:#135b8a; font-family:Arial; font-size:10.0pt; font-weight:normal; margin:0mm;margin-bottom:.0001pt; mso-pagination:widow-orphan; mso-bidi-font-size:12.0pt; mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";}
+		h1 {mso-style-next:Normal; color:#0096c8; font-family:Arial; font-size:14.0pt; font-weight:bold; margin:0mm;margin-bottom:.0001pt; text-align:center; mso-pagination:widow-orphan;page-break-after:avoid; mso-outline-level:1; mso-bidi-font-family:"Times New Roman"; mso-font-kerning:0pt;}
+		h2 {mso-style-next:Normal; color:#7dbee1; font-family:Arial; font-size:12.0pt; font-weight:normal; size:595.3pt 841.9pt; margin:10.0mm 19.85pt 30.05pt 20.0mm; mso-header-margin:5.65pt;mso-footer-margin:5.65pt; mso-paper-source:0;}	
+		a:link , a:visited , a:active {font-size:10.0pt; display:block; font-weight:bold; background-color:#a0d7a0; color:#ffffff; width:120px; text-align:center; padding:4px; text-decoration:none;}
+		a:hover {font-size:10.0pt; background-color:#619861; color:#ffffff;}
+		</style>
+</head>
+<body>
+<div id="principal">
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="90%">
+<tr>
+<td colspan="5" width="100%"><a href="javascript:history.go(-1)">VOLVER A FORMULARIO INICIO</a></td>
+</tr>
+<tr id="lote">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" colspan="2">
+<h1>RESUMEN DEL LOTE</h1>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="33%">
+<h3>N&Uacute;MERO</h3>
+<br>0000000707</td><td align="center" width="34%">
+<h3>VERSI&Oacute;N</h3>
+<br>3.2</td><td align="center" width="33%">
+<h3>MODALIDAD</h3>
+<br>INDIVIDUAL</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="33%">
+<h3>EMISOR DE LA FACTURA</h3>
+<br>Proveedor (Emisor)</td><td align="center" width="33%">
+<h3>NUM. FACTURAS</h3>
+<br>1</td><td align="center" width="34%">
+<h3>MONEDA DE FACTURACI&Oacute;N</h3>
+<br>EUR<font color="#ffffff">_</font>€</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="factura707" style="display:none">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center">
+<h1>FACTURA N&Uacute;MERO<font color="FFFFFF">_</font>707</h1>
+</td>
+</tr>
+<tr>
+<td align="right"><a href="#" onclick="mostrarFactura('707')">VOLVER AL LOTE</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="importesLote">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>IMPORTES</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td align="right">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>IMPORTE TOTAL FACTURAS<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>IMPORTE TOTAL A PAGAR<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>IMPORTE TOTAL A EJECUTAR<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="emisor">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td colspan="3">
+<hr color="a0d7a0">
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<h2>DATOS EMISOR</h2>
+</td><td align="right"><a href="javascript:mostrarCapa('datosEmisor')" id="datosEmisorLink">Mostrar m&aacute;s datos</a></td>
+</tr>
+<tr>
+<td colspan="3"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td colspan="2" width="50%">
+<h3>RAZ&Oacute;N SOCIAL</h3>
+<font color="FFFFFF">__</font>WinStation, S.L.</td><td width="50%">
+<h3>NIF/CIF:</h3>
+<font color="FFFFFF">__</font>ESB12406989</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="datosEmisor" style="display:none">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="50%">
+<h3>TIPO PERSONA:</h3>
+<font color="FFFFFF">__</font>Persona Jur&iacute;dica</td><td width="50%">
+<h3>TIPO RESIDENCIA:</h3>
+<font color="FFFFFF">__</font>Residente (en Espa&ntilde;a)</td>
+</tr>
+<tr>
+<td valign="top" width="10%">
+<h3>DIRECCI&Oacute;N:</h3>
+</td><td valign="top" width="40%">Avda. Yecla, 28<br>12580<font color="FFFFFF">__</font>Benicarl&oacute;<br>Castell&oacute;n<br>ESP</td><td valign="top" width="50%">
+<h3>NOMBRE COMERCIAL:</h3>
+<font color="FFFFFF">__</font>Comp</td>
+</tr>
+<tr>
+<td colspan="3" width="30%">
+<h3>DATOS DE CONTACTO:</h3>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td width="25%">
+<h3>Telephone:</h3>
+<font color="FFFFFF">__</font>964460646</td><td width="25%">
+<h3>Fax:</h3>
+<font color="FFFFFF">___</font>964461916</td><td width="25%">
+<h3>Web:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>Email:</h3>
+<font color="FFFFFF">___</font></td>
+</tr>
+<tr>
+<td width="25%">
+<h3>Personas de contacto:</h3>
+<font color="FFFFFF">__</font></td><td width="25%">
+<h3>CnoCnae:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>C&oacute;digo INE:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>Otros:</h3>
+<font color="FFFFFF">___</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="receptor">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td colspan="3">
+<hr color="a0d7a0">
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<h2>RECEPTOR DE LA FACTURA</h2>
+</td><td align="right"><a href="javascript:mostrarCapa('datosReceptor')" id="datosReceptorLink">Mostrar m&aacute;s datos</a></td>
+</tr>
+<tr>
+<td colspan="3"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td colspan="2" width="50%">
+<h3>NOMBRE Y APELLIDOS:</h3>
+<font color="FFFFFF">__</font><font color="FFFFFF">_</font><font color="FFFFFF">_</font><font color="FFFFFF">_</font></td><td width="50%">
+<h3>NIF/CIF:</h3>
+<font color="FFFFFF">__</font>ES47823748D</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="datosReceptor" style="display:none">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="50%">
+<h3>TIPO PERSONA:</h3>
+<font color="FFFFFF">__</font>Persona F&iacute;sica</td><td width="50%">
+<h3>TIPO RESIDENCIA:</h3>
+<font color="FFFFFF">__</font>Residente (en Espa&ntilde;a)</td>
+</tr>
+<tr>
+<td valign="top" width="10%">
+<h3>DIRECCI&Oacute;N:</h3>
+</td><td valign="top" width="40%">MOLI, 2, 3&ordm; PTA. 66<br>12500 VINAROS<br>Castell&oacute;n<br>ESP</td>
+</tr>
+<tr>
+<td colspan="3" width="30%">
+<h3>DATOS DE CONTACTO:</h3>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td width="25%">
+<h3>Telephone:</h3>
+<font color="FFFFFF">__</font>645090593</td><td width="25%">
+<h3>Fax:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>Web:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>Email:</h3>
+<font color="FFFFFF">___</font></td>
+</tr>
+<tr>
+<td width="25%">
+<h3>Personas de contacto:</h3>
+<font color="FFFFFF">__</font></td><td width="25%">
+<h3>CnoCnae:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>C&oacute;digo INE:</h3>
+<font color="FFFFFF">___</font></td><td width="25%">
+<h3>Otros:</h3>
+<font color="FFFFFF">___</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="707" style="display:none">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>RESUMEN FACTURA</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>N&Uacute;MERO</h3>
+<br>707</td><td align="center" width="25%">
+<h3>SERIE</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>TIPO</h3>
+<br>Factura Completa</td><td align="center" width="25%">
+<h3>CLASE</h3>
+<br>Original</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>FECHA EXPED.</h3>
+<br>10-06-2011</td><td align="center" width="25%">
+<h3>FECHA OPER.</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>LUGAR EXPED.</h3>
+<br>12580<font color="FFFFFF">_</font>Benicarl&oacute;</td><td align="center" width="25%">
+<h3>PERIODO FACT.</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>LENGUA</h3>
+<br>es</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>MONEDA OPERACI&Oacute;N</h3>
+<br>EUR<font color="#ffffff">_</font>€</td><td align="center" width="25%">
+<h3>MONEDA IMPUESTO</h3>
+<br>EUR<font color="#ffffff">_</font>€</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>DETALLES</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="48%">
+<h3>DESCRIPCI&Oacute;N</h3>
+</td><td align="center" width="12%">
+<h3>FECHA TRANS.</h3>
+</td><td align="center" width="10%">
+<h3>CANTIDAD</h3>
+</td><td align="center" width="15%">
+<h3>IMP. UNITARIO</h3>
+</td><td align="center" width="15%">
+<h3>TOTAL</h3>
+</td>
+</tr>
+<tr onMouseOut="this.style.background='#FFFFFF'" onMouseOver="this.style.background='#e6f0fa'" onclick="mostrarDetalle('707','GESTWIN Contable y Comercial 10 para Windows')" style="cursor:hand">
+<td valign="top" width="48%">GESTWIN Contable y Comercial 10 para Windows</td><td align="center" valign="top" width="12%"><font color="FFFFFF">_</font></td><td align="right" valign="top" width="10%">1,00</td><td align="right" valign="top" width="15%">1.503,00</td><td align="right" valign="top" width="15%">1.503,00</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2>IMPORTES</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>IMPORTE BRUTO<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.127,25</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>TOTAL IMPORTE BRUTO ANTES IMPUESTOS<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.127,25</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<h3>
+<i>IMPUESTOS REPERCUTIDOS</i>
+</h3>
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" valign="center" width="10%">
+<h3>CLASE DE IMPUESTO</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>TIPO (%)</h3>
+</td><td align="center" valign="center" width="20%">
+<h3>BASE IMPONIBLE</h3>
+</td><td align="center" valign="center" width="20%">
+<h3>CUOTA</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>BI.ESPECIAL</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>IMP.ESPECIAL</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>REC.EQ.</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>I.R.EQ.</h3>
+</td>
+</tr>
+<tr>
+<td>IVA</td><td align="center">18,00</td><td align="right">1.127,25</td><td align="right">202,91</td><td align="right">
+																		-
+																	</td><td align="right">
+																		-
+																	</td><td align="right">0,00</td><td align="right">0,00</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>TOTAL IMPUESTOS REPERCUTIDOS<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">202,91</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>TOTAL FACTURA<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>TOTAL A PAGAR<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>TOTAL A EJECUTAR<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>DATOS COBRO</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="10%">
+<h3>FECHA VENC.</h3>
+</td><td align="center" width="10%">
+<h3>IMPORTE</h3>
+</td><td align="center" width="10%">
+<h3>FORMA DE PAGO</h3>
+</td><td align="center" width="15%">
+<h3>CUENTA D&Eacute;BITO</h3>
+</td><td align="center" width="15%">
+<h3>CUENTA CR&Eacute;DITO</h3>
+</td><td align="center" width="10%">
+<h3>REF. PAGO</h3>
+</td><td align="center" width="10%">
+<h3>REF. PAGADOR</h3>
+</td><td align="center" width="10%">
+<h3>COD. ESTAD&Iacute;STICO</h3>
+</td><td align="center" width="10%">
+<h3>OBSERVACIONES</h3>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" width="10%">09-06-2011</td><td align="right" valign="top" width="10%">443,38</td><td align="center" valign="top" width="10%">Contado</td><td align="center" valign="top" width="15%"></td><td align="center" valign="top" width="15%"></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="10%">09-07-2011</td><td align="right" valign="top" width="10%">443,39</td><td align="center" valign="top" width="10%">Contado</td><td align="center" valign="top" width="15%"></td><td align="center" valign="top" width="15%"></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="10%">09-08-2011</td><td align="right" valign="top" width="10%">443,39</td><td align="center" valign="top" width="10%">Contado</td><td align="center" valign="top" width="15%"></td><td align="center" valign="top" width="15%"></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td><td valign="top" width="10%"><font color="FFFFFF">_</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<tr id="707_GESTWIN Contable y Comercial 10 para Windows" style="display:none">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" colspan="2">
+<h1>GESTWIN Contable y Comercial 10 para Windows</h1>
+</td>
+</tr>
+<tr>
+<td align="right"><a href="#" onclick="mostrarDetalle('707','GESTWIN Contable y Comercial 10 para Windows')">VOLVER A LA FACTURA</a></td>
+</tr>
+<tr>
+<td colspan="3"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>POSICION DE LA LINEA</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>CANTIDAD</h3>
+<br>1.00</td><td align="center" width="25%">
+<h3>UNIDAD DE MEDIDA</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>ID. ARTICULO</h3>
+<br>00210011</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>EXPEDIENTE CONTRATACI&Oacute;N EMISOR</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>FECHA</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>REFERENCIA OPERACI&Oacute;N EMISOR</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>FECHA</h3>
+<br>
+															-
+														</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="25%">
+<h3>EXPEDIENTE CONTRATACI&Oacute;N RECEPTOR</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>FECHA</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>REFERENCIA OPERACI&Oacute;N RECEPTOR</h3>
+<br>
+															-
+														</td><td align="center" width="25%">
+<h3>FECHA</h3>
+<br>
+															-
+														</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="50%">
+<h3>EXPEDIENTE</h3>
+<br>
+															-
+														</td><td align="center" width="50%">
+<h3>FECHA</h3>
+<br>
+															-
+														</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="50%">
+<h3>PER&Iacute;ODO DETALLE</h3>
+<br>
+															-
+														</td><td align="center" width="50%">
+<h3>FECHA TRANS.</h3>
+<br>
+															-
+														</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2>ALBARANES</h2>
+</td>
+</tr>
+<tr>
+<td colspan="2"><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="50%">
+<tr>
+<td align="center">
+<h3>N&ordm; ALBARAN</h3>
+</td><td align="center">
+<h3>FECHA</h3>
+</td>
+</tr>
+<tr>
+<td align="center">934</td><td align="center">10
+													-
+													06
+													-
+													2011</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="#a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>IMPORTES</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>PRECIO UNITARIO SIN IMPUESTOS<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.503,00</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>COSTE TOTAL<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.503,00</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<h3>
+<i>DESCUENTOS</i>
+</h3>
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" valign="top" width="70%">
+<h3>CONCEPTO</h3>
+</td><td align="center" valign="top" width="10%">
+<h3>TIPO (%)</h3>
+</td><td align="center" valign="top" width="20%">
+<h3>IMPORTE</h3>
+</td>
+</tr>
+<tr>
+<td valign="top" width="70%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td width="100%">Acordado con el cliente</td>
+</tr>
+</table>
+</td><td valign="top" width="10%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="100%">25,00</td>
+</tr>
+</table>
+</td><td valign="top" width="20%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">375,75</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right" width="80%">
+<h3>IMPORTE BRUTO<font color="FFFFFF">___</font>
+</h3>
+</td><td align="center" width="20%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="right">1.127,25</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<h3>
+<i>IMPUESTOS REPERCUTIDOS</i>
+</h3>
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" valign="center" width="10%">
+<h3>CLASE DE IMPUESTO</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>TIPO (%)</h3>
+</td><td align="center" valign="center" width="20%">
+<h3>BASE IMPONIBLE</h3>
+</td><td align="center" valign="center" width="20%">
+<h3>CUOTA</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>BI.ESPECIAL</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>IMP.ESPECIAL</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>REC.EQ.</h3>
+</td><td align="center" valign="center" width="10%">
+<h3>I.R.EQ.</h3>
+</td>
+</tr>
+<tr>
+<td>OTRO</td><td align="center">18,00</td><td align="right">1.127,25</td><td align="right">202,91</td><td align="right">
+															-
+														</td><td align="right">
+															-
+														</td><td align="right">
+															-
+														</td><td align="right">
+															-
+														</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</td>
+</tr>
+<tr id="listadoFacturas">
+<td width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="a0d7a0">
+</td>
+</tr>
+<tr>
+<td>
+<h2>LISTADO DE FACTURAS</h2>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td width="100%">
+<table border="1" bordercolor="#e6f0fa" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td align="center" width="20%">
+<h3>N&Uacute;MERO</h3>
+</td><td align="center" width="20%">
+<h3>SERIE</h3>
+</td><td align="center" width="20%">
+<h3>FECHA EXPED.</h3>
+</td><td align="center" width="20%">
+<h3>IMPORTE BRUTO</h3>
+</td><td align="center" width="20%">
+<h3>TOTAL EUROS</h3>
+</td>
+</tr>
+<tr onMouseOut="this.style.background='#FFFFFF'" onMouseOver="this.style.background='#e6f0fa'" onclick="mostrarFactura('707')" style="cursor:hand">
+<td align="center">707</td><td align="center"><font color="FFFFFF">_</font></td><td align="center">10
+														-
+														06
+														-
+														2011</td><td align="right">1.127,25</td><td align="right">1.330,16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td>
+<hr color="a0d7a0">
+</td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+<tr>
+<td><font color="FFFFFF">_</font></td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+</html>

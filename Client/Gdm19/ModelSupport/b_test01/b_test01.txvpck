@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet>
+  <view uin="kh1l4tj8f_v">
+    <property name="$name" value="b_test01" />
+    <property name="$defaultDiagram" value="True" />
+    <property name="$metaclass" value="Package Diagram" />
+    <reference referencedUin="delphi:e_class:src:gdm19:b_test01.TboxTest01Form">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds_setted_by_user" value="True" />
+      <property name="bounds" value="70,50,220,570" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.ButtonPanel" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.dataPanel" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.FormManager" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.data" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Bevel1" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Panel3" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.CloseButton" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.asientoCursor" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Label1" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.PruebaCtrl" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.dataPrueba" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.gBox1" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Label2" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.ProgressBar" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.gBitBtn1" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.MainMenu1" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.TestItem" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.gBitBtn2" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.apunteCursor" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.processLabel" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.infoLabel" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.counterLabel" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Prueba11" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Prueba21" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.Otro1" />
+      <reference referencedUin="delphi:e_method:src:gdm19:b_test01.TboxTest01Form.InitializeForm" />
+      <reference referencedUin="delphi:e_method:src:gdm19:b_test01.TboxTest01Form.gBitBtn1Click" />
+      <reference referencedUin="delphi:e_method:src:gdm19:b_test01.TboxTest01Form.gBitBtn2Click" />
+      <reference referencedUin="delphi:e_method:src:gdm19:b_test01.TboxTest01Form.FormManagerCloseButton" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.asientoRec" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.apunteRec" />
+      <reference referencedUin="delphi:e_field:src:gdm19:b_test01.TboxTest01Form.cancelled" />
+      <reference referencedUin="delphi:e_method:src:gdm19:b_test01.TboxTest01Form.incProgressBar" />
+    </reference>
+  </view>
+</nodeSet>

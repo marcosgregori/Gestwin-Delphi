@@ -1,0 +1,10 @@
+
+IMPORTANTE
+
+Para importar correctamente los ficheros WSDL en Delphi se tiene que incluir en la misma carpeta :
+
+SuministroInformacion.xsd
+
+ConsultaLR.xsd              v-- hay que cambiar la extensión .xml por .xsd, que es como se descarga desde la Web de Hacienda
+RespuestaConsultaLR.xsd     
+SuministroLR.xsd               

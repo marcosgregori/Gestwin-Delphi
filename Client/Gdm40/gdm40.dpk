@@ -1,0 +1,65 @@
+package gdm40;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsNC,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdm30,
+  gdm10;
+
+contains
+  gdm40Frm in 'gdm40Frm.pas' {gds40Frm: TFrame},
+  gdm40Dm in 'gdm40Dm.pas' {DataModule40: TDataModule},
+  b_gas in 'b_gas.pas',
+  cx_hdc in 'cx_hdc.pas',
+  l_hdc in 'l_hdc.pas',
+  b_eap in 'b_eap.pas' {BrwEapForm},
+  cm_mve40 in 'cm_mve40.pas',
+  b_ehc in 'b_ehc.pas' {BoxEhcForm},
+  dm_hdc in 'dm_hdc.pas' {HojaCargaModule: TDataModule},
+  i_hdc in 'i_hdc.pas' {FrpHdcForm},
+  b_gmr in 'b_gmr.pas' {BoxGmrForm: TgxForm},
+  dmi_hdc in '..\..\Interface\Gim40\dmi_hdc.pas',
+  Gim40Fields in '..\..\Interface\Gim40\Gim40Fields.pas',
+  HojaCargaIntf in '..\..\Interface\Gim40\HojaCargaIntf.pas',
+  LineaHojaCargaIntf in '..\..\Interface\Gim40\LineaHojaCargaIntf.pas',
+  b_gpc in 'b_gpc.pas' {BoxGpcForm: TgxForm},
+  l_eap in 'l_eap.pas' {RptEapForm: TgxForm},
+  a_pde4 in 'a_pde4.pas' {MntPde4Form: TgxForm},
+  a_hdc in 'a_hdc.pas' {MntHdcForm: TgxForm},
+  dmi_nda in '..\..\Interface\Gim40\dmi_nda.pas';
+
+end.
+

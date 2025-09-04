@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g transform="translate(0, 0)">
+		<polygon points="8,6 3,2 5,6 3,10  " fill="#707070" class="st0" tag="st0"/>
+	</g>
+	<g transform="translate(0, 10)">
+		<polygon points="5,9 9,4 5,6 1,4  " fill="#707070" class="st0" tag="st0"/>
+	</g>
+	<g transform="translate(0, 20)">
+		<polygon points="8,6 3,2 5,6 3,10  " fill="#707070" class="st0" tag="st0"/>
+	</g>
+	<g transform="translate(0, 30)">
+		<polygon points="5,9 9,4 5,6 1,4  " fill="#707070" class="st0" tag="st0"/>
+	</g>
+</svg>

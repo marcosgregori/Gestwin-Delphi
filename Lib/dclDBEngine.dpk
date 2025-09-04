@@ -1,0 +1,55 @@
+{##############################################################################}
+{# NexusDB Package: NexusDB300dv120.dpk %NXDBVERSION%                         #}
+{# Copyright (c) Nexus Database Systems Pty. Ltd. %COPYRIGHT%                 #}
+{# All rights reserved.                                                       #}
+{##############################################################################}
+{# NexusDB Package: designtime                                                #}
+{##############################################################################}
+
+package dclDBEngine;
+
+{$R *.res}
+{$R 'nxdvRegister.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'NexusDB Engine'}
+{$IMPLICITBUILD ON}
+
+requires
+  designide,
+  dcldb,
+  DBEngine,
+  soaprtl;
+
+contains
+  nxServerComp,
+  nxdvVersionProperty,
+  nxdvRegister,
+  nxdvOnCompileHelper,
+  nxdvBDSIdeSplash,
+  nxdvPluginWizard,
+  nxdvPluginWizardFrm;
+
+end.

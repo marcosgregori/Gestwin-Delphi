@@ -1,0 +1,138 @@
+package dclExtControlsCC;
+
+{$R *.res}
+{$R 'cxGridReg.dcr'}
+{$R 'cxGridPopupMenuReg.dcr'}
+{$R 'cxVGridReg.dcr'}
+{$R 'cxPivotGridReg.dcr'}
+{$R 'dxNavBarReg.dcr'}
+{$R 'dxBarDBNavReg.dcr'}
+{$R 'dxSpellCheckerReg.dcr'}
+{$R 'dxtrpreg.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'DevExpress Controls (CC)'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  dcldb,
+  ExtControls,
+  ExtControlsEE,
+  ExtControlsNC,
+  ExtControlsCC,
+  dclExtControls,
+  dclExtControlsEE,
+  dclExtControlsNC;
+
+contains
+
+  // ExpressQuantumGrid
+
+  cxBandedTableViewEditor,
+  cxCardViewEditor,
+  cxChartViewEditor,
+  cxCustomTableViewEditor,
+  cxDBGridConverter,
+  cxDXGridConverter,
+  cxGridConverter,
+  cxGridEditor,
+  cxGridImportDialog,
+  cxGridPopupMenuReg,
+  cxGridPredefinedStyles,
+  cxGridReg,
+  cxGridStructureNavigator,
+  cxGridViewLayoutEditor,
+  cxImageComboBoxItemsEditor,
+  cxTableViewEditor,
+  cxViewEditor,
+  cxLayoutViewEditor,
+  cxGridLayoutViewReg,
+  cxGridServerModeReg,
+  cxWWGridConverter,
+  cxWinExplorerViewEditor,
+  cxGridWinExplorerViewReg,
+
+  // Vertical Grid
+
+  cxVGridEditor,
+  cxVGridLayoutEditor,
+  cxVGridReg,
+  cxVGridPredefinedStyles,
+  cxVGridConverter,
+  cxVGridDXInspConverter,
+
+  // ExpressNavBar
+
+  dxNavBarDsgnConsts,
+  dxfmNavBarDsgnEditor,
+  dxNavBarDsgnUtils,
+  dxNavBarReg,
+
+  // Pivot Grid
+
+  cxPivotGridPredefinedStyles,
+  cxPivotGridDesigner,
+  cxPivotGridReg,
+  cxPivotGridChartConnectionReg,
+
+  dxdbtreg,
+  dxtrpreg,
+
+  // ExpressQuantumTreeList
+
+  cxTLReg,
+  cxTLEditor,
+  cxTLItemsEditor,
+  cxTLPredefinedStyles,
+  cxTLdxBarBuiltInMenuReg,
+
+  // Express SpellChecker
+
+  dxSpellCheckerReg,
+
+  // ExpressTile Control
+
+  dxTileControlReg,
+
+  //  Scheduler
+
+  cxSchedulerReg,
+  cxSchedulerActionsReg,
+  cxSchedulerUIGeneratorScheme,
+  cxSchedulerRibbonStyleEventEditorReg,
+  cxSchedulercxGridConnectionReg,
+  cxSchedulerTreeListBrowserReg;
+
+end.
+
+

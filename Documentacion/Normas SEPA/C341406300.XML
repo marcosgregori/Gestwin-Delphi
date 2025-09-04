@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>2014030411172700134bsWindowsE936</MsgId>
+            <CreDtTm>2014-03-04T11:17:27</CreDtTm>
+            <NbOfTxs>7</NbOfTxs>
+            <InitgPty>
+                <Nm>WINSTATION, S.L.</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>B12406989000</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>20140304111727W36B12406989000140311</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>2014-03-11</ReqdExctnDt>
+            <Dbtr>
+                <Nm>WINSTATION, S.L.</Nm>
+                <PstlAdr>
+                    <Ctry>ES</Ctry>
+                    <AdrLine>AVDA. YECLA, 28 12580 12580BENICARLÓ CASTELLON</AdrLine>
+                </PstlAdr>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>B12406989000</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <IBAN>ES3500810276020001133316</IBAN>
+                </Id>
+                <Ccy>EUR</Ccy>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BIC>BSABESBBXXX</BIC>
+                </FinInstnId>
+            </DbtrAgt>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>3</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">1462.36</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>CCRIES2A</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>PEDRO PASALODOS FERRAN</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>TRULLOLS 12000 CASTELLON CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES6230587303122810007610</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>4</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">1518.92</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BSABESBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>MARIA JOSE ANTOLI PALLARES</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>PEÑISCOLA, 64A, 2ºA 12580 BENICARLO CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES3700810276030006083723</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>1</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">6094.22</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BSABESBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>MARCOS GREGORI FORESTIER</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>AVDA. YECLA, 43 12580 BENICARLO CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES3500810276030001063815</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>7</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">248.59</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BSABESBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>MARC GREGORI FORES</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>AVDA. YECLA, 43 12580 BENICARLO CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES5200810276090006625971</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>2</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">3070.45</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BSABESBB</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>JUAN FCO. BOSCH ROCA</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>MENDEZ NUÑEZ, 43 12580 BENICARLO CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES3200810276030001036806</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMOINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>6</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">1117.28</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BCOEESMM134</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>JOSE ANTONIO CERDA MEZQUITA</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>MARIA CASES, 9 3ºA 12200 ONDA CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES2431343499950027434315</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>5</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Cd>SEPA</Cd>
+                    </SvcLvl>
+                    <CtgyPurp>
+                        <Cd>SALA</Cd>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="EUR">1452.01</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC>BBVAESMM</BIC>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>ALVARO PARIS</Nm>
+                    <PstlAdr>
+                        <Ctry>ES</Ctry>
+                        <AdrLine>MANUEL ALVAR 12580 BENICARLO CASTELLÓN/CASTELLÓ</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>ES7601820519530201512406</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>NOMINAS FEBRERO</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" xml:space="preserve" id="Layer_1" tag="Element4">&#13;&#10;  <style type="text/css" tag="Element1" xml:space="preserve">.st0{fill:#AFAFAF;}&#10;&#9;.st1{fill:#707070;}</style>
+<g tag="Element2" xml:space="preserve">    <path d="M31, 32L1, 32C0.4, 32 0, 31.5 0, 31L0, 1C0, 0.4 0.4, 0 1, 0L31, 0C31.5, 0 32, 0.4 32, 1L32, 31C32, 31.5 31.5, 32 31, 32z" fill="#AFAFAF" class="st0" tag="st00"/>
+	</g>
+<g tag="Element3" xml:space="preserve">    <path d="M0, 1L0, 31C0, 31.5 0.4, 32 1, 32L31, 32C31.5, 32 32, 31.5 32, 31L32, 1C32, 0.4 31.5, 0 31, 0L1, 0C0.4, 0 0, 0.4 0, 1zM31, 31L1, 31L1, 1L31, 1L31, 31z" fill="#707070" class="st1" tag="st10"/>
+	</g>
+</svg>

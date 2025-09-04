@@ -1,0 +1,50 @@
+package gdm20;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  GdLib,
+  ExtControlsNC,
+  gdm30,
+  gdm10;
+
+contains
+  gdm20Dm in 'gdm20Dm.pas' {DataModule20: TDataModule},
+  gdm20Frm in 'gdm20Frm.pas' {gds20Frm: TFrame},
+  l_arq in 'l_arq.pas' {rptArqForm},
+  a_arq in 'a_arq.pas' {mntArqForm},
+  a_pde_tpv in 'a_pde_tpv.pas' {mntPdeTPVForm},
+  f_tpv in 'f_tpv.pas' {TPVModule: TDataModule};
+
+end.

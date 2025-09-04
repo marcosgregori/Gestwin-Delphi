@@ -1,0 +1,25 @@
+var classTCustomTranslator =
+[
+    [ "BuildLangAttribute", "classTCustomTranslator.html#a0fad03880ef7dd661d46db0e3bab6400", null ],
+    [ "Encode", "classTCustomTranslator.html#ae17c4f354c203b70e2f90f59841be117", null ],
+    [ "FormatElement", "classTCustomTranslator.html#a93d5fc028e8f8b3c02692300fad1dd6d", null ],
+    [ "GetCharacterStyles", "classTCustomTranslator.html#abf4bcd4f4c8fcef76c5000cfdfa9f35d", null ],
+    [ "GetCloseEmptyElement", "classTCustomTranslator.html#a6e7a5cfe7511a983b4ecda494371904c", null ],
+    [ "GetDocType", "classTCustomTranslator.html#a2ef40df02dd2dfd6c633470d31a2fa35", null ],
+    [ "GetDocTypeName", "classTCustomTranslator.html#ad0cc92bad18c8827233e6d4ec1999186", null ],
+    [ "GetFontSizeStyle", "classTCustomTranslator.html#aba450c149e235bb84f7560269d41e031", null ],
+    [ "GetIndentAndDirectionStyle", "classTCustomTranslator.html#ac47c0e2b8db9b950052d14a98abf0d9d", null ],
+    [ "GetMargin", "classTCustomTranslator.html#a984e548627e38ddb72246b930ec4d1ed", null ],
+    [ "GetParagraph", "classTCustomTranslator.html#a78dbe00c7c428ef2220fafdf158e04fa", null ],
+    [ "GetParagraphStyle", "classTCustomTranslator.html#a0e8ed9a01c9622df034ad7621aad5bec", null ],
+    [ "GetRootElement", "classTCustomTranslator.html#a6b629fc554617fd202e16688de849a2d", null ],
+    [ "GetStyleParam", "classTCustomTranslator.html#a1a3fd49b2203a30fa7fa76db94a6b9e1", null ],
+    [ "IndentCrLf", "classTCustomTranslator.html#ae15573614a4d1a0e9c417c9e2582be4d", null ],
+    [ "IsDocTypeRequired", "classTCustomTranslator.html#af85768cdd8066d03d19d9f5f81964f1d", null ],
+    [ "IsTransitional", "classTCustomTranslator.html#a8591976a671f22edc13a210dc540cf81", null ],
+    [ "IsXml", "classTCustomTranslator.html#a14904549650a1f4397105498456e8cb6", null ],
+    [ "SetFontSizeScale", "classTCustomTranslator.html#a1487f5403d71647074e9ae07b4431fa5", null ],
+    [ "SetParOpen", "classTCustomTranslator.html#a086c47a95642a730efe6bd60f2dd36a8", null ],
+    [ "SupportsElement", "classTCustomTranslator.html#aa00a20d74a7aa06ddfb7fca8ea089cf0", null ],
+    [ "SupportsParameter", "classTCustomTranslator.html#ad255fb5919fb8adeb1c3c5ba5df4b49c", null ]
+];

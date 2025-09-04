@@ -1,0 +1,133 @@
+package dclDBUniDAC;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS OFF}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS OFF}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE AllowInactiveCleanup}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'UniDAC'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dcldb,
+  vcl,
+  dbrtl,
+  vcldb,
+  vclactnband,
+  DBUniDAC;
+
+contains
+
+  // DAC
+
+  DacReg,
+  CRCtrls,
+  CRFrame,
+  CRColFrame,
+  CREditor,
+  CRTabEditor,
+  CRDataEditor,
+  DAMenu,
+  Download,
+  DAConnectionEditor,
+  DATableEditor,
+  DAStoredProcEditor,
+  DAScriptEditor,
+  DADumpEditor,
+  DADumpProgress,
+  DADualListEditor,
+  DAMacrosFrame,
+  DASQLComponentEditor,
+  DASPCallFrame,
+  DAUpdateSQLFrame,
+  DAUpdateSQLEditor,
+  DASQLGeneratorFrame,
+  DAQueryEditor,
+  DADataEditor,
+  DAParamsFrame,
+  DASQLFrame,
+  DAParamValueEditor,
+  DATableSQLFrame,
+  DAEditor,
+  DADataTypeMapFrame,
+  HelpUtils,
+  VTDataEditor,
+  VTDesign,
+  DBToolsClient,
+  DBToolsIntf,
+  DBToolsClientImp,
+  DBForgeClientImp,
+  DBForgeStudioClientImp,
+  CRDesign,
+  CRDesignUtils,
+  DADesign,
+  DADesignUtils,
+  CRVersionChecker,
+  DAConditionsFrame,
+
+  // UniDAC
+
+  UniAbout,
+  UniMenu,
+  UniDesignUtils,
+  UniUpdateSQLEditor,
+  UniScriptEditor,
+  UniStoredProcEditor,
+  UniTableEditor,
+  UniTableSQLFrame,
+  UniSQLEditor,
+  UniQueryOptionsFrame,
+  UniQueryEditor,
+  UniSPCallFrame,
+  UniParamsFrame,
+  UniSQLOptionsFrame,
+  UniConnectionEditor,
+  UniSpecificOptionsFrame,
+  UniSpecificOptionsEditor,
+  UniMacrosFrame,
+  UniDataTypeMapFrame,
+  UniReg,
+  UniDesign,
+
+  // Virtual query
+
+  VirtualQueryReg,
+  VirtualQueryDesign,
+  VirtualQueryEditor,
+  VirtualMenu,
+  VirtualAbout,
+  VirtualQueryDesignUtils,
+
+  // Controls
+
+  CRControlsReg,
+
+  // NexusDB
+
+  NexusDBUniProvider;
+
+end.
+

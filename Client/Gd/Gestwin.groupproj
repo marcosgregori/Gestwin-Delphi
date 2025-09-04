@@ -1,0 +1,746 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5f6e5b12-6c93-4c44-9790-b2e3887b02ae}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\GdLib\GdLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Dde\gw.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm00\gdm00.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm10\Gdm10.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm30\Gdm30.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm20\gdm20.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm40\gdm40.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm60\gdm60.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm70\gdm70.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm90\gdm90.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm91\gdm91.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm01\gdm01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm02\gdm02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm03\gdm03.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm04\gdm04.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm05\gdm05.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm06\gdm06.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm07\gdm07.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm09\gdm09.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm19\gdm19.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm101\gdm101.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm103\gdm103.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm105\gdm105.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm115\gdm115.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm116\gdm116.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm117\gdm117.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm118\gdm118.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm119\gdm119.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm120\gdm120.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm121\gdm121.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm199\gdm199.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm200\gdm200.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm201\gdm201.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm202\gdm202.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm203\gdm203.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm204\gdm204.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm205\gdm205.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm207\gdm207.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Gdm208\gdm208.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GdLib">
+        <MSBuild Projects="..\GdLib\GdLib.dproj"/>
+    </Target>
+    <Target Name="GdLib:Clean">
+        <MSBuild Projects="..\GdLib\GdLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GdLib:Make">
+        <MSBuild Projects="..\GdLib\GdLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gd">
+        <MSBuild Projects="gd.dproj"/>
+    </Target>
+    <Target Name="gd:Clean">
+        <MSBuild Projects="gd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gd:Make">
+        <MSBuild Projects="gd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gw">
+        <MSBuild Projects="..\Dde\gw.dproj"/>
+    </Target>
+    <Target Name="gw:Clean">
+        <MSBuild Projects="..\Dde\gw.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gw:Make">
+        <MSBuild Projects="..\Dde\gw.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm00">
+        <MSBuild Projects="..\Gdm00\gdm00.dproj"/>
+    </Target>
+    <Target Name="gdm00:Clean">
+        <MSBuild Projects="..\Gdm00\gdm00.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm00:Make">
+        <MSBuild Projects="..\Gdm00\gdm00.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Gdm10">
+        <MSBuild Projects="..\Gdm10\Gdm10.dproj"/>
+    </Target>
+    <Target Name="Gdm10:Clean">
+        <MSBuild Projects="..\Gdm10\Gdm10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Gdm10:Make">
+        <MSBuild Projects="..\Gdm10\Gdm10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Gdm30">
+        <MSBuild Projects="..\Gdm30\Gdm30.dproj"/>
+    </Target>
+    <Target Name="Gdm30:Clean">
+        <MSBuild Projects="..\Gdm30\Gdm30.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Gdm30:Make">
+        <MSBuild Projects="..\Gdm30\Gdm30.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm20">
+        <MSBuild Projects="..\Gdm20\gdm20.dproj"/>
+    </Target>
+    <Target Name="gdm20:Clean">
+        <MSBuild Projects="..\Gdm20\gdm20.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm20:Make">
+        <MSBuild Projects="..\Gdm20\gdm20.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm40">
+        <MSBuild Projects="..\Gdm40\gdm40.dproj"/>
+    </Target>
+    <Target Name="gdm40:Clean">
+        <MSBuild Projects="..\Gdm40\gdm40.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm40:Make">
+        <MSBuild Projects="..\Gdm40\gdm40.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm60">
+        <MSBuild Projects="..\Gdm60\gdm60.dproj"/>
+    </Target>
+    <Target Name="gdm60:Clean">
+        <MSBuild Projects="..\Gdm60\gdm60.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm60:Make">
+        <MSBuild Projects="..\Gdm60\gdm60.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm70">
+        <MSBuild Projects="..\Gdm70\gdm70.dproj"/>
+    </Target>
+    <Target Name="gdm70:Clean">
+        <MSBuild Projects="..\Gdm70\gdm70.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm70:Make">
+        <MSBuild Projects="..\Gdm70\gdm70.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm90">
+        <MSBuild Projects="..\Gdm90\gdm90.dproj"/>
+    </Target>
+    <Target Name="gdm90:Clean">
+        <MSBuild Projects="..\Gdm90\gdm90.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm90:Make">
+        <MSBuild Projects="..\Gdm90\gdm90.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm91">
+        <MSBuild Projects="..\Gdm91\gdm91.dproj"/>
+    </Target>
+    <Target Name="gdm91:Clean">
+        <MSBuild Projects="..\Gdm91\gdm91.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm91:Make">
+        <MSBuild Projects="..\Gdm91\gdm91.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm01">
+        <MSBuild Projects="..\Gdm01\gdm01.dproj"/>
+    </Target>
+    <Target Name="gdm01:Clean">
+        <MSBuild Projects="..\Gdm01\gdm01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm01:Make">
+        <MSBuild Projects="..\Gdm01\gdm01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm02">
+        <MSBuild Projects="..\Gdm02\gdm02.dproj"/>
+    </Target>
+    <Target Name="gdm02:Clean">
+        <MSBuild Projects="..\Gdm02\gdm02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm02:Make">
+        <MSBuild Projects="..\Gdm02\gdm02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm03">
+        <MSBuild Projects="..\Gdm03\gdm03.dproj"/>
+    </Target>
+    <Target Name="gdm03:Clean">
+        <MSBuild Projects="..\Gdm03\gdm03.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm03:Make">
+        <MSBuild Projects="..\Gdm03\gdm03.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm04">
+        <MSBuild Projects="..\Gdm04\gdm04.dproj"/>
+    </Target>
+    <Target Name="gdm04:Clean">
+        <MSBuild Projects="..\Gdm04\gdm04.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm04:Make">
+        <MSBuild Projects="..\Gdm04\gdm04.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm05">
+        <MSBuild Projects="..\Gdm05\gdm05.dproj"/>
+    </Target>
+    <Target Name="gdm05:Clean">
+        <MSBuild Projects="..\Gdm05\gdm05.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm05:Make">
+        <MSBuild Projects="..\Gdm05\gdm05.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm06">
+        <MSBuild Projects="..\Gdm06\gdm06.dproj"/>
+    </Target>
+    <Target Name="gdm06:Clean">
+        <MSBuild Projects="..\Gdm06\gdm06.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm06:Make">
+        <MSBuild Projects="..\Gdm06\gdm06.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm07">
+        <MSBuild Projects="..\Gdm07\gdm07.dproj"/>
+    </Target>
+    <Target Name="gdm07:Clean">
+        <MSBuild Projects="..\Gdm07\gdm07.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm07:Make">
+        <MSBuild Projects="..\Gdm07\gdm07.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm09">
+        <MSBuild Projects="..\Gdm09\gdm09.dproj"/>
+    </Target>
+    <Target Name="gdm09:Clean">
+        <MSBuild Projects="..\Gdm09\gdm09.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm09:Make">
+        <MSBuild Projects="..\Gdm09\gdm09.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm19">
+        <MSBuild Projects="..\Gdm19\gdm19.dproj"/>
+    </Target>
+    <Target Name="gdm19:Clean">
+        <MSBuild Projects="..\Gdm19\gdm19.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm19:Make">
+        <MSBuild Projects="..\Gdm19\gdm19.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm101">
+        <MSBuild Projects="..\Gdm101\gdm101.dproj"/>
+    </Target>
+    <Target Name="gdm101:Clean">
+        <MSBuild Projects="..\Gdm101\gdm101.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm101:Make">
+        <MSBuild Projects="..\Gdm101\gdm101.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm103">
+        <MSBuild Projects="..\Gdm103\gdm103.dproj"/>
+    </Target>
+    <Target Name="gdm103:Clean">
+        <MSBuild Projects="..\Gdm103\gdm103.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm103:Make">
+        <MSBuild Projects="..\Gdm103\gdm103.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm105">
+        <MSBuild Projects="..\Gdm105\gdm105.dproj"/>
+    </Target>
+    <Target Name="gdm105:Clean">
+        <MSBuild Projects="..\Gdm105\gdm105.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm105:Make">
+        <MSBuild Projects="..\Gdm105\gdm105.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm115">
+        <MSBuild Projects="..\Gdm115\gdm115.dproj"/>
+    </Target>
+    <Target Name="gdm115:Clean">
+        <MSBuild Projects="..\Gdm115\gdm115.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm115:Make">
+        <MSBuild Projects="..\Gdm115\gdm115.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm116">
+        <MSBuild Projects="..\Gdm116\gdm116.dproj"/>
+    </Target>
+    <Target Name="gdm116:Clean">
+        <MSBuild Projects="..\Gdm116\gdm116.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm116:Make">
+        <MSBuild Projects="..\Gdm116\gdm116.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm117">
+        <MSBuild Projects="..\Gdm117\gdm117.dproj"/>
+    </Target>
+    <Target Name="gdm117:Clean">
+        <MSBuild Projects="..\Gdm117\gdm117.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm117:Make">
+        <MSBuild Projects="..\Gdm117\gdm117.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm118">
+        <MSBuild Projects="..\Gdm118\gdm118.dproj"/>
+    </Target>
+    <Target Name="gdm118:Clean">
+        <MSBuild Projects="..\Gdm118\gdm118.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm118:Make">
+        <MSBuild Projects="..\Gdm118\gdm118.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm119">
+        <MSBuild Projects="..\Gdm119\gdm119.dproj"/>
+    </Target>
+    <Target Name="gdm119:Clean">
+        <MSBuild Projects="..\Gdm119\gdm119.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm119:Make">
+        <MSBuild Projects="..\Gdm119\gdm119.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm120">
+        <MSBuild Projects="..\Gdm120\gdm120.dproj"/>
+    </Target>
+    <Target Name="gdm120:Clean">
+        <MSBuild Projects="..\Gdm120\gdm120.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm120:Make">
+        <MSBuild Projects="..\Gdm120\gdm120.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm121">
+        <MSBuild Projects="..\Gdm121\gdm121.dproj"/>
+    </Target>
+    <Target Name="gdm121:Clean">
+        <MSBuild Projects="..\Gdm121\gdm121.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm121:Make">
+        <MSBuild Projects="..\Gdm121\gdm121.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm199">
+        <MSBuild Projects="..\Gdm199\gdm199.dproj"/>
+    </Target>
+    <Target Name="gdm199:Clean">
+        <MSBuild Projects="..\Gdm199\gdm199.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm199:Make">
+        <MSBuild Projects="..\Gdm199\gdm199.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm200">
+        <MSBuild Projects="..\Gdm200\gdm200.dproj"/>
+    </Target>
+    <Target Name="gdm200:Clean">
+        <MSBuild Projects="..\Gdm200\gdm200.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm200:Make">
+        <MSBuild Projects="..\Gdm200\gdm200.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm201">
+        <MSBuild Projects="..\Gdm201\gdm201.dproj"/>
+    </Target>
+    <Target Name="gdm201:Clean">
+        <MSBuild Projects="..\Gdm201\gdm201.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm201:Make">
+        <MSBuild Projects="..\Gdm201\gdm201.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm202">
+        <MSBuild Projects="..\Gdm202\gdm202.dproj"/>
+    </Target>
+    <Target Name="gdm202:Clean">
+        <MSBuild Projects="..\Gdm202\gdm202.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm202:Make">
+        <MSBuild Projects="..\Gdm202\gdm202.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm203">
+        <MSBuild Projects="..\Gdm203\gdm203.dproj"/>
+    </Target>
+    <Target Name="gdm203:Clean">
+        <MSBuild Projects="..\Gdm203\gdm203.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm203:Make">
+        <MSBuild Projects="..\Gdm203\gdm203.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm204">
+        <MSBuild Projects="..\Gdm204\gdm204.dproj"/>
+    </Target>
+    <Target Name="gdm204:Clean">
+        <MSBuild Projects="..\Gdm204\gdm204.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm204:Make">
+        <MSBuild Projects="..\Gdm204\gdm204.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm205">
+        <MSBuild Projects="..\Gdm205\gdm205.dproj"/>
+    </Target>
+    <Target Name="gdm205:Clean">
+        <MSBuild Projects="..\Gdm205\gdm205.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm205:Make">
+        <MSBuild Projects="..\Gdm205\gdm205.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm207">
+        <MSBuild Projects="..\Gdm207\gdm207.dproj"/>
+    </Target>
+    <Target Name="gdm207:Clean">
+        <MSBuild Projects="..\Gdm207\gdm207.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm207:Make">
+        <MSBuild Projects="..\Gdm207\gdm207.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gdm208">
+        <MSBuild Projects="..\Gdm208\gdm208.dproj"/>
+    </Target>
+    <Target Name="gdm208:Clean">
+        <MSBuild Projects="..\Gdm208\gdm208.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gdm208:Make">
+        <MSBuild Projects="..\Gdm208\gdm208.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GdLib;gd;gw;gdm00;Gdm10;Gdm30;gdm20;gdm40;gdm60;gdm70;gdm90;gdm91;gdm01;gdm02;gdm03;gdm04;gdm05;gdm06;gdm07;gdm09;gdm19;gdm101;gdm103;gdm105;gdm115;gdm116;gdm117;gdm118;gdm119;gdm120;gdm121;gdm199;gdm200;gdm201;gdm202;gdm203;gdm204;gdm205;gdm207;gdm208"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GdLib:Clean;gd:Clean;gw:Clean;gdm00:Clean;Gdm10:Clean;Gdm30:Clean;gdm20:Clean;gdm40:Clean;gdm60:Clean;gdm70:Clean;gdm90:Clean;gdm91:Clean;gdm01:Clean;gdm02:Clean;gdm03:Clean;gdm04:Clean;gdm05:Clean;gdm06:Clean;gdm07:Clean;gdm09:Clean;gdm19:Clean;gdm101:Clean;gdm103:Clean;gdm105:Clean;gdm115:Clean;gdm116:Clean;gdm117:Clean;gdm118:Clean;gdm119:Clean;gdm120:Clean;gdm121:Clean;gdm199:Clean;gdm200:Clean;gdm201:Clean;gdm202:Clean;gdm203:Clean;gdm204:Clean;gdm205:Clean;gdm207:Clean;gdm208:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GdLib:Make;gd:Make;gw:Make;gdm00:Make;Gdm10:Make;Gdm30:Make;gdm20:Make;gdm40:Make;gdm60:Make;gdm70:Make;gdm90:Make;gdm91:Make;gdm01:Make;gdm02:Make;gdm03:Make;gdm04:Make;gdm05:Make;gdm06:Make;gdm07:Make;gdm09:Make;gdm19:Make;gdm101:Make;gdm103:Make;gdm105:Make;gdm115:Make;gdm116:Make;gdm117:Make;gdm118:Make;gdm119:Make;gdm120:Make;gdm121:Make;gdm199:Make;gdm200:Make;gdm201:Make;gdm202:Make;gdm203:Make;gdm204:Make;gdm205:Make;gdm207:Make;gdm208:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Gestwin'">
+        <BuildGroupProject Include="..\Gdm07\gdm07.dproj">
+            <ProjectGuid>{D059EC2C-EE60-4F5C-BBC5-AEEDE8C45058}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm121\gdm121.dproj">
+            <ProjectGuid>{21A06FFE-BB23-4358-AD35-1A78877463C0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm91\gdm91.dproj">
+            <ProjectGuid>{AC914BF2-1138-4601-A343-FD9BDED33942}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm207\gdm207.dproj">
+            <ProjectGuid>{708392E5-C72A-49BA-B6A5-FB1AFB8FA51A}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm06\gdm06.dproj">
+            <ProjectGuid>{43547C27-0C53-4DB5-8F64-5E6F55724793}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm30\Gdm30.dproj">
+            <ProjectGuid>{54B2828A-8754-4307-88F4-C68161FF7847}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm116\gdm116.dproj">
+            <ProjectGuid>{076907BC-0919-4C73-B10D-51F6C6650F00}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm20\gdm20.dproj">
+            <ProjectGuid>{82B3281E-FEC2-4364-B720-EDD076272F8E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm09\gdm09.dproj">
+            <ProjectGuid>{4EE8FEA1-0D4A-4EF7-A1A7-B12C0D20F97D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm103\gdm103.dproj">
+            <ProjectGuid>{382017E9-9A11-498B-B4D9-FBC8418DFA57}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm204\gdm204.dproj">
+            <ProjectGuid>{0AD8DD5F-9D22-468C-9B36-B4014012B423}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm205\gdm205.dproj">
+            <ProjectGuid>{A3E56AFC-EA93-459A-BEBE-440579F1A9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm03\gdm03.dproj">
+            <ProjectGuid>{5862CD2D-6745-4512-8EAE-6F827949DE15}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm02\gdm02.dproj">
+            <ProjectGuid>{C21268C2-10A4-48BA-8D38-BCCDC635EB66}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm199\gdm199.dproj">
+            <ProjectGuid>{DBB28E14-BE3E-4DE7-9798-942826D9DF91}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm40\gdm40.dproj">
+            <ProjectGuid>{D9EB3DC5-063C-48BF-80C1-0B879F7B75A3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm202\gdm202.dproj">
+            <ProjectGuid>{BF49CCF0-4374-42AB-B243-602DD74347B5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm120\gdm120.dproj">
+            <ProjectGuid>{02601C22-1D9B-4C47-A64D-2B88537646A1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm118\gdm118.dproj">
+            <ProjectGuid>{B9F473E7-238A-4432-9F4C-C666F14FCD47}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm04\gdm04.dproj">
+            <ProjectGuid>{826CD204-EB23-47F8-AA3F-42286E6F4935}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm208\gdm208.dproj">
+            <ProjectGuid>{35812300-2D7A-4B5E-A4BB-55E32332018E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm119\gdm119.dproj">
+            <ProjectGuid>{02601C22-1C9B-4C47-A65D-2C88547696D6}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm101\gdm101.dproj">
+            <ProjectGuid>{A361FC06-8582-4578-9F17-24192C94ECDA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm00\gdm00.dproj">
+            <ProjectGuid>{7E02FC07-1762-4531-9DFB-36EA1AD2FF2E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\GdLib\GdLib.dproj">
+            <ProjectGuid>{B93EE91F-37AE-4403-B761-0B65553D5455}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Dde\gw.dproj">
+            <ProjectGuid>{CA211224-AE1D-4065-8722-92833BD9DBC3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gd.dproj">
+            <ProjectGuid>{B94BBDD6-D47E-4251-ADF6-B6B425E1FA6B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm105\gdm105.dproj">
+            <ProjectGuid>{E20511E6-25B6-42BD-A926-40180F3B48EE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm70\gdm70.dproj">
+            <ProjectGuid>{60E11F18-CBA2-47F3-B0E8-89603A91471F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm60\gdm60.dproj">
+            <ProjectGuid>{F26786D2-2E01-4F72-91B2-5306C19EBC36}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm90\gdm90.dproj">
+            <ProjectGuid>{5F0354D8-8AA5-4263-A4E3-490F72FA5B6C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm201\gdm201.dproj">
+            <ProjectGuid>{20843136-3ED7-42BD-BBFD-82CD82CF1831}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm19\gdm19.dproj">
+            <ProjectGuid>{0667594D-D8BF-4EC1-AF06-07FFD30D71B8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm203\gdm203.dproj">
+            <ProjectGuid>{B3A58D6C-08EB-4147-AC16-DDAE744F128C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm05\gdm05.dproj">
+            <ProjectGuid>{72FD6BC0-8FF5-4CB5-BAE7-61D043DB7907}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm117\gdm117.dproj">
+            <ProjectGuid>{08DFB082-95D3-468A-AA47-9FC18D2926F8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm01\gdm01.dproj">
+            <ProjectGuid>{6DAF653B-389C-42CD-8DF4-D5C93F1CECFE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm10\Gdm10.dproj">
+            <ProjectGuid>{3A4714DD-3BA7-4775-B4FF-B8E03A42C9A5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm200\gdm200.dproj">
+            <ProjectGuid>{C003DFF1-B775-4346-B86B-5DD2A9F5F243}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Gdm115\gdm115.dproj">
+            <ProjectGuid>{1A8D0344-7797-4339-9EC2-5689B5413771}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

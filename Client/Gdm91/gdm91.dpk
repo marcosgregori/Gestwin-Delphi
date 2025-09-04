@@ -1,0 +1,68 @@
+package gdm91;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  ExtControlsNC,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdm10,
+  gdlib,
+  gdm30,
+  gdm90;
+
+contains
+  gdm91Frm in 'gdm91Frm.pas' {gds91Frm: TFrame},
+  a_cnw in 'a_cnw.pas' {mntCntForm},
+  l_tdr in 'l_tdr.pas' {rptTdrForm},
+  a_pex in 'a_pex.pas' {mntPexForm},
+  a_tdr in 'a_tdr.pas' {mntTdrForm},
+  l_cnt in 'l_cnt.pas' {rptCntForm},
+  dm_cnt in 'dm_cnt.pas' {contactoModule: TDataModule},
+  e_cnt in 'e_cnt.pas' {etqCntForm},
+  cx_act in 'cx_act.pas',
+  cx_cnt in 'cx_cnt.pas',
+  cx_pex in 'cx_pex.pas',
+  cx_tdr in 'cx_tdr.pas',
+  dm_pex in 'dm_pex.pas',
+  a_act in 'a_act.pas',
+  b_rsc in 'b_rsc.pas',
+  dm_act in 'dm_act.pas',
+  a_cnt in 'a_cnt.pas',
+  cx_cnw in 'cx_cnw.pas',
+  dm_cnw in 'dm_cnw.pas',
+  l_cnw in 'l_cnw.pas',
+  e_cnw in 'e_cnw.pas',
+  b_rai in 'b_rai.pas' {BrwRaiForm};
+
+end.

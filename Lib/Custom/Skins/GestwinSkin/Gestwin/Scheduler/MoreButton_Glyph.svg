@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="&quot;http://www.w3.org/1999/xlink&quot;">
+	<circle cx="9" cy="5" r="1" fill="#707070" class="Mask" tag="Mask"/>
+	<circle cx="5" cy="5" r="1" fill="#707070" class="Mask" tag="Mask1"/>
+	<circle cx="1" cy="5" r="1" fill="#707070" class="Mask" tag="Mask2"/>
+	<g transform="translate(0, 10)">
+		<circle cx="9" cy="5" r="1" fill="#707070" class="Mask2" tag="Mask"/>
+		<circle cx="5" cy="5" r="1" fill="#707070" class="Mask2" tag="Mask1"/>
+		<circle cx="1" cy="5" r="1" fill="#707070" class="Mask2" tag="Mask2"/>
+	</g>
+</svg>

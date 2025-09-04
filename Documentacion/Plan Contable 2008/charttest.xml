@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TChart>
+  <Left value="3"/>
+  <Top value="3"/>
+  <Width value="733"/>
+  <Height value="327"/>
+  <BackWall>
+    <Brush>
+      <Color value="clWhite"/>
+    </Brush>
+    <Color value="clWhite"/>
+  </BackWall>
+  <LeftWall>
+    <Brush>
+      <Color value="clWhite"/>
+    </Brush>
+  </LeftWall>
+  <Legend>
+    <Alignment value="laBottom"/>
+    <ColorWidth value="10"/>
+    <Font>
+      <Charset value="ANSI_CHARSET"/>
+    </Font>
+    <Shadow>
+      <Color value="clGray"/>
+    </Shadow>
+    <Symbol>
+      <Width value="10"/>
+    </Symbol>
+    <TextStyle value="ltsPlain"/>
+  </Legend>
+  <PrintProportional value="False"/>
+  <Title>
+    <Font>
+      <Charset value="ANSI_CHARSET"/>
+    </Font>
+    <Text>
+      <Strings>
+        <String value="'TELEFONO OFICINA'"/>
+      </Strings>
+    </Text>
+  </Title>
+  <BottomAxis>
+    <Title>
+      <Caption value="'Periodo'"/>
+      <Font>
+        <Charset value="ANSI_CHARSET"/>
+      </Font>
+    </Title>
+  </BottomAxis>
+  <LeftAxis>
+    <Title>
+      <Caption value="'Importe'"/>
+      <Font>
+        <Charset value="ANSI_CHARSET"/>
+      </Font>
+    </Title>
+  </LeftAxis>
+  <View3DOptions>
+    <Elevation value="360"/>
+    <Orthogonal value="False"/>
+    <Perspective value="103"/>
+    <Rotation value="360"/>
+    <Zoom value="93"/>
+  </View3DOptions>
+  <Zoom>
+    <Animated value="True"/>
+  </Zoom>
+  <Align value="alClient"/>
+  <BevelOuter value="bvNone"/>
+  <Color value="clWhite"/>
+  <TabOrder value="0"/>
+  <TabStop value="True"/>
+  <OnDblClick value="ChartDblClick"/>
+  <TBarSeries>
+    <Marks>
+      <Arrow>
+        <Visible value="True"/>
+      </Arrow>
+      <Callout>
+        <Brush>
+          <Color value="clBlack"/>
+        </Brush>
+        <Arrow>
+          <Visible value="True"/>
+        </Arrow>
+      </Callout>
+      <Style value="smsValue"/>
+      <Visible value="True"/>
+    </Marks>
+    <Title value="'2005 - 628000003,628000004,628000005 : TELEFONO'"/>
+    <BarStyle value="bsRectGradient"/>
+    <Gradient>
+      <Direction value="gdTopBottom"/>
+    </Gradient>
+    <XValues>
+      <Name value="'X'"/>
+      <Order value="loAscending"/>
+    </XValues>
+    <YValues>
+      <Name value="'Barra'"/>
+      <Order value="loNone"/>
+    </YValues>
+    <Data>
+      <String value="050C000000000000000000F03F51B81E85EBD97A4003456E650000000000000"/>
+      <String value="4015AE47E17A8C70400346656200000000000008400000000000628040034D6"/>
+      <String value="72000000000000104090C2F5285C33774003416272000000000000144000000"/>
+      <String value="0000707440034D617900000000000018406866666666FA7440034A756E00000"/>
+      <String value="0000001C408FC2F5285CD77540034A756C000000000000204053B81E85EB457"/>
+      <String value="400341676F00000000000022402A5C8FC2F5BC7C40035365700000000000002"/>
+      <String value="402085EB51B87A7540034F637400000000000026400000000000787440034E6"/>
+      <String value="760000000000002840AE47E17A140E804003446963"/>
+    </Data>
+  </TBarSeries>
+  <TBarSeries>
+    <Marks>
+      <Arrow>
+        <Visible value="True"/>
+      </Arrow>
+      <Callout>
+        <Brush>
+          <Color value="clBlack"/>
+        </Brush>
+        <Arrow>
+          <Visible value="True"/>
+        </Arrow>
+      </Callout>
+      <Style value="smsValue"/>
+      <Visible value="True"/>
+    </Marks>
+    <Title value="'2006 - 628000003 : TELEFONO'"/>
+    <BarStyle value="bsRectGradient"/>
+    <Gradient>
+      <Direction value="gdTopBottom"/>
+    </Gradient>
+    <XValues>
+      <Name value="'X'"/>
+      <Order value="loAscending"/>
+    </XValues>
+    <YValues>
+      <Name value="'Barra'"/>
+      <Order value="loNone"/>
+    </YValues>
+    <Data>
+      <String value="050C000000000000000000F03FC2F5285C8FA6794003456E650000000000000"/>
+      <String value="401F85EB51B8A68140034665620000000000000840295C8FC2F5387640034D6"/>
+      <String value="7200000000000010403333333333437C40034162720000000000001440F6285"/>
+      <String value="8FC2AD7540034D61790000000000001840CCCCCCCCCCD87640034A756E00000"/>
+      <String value="0000001C40EC51B81E85AB7F40034A756C00000000000020409A99999999057"/>
+      <String value="400341676F0000000000002240AE47E17A14567B40035365700000000000002"/>
+      <String value="4047E17A14AE437840034F6374000000000000264052B81E85EB817640034E6"/>
+      <String value="760000000000002840333333333331814003446963"/>
+    </Data>
+  </TBarSeries>
+  <TBarSeries>
+    <Marks>
+      <Arrow>
+        <Visible value="True"/>
+      </Arrow>
+      <Callout>
+        <Brush>
+          <Color value="clBlack"/>
+        </Brush>
+        <Arrow>
+          <Visible value="True"/>
+        </Arrow>
+      </Callout>
+      <Style value="smsValue"/>
+      <Visible value="True"/>
+    </Marks>
+    <Title value="'2007 - 628000003 : TELEFONO'"/>
+    <BarStyle value="bsRectGradient"/>
+    <Gradient>
+      <Direction value="gdTopBottom"/>
+    </Gradient>
+    <XValues>
+      <Name value="'X'"/>
+      <Order value="loAscending"/>
+    </XValues>
+    <YValues>
+      <Name value="'Barra'"/>
+      <Order value="loNone"/>
+    </YValues>
+    <Data>
+      <String value="050C000000000000000000F03FC3F5285C8F5A794003456E650000000000000"/>
+      <String value="4013AE47E17A0877400346656200000000000008406666666666667D40034D6"/>
+      <String value="7200000000000010405C8FC2F5280C774003416272000000000000144090C2F"/>
+      <String value="285CF77840034D617900000000000018402A5C8FC2F51C8340034A756E00000"/>
+      <String value="0000001C40B81E85EB51808240034A756C0000000000002040E17A14AE474D7"/>
+      <String value="400341676F000000000000224015AE47E17AB07840035365700000000000002"/>
+      <String value="409999999999F57940034F63740000000000002640AE47E17A14CA7440034E6"/>
+      <String value="760000000000002840000000000000000003446963"/>
+    </Data>
+  </TBarSeries>
+</TChart>

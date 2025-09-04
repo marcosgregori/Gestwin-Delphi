@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['charprops',['CharProps',['../classTReaderProperties.html#a525de5cf2a811f4f9ac9fc53c97432d6',1,'TReaderProperties']]],
+  ['charset',['CharSet',['../classTUnicodeConverter.html#abfa33300d6f6f08e8a46b28d51f23f82',1,'TUnicodeConverter']]],
+  ['chartounicode',['CharToUnicode',['../classTUnicodeConverter.html#afa998dbf3fe03718310f91aace8c46e6',1,'TUnicodeConverter']]],
+  ['clone',['Clone',['../classTCharacterProperties.html#ab672f6920bdef8c84b944e16936fb805',1,'TCharacterProperties::Clone()'],['../classTParagraphProperties.html#a8d3770a8ca24100cb53094c33a638703',1,'TParagraphProperties::Clone()']]],
+  ['clonecharacterproperties',['CloneCharacterProperties',['../classTSxWriter.html#a02057bd12f5e2917e851ec34b802bbaf',1,'TSxWriter']]],
+  ['cloneparagraphproperties',['CloneParagraphProperties',['../classTSxWriter.html#a85e0c96986d4453fe4c420cc155b2605',1,'TSxWriter']]],
+  ['complete',['complete',['../classTEmbeddedPicture.html#acf856d6b2ae36f9cc4acb22d93f277e3',1,'TEmbeddedPicture']]],
+  ['convert',['Convert',['../classTSxMain.html#ac889147540cdde2636548fc1f38f618f',1,'TSxMain::Convert()'],['../classTPictureConverterWMF.html#a569ee18fdccae563b330e733c6838224',1,'TPictureConverterWMF::Convert()']]],
+  ['convertempty',['ConvertEmpty',['../classTSxOutputWriter.html#aab4c1fa415d821e71ebf91f3b790b7a1',1,'TSxOutputWriter']]],
+  ['convertemptyparagraphs',['ConvertEmptyParagraphs',['../classTSxBase.html#a02c22e98715679aa578b207ac04d6f23',1,'TSxBase']]],
+  ['converter',['Converter',['../classTSxOutputWriter.html#a911e8c8d40099d639d5b6c8dbeaefc46',1,'TSxOutputWriter']]],
+  ['converthyperlinks',['ConvertHyperlinks',['../classTSxBase.html#a1df648755f32ddce93714a2511d283dc',1,'TSxBase']]],
+  ['convertindent',['ConvertIndent',['../classTSxBase.html#a58483334a06cdbdfbbb933c3ae3d9d02',1,'TSxBase']]],
+  ['convertlanguage',['ConvertLanguage',['../classTSxBase.html#ac831d3cd810785c09a349ad8fe9e0421',1,'TSxBase']]],
+  ['convertpictures',['ConvertPictures',['../classTSxBase.html#abdf701672e48b813aaa23661201f9070',1,'TSxBase']]],
+  ['convertrtf',['ConvertRTF',['../classTCustomScrooge.html#a4d0d48304a93b6da06e0f03c84bed8d9',1,'TCustomScrooge']]],
+  ['convertrtffile',['ConvertRTFFile',['../classTCustomScrooge.html#ae191f710a38dbce1047bc49ca7072625',1,'TCustomScrooge']]],
+  ['convertrtftohtml',['ConvertRTFToHTML',['../classTSxReader.html#ae98417f8769735ea46940a1abbdc57cb',1,'TSxReader']]],
+  ['convertspaces',['ConvertSpaces',['../classTSxBase.html#a8689635810da6bbc80e083e71bee7b46',1,'TSxBase']]],
+  ['converttoplaintext',['ConvertToPlainText',['../classTSxBase.html#ac738b8899d17a04bfd3cc40ee5c8b6b9',1,'TSxBase::ConvertToPlainText()'],['../classTSxOutputWriter.html#a1c9bcbed1dd89c82d29e37267bc5f03f',1,'TSxOutputWriter::ConvertToPlainText()']]],
+  ['convertusingprettyindents',['ConvertUsingPrettyIndents',['../classTSxBase.html#aef81919fc9bd0b0febd6425f5b4a991b',1,'TSxBase']]],
+  ['copyfrom',['CopyFrom',['../classTCharacterProperties.html#ada27df6920b9693f0c4e5462378aca19',1,'TCharacterProperties::CopyFrom()'],['../classTParagraphProperties.html#a677c81b443d32384be98e35ffce988f5',1,'TParagraphProperties::CopyFrom()']]]
+];

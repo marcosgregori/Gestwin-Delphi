@@ -1,0 +1,153 @@
+{
+  "id": 124,
+  "sku": "0001",
+  "name": "Camiseta Corta Shell",
+  "attribute_set_id": 4,
+  "price": 0,
+  "status": 1,
+  "visibility": 4,
+  "type_id": "configurable",
+  "created_at": "2022-02-08 09:29:37",
+  "updated_at": "2022-02-08 11:32:48",
+  "weight": 0,
+  "extension_attributes": {
+    "website_ids": [
+      1
+    ],
+    "category_links": [
+      {
+        "position": 0,
+        "category_id": "23"
+      }
+    ],
+    "stock_item": {
+      "item_id": 124,
+      "product_id": 124,
+      "stock_id": 1,
+      "qty": 0,
+      "is_in_stock": true,
+      "is_qty_decimal": false,
+      "show_default_notification_message": false,
+      "use_config_min_qty": true,
+      "min_qty": 0,
+      "use_config_min_sale_qty": 1,
+      "min_sale_qty": 1,
+      "use_config_max_sale_qty": true,
+      "max_sale_qty": 10000,
+      "use_config_backorders": true,
+      "backorders": 0,
+      "use_config_notify_stock_qty": true,
+      "notify_stock_qty": 1,
+      "use_config_qty_increments": true,
+      "qty_increments": 0,
+      "use_config_enable_qty_inc": true,
+      "enable_qty_increments": false,
+      "use_config_manage_stock": true,
+      "manage_stock": true,
+      "low_stock_date": null,
+      "is_decimal_divided": false,
+      "stock_status_changed_auto": 0
+    },
+    "configurable_product_options": [
+      {
+        "id": 22,
+        "attribute_id": "145",
+        "label": "Talla",
+        "position": 0,
+        "values": [
+          {
+            "value_index": 14
+          },
+          {
+            "value_index": 15
+          }
+        ],
+        "product_id": 124
+      }
+    ],
+    "configurable_product_links": [
+      131,
+      132
+    ]
+  },
+  "options": [],
+  "media_gallery_entries": [
+    {
+      "id": 59,
+      "media_type": "image",
+      "label": "Camiseta Corta Shell",
+      "position": 1,
+      "disabled": false,
+      "types": [
+        "image",
+        "small_image",
+        "thumbnail"
+      ],
+      "file": "/0/0/0001.png"
+    }
+  ],
+  "custom_attributes": [
+    {
+      "attribute_code": "featured",
+      "value": "0"
+    },
+    {
+      "attribute_code": "image",
+      "value": "/0/0/0001.png"
+    },
+    {
+      "attribute_code": "url_key",
+      "value": "0001"
+    },
+    {
+      "attribute_code": "small_image",
+      "value": "/0/0/0001.png"
+    },
+    {
+      "attribute_code": "options_container",
+      "value": "container2"
+    },
+    {
+      "attribute_code": "portugues",
+      "value": "Camisola Curta Shell"
+    },
+    {
+      "attribute_code": "thumbnail",
+      "value": "/0/0/0001.png"
+    },
+    {
+      "attribute_code": "msrp_display_actual_price_type",
+      "value": "0"
+    },
+    {
+      "attribute_code": "tax_class_id",
+      "value": "10"
+    },
+    {
+      "attribute_code": "category_ids",
+      "value": [
+        "23"
+      ]
+    },
+    {
+      "attribute_code": "required_options",
+      "value": "0"
+    },
+    {
+      "attribute_code": "has_options",
+      "value": "0"
+    },
+    {
+      "attribute_code": "image_label",
+      "value": "Camiseta Corta Shell"
+    },
+    {
+      "attribute_code": "small_image_label",
+      "value": "Camiseta Corta Shell"
+    },
+    {
+      "attribute_code": "thumbnail_label",
+      "value": "Camiseta Corta Shell"
+    }
+  ]
+}

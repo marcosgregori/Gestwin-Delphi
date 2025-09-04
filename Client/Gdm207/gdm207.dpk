@@ -1,0 +1,64 @@
+package gdm207;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdlib,
+  gdm30,
+  gdm10,
+  ExtControlsNC;
+
+contains
+  a_cat in 'a_cat.pas' {MntCatForm: TgxForm},
+  cx_cat in 'cx_cat.pas' {CxCatForm: TgxForm},
+  dm_cat in 'dm_cat.pas' {CategoriaModule: TDataModule},
+  f_cnf207 in 'f_cnf207.pas' {TiendaVirtualModule: TDataModule},
+  gdm207Dm in 'gdm207Dm.pas' {DataModule207: TDataModule},
+  l_cat in 'l_cat.pas' {RptCatForm: TgxForm},
+  dmi_sdt in '..\..\Interface\Gim207\dmi_sdt.pas',
+  Gim207Fields in '..\..\Interface\Gim207\Gim207Fields.pas',
+  a_pde207 in 'a_pde207.pas' {MntPde207Form: TgxForm},
+  b_rra in 'b_rra.pas' {BoxRraForm: TgxForm},
+  b_sdt207 in 'b_sdt207.pas' {BoxSdt207Form: TgxForm},
+  dm_rea207 in 'dm_rea207.pas',
+  dm_tvr in 'dm_tvr.pas' {TiendaVirtualModule: TDataModule},
+  dm_sdt207 in 'dm_sdt207.pas' {SincronizacionTiendaMagentoModule: TDataModule},
+  b_2fa in 'b_2fa.pas' {Box2faForm: TgxForm},
+  f_art_tvr in 'f_art_tvr.pas' {TMntArtTvrFrame: TFrame};
+
+end.
+
+
+

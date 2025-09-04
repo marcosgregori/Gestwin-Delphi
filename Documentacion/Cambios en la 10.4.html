@@ -1,0 +1,316 @@
+<p><font color="#000000">Nueva versión del gestor de base de datos -NexusDB 3- que tiene algunas novedades interesantes, como un administrador del servidor a través de navegador Web o una mayor velocidad en las consultas.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font><font color="#000000">
+
+
+</font>
+</p><p><font color="#000000">Gestión de documentos comerciales paginados. Los usuarios podrán crear páginas o grupos en los documentos. Esta característica va destinada a aquellos clientes que crean presupuestos monstruosos (constructores, fontaneros y demás) organizados por partidas o certificaciones.<br>En realidad lo importante vendrá en un módulo que tendrán que adquirir a parte, pero ha sido necesario modificar el núcleo de la gestión para preparar su desarrollo. <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font>
+</p></font>
+<p><font color="#000000">Ampliación del uso de rejillas de consulta de datos. Se trata de ir permitiendo que los listados e informes se puedan enviar a una rejilla para que el usuario pueda ordenar, agrupar o buscar datos en ellas. De momento tengo hechas las de cantidades pendientes de servir y recibir (junto con la de asientos que es la única que existe en la 10.3), pero ya iré poniendo más con el tiempo.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font></p></font>
+<p><font color="#000000">He mejorado&nbsp;el uso de las consultas con &lt;F4&gt;. Ahora el filtro es más simple pero permite realizar busquedas filtrando por varios campos a la vez. Como es más fácil de ver que de explicar ya os pondré una versión 10.4 que podais revisar en algún servidor.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font></p></font>
+<p>Conexiones SSL/TLS de correo. Permite utilizar GMail como servidor de correo entrante y saliente.
+
+</p>
+<p>Consultas persistentes. En las consultas realizadas sobre ventanas de mantenimiento existe la posibilidad de desvincularla del mantenimiento y utilizarla para realizar agrupaciones selecciones y ordenaciones de los datos. Desde estas ventanas se puede acceder al mantenimiento relacionado.
+
+
+</p>
+<p>Mejora de la gestión de los correos :&nbsp;&nbsp;
+
+</p>
+<ol>
+  <li>
+<div>configuracion del servidor individual por usuario
+
+</div></li>
+  <li>
+<div>carpeta de entrada, salida y archivo que permite revisar los mensajes recibidos y enviados. En un futuro pretendo permitir reenviar mensajes o volver a relizar procesos de importación (en previsión de esta última característica los mensajes guardan los ficheros adjuntos dentro del registro).
+
+
+
+
+
+</div>
+  </li>
+</ol>
+<p>Gestión de impresión de rejillas de consulta y del planificador (agenda), con previsualización y configuración detallada de la salida impresa.
+</p>
+<p>Preseleccion de listados e impresos con selección individualizada de registros. De momento todos los listados de comprobación e impresos de los documentos comerciales (ofertas, pedidos, albaranes, etc..) soportan esta característica. Más adelante la iré aplicando donde haga falta.
+</p>
+<p><strong>Mejoras internas y de control
+</strong>
+</p>
+<ul>
+  <li>
+<div>Se ha integrado el sistema de actualizaciones en la aplicación, notificando al usuario (solo al usuario maestro, claro) la disponibilidad de nuevas versiones en la red.
+</div></li>
+  <li>
+<div>Control de licencias durante las instalaciones y actualizaciones. He diseñado un servidor de procedimientos remotos que sirve para actualizar las últimas versiones (prescindiendo definitivamente del inseguro FTP) y para que el usuario actualice GESTWIN. He aprovechado para registrar todas las solicitudes de nuevas instalaciones y actualizaciones, comprobando la licencia y guardando la dirección de llamada y el éxito o fracaso del proceso para nuestros registros.<br>Las instalaciones se pueden realizar aunque no haya conexión a Internet en el equipo del usuario.
+</div>
+  </li>
+</ul>
+<p><strong>Mejoras por secciones
+</strong>
+</p>
+<p><strong><font color="#006699">Configuración
+</font>
+  </strong>
+</p>
+<ul>
+  <li>
+<div><font color="#000000"><strong>Usuarios<br>
+
+
+
+
+
+
+
+</strong>Opciones de inicio accesibles desde el mismo mantenimiento y configuración de la conexión de correo&nbsp;por usuario.&nbsp;
+</font>
+</div></li>
+  <li>
+<div>
+      <strong>Parámetros generales<br>
+
+
+
+
+
+
+
+</strong>Configuración del tiempo máximo de espera en las consultas. <br>Dos modos de gestión de las ventanas de la aplicación : TDI y MDI. <br>Opción de maximizar las ventanas de edición al inicio. <br>Fuente por defecto en las anotaciones RTF <br>Conexiones de correo seguras (entrantes y salientes ) utilizando el protocolo SSL/TLS.
+</div></li>
+  <li>
+<div><strong>Configuración de Empresas<br>
+
+
+
+
+
+
+
+
+</strong>Documentos paginados en ventas con la posibilidad de indicar el nombre de los grupos de líneas o páginas.
+</div></li>
+  <li>
+<div><strong>Comprobación de actualizaciones disponibles<br>
+
+
+
+
+
+
+
+
+</strong>Se ha añadido un proceso que permite comprobar si hay alguna actualización disponible en la Web y aplicarla en caso necesario.
+</div>
+  </li>
+</ul>
+<p><strong><font color="#006699">Gestión contable
+</font>
+  </strong>
+</p>
+<ul>
+  <li>
+<div><font color="#006699">
+<div><font color="#000000"><strong>Conceptos de apunte<br>
+
+
+
+
+
+
+
+
+</strong>Descripciones extendidas a 80 caracteres
+</font>
+</div>
+      </font>
+</div></li>
+  <li>
+<div><font color="#006699">
+<div><font color="#000000"><strong>Consulta de saldos
+</strong><br>Posibilidad de consultar los saldos de listas de cuentas. Se puede indicar una relación de niveles y subcuentas separándolas por comas : 112,113,1404,1405,12800001,128000002.<br>Al igual que en los extractos, ahora se puede abrir más de una ventana de saldos (hasta 3) para realizar comparaciones múltiples.
+</font></div>
+      </font><font color="#006699"></font>
+</div>
+    <div></div></font></li>
+  <li>
+<div><font color="#006699">
+<div><font color="#000000"><strong>Importación y exportación de asientos
+</strong><br>Añadida la posibilidad de realizar importaciones desde ficheros que contengan asientos de más de un ejercicio contable, tanto en formato texto como GESTWIN.
+</font></div>
+      </font><font color="#006699">
+</div>
+    <div></div></font>
+  </li>
+</ul>
+<p><font color="#006699">
+<div></div></font><strong><font color="#006699">Libros registro del I.V.A.
+</font>
+  </strong>
+  <div></div></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><strong><font color="#006699">Previsión de cobros y pagos
+</font>
+  </strong>
+</p>
+<ul>
+  <li>
+<div><font color="#000000"><strong>Conceptos de apunte<br>
+
+
+
+
+
+
+
+
+</strong>Cuando se realiza la anotación del descuento de una remesa se añade un evento en el planificador utilizando el plazo de cancelación definido para esa entidad financiera,&nbsp;que le recordará mas tarde al usuario la necesidad de realizar la cancelación de la misma.
+</font>
+</div>
+  </li>
+</ul>
+<p><strong><font color="#006699">Elementos del inmovilizado
+</font>
+  </strong>
+</p>
+<p><strong><font color="#006699">Compras
+</font>
+  </strong>
+</p>
+<ul>
+  <li>
+<div><strong>Listado e impresión de documentos<br>
+
+
+
+
+</strong>Todos los listados de comprobación de documentos (ofertas, pedidos de compra y albaranes de compra) permiten filtrar los registros por más de un parámetro a la vez. También se puede generar -a partir de la selección previa- una relación de documentos a listar o imprimir que pude ser editada, añadiendo, quitando o modificando el orden de los documentos.<br>Se ha añadido la posibilidad de filtrar los listados e impresos por grupo de proveedor. <br>
+
+
+
+
+
+</div>
+  </li>
+</ul>
+<p><strong><font color="#006699">Ventas
+</font>
+  </strong>
+</p>
+<ul>
+  <li>
+<div><strong>Listado e impresión de documentos<br>
+
+
+
+
+</strong>Todos los listados de comprobación de documentos (presupuestos, pedidos de&nbsp;venta y albaranes de venta) permiten filtrar los registros por más de un parámetro a la vez. También se puede generar -a partir de la selección previa- una relación de documentos a listar o imprimir que puede ser editada, añadiendo, quitando o modificando el orden de los documentos.
+</div></li>
+  <li>
+<div><strong>Documentos de venta
+</strong><br>Añadida la posibilidad de crear documentos paginados, que agrupan las líneas bajo un grupo o concepto definido por el usuario. La agrupación se mantiene en las facturas, pudiendo mostrar los grupos en las mismas.
+</div>
+  </li>
+</ul>
+<p><strong><font color="#006699">Almacén
+</font>
+  </strong>
+</p>
+<p><strong><font color="#006699">Resultados y estadísticas
+</font>
+  </strong>
+</p>
+<p><strong>Módulos de pago previstos
+</strong>
+</p>
+<ul>
+  <li>
+<div>Centro de control en contabilidad (no está acabado)
+
+</div></li>
+  <li>
+<div>Gestión de certificaciones o partidas. La versión 10.4 permitirá diseñar este módulo al disponer de documentos comerciales paginados.
+
+</div>
+  </li>
+</ul>
+<p>
+
+</p>
+<p><br>&nbsp;
+
+</p>

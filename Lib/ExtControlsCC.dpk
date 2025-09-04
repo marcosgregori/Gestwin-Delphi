@@ -1,0 +1,307 @@
+package ExtControlsCC;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DevExpress - ExtControls'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  vclie,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  ExtControls,
+  ExtControlsEE,
+  ExtControlsNC;
+
+contains
+
+
+  // ExpressQuantumGrid
+
+  cxGridLevel,
+  cxDBExtLookupComboBox,
+  cxGridExportLink,
+  cxGrid,
+  cxGridBandedTableView,
+  cxGridCardView,
+  cxGridChartView,
+  cxGridCommon,
+  cxGridCustomPopupMenu,
+  cxGridCustomTableView,
+  cxGridCustomView,
+  cxGridCustomLayoutView,
+  cxGridDataRowPopupMenuItems,
+  cxGridDBBandedTableView,
+  cxGridDBCardView,
+  cxGridDBChartView,
+  cxGridDBDataDefinitions,
+  cxGridDBTableView,
+  cxGridDetailsSite,
+  cxGridFilterHelpers,
+  cxGridFooterPopupMenuItems,
+  cxGridHeaderPopupMenuItems,
+  cxGridGroupRowPopupMenuItems,
+  cxGridGroupByBoxPopupMenuItems,
+  cxGridMenuOperations,
+  cxGridPopupMenu,
+  cxGridPopupMenuConsts,
+  cxGridRows,
+  cxGridStdPopupMenu,
+  cxGridStrs,
+  cxGridStyleSheetsPreview,
+  cxGridTableView,
+  cxGridUIBandedTableHelper,
+  cxGridUICardHelper,
+  cxGridUICustomTableHelper,
+  cxGridUIHelper,
+  cxGridLayoutView,
+  cxGridDBLayoutView,
+  cxGridLayoutViewCarouselMode,
+  cxGridLayoutViewCustomizationForm,
+  cxGridServerModeDataDefinitions,
+  cxGridServerModeTableView,
+  cxGridServerModeBandedTableView,
+  cxGridUITableHelper,
+  cxGridViewLayoutContainer,
+  cxGridViewLayoutCustomizationForm,
+  cxGridTableViewInplaceEditFormCustomizationForm,
+  cxGridInplaceEditForm,
+  cxGridWinExplorerView,
+  cxGridDBWinExplorerView,
+  cxGridTableRowLayoutCustomizationForm,
+  cxGridRowLayoutCustomizationForm,
+  cxGridRowLayout,
+  cxGridDetachedEditForm,
+
+  // ExpressExport Library
+
+  cxExport,
+  cxExportProviders,
+  cxExportStrs,
+
+  // ExpressVerticalGrid
+
+  cxDBVGrid,
+  cxOI,
+  cxVGrid,
+  cxVGridConsts,
+  cxVGridStyleSheetPreview,
+  cxVGridUtils,
+  cxVGridViewInfo,
+  cxOIPictureEd,
+  cxOIStringsEd,
+  cxVGridNewCategory,
+  cxExportVGLink,
+  cxOICollectionEd,
+
+  // ExpressNavBar
+
+  dxNavBar,
+  dxNavBarStyles,
+  dxNavBarCollns,
+  dxNavBarViewsFact,
+  dxNavBarVSToolBoxViews,
+  dxNavBarXPViews,
+  dxNavBarExplorerViews,
+  dxNavBarOfficeViews,
+  dxNavBarBaseViews,
+  dxNavBarConsts,
+  dxNavBarBase,
+  dxNavBarGraphics,
+  dxNavBarOffice11Views,
+  dxNavBarOffice12Views,
+  dxNavBarVistaViews,
+  dxNavBarCustomPainters,
+  dxNavBarSkinBasedViews,
+  dxNavBarGroupItems,
+  dxNavBarCustomization,
+  dxNavBarAccessibility,
+  dxNavBarOfficeNavigationBarCustomizationDlg,
+  dxNavBarOfficeNavigationBar,
+  dxNavBarOverflowPanel,
+  dxSkinsdxNavBarHamburgerMenuPainter,
+
+  // dxNavBarAdvancedCustomization,
+
+  dxSkinsdxNavBarPainter,
+  dxSkinsdxNavBarAccordionViewPainter,
+
+  // ExpressPivotGrid
+
+  cxCustomPivotGrid,
+  cxPivotGrid,
+  cxDBPivotGrid,
+  cxPivotGridStrs,
+  cxPivotGridCustomization,
+  cxPivotGridStyleSheetsPreview,
+  cxPivotGridCustomDataSet,
+  cxPivotGridSummaryDataSet,
+  cxPivotGridAdvancedCustomization,
+  cxPivotGridDrillDownDataSet,
+  cxExportPivotGridLink,
+  cxPivotGridChartConnection,
+
+  // DBTree
+
+  dxtree,
+  dxdbtrel,
+  dxdbtree,
+  dxtrprds,
+
+ // Express SpellChecker
+
+  dxCustomDictionaryDialog,
+  dxISpellDecompressor,
+  dxSpellChecker,
+  dxSpellCheckerAutoCorrect,
+  dxSpellCheckerAlgorithms,
+  dxSpellCheckerBaseForm,
+  dxSpellCheckerDialogs,
+  dxSpellCheckerOutlookDialog,
+  dxSpellCheckerRules,
+  dxSpellCheckerStrs,
+  dxSpellCheckerUtils,
+  dxSpellCheckerWordDialog,
+  dxSpellCheckerCheckAsYouType,
+  dxSpellCheckerSpellingOptionsDialog,
+  dxSpellCheckerAutoCorrectExceptionDialog,
+  dxSpellCheckerAutoCorrectOptionsDialog,
+  dxSpellCheckerExceptionsFrame,
+  dxSpellCheckerTextParsers,
+  dxSpellCheckerAdapters,
+
+  dxHunspellAffixes,
+  dxHunspellDictionary,
+  dxHunspellTypes,
+  dxHunspellUtils,
+  dxHunspellWords,
+
+ // ExpressMap Control
+
+  dxBingMapImageryDataService,
+  dxBingMapLocationDataService,
+  dxBingMapRESTService,
+  dxBingMapRESTServiceStrs,
+  dxBingMapRouteDataService,
+  dxCustomMapItemLayer,
+  dxDbfFileInfo,
+  dxKmlElements,
+  dxKmlTokens,
+  dxMapControl,
+  dxMapControlBingImageryServiceInfo,
+  dxMapControlBingMapImageryDataProvider,
+  dxMapControlBingMapInformationProviders,
+  dxMapControlCacheOptions,
+  dxMapControlDiskCache,
+  dxMapControlElementViewInfo,
+  dxMapControlGeometry,
+  dxMapControlHttpRequest,
+  dxHttpIndyRequest,
+  dxMapControlImageTileProvider,
+  dxMapControlInformationProvider,
+  dxMapControlKmlFileLoader,
+  dxMapControlMultiScaleTile,
+  dxMapControlOpenStreetMapImageryDataProvider,
+  dxMapControlProjections,
+  dxMapControlShapeFileLoader,
+  dxMapControlTypes,
+  dxMapControlViewInfo,
+  dxMapImageTileLayer,
+  dxMapItem,
+  dxMapItemFileLayer,
+  dxMapItemLayer,
+  dxMapItemStyle,
+  dxMapLayer,
+  dxMapUnitConverter,
+  dxMapControlStrs,
+
+  dxRESTService,
+  dxShapeFileInfo,
+
+   // ExpressTile Control
+
+  dxCustomTileControl,
+  dxTileControl,
+  dxTileBar,
+
+  //  Scheduler
+
+  cxScheduler,
+  cxSchedulerAggregateStorage,
+  cxSchedulerCustomControls,
+  cxSchedulerCustomResourceView,
+  cxSchedulerDateNavigator,
+  cxSchedulerDayView,
+  cxSchedulerDBStorage,
+  cxSchedulerDialogs,
+  cxSchedulerEventEditor,
+  cxSchedulerGoToDateDialog,
+  cxSchedulerRecurrenceEditor,
+  cxSchedulerRecurrenceSelectionDialog,
+  cxSchedulerResourcesLayoutEditor,
+  cxSchedulerRecurrence,
+  cxSchedulerRecurrenceHolidayEditor,
+  cxSchedulerStorage,
+  cxSchedulerStrs,
+  cxSchedulerUtils,
+  cxSchedulerOutlookExchange,
+  cxDateNavigator,
+  cxSchedulerReminderWindow,
+  cxSchedulerTimeGridView,
+  cxSchedulerYearView,
+  cxSchedulerWeekView,
+  cxSchedulerGanttView,
+  cxSchedulerHolidaysLocationHolidayEditor,
+  cxSchedulerHolidays,
+  cxSchedulerHolidaysEditor,
+  cxSchedulerHolidaysLocationEditor,
+  cxSchedulerICalendar,
+  cxSchedulerTaskDependencyEditor,
+  cxSchedulerEditorFormManager,
+  cxSchedulerActions,
+  cxSchedulerActionsStrs,
+  cxSchedulercxGridConnection,
+  cxSchedulerRibbonStyleEventEditor,
+  cxSchedulerTreeListBrowser,
+  dxSkinscxSchedulerPainter,
+  cxSchedulerAgendaView,
+  cxSchedulerRangeControlClientProperties,
+  cxSchedulerEventModernInfoContainer,
+  cxExportSchedulerLink;
+
+end.
+

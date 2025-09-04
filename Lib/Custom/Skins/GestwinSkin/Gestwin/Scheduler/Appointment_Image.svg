@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<path d="M26, 28L2, 28C0.9, 28 0, 27.1 0, 26L0, 2C0, 0.9 0.9, 0 2, 0L26, 0C27.1, 0 28, 0.9 28, 2L28, 26C28, 27.1 27.1, 28 26, 28z" fill="#AFAFAF" class="st0" tag="st0"/>
+	<polygon points="14,12 24,2 22,2 14,10 10,14 2,22 2,24 12,14  " fill="#707070" class="st1" tag="st1"/>
+	<polygon points="14,8 20,2 18,2 14,6 6,14 2,18 2,20 8,14  " fill="#707070" class="st1" tag="st11"/>
+	<polygon points="14,4 16,2 14,2 2,14 2,16 4,14  " fill="#707070" class="st1" tag="st12"/>
+	<polygon points="10,2 2,10 2,12 12,2  " fill="#707070" class="st1" tag="st13"/>
+	<polygon points="6,2 2,6 2,8 8,2  " fill="#707070" class="st1" tag="st14"/>
+	<polygon points="2,2 2,4 4,2  " fill="#707070" class="st1" tag="st15"/>
+	<polygon points="14,14 2,26 4,26 14,16 16,14 26,4 26,2  " fill="#707070" class="st1" tag="st16"/>
+	<polygon points="24,26 26,24 26,22 22,26  " fill="#707070" class="st1" tag="st17"/>
+	<polygon points="20,26 26,20 26,18 18,26  " fill="#707070" class="st1" tag="st18"/>
+	<polygon points="16,26 26,16 26,14 14,26  " fill="#707070" class="st1" tag="st19"/>
+	<polygon points="14,22 10,26 12,26 14,24 24,14 26,12 26,10 22,14  " fill="#707070" class="st1" tag="st110"/>
+	<polygon points="14,18 6,26 8,26 14,20 20,14 26,8 26,6 18,14  " fill="#707070" class="st1" tag="st111"/>
+</svg>

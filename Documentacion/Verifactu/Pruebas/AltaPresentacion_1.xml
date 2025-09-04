@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Header xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <RegFactuSistemaFacturacion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroLR.xsd">
+            <Cabecera xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                <ObligadoEmision>
+                    <NombreRazon>Empresa de pruebas, S.L.</NombreRazon>
+                    <NIF>B12406989</NIF>
+                </ObligadoEmision>
+            </Cabecera>
+            <RegistroFactura>
+                <RegistroAlta>
+                    <IDVersion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">1.0</IDVersion>
+                    <IDFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDEmisorFactura>B12406989</IDEmisorFactura>
+                        <NumSerieFactura>440</NumSerieFactura>
+                        <FechaExpedicionFactura>12-10-2024</FechaExpedicionFactura>
+                    </IDFactura>
+                    <NombreRazonEmisor xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Empresa de pruebas, S.L.</NombreRazonEmisor>
+                    <TipoFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">F1</TipoFactura>
+                    <DescripcionOperacion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Venta</DescripcionOperacion>
+                    <Destinatarios xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDDestinatario>
+                            <NombreRazon>DHIMA, S.L.</NombreRazon>
+                            <NIF>B12063640</NIF>
+                        </IDDestinatario>
+                    </Destinatarios>
+                    <Desglose xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <DetalleDesglose>
+                            <ClaveRegimen>01</ClaveRegimen>
+                            <CalificacionOperacion>S1</CalificacionOperacion>
+                            <TipoImpositivo>21.00</TipoImpositivo>
+                            <BaseImponibleOimporteNoSujeto>82.64</BaseImponibleOimporteNoSujeto>
+                            <CuotaRepercutida>17.36</CuotaRepercutida>
+                            <TipoRecargoEquivalencia>5.20</TipoRecargoEquivalencia>
+                            <CuotaRecargoEquivalencia>4.30</CuotaRecargoEquivalencia>
+                        </DetalleDesglose>
+                    </Desglose>
+                    <CuotaTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">21.66</CuotaTotal>
+                    <ImporteTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">115.44</ImporteTotal>
+                    <Encadenamiento xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <PrimerRegistro>S</PrimerRegistro>
+                    </Encadenamiento>
+                    <SistemaInformatico xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <NombreRazon>Winstation, S.L.</NombreRazon>
+                        <NIF>B12406989</NIF>
+                        <NombreSistemaInformatico>Gestwin</NombreSistemaInformatico>
+                        <IdSistemaInformatico>00</IdSistemaInformatico>
+                        <Version>11.0</Version>
+                        <NumeroInstalacion>167</NumeroInstalacion>
+                        <TipoUsoPosibleSoloVerifactu>S</TipoUsoPosibleSoloVerifactu>
+                        <TipoUsoPosibleMultiOT>S</TipoUsoPosibleMultiOT>
+                        <IndicadorMultiplesOT>S</IndicadorMultiplesOT>
+                    </SistemaInformatico>
+                    <FechaHoraHusoGenRegistro xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">2024-10-16T10:40:35Z</FechaHoraHusoGenRegistro>
+                    <TipoHuella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">01</TipoHuella>
+                    <Huella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">4FCE30B42A386DA68AC7ACDAA3FCFF1218A32D0062DF0BCD5236730189D17AEA</Huella>
+                </RegistroAlta>
+            </RegistroFactura>
+            <RegistroFactura>
+                <RegistroAlta>
+                    <IDVersion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">1.0</IDVersion>
+                    <IDFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDEmisorFactura>B12406989</IDEmisorFactura>
+                        <NumSerieFactura>439</NumSerieFactura>
+                        <FechaExpedicionFactura>12-10-2024</FechaExpedicionFactura>
+                    </IDFactura>
+                    <NombreRazonEmisor xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Empresa de pruebas, S.L.</NombreRazonEmisor>
+                    <TipoFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">F1</TipoFactura>
+                    <DescripcionOperacion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Venta</DescripcionOperacion>
+                    <Destinatarios xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDDestinatario>
+                            <NombreRazon>ABONOS CALSILLA, S.L.U.</NombreRazon>
+                            <NIF>B72644941</NIF>
+                        </IDDestinatario>
+                    </Destinatarios>
+                    <Desglose xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <DetalleDesglose>
+                            <ClaveRegimen>01</ClaveRegimen>
+                            <CalificacionOperacion>S1</CalificacionOperacion>
+                            <TipoImpositivo>21.00</TipoImpositivo>
+                            <BaseImponibleOimporteNoSujeto>490.00</BaseImponibleOimporteNoSujeto>
+                            <CuotaRepercutida>102.90</CuotaRepercutida>
+                        </DetalleDesglose>
+                    </Desglose>
+                    <CuotaTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">102.90</CuotaTotal>
+                    <ImporteTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">592.90</ImporteTotal>
+                    <Encadenamiento xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <RegistroAnterior>
+                            <IDEmisorFactura>B12406989</IDEmisorFactura>
+                            <NumSerieFactura>440</NumSerieFactura>
+                            <FechaExpedicionFactura>12-10-2024</FechaExpedicionFactura>
+                            <Huella>4FCE30B42A386DA68AC7ACDAA3FCFF1218A32D0062DF0BCD5236730189D17AEA</Huella>
+                        </RegistroAnterior>
+                    </Encadenamiento>
+                    <SistemaInformatico xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <NombreRazon>Winstation, S.L.</NombreRazon>
+                        <NIF>B12406989</NIF>
+                        <NombreSistemaInformatico>Gestwin</NombreSistemaInformatico>
+                        <IdSistemaInformatico>00</IdSistemaInformatico>
+                        <Version>11.0</Version>
+                        <NumeroInstalacion>167</NumeroInstalacion>
+                        <TipoUsoPosibleSoloVerifactu>S</TipoUsoPosibleSoloVerifactu>
+                        <TipoUsoPosibleMultiOT>S</TipoUsoPosibleMultiOT>
+                        <IndicadorMultiplesOT>S</IndicadorMultiplesOT>
+                    </SistemaInformatico>
+                    <FechaHoraHusoGenRegistro xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">2024-10-16T10:40:48Z</FechaHoraHusoGenRegistro>
+                    <TipoHuella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">01</TipoHuella>
+                    <Huella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">C1B6FC3D63A79766A830AD793B167C2C23936448E3F11B0BD621606FD51E5DAA</Huella>
+                </RegistroAlta>
+            </RegistroFactura>
+            <RegistroFactura>
+                <RegistroAlta>
+                    <IDVersion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">1.0</IDVersion>
+                    <IDFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDEmisorFactura>B12406989</IDEmisorFactura>
+                        <NumSerieFactura>438</NumSerieFactura>
+                        <FechaExpedicionFactura>12-10-2024</FechaExpedicionFactura>
+                    </IDFactura>
+                    <NombreRazonEmisor xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Empresa de pruebas, S.L.</NombreRazonEmisor>
+                    <TipoFactura xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">F1</TipoFactura>
+                    <DescripcionOperacion xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">Venta</DescripcionOperacion>
+                    <Destinatarios xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <IDDestinatario>
+                            <NombreRazon>DHIMA, S.L.</NombreRazon>
+                            <NIF>B12063640</NIF>
+                        </IDDestinatario>
+                    </Destinatarios>
+                    <Desglose xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd"/>
+                    <CuotaTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">0.00</CuotaTotal>
+                    <ImporteTotal xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">0.00</ImporteTotal>
+                    <Encadenamiento xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <RegistroAnterior>
+                            <IDEmisorFactura>B12406989</IDEmisorFactura>
+                            <NumSerieFactura>439</NumSerieFactura>
+                            <FechaExpedicionFactura>12-10-2024</FechaExpedicionFactura>
+                            <Huella>C1B6FC3D63A79766A830AD793B167C2C23936448E3F11B0BD621606FD51E5DAA</Huella>
+                        </RegistroAnterior>
+                    </Encadenamiento>
+                    <SistemaInformatico xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">
+                        <NombreRazon>Winstation, S.L.</NombreRazon>
+                        <NIF>B12406989</NIF>
+                        <NombreSistemaInformatico>Gestwin</NombreSistemaInformatico>
+                        <IdSistemaInformatico>00</IdSistemaInformatico>
+                        <Version>11.0</Version>
+                        <NumeroInstalacion>167</NumeroInstalacion>
+                        <TipoUsoPosibleSoloVerifactu>S</TipoUsoPosibleSoloVerifactu>
+                        <TipoUsoPosibleMultiOT>S</TipoUsoPosibleMultiOT>
+                        <IndicadorMultiplesOT>S</IndicadorMultiplesOT>
+                    </SistemaInformatico>
+                    <FechaHoraHusoGenRegistro xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">2024-10-16T10:40:51Z</FechaHoraHusoGenRegistro>
+                    <TipoHuella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">01</TipoHuella>
+                    <Huella xmlns="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/tike/cont/ws/SuministroInformacion.xsd">A363FCF074813D4CAC722F9AD449C67FFD555C2BC9362F5240122A2F332E5E6C</Huella>
+                </RegistroAlta>
+            </RegistroFactura>
+        </RegFactuSistemaFacturacion>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>'#$D#$A

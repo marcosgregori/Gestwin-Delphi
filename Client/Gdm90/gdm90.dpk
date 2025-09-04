@@ -1,0 +1,65 @@
+package gdm90;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  ExtControlsNC,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdm10,
+  gdlib,
+  gdm30;
+
+contains
+  gdm90Frm in 'gdm90Frm.pas' {gds90Frm: TFrame},
+  gdm90Dm in 'gdm90Dm.pas' {DataModule90: TDataModule},
+  l_tar in 'l_tar.pas' {rptTarForm},
+  a_tar in 'a_tar.pas' {mntTarForm},
+  a_tdt in 'a_tdt.pas' {mntTdtForm},
+  a_tec in 'a_tec.pas' {mntTecForm},
+  b_gdt in 'b_gdt.pas' {bGdtForm},
+  dm_tar in 'dm_tar.pas' {tareaModule: TDataModule},
+  dm_tec in 'dm_tec.pas' {tecnicoModule: TDataModule},
+  cx_tar in 'cx_tar.pas',
+  cx_tdt in 'cx_tdt.pas',
+  cx_tec in 'cx_tec.pas',
+  dm_tdt in 'dm_tdt.pas',
+  a_pdc in 'a_pdc.pas' {MntPdcForm},
+  a_pgc in 'a_pgc.pas' {MntPgcForm},
+  Gim90Fields in '..\..\Interface\Gim90\Gim90Fields.pas',
+  b_export in '..\Gdm199\b_export.pas' {BoxExportForm: TgxForm},
+  b_import in '..\Gdm199\b_import.pas' {BoxImportForm: TgxForm},
+  dm_tdr in 'dm_tdr.pas' {TarjetaRegistroModule: TDataModule};
+
+end.
+

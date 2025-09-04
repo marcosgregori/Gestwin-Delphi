@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 27" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g>
+		<polygon points="5,3 2,6 8,6  " fill="#000000" class="st0"/>
+	</g>
+	<g transform="translate(0, 9)">
+		<polygon points="5,6 8,3 2,3  " fill="#000000" class="st1"/>
+	</g>
+	<g transform="translate(0, 18)">
+		<path d="M4, 7L9, 7L9, 2L4, 2L4, 1L3, 1L3, 4L0, 4L0, 5L3, 5L3, 8L4, 8L4, 7zM4, 3L8, 3L8, 4L4, 4L4, 3z" fill="#707070" class="st2"/>
+	</g>
+</svg>

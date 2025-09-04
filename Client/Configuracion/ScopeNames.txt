@@ -1,0 +1,7 @@
+All
+
+System;Xml;Data;Datasnap;Web;Soap
+
+32bit Windows
+
+Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;System;Xml;Data;Datasnap;Web;Soap

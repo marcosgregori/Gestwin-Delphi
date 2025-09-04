@@ -1,0 +1,118 @@
+package dclExtControlsPS;
+
+{$R *.res}
+{$R 'dxPDFViewerReg.dcr'}
+{$R 'dxMapControlReg.dcr'}
+{$R 'dxGanttControlReg.dcr'}
+{$R 'dxPS.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'DevExpress Controls (PS)'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  dcldb,
+  ExtControls,
+  ExtControlsPS,
+  dclExtControls,
+  dclExtControlsNC,
+  dclExtControlsCC,
+  RESTComponents;
+
+contains
+  // Express Charts
+
+  dxChartPaletteRepositoryDesigner,
+  dxAlphaColorComboBox,
+  dxChartControlReg,
+
+  // PDF Viewer
+
+  dxPDFViewerReg,
+  dxPDFViewerActionsReg,
+  dxPDFViewerUIGeneratorScheme,
+
+  // ExpressMap Control
+
+  dxMapInformationProvidersEditor,
+  dxMapItemsEditor,
+  dxMapLayersEditor,
+  dxMapControlReg,
+
+(*
+  // dxRibbonGalleryDesigner,
+
+  dxRibbonReg,
+  dxRibbonFormWizard,
+  dxRibbonFormWizardReg,
+  dxSkinChooserGalleryReg,
+  dxRibbonCustomizationFormReg,
+  dxTabbedMDIReg,
+
+  *)
+
+  // Gantt controls
+
+  dxGanttControlSheetColumnsEditor,
+  dxGanttControlReg,
+
+  { PS }
+
+  dxPSDsgProxies,
+  dxPSDsgUtils,
+  dxPSPrVwDsg,
+  dxPSfmLnkDsg,
+  dxPSfmLnkAdde,
+  dxPSfmStlAdd,
+  dxPSfmStlDsg,
+  dxPSReg,
+  dxPSDBBasedXplorerReg,
+  dxPScxCommonReg,
+  dxPScxVGridLnkPredefinedStyleSheets,
+  dxPScxVGridLnkReg,
+  dxPSPrVwAdvReg,
+  dxPScxEditorLnkReg,
+  dxPScxDBEditorLnkReg,
+  dxPSPrVwRibbonReg,
+  dxPScxPivotGridLnkReg,
+  dxPSdxDBTVLnkReg,
+  dxPScxSchedulerLnkReg,
+  dxPScxExtDBEditorLnkReg,
+  dxPScxGridLnkReg,
+  dxPScxTLLnkReg,
+  dxPSdxSpreadSheetLnkReg,
+  dxPScxExtEditorLnkReg,
+  dxPScxGridLnkPredefinedStyleSheets,
+  dxPScxTLLnkPredefinedStyleSheets;
+
+end.

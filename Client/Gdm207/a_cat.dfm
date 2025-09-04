@@ -1,0 +1,251 @@
+object MntCatForm: TMntCatForm
+  Left = 356
+  Top = 261
+  HelpType = htKeyword
+  HelpKeyword = 'a_cat'
+  BorderStyle = bsDialog
+  Caption = 'Categor'#237'as'
+  ClientHeight = 181
+  ClientWidth = 512
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  HelpFile = 'hs10'
+  Position = poDefault
+  Visible = True
+  TextHeight = 17
+  object keyPanel: TgxEditPanel
+    Left = 0
+    Top = 0
+    Align = alTop
+    Ctl3D = True
+    PanelStyle.Active = True
+    ParentCtl3D = False
+    Style.BorderStyle = ebsNone
+    TabOrder = 0
+    PanelKind = epKeyPanel
+    Height = 36
+    Width = 512
+    object codigoCtrlCaption: TcxLabel
+      Left = 12
+      Top = 8
+      TabStop = False
+      Caption = 'C'#243'digo'
+      Style.TransparentBorder = False
+      Properties.Alignment.Horz = taLeftJustify
+      Transparent = True
+    end
+    object CodigoCtrl: TcxDBTextEdit
+      Left = 129
+      Top = 5
+      DataBinding.DataField = 'Codigo'
+      DataBinding.DataSource = DataSource
+      Properties.OnQueryRequest = CodigoQueryRequest
+      TabOrder = 1
+      Width = 43
+    end
+  end
+  object ButtonPanel: TgxEditPanel
+    Left = 0
+    Top = 145
+    Align = alBottom
+    PanelStyle.Active = True
+    Style.BorderStyle = ebsNone
+    TabOrder = 2
+    PanelKind = epButtonsPanel
+    ExplicitTop = 169
+    DesignSize = (
+      512
+      36)
+    Height = 36
+    Width = 512
+    object Panel2: TcxGroupBox
+      Left = 127
+      Top = 3
+      Anchors = []
+      PanelStyle.Active = True
+      Style.BorderStyle = ebsNone
+      TabOrder = 0
+      Height = 30
+      Width = 261
+      object OkButton: TgBitBtn
+        Left = 1
+        Top = 1
+        Width = 85
+        Height = 28
+        Caption = '&Aceptar'
+        Enabled = True
+        ModalResult = 1
+        OptionsImage.ImageIndex = 2
+        OptionsImage.Images = ApplicationContainer.ButtonImageList
+        OptionsImage.Margin = 4
+        OptionsImage.Spacing = 5
+        TabOrder = 0
+        GlyphBitmap = gmOk
+      end
+      object CloseButton: TgBitBtn
+        Left = 88
+        Top = 1
+        Width = 85
+        Height = 28
+        Cancel = True
+        Caption = '&Cerrar'
+        Enabled = True
+        ModalResult = 2
+        OptionsImage.ImageIndex = 7
+        OptionsImage.Images = ApplicationContainer.ButtonImageList
+        OptionsImage.Margin = 4
+        OptionsImage.Spacing = 5
+        TabOrder = 1
+        GlyphBitmap = gmClose
+      end
+      object DeleteButton: TgBitBtn
+        Left = 175
+        Top = 1
+        Width = 85
+        Height = 28
+        Caption = '&Suprimir'
+        Enabled = True
+        ModalResult = 3
+        OptionsImage.ImageIndex = 5
+        OptionsImage.Images = ApplicationContainer.ButtonImageList
+        OptionsImage.Margin = 4
+        OptionsImage.Spacing = 5
+        TabOrder = 2
+        GlyphBitmap = gmDelete
+      end
+    end
+  end
+  object dataPanel: TgxEditPanel
+    AlignWithMargins = True
+    Left = 5
+    Top = 36
+    Margins.Left = 5
+    Margins.Top = 0
+    Margins.Right = 5
+    Margins.Bottom = 0
+    Align = alClient
+    Alignment = alCenterCenter
+    Ctl3D = True
+    PanelStyle.Active = True
+    ParentBackground = False
+    ParentColor = False
+    ParentCtl3D = False
+    Style.BorderStyle = ebsSingle
+    Style.Color = cl3DLight
+    TabOrder = 1
+    PanelKind = epDataPanel
+    ExplicitHeight = 133
+    Height = 109
+    Width = 502
+    object NombreCtrl: TcxDBTextEdit
+      Left = 124
+      Top = 12
+      DataBinding.DataField = 'Nombre'
+      DataBinding.DataSource = DataSource
+      TabOrder = 0
+      Width = 347
+    end
+    object Label1: TcxLabel
+      Left = 8
+      Top = 15
+      TabStop = False
+      Caption = 'Nombre'
+      Style.TransparentBorder = False
+      Properties.Alignment.Horz = taLeftJustify
+      Transparent = True
+    end
+    object cxLabel2: TcxLabel
+      Left = 8
+      Top = 42
+      TabStop = False
+      Caption = 'Categoria superior'
+      Style.TransparentBorder = False
+      Properties.Alignment.Horz = taLeftJustify
+      Transparent = True
+    end
+    object DescSuperiorLabel: TcxLabel
+      Left = 203
+      Top = 42
+      TabStop = False
+      AutoSize = False
+      Enabled = False
+      Style.TextColor = clNavy
+      Style.TransparentBorder = False
+      Properties.Alignment.Horz = taLeftJustify
+      Transparent = True
+      Height = 19
+      Width = 285
+    end
+    object cxDBCheckBox1: TcxDBCheckBox
+      Left = 7
+      Top = 67
+      AutoSize = False
+      Caption = 'Activa'
+      DataBinding.DataField = 'Activo'
+      DataBinding.DataSource = DataSource
+      Properties.Alignment = taRightJustify
+      Properties.NullStyle = nssUnchecked
+      TabOrder = 2
+      Transparent = True
+      Height = 23
+      Width = 135
+    end
+    object CodigoPadreCtrl: TcxDBTextEdit
+      Left = 124
+      Top = 39
+      DescriptionLabel = DescSuperiorLabel
+      DataBinding.DataField = 'CodigoPadre'
+      DataBinding.DataSource = DataSource
+      Properties.OnQueryRequest = CodigoPadreQueryRequest
+      Properties.OnValidate = CodigoPadreValidate
+      TabOrder = 1
+      Width = 43
+    end
+  end
+  object FormManager: TgxFormManager
+    Dataset = CategoriaTable
+    FirstKeyControl = CodigoCtrl
+    FirstDataControl = NombreCtrl
+    Model = fmEditForm
+    ShowQueryOption = False
+    OnInitializeForm = FormManagerInitializeForm
+    OnReportRequest = FormManagerReportRequest
+    Left = 328
+    Top = 4
+  end
+  object CategoriaTable: TnxeTable
+    ActiveRuntime = True
+    Database = EnterpriseDataModule.UserDatabase
+    Timeout = 6000
+    BeforePost = CategoriaTableBeforePost
+    OnNewRecord = CategoriaTableNewRecord
+    TableName = 'Categoria'
+    IndexFieldNames = 'Codigo'
+    AutoIncFieldName = 'Codigo'
+    Left = 295
+    Top = 4
+  end
+  object DataSource: TDataSource
+    DataSet = CategoriaTable
+    Left = 262
+    Top = 4
+  end
+  object CategoriaAuxTable: TnxeTable
+    ActiveRuntime = True
+    Database = EnterpriseDataModule.UserDatabase
+    Timeout = 6000
+    BeforePost = CategoriaTableBeforePost
+    OnNewRecord = CategoriaTableNewRecord
+    TableName = 'Categoria'
+    IndexFieldNames = 'CodigoFamilia;Codigo'
+    AutoIncFieldName = 'Codigo'
+    Left = 409
+    Top = 4
+  end
+end

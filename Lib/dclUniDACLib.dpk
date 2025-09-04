@@ -1,0 +1,73 @@
+package dclUniDACLib;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Devart Data Access Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  dcldb,
+  vcldb,
+  vclactnband,
+  designIDE,
+  DBEngine,
+  UniDACLib;
+
+contains
+  UniAbout,
+  UniMenu,
+  UniDesignUtils,
+  UniUpdateSQLEditor,
+  UniScriptEditor,
+  UniStoredProcEditor,
+  UniTableEditor,
+  UniTableSQLFrame,
+  UniSQLEditor,
+  UniQueryOptionsFrame,
+  UniQueryEditor,
+  UniSPCallFrame,
+  UniParamsFrame,
+  UniSQLOptionsFrame,
+  UniConnectionEditor,
+  UniSpecificOptionsFrame,
+  UniSpecificOptionsEditor,
+  UniMacrosFrame,
+  UniDataTypeMapFrame,
+  UniReg,
+  UniDesign,
+  VirtualQueryReg,
+  VirtualQueryDesign,
+  VirtualQueryEditor,
+  VirtualMenu,
+  VirtualAbout,
+  VirtualQueryDesignUtils,
+  CRControlsReg,
+  NexusDBUniProvider;
+
+end.

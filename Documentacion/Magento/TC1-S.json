@@ -1,0 +1,35 @@
+{
+  "sku": "TC1-S",
+  "name": "Camiseta deportiva Adidas",
+  "attributeSetId": 4,
+  "type_id": "virtual",
+  "visibility": 1,
+  "weight": 0,
+  "extensionAttributes": {
+    "stock_item": {
+      "qty": 10,
+      "is_in_stock": true
+    }
+  },
+  "price": 10,
+  "customAttributes": [
+    {
+      "attributeCode": "tax_class_id",
+      "value": "10"
+    },
+    {
+      "attributeCode": "category_ids",
+      "value": [
+        "15"
+      ]
+    },
+    {
+      "attributeCode": "url_key",
+      "value": "TC1-S"
+    },
+    {
+      "attributeCode": "talla",
+      "value": "14"
+    }
+  ]
+}

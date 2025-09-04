@@ -1,0 +1,65 @@
+Instalación y actualización
+
+· Registro de actualizaciones que permite retroceder a una versión anterior (historial de actualizaciones).
+· Actualización selectiva que permite actualizar módulos de opciones especiales y módulos propietarios.
+· Instalador : adaptación a Windows Vista (se asignan privilegios de administrador a los enlaces aunque el instalador)
+  se ejecute como un usuario normal y se crea un enlace automático en el escritorio a la aplicación principal.
+
+Ejecución
+
+· Posibilidad de especificar el tamaño por defecto de la ventana principal de la aplicación (en gd_XXX.ini).
+
+Genéricas
+
+· Nuevos componentes extendidos a toda la aplicación.
+· Posibilidad de ajustar la anchura de las columnas de las rejillas en los mantenimientos.
+· Opción de mostrar en las consultas la ventana de filtro de registros directamente.
+· Poder seleccionar, en el momento de su emisión, diferentes formatos de cualquier listado o informe.
+· El planificador.
+· Durante la edición se puede acceder a registros bloqueados (albaranes facturados, asientos de tipo automático, etc..)
+  manteniendo pulsada la tecla <Ctrl> y poder entrar en los campos para copiar (Cortar y Pegar), Consultar o Editar las
+  fichas de los registros introducidos.
+· Posibilidad de editar y guardar los cambios en el diseño que se realizan a los gráficos de la aplicación.
+
+Contabilidad
+
+· Ajustes al nuevo PGC 2008
+· Graficos comparativos de saldos más accesibles y que permiten incluir hasta 6 cuentas en una misma serie. Se han añadido
+  también las siguientes operaciones : saldo acreedor, saldo deudor acumulado y saldo acreedor acumulado.
+· Los extractos de cuentas se pueden ahora agrupar por cualquiera de sus columnas. También se ofrecen 2 tipos de relaciones :
+  la clásica con las columnas de los importes al debe y al haber y otra simpleficada, con un único importe y su signo (resulta
+  útil para realizar búsquedas de importes cuando no se conoce su signo).
+
+Libros registro del I.V.A.
+
+Previsión de cobros y pagos
+
+· Anotación del cobro de efectos :Diferenciación entre las diferencias por el tipo de cambio y las ordinarias (por no coincidencia del importe
+  del efecto con el cobrado).
+· Mantenimiento de remesas de cobro y de pago: posibilidad de incluir o excluir partidas de efectos a partir de la selección realizada en el filtro.
+· Evolución futura de la situación financiera : ahora el resumen de periodicidad puede ser diaria o quincenal.
+
+Compras
+
+Ventas
+
+Almacen
+
+· Trazabilidad de los artículos.
+· Los documentos comerciales (ofertas, presupuestos, pedidos y albaranes)  se han integrado en un único fichero de movimientos. El motivo es tener un registro global de todos los movimientos de articulos en la aplicación.
+  Ventajas :
+
+    · Seguimiento de cada movimiento individual a lo largo de todos los documentos (trazabilidad). Podeis ver las traza de un artículo pulsando con el botón derecho sobre cualquier línea de un documento.
+    · Identificación de forma exacta de la posición de cada movimiento : cuando se consulta el movimiento origen de una línea (por ejemplo el pedido que originó una linea de albarán ) se muestra resaltada la línea origen.
+    · Proceso de exportación/importación centralizado y completo : desde un documento se puede exportar a otro o importar desde otro. Derivado de comprobar las dificultades que tienen
+      los usuarios (algunos) para saber donde deben situarse para convertir un documento en otro.
+    · La ficha de artículos incluye todos los movimientos. Es útil para identificar cualquier movimiento de un artículo y no solo las entradas y salidas de almacén (ofertas, presupuestos, pedidos etc..).
+
+
+  
+
+
+
+Resultados y estadísticas comerciales
+
+TPV

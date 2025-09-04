@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dxSkin Version="1,25" Name="GestwinWhiteSkin" Parent="Office2019White">
+	<Details>
+		<SkinGroupName Value="Vector Skins"/>
+		<DisplayName Value="GestwinWhiteWhite"/>
+		<SkinIcon Name="16x16" Value="SkinIcon16x16.png"/>
+		<SkinIcon Name="48x48" Value="SkinIcon48x48.png"/>
+	</Details>
+	<ColorPalettes/>
+	<AdditionalProperties>
+		<Colors/>
+	</AdditionalProperties>
+	<ControlParts Name="Bars">
+		<Part Name="StatusBar" Alpha="255" Color="16777215" TextColor="12480016" TextColorReference="Accent Paint">
+			<MinSize Width="0" Height="0"/>
+			<Borders>
+				<Left Thin="1"/>
+				<Top Thin="1"/>
+				<Right Thin="1"/>
+				<Bottom Thin="1"/>
+			</Borders>
+			<Image ImageCount="1" Layout="Horizontal" Stretch="Stretch" States="1" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+			</Image>
+			<Glyph ImageCount="1" Layout="Horizontal" Stretch="Stretch" States="1" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+			</Glyph>
+		</Part>
+	</ControlParts>
+	<ControlParts Name="Common"/>
+	<ControlParts Name="Docking"/>
+	<ControlParts Name="Editors">
+		<Part Name="SpinDownGlyph" Alpha="255">
+			<MinSize Width="16" Height="9"/>
+			<Borders>
+				<Left Thin="1"/>
+				<Top Thin="1"/>
+				<Right Thin="1"/>
+				<Bottom Thin="1"/>
+			</Borders>
+			<Image ImageCount="1" Layout="Vertical" Stretch="Stretch" States="15" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+			</Image>
+			<Glyph ImageCount="1" Layout="Vertical" Stretch="NoResize" States="15" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+				<File Name="SpinDownGlyph_Glyph.svg"/>
+			</Glyph>
+		</Part>
+	</ControlParts>
+	<ControlParts Name="Form"/>
+	<ControlParts Name="GanttControl"/>
+	<ControlParts Name="Grid"/>
+	<ControlParts Name="HamburgerMenu"/>
+	<ControlParts Name="MapControl"/>
+	<ControlParts Name="NavBar"/>
+	<ControlParts Name="NavPane"/>
+	<ControlParts Name="PageControl">
+		<Part Name="TabButtonVert" Alpha="255" TextColor="4474440" TextColorReference="Brush">
+			<MinSize Width="0" Height="0"/>
+			<Borders>
+				<Left Thin="1"/>
+				<Top Thin="1"/>
+				<Right Thin="1"/>
+				<Bottom Thin="1"/>
+			</Borders>
+			<Image ImageCount="4" Layout="Vertical" Stretch="Stretch" States="15" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+			</Image>
+			<Glyph ImageCount="4" Layout="Vertical" Stretch="NoResize" States="15" GradientMode="Horizontal" InterpolationMode="0">
+				<ColorPalettes/>
+				<File Name="TabButtonVert_Glyph.svg"/>
+			</Glyph>
+		</Part>
+	</ControlParts>
+	<ControlParts Name="PDFViewer"/>
+	<ControlParts Name="PrintingSystem"/>
+	<ControlParts Name="Ribbon"/>
+	<ControlParts Name="RichEdit"/>
+	<ControlParts Name="Scheduler"/>
+	<ControlParts Name="TileControl"/>
+	<ControlParts Name="VerticalGrid"/>
+</dxSkin>

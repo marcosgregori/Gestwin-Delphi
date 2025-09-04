@@ -1,0 +1,53 @@
+package gdm105;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS OFF}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS ON}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdlib,
+  gdm30,
+  ExtControlsNC;
+
+contains
+  gdm105Dm in 'gdm105Dm.pas',
+  f_lma105 in 'f_lma105.pas',
+  f_cpv105 in 'f_cpv105.pas',
+  f_fpv105 in 'f_fpv105.pas',
+  f_lcv105 in 'f_lcv105.pas',
+  dmi_cfg105 in '..\..\Interface\Gim105\dmi_cfg105.pas',
+  Gim105Fields in '..\..\Interface\Gim105\Gim105Fields.pas',
+  dm_cfg105 in 'dm_cfg105.pas' {Configuracion105Module: TDataModule},
+  b_ddb in 'b_ddb.pas' {BoxDdbForm: TgxForm};
+
+end.

@@ -1,0 +1,177 @@
+package MainLib;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Gestwin MainLib'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclx,
+  vcl,
+  vclie,
+  vclimg,
+  dbrtl,
+  vcldb,
+  DBEngine,
+  IndyCore,
+  IndySystem,
+  Remote,
+  ExtControls,
+  ExtControlsNC,
+  ExtControlsPS,
+  Security,
+  InetSecurity,
+  ExtControlsRE;
+
+contains
+  Spring,
+  Spring.Collections,
+  Spring.Collections.Adapters,
+  Spring.Collections.Base,
+  Spring.Collections.Dictionaries,
+  Spring.Collections.Events,
+  Spring.Collections.Extensions,
+  Spring.Collections.Lists,
+  Spring.Collections.LinkedLists,
+  Spring.Collections.MultiMaps,
+  Spring.Collections.Queues,
+  Spring.Collections.Sets,
+  Spring.Collections.Stacks,
+  Spring.Collections.Trees,
+  Spring.DesignPatterns,
+  Spring.Events,
+  Spring.Events.Base,
+  Spring.Helpers,
+  Spring.Logging,
+  Spring.Logging.Appenders,
+  Spring.Logging.Appenders.Base,
+  Spring.Logging.Controller,
+  Spring.Logging.Extensions,
+  Spring.Logging.Loggers,
+  Spring.Logging.NullLogger,
+  Spring.Logging.ResourceStrings,
+  Spring.Logging.Serializers,
+  Spring.MethodIntercept,
+  Spring.Reflection,
+  Spring.ResourceStrings,
+  Spring.SystemUtils,
+  Spring.Times,
+  Spring.ValueConverters,
+  Spring.VirtualClass,
+  Spring.VirtualInterface,
+
+  ZFConst,
+  ZipForge,
+  ZFZlib,
+  ZFFolderDialog,
+  ZFStrFunc,
+  ZFExcept,
+  ZFUClasses,
+  ZFUFormatStrUtils,
+  ZFUSystem,
+  ZFUSysUtils,
+  ZFUWideStrUtils,
+  ZFUWindows,
+  ZFPBKDF_2,
+  ZFhash,
+  ZFhmac,
+  ZFsha1,
+  ZFpb_kdf,
+  ZFKeyDeriv,
+  ZFDecConst,
+  ZFCipher,
+  ZFDecUtil,
+
+  Files,
+  SQLSet,
+  SuscriptionConsts,
+  LibUtils,
+  DataManager,
+  AppForms,
+  AppContainer,
+  AppManager,
+  PrintSystem,
+  f_grd,
+  f_prg,
+  EditSelector,
+  QueryForm,
+  QueryFormBar,
+  PrintPreviewWindow,
+  MsgFrame,
+  NexusRpcData,
+  RestRpcData,
+  DataAccess,
+  EnterpriseDataAccess,
+  SessionDataAccess,
+  EditableGrid,
+  WorkCalendar,
+  QueryGrid,
+  WebBrowser,
+  b_tcn,
+  b_exp,
+  b_avs,
+  b_pro,
+  b_win,
+  b_spr,
+  b_dir,
+  b_mpr,
+  b_flt,
+  b_reg,
+  b_sch,
+  b_abo,
+  b_msg,
+  GridTableViewController,
+  WindowsServiceManager,
+  SessionIntf,
+  PDFViewer,
+  TextConvert,
+
+  CPort,
+  CPortSetup,
+  CPortCtl,
+  CPortEsc,
+  CPortTrmSet,
+
+  Dashboard,
+  DashboardSection,
+  dxSkinXmas2008Blue,
+  dxSkinValentine,
+  dxSkinSummer2008,
+  dxSkinSpringTime,
+  dxSkinPumpkin,
+  dxSkinFoggy,
+  dxSkinSeven,
+  dxSkinDevExpressStyle,
+  dxSkinDevExpressDarkStyle,
+  dxSkinBasic,
+  GestwinWhiteSkin,
+  GestwinSkin {,
+
+  dxServerModeNexusDBDataSource};
+
+end.

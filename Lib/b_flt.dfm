@@ -1,0 +1,157 @@
+object FilterForm: TFilterForm
+  Left = 503
+  Top = 363
+  HelpContext = 103
+  ActiveControl = FiltroMemo
+  BorderIcons = [biSystemMenu]
+  Caption = 'Filtrar registros'
+  ClientHeight = 163
+  ClientWidth = 379
+  Color = clWhite
+  TransparentColorValue = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Icon.Data = {
+    0000010001001010000001002000280400001600000028000000100000002000
+    0000010020000000000000040000C30E0000C30E000000000000000000004B30
+    1B00BC754030B6703D1C2B1B0F00000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000B979
+    482FE18F52F8DA874AE5CC7E45272B1B0F000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000AF73
+    441BE9995BE2E18F52FDDA874AE5CC7E45262C1B0F0000000000090807001816
+    1400181614001614130004040300000000000000000000000000000000001D13
+    0B00CC864F24E9995BE2E18F52FDD88649E4B67540275D534B0B786D6560786D
+    659A776C64A8786D658B746A63424B4440000B0A0A0000000000000000000000
+    00001D130B00CC864F24E7985AE3C37F46FDA4744CE5786C63E6847A72FDA79F
+    99FDB0A8A4FD9E958FFD7A7068FD776C65C06D635C1B14121000000000000000
+    0000000000001D130B00B1764526B2835CE5897F77FDB9B1ADFCF6F2F0FCF9F5
+    F4FCF9F5F4FCF9F5F4FCEBE6E4FC99908AFD776C64DB695F5913050404000000
+    000000000000000000006B645F0A9A918BE4CBC5C1FDF9F5F4FDF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF5F1EFFD918881FD786D659D35302C000000
+    00000000000004040400968E885DA39B96FDF5F1F0FCF9F5F4FDF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FDD8D2CFFD776C64F85B534D110000
+    0000000000001413120099918B97BAB3AFFDF8F4F3FCF9F5F4FDF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FDF7F3F2FC7D726AFD685F58460000
+    0000000000001413120099928CA5BFB9B5FDF7F3F1FCF9F5F4FDF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FD857B74FD685E58530000
+    000000000000100F0E0099918B88B4ADA8FDF3EFEEFCF9F5F4FDF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FDF2EEEDFD796E66FD665D56370000
+    000000000000000000008A837D3F9C948FFDE6E1DFFCF7F3F2FCF9F5F4FDF9F5
+    F4FDF9F5F4FDF9F5F4FDF9F5F4FDF9F5F4FDC3BDB9FD776C64E64E4842040000
+    000000000000000000004E4A470099918BBDB1AAA5FDEDE9E7FCF6F2F1FCF9F5
+    F4FCF9F5F4FCF9F5F4FCF9F5F4FCE7E2E0FD7F756DFD786D666B1F1C1A000000
+    00000000000000000000060606007F78731999918BD9ABA49FFDD9D4D1FCF0EC
+    EAFCF3EFEEFCF0ECEAFCD0CBC8FCA09893FD8A817A9F4B444001000000000000
+    00000000000000000000000000000E0D0D0077716C1199918B9A99918BF79E96
+    91FDA39C96FD9B938DFD99918BE499918B685A56520002020100000000000000
+    0000000000000000000000000000000000000101010033302E0065605C0F7A73
+    6E437B746F5177706C345B565203201E1D00000000000000000000000000}
+  Position = poMainFormCenter
+  OnShow = FormShow
+  DesignSize = (
+    379
+    163)
+  TextHeight = 17
+  object Panel3: TPanel
+    Left = 99
+    Top = 125
+    Width = 184
+    Height = 33
+    Anchors = [akBottom]
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 92
+    object OkButton: TgBitBtn
+      Left = 0
+      Top = 0
+      Width = 90
+      Height = 32
+      Caption = '&Aceptar'
+      Default = True
+      Enabled = True
+      ModalResult = 1
+      OptionsImage.ImageIndex = 2
+      OptionsImage.Images = ApplicationContainer.ButtonImageList
+      OptionsImage.Margin = 3
+      OptionsImage.Spacing = 5
+      TabOrder = 0
+      GlyphBitmap = gmOk
+    end
+    object CloseButton: TgBitBtn
+      Left = 93
+      Top = 0
+      Width = 90
+      Height = 32
+      Cancel = True
+      Caption = ' &Cancelar'
+      Enabled = True
+      ModalResult = 2
+      OptionsImage.ImageIndex = 6
+      OptionsImage.Images = ApplicationContainer.ButtonImageList
+      OptionsImage.Margin = 3
+      OptionsImage.Spacing = 2
+      TabOrder = 1
+      GlyphBitmap = gmCancel
+    end
+  end
+  object cxGroupBox1: TcxGroupBox
+    Left = 3
+    Top = 3
+    Alignment = alCenterCenter
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 1
+    DesignSize = (
+      372
+      116)
+    Height = 116
+    Width = 372
+    object LabelCtrl2: TLabel
+      Left = 27
+      Top = 53
+      Width = 29
+      Height = 17
+      Caption = 'Filtro'
+      Transparent = True
+    end
+    object ExpresionCtrl: TcxRadioButton
+      Left = 10
+      Top = 6
+      Width = 113
+      Height = 17
+      Caption = 'Expresi'#243'n'
+      TabOrder = 0
+      OnClick = ExpresionCtrlClick
+      Transparent = True
+    end
+    object CampoCtrl: TcxRadioButton
+      Left = 10
+      Top = 26
+      Width = 71
+      Height = 17
+      Caption = 'Campo'
+      TabOrder = 1
+      OnClick = CampoCtrlClick
+      Transparent = True
+    end
+    object CampoComboBox: TcxComboBox
+      Left = 90
+      Top = 25
+      Properties.DropDownListStyle = lsFixedList
+      TabOrder = 2
+      Width = 161
+    end
+    object FiltroMemo: TcxMemo
+      Left = 90
+      Top = 53
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Properties.WantReturns = False
+      TabOrder = 3
+      Height = 57
+      Width = 276
+    end
+  end
+end

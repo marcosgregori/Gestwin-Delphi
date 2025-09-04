@@ -1,0 +1,63 @@
+{
+  "product": {
+    "sku": "M0011-2XS",
+    "name": "CAMISETA AZUL MUJER MCDONALD''S",
+    "attributeSetId": 4,
+    "type_id": "virtual",
+    "visibility": 1,
+    "weight": 0,
+    "extensionAttributes": {
+      "stock_item": {
+        "qty": 0,
+        "is_in_stock": false
+      }
+    },
+    "tierPrices": [],
+    "price": 5.55,
+    "customAttributes": [
+      {
+        "attributeCode": "tax_class_id",
+        "value": "24"
+      },
+      {
+        "attributeCode": "category_ids",
+        "value": [
+          "70",
+          "74"
+        ]
+      },
+      {
+        "attributeCode": "url_key",
+        "value": "M0011-2XS"
+      },
+      {
+        "attributeCode": "description",
+        "value": "Camiseta de manga corta\r\nCuello pico\r\nEtiqueta textil verde con logo McD en manga derecha\r\nPictos aleatorios en pecho izquierdo\r\nComposición: 65% Poliester reciclado 35% Algodón"
+      },
+      {
+        "attributeCode": "short_description",
+        "value": "Camiseta de manga corta\r\nCuello pico\r\nEtiqueta textil verde con logo McD en manga derecha\r\nPictos aleatorios en pecho izquierdo\r\nComposición: 65% Poliester reciclado 35% Algodón"
+      },
+      {
+        "attributeCode": "disponibilidad",
+        "value": ""
+      },
+      {
+        "attributeCode": "descr_portugues",
+        "value": ""
+      },
+      {
+        "attributeCode": "portugues",
+        "value": ""
+      },
+      {
+        "attributeCode": "vta.distribuido",
+        "value": ""
+      },
+      {
+        "attributeCode": "talla",
+        "value": "502"
+      }
+    ]
+  }
+}

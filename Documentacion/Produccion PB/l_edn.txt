@@ -1,0 +1,358 @@
+	Crystal Report Professional v14.0 (32-bit) - Report Definition
+
+1.0 File Information
+
+	Report File: 
+	Version: 8.0
+
+2.0 Record Sort Fields
+
+3.0 Group Sort Fields
+
+4.0 Formulas
+
+4.1 Record Selection Formula
+	
+
+4.2 Group Selection Formula
+	
+
+4.3 Other Formulas
+
+	Name: {@CabeceraEmpresa}
+	Formula: {@Empresa_Codigo} + ' - '  + {@Empresa_Nombre} + ' - ' + ToText( {@Ejercicio},0 ) 
+
+	Name: {@Usuario_Codigo}
+	Formula: '02'
+
+	Name: {@Informe_Titulo}
+	Formula: 'Listado de disponibilidad para fabricación'
+
+	Name: {@TituloClaseA}
+	Formula: ''
+
+	Name: {@TituloClaseB}
+	Formula: ''
+
+	Name: {@TituloClaseC}
+	Formula: ''
+
+	Name: {@TextoLimites}
+	Formula: 'Desde el código de artículo [' + {@CodigoInicial} + '] hasta el [' + {@CodigoFinal} +']'
+
+	Name: {@CodigoComponente}
+	Formula: WhilePrintingRecords;
+	
+	NumberVar Offset;
+	StringVar    TextoCodigo
+	;
+	Offset            := {Report1.ValorEntero1} - 1;
+	TextoCodigo := {Report1.ValorTexto1};
+	If      Offset>5
+	then ( TextoCodigo := '* ' + TextoCodigo; Offset := 5 );
+	If      Offset>0
+	then TextoCodigo := ReplicateString ('   ',Offset ) + TextoCodigo;
+	
+	TextoCodigo;
+	
+	
+
+	Name: {@DescripcionComponente}
+	Formula: WhilePrintingRecords;
+	
+	NumberVar Offset;
+	StringVar    TextoCodigo
+	;
+	Offset            := {Report1.ValorEntero1} - 1;
+	TextoCodigo := {Report1.Descripcion2};
+	If      Offset>5
+	then Offset := 5;
+	If      Offset>0
+	then TextoCodigo := ReplicateString ('   ',Offset ) + TextoCodigo;
+	
+	TextoCodigo;
+	
+
+	Name: {@PrecioCosteConjunto}
+	Formula: {Report1.ValorNumerico1} * {Report1.ValorNumerico3}
+
+	Name: {@PrecioVentaConjunto}
+	Formula: {Report1.ValorNumerico1} * {Report1.ValorNumerico4}
+
+5.0 Sectional Information
+
+5.1 Page Header Section
+	Visible, Keep Together
+
+	{@CabeceraEmpresa}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together
+
+
+	PrintDate
+		Date, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Windows Default Type: Use Windows Short Date, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: None, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ''
+
+
+	{@Usuario_Codigo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together
+
+
+	Código
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Descripción
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{@Informe_Titulo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	Cantidad
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Existencias
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Precio coste
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Precio venta
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Salen
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	DataTime
+		Time, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Time Base: 24 Hour, AM/PM Type: AM/PM After, Hour Type: Numeric, Minute Type: Numeric, Second Type: None, AM String: 'AM', PM String: 'PM', Hour Minute Separator: ':', Minute  Second Separator: ':'
+
+
+	{@TituloClaseA}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TituloClaseB}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TituloClaseC}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.2 Page Footer Section
+	Visible, New Page After, Keep Together, Print At Bottom of Page
+
+	GESTWIN
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Página
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	PageNumber
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, No Leading Zero, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	PageNumber
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.3 Report Header Section
+	Visible, New Page Before
+
+	Criterios
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Límites :
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{@TextoLimites}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.4 Report Footer Section
+	Hidden, New Page After
+
+5.5 Group Header Section
+	Visible
+
+	{Report1.Descripcion1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.CodigoTexto}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.ValorTexto2}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.ValorTexto3}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.ValorTexto4}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+5.6 Group Footer Section
+	Visible
+
+	Sum ({@PrecioCosteConjunto}, {Report1.CodigoEntero})
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	Sum ({@PrecioVentaConjunto}, {Report1.CodigoEntero})
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	{Report1.ValorNumerico5}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.7 Details Section
+	Visible
+
+	Subsection.1 
+		Visible, Suppress Blank Sections
+
+		Format Formulas
+
+		Visible: {Report1.CodigoEntero}=0
+		
+	{Report1.ValorNumerico1}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Suppress If Zero, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecCantidadCompra}
+		Rounding Type: {@DecCantidadCompra}
+		
+	{Report1.ValorNumerico2}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecCantidadCompra}
+		
+	{@CodigoComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@DescripcionComponente}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@PrecioCosteConjunto}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecPrecioCompra}
+		
+	{@PrecioVentaConjunto}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 2 Decimal Places, Rounding: 0.01, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecPrecioVenta}
+		
+	{Report1.ValorNumerico5}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: ',', Decimal Symbol: '.'
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecCantidadCompra}
+		
+	{Report1.ValorTexto2}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.ValorTexto3}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.ValorTexto4}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+

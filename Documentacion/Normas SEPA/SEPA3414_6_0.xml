@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>PRE2014030413381600913</MsgId>
+      <CreDtTm>2014-03-04T13:38:16</CreDtTm>
+      <NbOfTxs>7</NbOfTxs>
+      <CtrlSum>14963.83</CtrlSum>
+      <InitgPty>
+        <Nm>WinStation, S.L.</Nm>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>B12406989000</Id>
+              <SchmeNm>
+                <Prtry>SEPA</Prtry>
+              </SchmeNm>
+            </Othr>
+          </OrgId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>PRE20140304133816009131</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <ReqdExctnDt>2014-03-04</ReqdExctnDt>
+      <Dbtr>
+        <Nm>WinStation, S.L.</Nm>
+        <PstlAdr>
+          <Ctry>ES</Ctry>
+          <AdrLine>Avda. Yecla, 28</AdrLine>
+          <AdrLine>12580 Benicarlo Castellon</AdrLine>
+        </PstlAdr>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>B12406989000</Id>
+            </Othr>
+          </OrgId>
+        </Id>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>ES3500810276020001133316</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>BSABESBB</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">6094.22</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BSABESBB</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>MARCOS GREGORI FORESTIER</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>AVDA. YECLA, 43</AdrLine>
+            <AdrLine>12580 BENICARLO Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES3500810276030001063815</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">3070.45</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BSABESBB</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>JUAN FCO. BOSCH ROCA</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>MENDEZ NUNEZ, 43</AdrLine>
+            <AdrLine>12580 BENICARLO Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES3200810276030001036806</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">1462.36</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>CCRIES2AXXX</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>PEDRO PASALODOS FERRAN</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>TRULLOLS</AdrLine>
+            <AdrLine>12000 CASTELLON Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES6230587303122810007610</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">1518.92</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BSABESBB</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>MARIA JOSE ANTOLI PALLARES</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>PENISCOLA, 64A, 2 A</AdrLine>
+            <AdrLine>12580 BENICARLO Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES3700810276030006083723</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">1452.01</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BBVAESMMXXX</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>ALVARO PARIS</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>MANUEL ALVAR</AdrLine>
+            <AdrLine>12580 BENICARLO Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES7601820519530201512406</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">1117.28</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BCOEESMM134</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>JOSE ANTONIO CERDA MEZQUITA</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>MARIA CASES, 9 3 A</AdrLine>
+            <AdrLine>12200 ONDA Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES2431343499950027434315</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>2014-00000002-01-110314</InstrId>
+          <EndToEndId>2014-00000002-01-110314</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">248.59</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>BSABESBB</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>MARC GREGORI FORES</Nm>
+          <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>AVDA. YECLA, 43</AdrLine>
+            <AdrLine>12580 BENICARLO Castellon</AdrLine>
+          </PstlAdr>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>ES5200810276090006625971</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

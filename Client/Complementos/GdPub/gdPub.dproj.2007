@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1da3c826-87a0-417f-835c-b55e16fd2fd9}</ProjectGuid>
+    <MainSource>gdPub.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>F:\Gestwin\gdPub.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Alignment>1</DCC_Alignment>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_OpenStringParams>False</DCC_OpenStringParams>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Hints>False</DCC_Hints>
+    <DCC_Warnings>False</DCC_Warnings>
+    <DCC_ExeOutput>F:\Gestwin</DCC_ExeOutput>
+    <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\Lib\ZLib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\Lib\ZLib</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\Lib\ZLib</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\Lib\ZLib</DCC_IncludePath>
+    <DCC_Define>NODBACCESS;NOREPORTS;NOTEECHART;RELEASE</DCC_Define>
+    <DCC_SYMBOL_DEPRECATED>False</DCC_SYMBOL_DEPRECATED>
+    <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+    <DCC_UNIT_DEPRECATED>False</DCC_UNIT_DEPRECATED>
+    <DCC_HRESULT_COMPAT>False</DCC_HRESULT_COMPAT>
+    <DCC_HIDING_MEMBER>False</DCC_HIDING_MEMBER>
+    <DCC_HIDDEN_VIRTUAL>False</DCC_HIDDEN_VIRTUAL>
+    <DCC_GARBAGE>False</DCC_GARBAGE>
+    <DCC_BOUNDS_ERROR>False</DCC_BOUNDS_ERROR>
+    <DCC_ZERO_NIL_COMPAT>False</DCC_ZERO_NIL_COMPAT>
+    <DCC_STRING_CONST_TRUNCED>False</DCC_STRING_CONST_TRUNCED>
+    <DCC_FOR_LOOP_VAR_VARPAR>False</DCC_FOR_LOOP_VAR_VARPAR>
+    <DCC_TYPED_CONST_VARPAR>False</DCC_TYPED_CONST_VARPAR>
+    <DCC_ASG_TO_TYPED_CONST>False</DCC_ASG_TO_TYPED_CONST>
+    <DCC_CASE_LABEL_RANGE>False</DCC_CASE_LABEL_RANGE>
+    <DCC_FOR_VARIABLE>False</DCC_FOR_VARIABLE>
+    <DCC_CONSTRUCTING_ABSTRACT>False</DCC_CONSTRUCTING_ABSTRACT>
+    <DCC_COMPARISON_FALSE>False</DCC_COMPARISON_FALSE>
+    <DCC_COMPARISON_TRUE>False</DCC_COMPARISON_TRUE>
+    <DCC_COMPARING_SIGNED_UNSIGNED>False</DCC_COMPARING_SIGNED_UNSIGNED>
+    <DCC_COMBINING_SIGNED_UNSIGNED>False</DCC_COMBINING_SIGNED_UNSIGNED>
+    <DCC_UNSUPPORTED_CONSTRUCT>False</DCC_UNSUPPORTED_CONSTRUCT>
+    <DCC_FILE_OPEN>False</DCC_FILE_OPEN>
+    <DCC_FILE_OPEN_UNITSRC>False</DCC_FILE_OPEN_UNITSRC>
+    <DCC_BAD_GLOBAL_SYMBOL>False</DCC_BAD_GLOBAL_SYMBOL>
+    <DCC_DUPLICATE_CTOR_DTOR>False</DCC_DUPLICATE_CTOR_DTOR>
+    <DCC_INVALID_DIRECTIVE>False</DCC_INVALID_DIRECTIVE>
+    <DCC_PACKAGE_NO_LINK>False</DCC_PACKAGE_NO_LINK>
+    <DCC_PACKAGED_THREADVAR>False</DCC_PACKAGED_THREADVAR>
+    <DCC_IMPLICIT_IMPORT>False</DCC_IMPLICIT_IMPORT>
+    <DCC_HPPEMIT_IGNORED>False</DCC_HPPEMIT_IGNORED>
+    <DCC_NO_RETVAL>False</DCC_NO_RETVAL>
+    <DCC_USE_BEFORE_DEF>False</DCC_USE_BEFORE_DEF>
+    <DCC_FOR_LOOP_VAR_UNDEF>False</DCC_FOR_LOOP_VAR_UNDEF>
+    <DCC_UNIT_NAME_MISMATCH>False</DCC_UNIT_NAME_MISMATCH>
+    <DCC_NO_CFG_FILE_FOUND>False</DCC_NO_CFG_FILE_FOUND>
+    <DCC_IMPLICIT_VARIANTS>False</DCC_IMPLICIT_VARIANTS>
+    <DCC_UNICODE_TO_LOCALE>False</DCC_UNICODE_TO_LOCALE>
+    <DCC_LOCALE_TO_UNICODE>False</DCC_LOCALE_TO_UNICODE>
+    <DCC_IMAGEBASE_MULTIPLE>False</DCC_IMAGEBASE_MULTIPLE>
+    <DCC_SUSPICIOUS_TYPECAST>False</DCC_SUSPICIOUS_TYPECAST>
+    <DCC_PRIVATE_PROPACCESSOR>False</DCC_PRIVATE_PROPACCESSOR>
+    <DCC_MESSAGE_DIRECTIVE>False</DCC_MESSAGE_DIRECTIVE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_OpenStringParams>False</DCC_OpenStringParams>
+    <DCC_Hints>False</DCC_Hints>
+    <DCC_Warnings>False</DCC_Warnings>
+    <DCC_ExeOutput>F:\Gestwin</DCC_ExeOutput>
+    <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\GdServicios</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\GdServicios</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\GdServicios</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;F:\Source\Lib;F:\Source\GdServicios</DCC_IncludePath>
+    <DCC_Define>NODBACCESS;NOREPORTS;NOTEECHART;DEBUG</DCC_Define>
+    <DCC_SYMBOL_DEPRECATED>False</DCC_SYMBOL_DEPRECATED>
+    <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+    <DCC_UNIT_DEPRECATED>False</DCC_UNIT_DEPRECATED>
+    <DCC_HRESULT_COMPAT>False</DCC_HRESULT_COMPAT>
+    <DCC_HIDING_MEMBER>False</DCC_HIDING_MEMBER>
+    <DCC_HIDDEN_VIRTUAL>False</DCC_HIDDEN_VIRTUAL>
+    <DCC_GARBAGE>False</DCC_GARBAGE>
+    <DCC_BOUNDS_ERROR>False</DCC_BOUNDS_ERROR>
+    <DCC_ZERO_NIL_COMPAT>False</DCC_ZERO_NIL_COMPAT>
+    <DCC_STRING_CONST_TRUNCED>False</DCC_STRING_CONST_TRUNCED>
+    <DCC_FOR_LOOP_VAR_VARPAR>False</DCC_FOR_LOOP_VAR_VARPAR>
+    <DCC_TYPED_CONST_VARPAR>False</DCC_TYPED_CONST_VARPAR>
+    <DCC_ASG_TO_TYPED_CONST>False</DCC_ASG_TO_TYPED_CONST>
+    <DCC_CASE_LABEL_RANGE>False</DCC_CASE_LABEL_RANGE>
+    <DCC_FOR_VARIABLE>False</DCC_FOR_VARIABLE>
+    <DCC_CONSTRUCTING_ABSTRACT>False</DCC_CONSTRUCTING_ABSTRACT>
+    <DCC_COMPARISON_FALSE>False</DCC_COMPARISON_FALSE>
+    <DCC_COMPARISON_TRUE>False</DCC_COMPARISON_TRUE>
+    <DCC_COMPARING_SIGNED_UNSIGNED>False</DCC_COMPARING_SIGNED_UNSIGNED>
+    <DCC_COMBINING_SIGNED_UNSIGNED>False</DCC_COMBINING_SIGNED_UNSIGNED>
+    <DCC_UNSUPPORTED_CONSTRUCT>False</DCC_UNSUPPORTED_CONSTRUCT>
+    <DCC_FILE_OPEN>False</DCC_FILE_OPEN>
+    <DCC_FILE_OPEN_UNITSRC>False</DCC_FILE_OPEN_UNITSRC>
+    <DCC_BAD_GLOBAL_SYMBOL>False</DCC_BAD_GLOBAL_SYMBOL>
+    <DCC_DUPLICATE_CTOR_DTOR>False</DCC_DUPLICATE_CTOR_DTOR>
+    <DCC_INVALID_DIRECTIVE>False</DCC_INVALID_DIRECTIVE>
+    <DCC_PACKAGE_NO_LINK>False</DCC_PACKAGE_NO_LINK>
+    <DCC_PACKAGED_THREADVAR>False</DCC_PACKAGED_THREADVAR>
+    <DCC_IMPLICIT_IMPORT>False</DCC_IMPLICIT_IMPORT>
+    <DCC_HPPEMIT_IGNORED>False</DCC_HPPEMIT_IGNORED>
+    <DCC_NO_RETVAL>False</DCC_NO_RETVAL>
+    <DCC_USE_BEFORE_DEF>False</DCC_USE_BEFORE_DEF>
+    <DCC_FOR_LOOP_VAR_UNDEF>False</DCC_FOR_LOOP_VAR_UNDEF>
+    <DCC_UNIT_NAME_MISMATCH>False</DCC_UNIT_NAME_MISMATCH>
+    <DCC_NO_CFG_FILE_FOUND>False</DCC_NO_CFG_FILE_FOUND>
+    <DCC_IMPLICIT_VARIANTS>False</DCC_IMPLICIT_VARIANTS>
+    <DCC_UNICODE_TO_LOCALE>False</DCC_UNICODE_TO_LOCALE>
+    <DCC_LOCALE_TO_UNICODE>False</DCC_LOCALE_TO_UNICODE>
+    <DCC_IMAGEBASE_MULTIPLE>False</DCC_IMAGEBASE_MULTIPLE>
+    <DCC_SUSPICIOUS_TYPECAST>False</DCC_SUSPICIOUS_TYPECAST>
+    <DCC_PRIVATE_PROPACCESSOR>False</DCC_PRIVATE_PROPACCESSOR>
+    <DCC_MESSAGE_DIRECTIVE>False</DCC_MESSAGE_DIRECTIVE>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="DebugCWD">F:\Gestwin</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2058</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Excluded_Packages>
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="c:\archivos de programa\borland\bds\3.0\Bin\dcltee90.bpl">TeeChart Components</Excluded_Packages>
+    </Excluded_Packages><Source><Source Name="MainSource">gdPub.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="gdPub.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="dm_ftp.pas">
+      <Form>ftpModule</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="dm_inf.pas">
+      <Form>infoModule</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="main.pas">
+      <Form>Form1</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

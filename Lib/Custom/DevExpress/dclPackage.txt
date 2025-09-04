@@ -1,0 +1,30 @@
+
+
+  // dxCore
+  
+    dxCoreReg,
+    
+  // dxServerMode
+  
+    dxServerModeReg,
+    dxServerModeDataSourceEditor,
+    
+  // cxLibrary
+  
+    dxIconLibraryEditorHelpers,
+    cxDesignWindows,
+    cxStyleRepositoryEditor,
+    cxPropEditors,
+    cxLibraryReg,
+    cxStyleSheetsLoad,
+    cxPropertiesStoreEditor,
+    cxImportDialog,
+    cxConverterFactory,
+    cxComponentCollectionEditor,
+    dxRichTextEditor,
+    dxScreenTipRepositoryEditor,
+    cxImageListEditor,
+    cxImageListEditorView,
+    dxGalleryDesigner,
+    dxDesignHelpers,
+    cxClassesReg;

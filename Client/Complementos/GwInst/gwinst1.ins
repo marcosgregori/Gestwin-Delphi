@@ -1,0 +1,108 @@
+
+; Fichero de configuración del instalador de aplicaciones GESTWIN
+;                  © 1996, Winstation, S.L.
+;          Realizado por Marcos Gregori Forestier.
+
+; Application | Demo | Module, App number, Version, release
+
+&Params,Demo, 102, 1, 0
+
+; source file name,
+; [ AppRoot, AppVersion, AppReports, Windows, System ] target file name,
+; overwrite        [ False, True ],
+; Install option   [ All, None, Local, Client, Server ]
+;
+
+#1
+
+; Instalador
+
+gwinst.exe,                    [AppRoot]gwinst.exe,                   True,  None
+gwinst.inf,                    [AppVersion]gwinst.inf,                True,  None
+instalar.exe,                  [AppRoot]instalar.exe,                 True,  None
+
+; Ficheros de Btrieve
+
+W32mkde.exe,                   [AppRoot]W32mkde.exe,                  True,  All
+W32mkrc.dll,                   [AppRoot]W32mkrc.dll,                  True,  All
+Wbtrv32.dll,                   [AppRoot]Wbtrv32.dll,                  True,  All
+W32bticm.dll,                  [AppRoot]W32bticm.dll,                 True,  Client
+
+; fichero de parámetros de btrieve para las versiones local, client y server.
+
+bti_local.ini,                 [Windows]bti.ini,                      True,  Local
+bti_client.ini,                [Windows]bti.ini,                      True,  Client
+bti_server.ini,                [Windows]bti.ini,                      True,  Server
+
+; idem pero necesarios para el programa de distribución
+
+bti_client.ini,                [AppRoot]bti_client.ini,               True,  None
+bti_server.ini,                [AppRoot]bti_server.ini,               True,  None
+bti_local.ini,                 [AppRoot]bti_local.ini,                True,  None
+
+; ficheros de la aplicación
+
+n102.010\file.ddf,             [AppVersion]file.ddf,                  True,  All
+n102.010\index.ddf,            [AppVersion]index.ddf,                 True,  All
+n102.010\field.ddf,            [AppVersion]field.ddf,                 True,  All
+
+n102.010\reports\l_fmv.rpt,    [AppReports]l_fmv.rpt,                 True,  All
+n102.010\reports\l_evv.rpt,    [AppReports]l_evv.rpt,                 True,  All
+n102.010\reports\l_bud.rpt,    [AppReports]l_bud.rpt,                 True,  All
+n102.010\reports\l_fdr.rpt,    [AppReports]l_fdr.rpt,                 True,  All
+n102.010\reports\l_sif.rpt,    [AppReports]l_sif.rpt,                 True,  All
+
+; Estos ficheros no es normal que se incluyan, pero de momento el cliente no dispone
+; de la versión de 32 bits de GESTWIN.
+
+app\file.ddf,                  gestwin\app\file.ddf,                  True,  All
+app\field.ddf,                 gestwin\app\field.ddf,                 True,  All
+app\index.ddf,                 gestwin\app\index.ddf,                 True,  All
+
+app\reports\file.ddf,          gestwin\app\reports\file.ddf,          True,  All
+app\reports\field.ddf,         gestwin\app\reports\field.ddf,         True,  All
+app\reports\index.ddf,         gestwin\app\reports\index.ddf,         True,  All
+
+#2
+
+n102.ex_,                      [AppRoot]n102.exe,                     True,  All
+
+n1.082\file.ddf,               gestwin\n1.082\file.ddf,               True,  All
+n1.082\field.ddf,              gestwin\n1.082\field.ddf,              True,  All
+n1.082\index.ddf,              gestwin\n1.082\index.ddf,              True,  All
+
+
+n3.082\file.ddf,               gestwin\n3.082\file.ddf,               True,  All
+n3.082\field.ddf,              gestwin\n3.082\field.ddf,              True,  All
+n3.082\index.ddf,              gestwin\n3.082\index.ddf,              True,  All
+
+#3
+
+crpe32#1-3.dl_,                [AppRoot]crpe32#1-3.dll,               True,  All
+crpe32#2-3.dl_,                [AppRoot]crpe32#2-3.dll,               True,  All
+
+#4
+crpe32#3-3.dl_,                [AppRoot]crpe32#3-3.dll,               True,  All
+P2bbtrv.dll,                   [AppRoot]P2bbtrv.dll,                  True,  All
+u2dmapi.dll,                   [AppRoot]u2dmapi.dll,                  True,  All
+u2fcr.dll,                     [AppRoot]u2fcr.dll,                    True,  All
+u2fdif.dll,                    [AppRoot]u2fdif.dll,                   True,  All
+u2frec.dll,                    [AppRoot]u2frec.dll,                   True,  All
+u2frtf.dll,                    [AppRoot]u2frtf.dll,                   True,  All
+u2fsepv.dll,                   [AppRoot]u2fsepv.dll,                  True,  All
+
+#5
+pg32.dl_,                      [AppRoot]pg32.dll,                     True,  All
+u2ftext.dll,                   [AppRoot]u2ftext.dll,                  True,  All
+u2fwks.dll,                    [AppRoot]u2fwks.dll,                   True,  All
+u2fwordw.dll,                  [AppRoot]u2fwordw.dll,                 True,  All
+u2ddisk.dll,                   [AppRoot]u2ddisk.dll,                  True,  All
+u2fxls.dll,                    [AppRoot]u2fxls.dll,                   True,  All
+co2c40en.dll,                  [System]co2c40en.dll,                  False, All
+implode.dll,                   [System]implode.dll,                   False, All
+
+&JOIN,[AppRoot]CRPE32.DLL,3
+
+&DDE,[CreateGroup(Aplicaciones GESTWIN)]
+&DDE,[AddItem(%sGESTWIN\N102.EXE,"GESTWIN Modulo 102",%sGESTWIN\N102.EXE)]
+

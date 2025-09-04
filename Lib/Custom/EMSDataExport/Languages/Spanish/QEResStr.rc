@@ -1,0 +1,790 @@
+// Spanish
+
+#include "QExport4StrIDs.pas"
+
+STRINGTABLE                 
+BEGIN
+  SMSExcelFilter  "Ficheros Microsoft Excel (*.xls)|*.xls"
+  SMSAccessFilter "Ficheros Microsoft Access (*.mdb)|*.mdb" // since 2.6
+  SMSWordFilter   "Ficheros Microsoft Word (*.doc)|*.doc"
+  SRTFFilter      "Ficheros RTF (*.rtf)|*.rtf"
+  SHTMLFilter     "Ficheros HTML (*.html, *.htm)|*.html*.htm"
+  SPDFFilter      "Documentos PDF (*pdf)|*.pdf" // since 2.7
+  //STextFilter     "Ficheros Texto (*.txt)|*.txt"
+  SXMLFilter      "Ficheros XML (*.xml)|*.xml"
+  SCSVFilter      "Ficheros CSV (*.csv)|*.csv"
+  SDIFFFilter     "Ficheros DIF (*.dif)|*.dif"
+  SSYLKFilter     "Ficheros SYLK (*.slk)|*.slk"
+  SLaTeXFilter    "Ficheros LaTeX (*.tex)|*.tex"
+  SSQLFilter      "Ficheros SQL (*.sql)|*.sql"
+  SDBFFilter      "Ficheros DBF (*.dbf)|*.dbf"
+  SODSFilter      "Ficheros ODS (*.ods)|*.ods"
+  SODTFilter      "Ficheros ODT (*.odt)|*.odt"
+  SXLSXFilter     "Ficheros MS Excel 2007 (*.xlsx)|*.xlsx"
+  SDOCXFilter     "Ficheros MS Word 2007 (*.docx)|*.docx"
+  
+  QEM_ExportSourceNotAssigned  "Fuente de exportación (%s) no asignada"
+  QEM_DefineSheetError         "Hoja %s definida con error: %s"
+  QEM_ExportSourceNotActive    "Fuente de exportación (%s) cerrada"
+  QEM_ExportSourceEmpty        "Fuente de exportación (%s) vacía"
+  QEM_AllowedExportsEmpty      "Propiedad Allowed no puede estar vacía"
+  QEM_StopExportCaption        "¿Está seguro?"
+  QEM_StopExportConfirm        "¿Desea cancelar la exportación?"
+  QEM_NewFormatValue           "Nuevo valor de formato"
+  QEM_EnterValue               "Introducir valor:"
+  QEM_FileNotPresent           "Nombre del fichero de resultados no definido"
+  QEM_ExportAccessOleError     "Necesita instalar y registrar la aplicación MS Access"
+  QEM_DirNotFound              "Carpeta ""%s"" no encontrada y no puede ser creada" // since 2.81
+
+  QEPF_Letter          "Carta (Letter)" // since 2.8
+  QEPF_Legal           "Legal" // since 2.8
+  QEPF_A3              "A3" // since 2.8
+  QEPF_A4              "A4" // since 2.8
+  QEPF_A5              "A5" // since 2.8
+  QEPF_B5_JIS          "B5(JIS)" // since 2.8
+  QEPF_US_Std_Fanfold  "US Std Fanfold" // since 2.8
+  QEPF_Fanfold         "Fanfold" // since 2.8
+  QEPF_User            "Usuario" // since 2.8
+
+  QEUN_Inch            "Pulgadas" // since 2.8
+  QEUN_Millimeter      "Milímetros" // since 2.8
+  QEUN_Dot             "Puntos" // since 2.8
+
+  QEPO_Portrait        "Vertical" // since 2.8
+  QEPO_Landscape       "Apaisado" // since 2.8
+
+  QED_Title  "Formulario de exportación"
+  QED_AdvancedTitle  "Formulario de exportación -- Exportar a [%s]"
+  QED_CloseButtonCaption  "&Cerrar"
+  QED_ExportTitle  "Exportando..."
+  QED_CancelButtonCaption  "Cancelar"
+  QED_FileName  "Fichero destino"
+  QED_SelectFile  "&Seleccionar..."
+  QED_OpenAfterExport  "Abrir después de exportar"
+  QED_PrintAfterExport  "Imprimir después de exportar"
+
+  // Export Type
+  QED_ExportType_Title  "Tipo de exportación"
+  QED_ExportType_Formats  " Formatos"
+  QED_ExportType_ExportTo  " Exportar a "
+  QED_ExportType_XLS  "MS Excel"
+  QED_ExportType_Access  "MS Access" // since 2.6
+  QED_ExportType_DOC  "MS Word"
+  QED_ExportType_RTF  "RTF"
+  QED_ExportType_HTML  "HTML"
+  QED_ExportType_PDF  "PDF" // since 2.7
+  QED_ExportType_TXT  "Fichero de Texto"
+  QED_ExportType_XML  "XML"
+  QED_ExportType_DBF  "DBF"
+  QED_ExportType_CSV  "Fichero CSV"
+  QED_ExportType_DIFF  "Fichero DIF"
+  QED_ExportType_SYLK  "Fichero SYLK"
+  QED_ExportType_LaTeX  "LaTeX"
+  QED_ExportType_SQL  "SQL"
+  QED_ExportType_Clipboard  "Portapapeles Windows"
+  QED_ExportType_ODS  "Fichero ODS"
+  QED_ExportType_ODT  "Fichero ODT"
+  QED_ExportType_XLSX  "MS Excel 2007"
+  QED_ExportType_DOCX  "MS Word 2007"
+
+  QED_ExportType_Options  "Opciones"
+  QED_ExportType_Constraints  " Restricciones "
+  QED_ExportType_Options_GoToFirstRecord  "Desde el primer registro"
+  QED_ExportType_Options_CurrentRecordOnly  "Solamente registro actual" // since 2.25
+  QED_ExportType_Options_ExportEmpty  "Permitir exportar fuente de datos vacía" // since 2.6
+  QED_ExportType_ExportAllRecords  "Exportar todos los registros"
+  QED_ExportType_Options_ExportRecCount  "Exportar solamente"
+  QED_ExportType_Options_SkipRecCount  "Omitir"
+  QED_ExportType_Options_Records  "registros"
+
+  QED_Tools  "Plantillas" // since 2.7
+  QED_ExportType_Save  "Guardar plantilla de exportación..."
+  QED_ExportType_Load  "Cargar plantilla de exportación..."
+
+  QED_ExportType_Start  "Exportar"
+  QED_ExportType_Close  "Cerrar"
+  
+  // Fields
+  QED_Fields_Title  "Campos"
+  QED_Fields_Available  "Campos disponibles:"
+  QED_Fields_Exported  "Campos a exportar:"
+  QED_Fields_Add  ">"
+  QED_Fields_AddAll  ">>"
+  QED_Fields_Remove  "<"
+  QED_Fields_RemoveAll  "<<"
+	QED_Fields_ShowDisplayLabel "Show display label"
+
+  // Formats
+  QED_Formats_Title  "Formatos"
+  QED_Formats_Common  "Común"
+  QED_Formats_Integer  "Entero"
+  QED_Formats_Float  "Como flotante"
+  QED_Formats_Date  "Fecha"
+  QED_Formats_Time  "Hora"
+  QED_Formats_DateTime   "Fecha / hora"
+  QED_Formats_Currency  "Coma fija"
+  QED_Formats_BooleanTrue  "Lógico verdadero"
+  QED_Formats_BooleanFalse  "Lógico falso"
+  QED_Formats_NullString  "Cadena vacía"
+  QED_Formats_User  "Personalizado"
+  QED_Formats_Add  "Añadir"
+  QED_Formats_Edit  "Modificar"
+  QED_Formats_Delete  "Borrar"
+  QED_Formats_Clear  "Limpiar"
+
+  QED_Formats_Separators "Separadores"
+  QED_Formats_DecimalSeparator "Decimales"
+  QED_Formats_DateSeparator "Fechas"
+  QED_Formats_ThousandSeparator "Miles"
+  QED_Formats_TimeSeparator "Horas"
+
+  // Header & Footer
+  QED_Header_Footer_Title  "Cabecera y pie"
+  QED_Header_Footer_Header  "Texto de la cabecera:"
+  QED_Header_Footer_Footer  "Texto del pie:"
+
+  // Captions
+  QED_Captions_AllowCaptions  "Habilitar etiquetas"
+  QED_Captions_Title  "Etiquetas"
+  QED_Captions_FeldName  "Nombre del campo"
+  QED_Captions_Caption  "Etiqueta"
+  QED_Captions_Width  "Ancho"
+  QED_Captions_Align  "Alineación"
+  QED_Align_Left  "Izquierda" // since 2.25
+  QED_Align_Right  "Derecha" // since 2.25
+  QED_Align_Center  "Centrado" // since 2.25
+  QED_StringGrid_CaptionRow  "Etiqueta fila" //since 2.6
+
+  // Word / RTF
+  QED_RTF_Title  "Opciones Word / RTF"
+  QED_RTF_DataStyles  "Estilos de datos" // since 3.0
+  QED_RTF_BaseStyles  "Estilos básicos" // since 3.0
+  QED_RTF_StripStyles  "Estilos strip" // since 3.0
+  QED_RTF_AddRTFStyle  "Añadir estilo" // since 3.0
+  QED_RTF_DelRTFStyle  "Borrar estilo" // since 3.0
+  QED_RTF_MoveRTFStyleUp  "Mover estilo arriba" // since 3.0
+  QED_RTF_MoveRTFStyleDown  "Mover estilo abajo" // since 3.0
+  QED_RTF_LoadRTFStyle  "Cargar estilos" // since 3.0
+  QED_RTF_SaveRTFStyle  "Guardar estilos" // since 3.0
+  QED_RTF_StripType  " Tipo de strip " // since 3.0
+  QED_RTF_StripType_None  "Ninguno" // since 3.0
+  QED_RTF_StripType_Col  "Columna" // since 3.0
+  QED_RTF_StripType_Row  "Fila" // since 3.0
+  QED_RTF_Font  "Tipo letra" // since 3.0
+  QED_RTF_FontSize  "Tamaño" // since 3.0
+  QED_RTF_FontColor  "Color letra" // since 3.0
+  QED_RTF_FontBold  "Negrita" // since 3.0
+  QED_RTF_FontItalic  "Cursiva" // since 3.0
+  QED_RTF_FontStrikeOut  "Tachada" // since 3.0
+  QED_RTF_FontUnderline  "Subrayada" // since 3.0
+  QED_RTF_Left  "Izquierda" // since 3.0
+  QED_RTF_Center  "Centrado" // since 3.0
+  QED_RTF_Right  "Derecha" // since 3.0
+  QED_RTF_Fill  "Relleno" // since 3.0
+  QED_RTF_BackgroundColor  "Color de fondo" // since 3.0
+  QED_RTF_HighlightColor  "Color destacado" // since 3.0
+  QED_RTF_AllowBackground  "Habilitar fondo" // since 3.0
+  QED_RTF_AllowHighlight  "Habilitar destacado" // since 3.0
+  QED_RTF_Sample  "  Muestra" // since 3.0
+  QED_RTF_Advanced  "Avanzado" // since 3.0
+  QED_RTF_PageOrientation  " Orientación página "
+
+  QED_RTF_Reset_Item  "Defecto item" // since 3.0
+  QED_RTF_Reset_SelectedItems  "Defecto seleccionados" // since 3.0
+  QED_RTF_Reset_All  "Defecto todos" // since 3.0
+  QED_RTF_Reset_All_Question_Caption  "Atención!" // since 3.0
+  QED_RTF_Reset_All_Question  "Todos los formatos de los campos serán establecidos a los valores por defecto.\n\r¿Está usted seguro?" // since 3.0
+
+  QED_RTF_Header  "HEADER" // since 3.0
+  QED_RTF_Caption  "CAPTION" // since 3.0
+  QED_RTF_Data  "DATA" // since 3.0
+  QED_RTF_Footer  "FOOTER" // since 3.0
+
+  QED_RTF_StyleItem  "ITEM_" // since 3.0
+
+  // XML
+  QED_XML_Title  "Opciones XML"
+  QED_XML_Standalone  "Independiente (Standalone)"
+  QED_XML_Encoding  "Codificación"
+
+  // SQL
+  QED_SQL_Title  "Opciones SQL"
+  QED_SQL_TableOptions  "Opciones tabla"
+  QED_SQL_AddCreateTable  "Añadir sentencia ""Create Table"""
+  QED_SQL_TableName  "Nombre tabla"
+  QED_SQL_Commit  "Opciones commit"
+  QED_SQL_CommitAfter_01  "Commit después de"
+  QED_SQL_CommitAfter_02  "registros(s)"
+  QED_SQL_CommitAfterScript  "Commit al final del script"
+  QED_SQL_CommitStatement  "Sentencia Commit"
+  QED_SQL_Other  "Otras opciones"
+  QED_SQL_NullAs  "Exportar valores null como "
+  QED_SQL_StatementTerm  "Terminador de sentencias"
+
+  // HTML
+  QED_HTML_Title  "Opciones HTML"
+  QED_HTML_Preview_Title  "Vista previa"
+  QED_HTML_Preview_DefaultText  "Texto por defecto"
+  QED_HTML_Preview_NonVisitedLink  "Link no visitado"
+  QED_HTML_Preview_VisitedLink  "Link visitado"
+  QED_HTML_Preview_ActiveLink  "Link activo"
+  QED_HTML_Preview_Template  "Plantilla"
+  QED_HTML_Preview_SaveTemplate  "Guardar plantilla..."
+  QED_HTML_Preview_LoadTemplate  "Cargar plantilla..."
+
+  QED_HTML_Basic_Title  "Basicas"
+  QED_HTML_Basic_PageTitle  "Título"
+  QED_HTML_Basic_CSS  "Utilización de Hojas de Estilo (CSS)"
+  QED_HTML_Basic_CSSInternal  "Interna"
+  QED_HTML_Basic_CSSExternal  "Externa"
+  QED_HTML_Basic_CSSFileName  "fichero CSS"
+  QED_HTML_Basic_OverwriteCSSFile  "Sobreescribir fichero CSS si existe" // since 2.7
+
+  QED_HTML_Multifile_Title  "Multi-Fichero" // since 2.7
+  QED_HTML_MultiFile_IndexLinkTemplate  "Index Link Template" // since 2.7
+
+  QED_HTML_Basic_MultiFile_Options  "Exportación multi-fichero"
+  QED_HTML_Basic_MultiFile_Use  "Usar exportación multi-fichero"
+  QED_HTML_Basic_MultiFile_RecCount_01  "Máximo"
+  QED_HTML_Basic_MultiFile_RecCount_02  "registro(s) en un solo fichero"
+  QED_HTML_Basic_MultiFile_GenerateIndex  "Generar índice"
+  QED_HTML_Basic_MultiFile_Navigation  " Navegación "  // since 2.7
+  QED_HTML_Basic_MultiFile_Navigation_OnTop  "Arriba"  // since 2.7
+  QED_HTML_Basic_MultiFile_Navigation_OnBottom  "Debajo"  // since 2.7
+  QED_HTML_Basic_MultiFile_IndexLinkTitle  "Indice"  // since 2.7
+  QED_HTML_Basic_MultiFile_FirstLinkTitle  "Primero"  // since 2.7
+  QED_HTML_Basic_MultiFile_PriorLinkTitle  "Anterior"  // since 2.7
+  QED_HTML_Basic_MultiFile_NextLinkTitle  "Siguiente"  // since 2.7
+  QED_HTML_Basic_MultiFile_LastLinkTitle  "Último"  // since 2.7
+
+  QED_HTML_Advanced_Title  "Avanzadas"
+  QED_HTML_Advanced_Body_Options  "Opciones Body"
+  QED_HTML_Advanced_Body_FontName  "Tipo de letra"
+  QED_HTML_Advanced_Body_Background  "Fondo"
+  QED_HTML_Advanced_Body_Attributes  "Atributos avanzados"
+  QED_HTML_Advanced_Table_Options  "Opciones tablas"
+  QED_HTML_Advanced_Table_CellPadding  "Cell padding"
+  QED_HTML_Advanced_Table_CellSpasing  "Cell spacing"
+  QED_HTML_Advanced_Table_Border  "Bordes"
+  QED_HTML_Advanced_Table_Background  "Fondo" // since 2.7
+  QED_HTML_Advanced_Table_Attributes  "Atributos avanzados"
+
+  // XLS
+  QED_XLS_Title  "Opciones Excel"
+  QED_XLS_Advanced_Title  "Avanzadas"
+  QED_XLS_Page_Header  "Cabecera de página"
+  QED_XLS_Page_Footer  "Pie de página"
+  QED_XLS_Sheet_Title  "Título de la hoja"
+  QED_XLS_AutoCalcColWidth  "Auto-ajuste del ancho de las columnas" // since 2.7
+  QED_XLS_AutoAddSheet "Auto anadir la hoja"
+  QED_XLS_AutoTruncateValue "Truncar valor automáticamente"
+  QED_XLS_Page_Background  "Fondo" // since 3.1
+  QED_XLS_PrintColumnHeaders "Imprimir cabeceras de columnas"
+
+  QED_XLS_DataFormat_Title  "Formato datos"
+
+  QED_XLS_DataFormat_Fields  "Campos" // since 2.2
+  QED_XLS_DataFormat_Options  "Opciones" // since 2.2
+  QED_XLS_DataFormat_Styles  "Estilos" // since 2.2
+  QED_XLS_DataFormat_Styles_Add  "Añadir estilo" // since 2.2
+  QED_XLS_DataFormat_Styles_Del  "Borrar estilo" // since 2.2
+  QED_XLS_DataFormat_Styles_Up  "Mover arriba" // since 2.2
+  QED_XLS_DataFormat_Styles_Down  "Mover abajo" // since 2.2
+  QED_XLS_DataFormat_Styles_Save  "Guardar estilo" // since 2.2
+  QED_XLS_DataFormat_Styles_Load  "Cargar estilo" // since 2.2
+  QED_XLS_DataFormat_Styles_StripStyle_Caption  "Estilo strip" // since 2.2
+  QED_XLS_DataFormat_Styles_StripStyle_None  "Niguno" // since 2.2
+  QED_XLS_DataFormat_Styles_StripStyle_Col  "Columna" // since 2.2
+  QED_XLS_DataFormat_Styles_StripStyle_Row  "Fila" // since 2.2
+
+  QED_XLS_Reset_Item  "Defecto ítem"
+  QED_XLS_Reset_SelectedItems  "Defecto seleccionados"
+  QED_XLS_Reset_All  "Defecto todos"
+  QED_XLS_Reset_All_Question_Caption  "Atención!"
+  QED_XLS_Reset_All_Question  "Todos los formatos de los campos serán establecidos a los valores por defecto.\n\r¿Está seguro?"
+
+  QED_XLS_SampleCell  "  Muestra de celda "
+
+  QED_XLS_Header  "HEADER"
+  QED_XLS_Caption  "CAPTION"
+  QED_XLS_Data  "DATA" // since 3.0
+  QED_XLS_Aggregate  "AGGREGATE"
+  QED_XLS_Footer  "FOOTER"
+  QED_XLS_Hyperlink  "HYPERLINK" // since 3.0
+  QED_XLS_Note  "NOTE" // since 3.0
+  QED_XLS_StripStyle  "STYLE_%d" // since 3.0
+  QED_XLS_Cell  "CELL" // since 3.1
+
+  QED_XLS_StyleItem  "ITEM_" // since 2.2
+
+  QED_XLS_Font_Title  "Texto"
+  QED_XLS_Font  "Tipo de letra"
+  QED_XLS_FontSize  "Tamaño"
+  QED_XLS_Font_Color  "Color del texto"
+  QED_XLS_Font_Bold  "Negrita"
+  QED_XLS_Font_Italic  "Cursiva"
+  QED_XLS_Font_StrikeOut  "Tachada"
+  QED_XLS_Underline_Single  "Subrayada simple"
+  QED_XLS_Underline_Single_Accounting  "Subrayada simple contab."
+  QED_XLS_Underline_Double  "Subrayada doble"
+  QED_XLS_Underline_Double_Accounting  "Subrayada doble contab."
+  QED_XLS_Alignment_Horizontal_Left  "Izquierda"
+  QED_XLS_Alignment_Horizontal_Center  "Centrado"
+  QED_XLS_Alignment_Horizontal_Right  "Derecha"
+  QED_XLS_Alignment_Horizontal_Fill  "Relleno"
+  QED_XLS_Alignment_Vertical_Top  "Arriba"
+  QED_XLS_Alignment_Vertical_Center  "Centro"
+  QED_XLS_Alignment_Vertical_Bottom  "Debajo"
+
+  QED_XLS_Borders_Title  "Bordes"
+  QED_XLS_Border_None  "Ninguno" // since 2.2
+  QED_XLS_Border_Top  "Borde superior"
+  QED_XLS_Border_Top_Color  "Color del borde superior"
+  QED_XLS_Border_Bottom  "Borde inferior"
+  QED_XLS_Border_Bottom_Color  "Color del borde inferior"
+  QED_XLS_Border_Left  "Borde izquierdo"
+  QED_XLS_Border_Left_Color  "Color del borde izquierdo"
+  QED_XLS_Border_Right  "Borde derecho"
+  QED_XLS_Border_Right_Color  "Color del borde derecho"
+
+  QED_XLS_Fill_Title  "Relleno"
+  QED_XLS_Fill_Background  "Color de fondo"
+  QED_XLS_Fill_Pattern_None  "Ninguno"
+  QED_XLS_Fill_Foreground  "Color del frente"
+
+  QED_XLS_Aggregate_Title  "Agregados"
+  QED_XLS_Function  "Agregado"
+  QED_XLS_Function_None  "Ninguno"
+  QED_XLS_Function_Sum  "SUMA"
+  QED_XLS_Function_Avg  "MEDIA"
+  QED_XLS_Function_Min  "MIN"
+  QED_XLS_Function_Max  "MAX"
+
+  QED_XLS_Extensions  "Extensiones" // since 3.0
+
+  QED_XLS_Hyperlinks  "Enlaces" // since 3.0
+  QED_XLS_AddHyperlink  "Añadir enlace" // since 3.0
+  QED_XLS_DelHyperlink  "Borrar enlace" // since 3.0
+  QED_XLS_Hyperlink_DefaultTitle  "Enlace" // since 3.0
+  QED_XLS_Hyperlink_Col  "Colunma" // since 3.0
+  QED_XLS_Hyperlink_Row  "Fila" // since 3.0
+  QED_XLS_Hyperlink_Style  " Estilo " // since 3.0
+  QED_XLS_Hyperlink_Style_URL  "URL" // since 3.0
+  QED_XLS_Hyperlink_Style_LocalFile  "Fichero local" // since 3.0
+  QED_XLS_Hyperlink_Title  "Título" // since 3.0
+  QED_XLS_Hyperlink_Target  "Destino" // since 3.0
+  QED_XLS_Hyperlink_ScreenTip  "Ayuda en pantalla" // since 3.1
+
+  QED_XLS_Notes  "Notas" // since 3.0
+  QED_XLS_AddNote  "Añadir nota" // since 3.0
+  QED_XLS_DelNote  "Borrar nota" // since 3.0
+  QED_XLS_Note_DefaultTitle  "Nota" // since 3.0
+  QED_XLS_Note_Base  "Base" // since 3.0
+  QED_XLS_Note_Col  "Columna" // since 3.0
+  QED_XLS_Note_Row  "Fila" // since 3.0
+  QED_XLS_Note_Lines  "Texto" // since 3.0
+  QED_XLS_Note_Font  "Tipo de letra" // since 3.0
+  QED_XLS_Note_FontName  "Tipo de letra" // since 3.0
+  QED_XLS_Note_FontSize  "Tamaño" // since 3.0
+  QED_XLS_Note_FontColor  "Color" // since 3.0
+  QED_XLS_Note_FontBold  "Negrita" // since 3.0
+  QED_XLS_Note_FontItalic  "Cursiva" // since 3.0
+  QED_XLS_Note_FontStrikeOut  "Tachada" // since 3.0
+  QED_XLS_Note_Underline_Single  "Simple" // since 3.0
+  QED_XLS_Note_Underline_SingleAccounting  "Simple contab." // since 3.0
+  QED_XLS_Note_Underline_Double  "Doble" // since 3.0
+  QED_XLS_Note_Underline_DoubleAccounting  "Doble contab." // since 3.0
+  QED_XLS_Note_Horizontal_Left  "Izquierda" // since 3.0
+  QED_XLS_Note_Horizontal_Center  "Centrado" // since 3.0
+  QED_XLS_Note_Horizontal_Right  "Derecha" // since 3.0
+  QED_XLS_Note_Horizontal_Fill  "Relleno" // since 3.0
+  QED_XLS_Note_Vertical_Top  "Arriba" // since 3.0
+  QED_XLS_Note_Vertical_Center  "Centro" // since 3.0
+  QED_XLS_Note_Vertical_Bottom  "Abajo" // since 3.0
+  QED_XLS_Note_Orientation  " Orientación " // since 3.0
+  QED_XLS_Note_Orientation_NoRotation  "Sin rotación" // since 3.0
+  QED_XLS_Note_Orientation_TopToBottom  "Arriba a abajo" // since 3.0
+  QED_XLS_Note_Orientation_CounterClockWise  "Contrario reloj" // since 3.0
+  QED_XLS_Note_Orientation_ClockWise  "Reloj" // since 3.0
+  QED_XLS_Note_Fill  "Relleno" // since 3.0
+  QED_XLS_Note_FillType  " Tipo de relleno " // since 3.0
+  QED_XLS_Note_FillType_Solid  "Sólido" // since 3.0
+  QED_XLS_Note_FillType_Gradient  "Gradiente" // since 3.0
+  QED_XLS_Note_Gradient_Horizontal  "Horizontal" // since 3.0
+  QED_XLS_Note_Gradient_Vertical  "Vertical" // since 3.0
+  QED_XLS_Note_Gradient_DiagonalUp  "Diagonal arriba" // since 3.0
+  QED_XLS_Note_Gradient_DiagonalDown  "Diagonal abajo" // since 3.0
+  QED_XLS_Note_Gradient_FromCorner  "Desde esquina" // since 3.0
+  QED_XLS_Note_Gradient_FromCenter  "Desde centro" // since 3.0
+  QED_XLS_Note_BackgroundColor  "Color fondo" // since 3.0
+  QED_XLS_Note_ForegroundColor  "Color frente" // since 3.0
+  QED_XLS_Note_Transparency  "Transparencia" // since 3.0
+
+  QED_XLS_Charts  "Gráficos" // since 3.0
+  QED_XLS_AddChart  "Añadir gráfico" // since 3.0
+  QED_XLS_DelChart  "Borrar gráfico" // since 3.0
+  QED_XLS_Chart_DefaultTitle  "Gráfico" // since 3.0
+  QED_XLS_Chart_Base  "Básico" // since 3.0
+  QED_XLS_Chart_Title  "Título" // since 3.0
+  QED_XLS_Chart_Style  "Estilo" // since 3.0
+  QED_XLS_Chart_Style_Column  "Columna" // since 3.0
+  QED_XLS_Chart_Style_Column3D  "Columna 3D" // since 3.0
+  QED_XLS_Chart_Style_Bar  "Barras" // since 3.0
+  QED_XLS_Chart_Style_Bar3D  "Barras 3D" // since 3.0
+  QED_XLS_Chart_Style_Line  "Líneas" // since 3.0
+  QED_XLS_Chart_Style_LineMark  "Líneas con marcas" // since 3.0
+  QED_XLS_Chart_Style_Line3D  "Líneas 3D" // since 3.0
+  QED_XLS_Chart_Style_Pie  "Tarta" // since 3.0
+  QED_XLS_Chart_Style_Pie3D  "Tarta 3D" // since 3.0
+  QED_XLS_Chart_Style_Area  "Áreaa" // since 3.0
+  QED_XLS_Chart_Style_Area3D  "Áreas 3D" // since 3.0
+  QED_XLS_Chart_Style_Surface  "Superficie" // since 3.0
+  QED_XLS_Chart_Style_Surface3D  "Superficie 3D" // since 3.0
+  QED_XLS_Chart_Style_Radar  "Radar" // since 3.0
+  QED_XLS_Chart_Style_RadarArea  "Áreas de Radar" // since 3.0
+  QED_XLS_Chart_Position  " Posición " // since 3.0
+  QED_XLS_Chart_AutoPosition  "Posición Automática" // since 3.0
+  QED_XLS_Chart_Placement  " Ubicación " // since 3.0
+  QED_XLS_Chart_Placement_Bottom  "Debajo" // since 3.0
+  QED_XLS_Chart_Placement_Right  "Derecha" // since 3.0
+  QED_XLS_Chart_Left  "Izquierda" // since 3.0
+  QED_XLS_Chart_Top  "Arriba" // since 3.0
+  QED_XLS_Chart_Height  "Altura" // since 3.0
+  QED_XLS_Chart_Width  "Ancho" // since 3.0
+  QED_XLS_Chart_CustomPosition  "Posición personalizada" // since 3.0
+  QED_XLS_Chart_Position_X1  "X1" // since 3.0
+  QED_XLS_Chart_Position_Y1  "Y1" // since 3.0
+  QED_XLS_Chart_Position_X2  "X2" // since 3.0
+  QED_XLS_Chart_Position_Y2  "Y2" // since 3.0
+  QED_XLS_Chart_CategoryLabels  " Etiquetas categorías " // since 3.0
+  QED_XLS_Chart_CategoryLabel_Column  "Columna" // Since 3.0
+  QED_XLS_Chart_CategoryLabel_Custom  "Usuario" // Since 3.0
+  QED_XLS_Chart_CategoryLabels_Col1  "Col 1" // since 3.0
+  QED_XLS_Chart_CategoryLabels_Row1  "Fila 1" // since 3.0
+  QED_XLS_Chart_CategoryLabels_Col2  "Col 2" // since 3.0
+  QED_XLS_Chart_CategoryLabels_Row2  "Fila 2" // since 3.0
+  QED_XLS_Chart_LegendPosition  "Ubicación leyenda" // since 3.0
+  QED_XLS_Chart_LegendPosition_Bottom  "Abajo" // since 3.0
+  QED_XLS_Chart_LegendPosition_Corner  "Esquina" // since 3.0
+  QED_XLS_Chart_LegendPosition_Top  "Arriba" // since 3.0
+  QED_XLS_Chart_LegendPosition_Right  "Derecha" // since 3.0
+  QED_XLS_Chart_LegendPosition_Left  "Izquierda" // since 3.0
+  QED_XLS_Chart_ShowLegend  "Mostrar leyenda" // since 3.0
+  QED_XLS_Chart_AutoColor  "Color automático" // since 3.0
+
+  QED_XLS_Series  "Series" // since 3.0
+  QED_XLS_AddSeries  "Añadir series" // since 3.0
+  QED_XLS_DelSeries  "Borrar series" // since 3.0
+  QED_XLS_Series_DefaultTitle  "Series" // since 3.0
+  QED_XLS_Series_Title  "Título" // since 3.0
+  QED_XLS_Series_DataRange  " Rango de datos " // since 3.0
+  QED_XLS_Series_Column  "Columna" // since 3.0
+  QED_XLS_Series_Custom  "Personalizado" // since 3.0
+  QED_XLS_Series_DataRange_Col1  "Col 1" // since 3.0
+  QED_XLS_Series_DataRange_Row1  "Fila 1" // since 3.0
+  QED_XLS_Series_DataRange_Col2  "Col 2" // since 3.0
+  QED_XLS_Series_DataRange_Row2  "Fila 2" // since 3.0
+  QED_XLS_Series_Color  "Color" // since 3.0
+
+  QED_XLS_Cells  "Celdas" // since 3.1
+  QED_XLS_AddCell  "Añadir celda" // since 3.1
+  QED_XLS_DelCell  "Borrar celda" // since 3.1
+  QED_XLS_Cell_DisplayName  "Celda(Col: %d Fila: %d)" // since 3.1
+  QED_XLS_Cell_Base  "Básico" // since 3.1
+  QED_XLS_Cell_Col  "Columna" // since 3.1
+  QED_XLS_Cell_Row  "Fila" // since 3.1
+  QED_XLS_Cell_Type  "Tipo de celda" // since 3.1
+  QED_XLS_Cell_Type_Boolean  "Lógicos" // since 3.1
+  QED_XLS_Cell_Type_DateTime  "Fecha y hora" // since 3.1
+  QED_XLS_Cell_Type_Numeric  "Numéricos" // since 3.1
+  QED_XLS_Cell_Type_String  "Textos" // since 3.1
+  QED_XLS_Cell_Value  "Valores" // since 3.1
+  QED_XLS_Cell_DateTimeFormat  "Formato fecha/hora" // since 3.1
+  QED_XLS_Cell_NumericFormat  "Formato númericos" // since 3.1
+
+  QED_XLS_MergedCells  "Celdas fusionadas" // since 3.1
+  QED_XLS_AddMergedCell  "Añadir celdas fusionadas" // since 3.1
+  QED_XLS_DelMergedCell  "Borrar celdas fucionadas" // since 3.1
+  QED_XLS_MergedCell_DefaultTitle  "Celdas fusionadas" // since 3.1
+  QED_XLS_MergedCell_FirstCol  "Primera columna" // since 3.1
+  QED_XLS_MergedCell_FirstRow  "Primera fila" // since 3.1
+  QED_XLS_MergedCell_LastCol  "Última Columna" // since 3.1
+  QED_XLS_MergedCell_LastRow  "Última Fila" // since 3.1
+
+  QEE_Caption  "%s - Editor del componente" // since 3.0
+  QEE_XLS_ExportSourceConfirm  "La hoja ""%s"" no tiene componente fuente de exportación asignado.\n\r¿Le gustaría seleccionarlo de una lista?" // since 3.0
+  QEE_XLS_Confirm  "Confirmar" // since 3.0
+  QEE_XLS_NewSheet  "Nueva hoja %d" // sinxe 3.0
+  QEE_XLS_AddNewSheet  "Añadir nueva hoja" // since 3.0
+  QEE_XLS_DefineSheetTitle  "Definir el título de la nueva hoja" // since 3.0
+  QEE_XLS_EditSheet  "Modificar hoja" // since 3.0
+  QEE_XLS_EditSheetTitle  "Modificar el título de la hoja" // since 3.0
+  QEE_XLS_SheetTitleIsEmpty  "El título de la hoja no puede estar vacío" // since 3.0
+  QEE_XLS_ColumnName  "Nombre de la columna %d" //since 3.0
+  QEE_XLS_AddFieldFormat  "Añadir formato de campo" // since 3.0
+  QEE_XLS_DefineColumnName  "Definir el nombre de la columna" //since 3.0
+  QEE_XLS_ColumnAlreadyExists  "Ya existe una columna con nombre %s" //since 3.0
+  QEE_XLS_EditColumnName  "Modificar nombre del campo" //since 3.0
+  QEE_XLS_SetAllToDefaultConfirm  "Los formatos de TODOS los ítems se establecerán a los valores por defecto.\n\r¿Le gustaría continuar?" // since 3.0
+  QEE_XLS_SetSelToDefaultConfirm  "Los formatos de los ítems SELECCIONADOS se establecerán a los valores por defecto.\n\r¿Le gustaría contibuar?" // since 3.0
+  QEE_XLS_Question  "Pregunta" // since 3.0
+  QEE_XLS_ExportSourceUndefined  "No definido" // since 3.0
+  QEE_XLS_MaxRowsError "Exportacion anulada. El numero de lineas en la hoja de Excel no puede superar 65536."
+  QEE_XLS_MaxColsError "Export is aborted. The number of columns in the Excel sheet cannot exceed 255."
+  QED_XLS_DefRowHeight "Row Height"
+
+  // ASCII
+  QED_ASCII_Title  "Opciones ASCII"
+  QED_TXT_Title  " Opciones TXT "
+  QED_TXT_AutoCalcColWidth  "Calcular ancho de columnas"
+  QED_TXT_Spacing  "Espaciado"
+  QED_CSV_Title  " Opciones CSV "
+  QED_CSV_QuoteStrings  "Entrecomillar textos"
+  QED_CSV_Comma  "Separador"
+  QED_CSV_Quote  "Comillas" // since 2.6
+
+  // Access
+  QED_Access_Title  "Opciones Access" // since 2.6
+  QED_Access_TableOptions  "Opciones tablas" // since 2.6
+  QED_Access_Password	"Contaseña" // since 3.32  
+  QED_Access_TableName  "Nombre de tabla" // since 2.6
+  QED_Access_CreateTable  "Crear la tabla si no existe" // since 2.6
+
+  // PDF
+  QED_PDF_Title  "Opciones PDF" // since 2.7
+  QED_PDF_FontName  "Tipo de letra" // since 2.7
+  QED_PDF_FontEncoding  "Codificación textos" // since 2.7
+  QED_PDF_FontSize  "Tamaño letra" // since 2.7
+  QED_PDF_FontColor  "Color letra" // since 2.7
+  QED_PDF_Sample  "Muestra" // since 2.7
+
+  QED_PDF_GridOptions  "Opciones rejillas" // since 2.7
+  QED_PDF_ColSpacing  "Espaciado columnas" // since 2.7
+  QED_PDF_RowSpacing  "Espaciado filas" // since 2.7
+  QED_PDF_GridLineWidth  "Ancho de línea de la rejilla" // since 2.7
+
+  QED_PDF_PageOptions  "Opciones página" // since 2.8
+  QED_PDF_PageSize  "Tamaño página" // since 2.8
+  QED_PDF_PageWidth  "Anchura" // since 2.8
+  QED_PDF_PageHeight  "Altura" // since 2.8
+  QED_PDF_PageUnits  "Unidades" // since 2.8
+  QED_PDF_PageOrientation  "Orientación página" // since 2.8
+  QED_PDF_Margins  "Márgenes" // since 2.8
+  QED_PDF_MarginLeft  "Izquierda" // since 2.8
+  QED_PDF_MarginRight  "Derecha" // since 2.8
+  QED_PDF_MarginTop  "Arriba" // since 2.8
+  QED_PDF_MarginBottom  "Abajo" // since 2.8
+
+  QED_PDF_HeaderFont  "Tipo de letra cabecera" // since 2.7
+  QED_PDF_CaptionFont  "Tipo de letra etiquetas" // since 2.7
+  QED_PDF_DataFont  "Tipo de letra datos" // since 2.7
+  QED_PDF_FooterFont  "Tipo de letra pie" // since 2.7
+
+  QED_PDF_UseUserFont "Habilitar tipo de letra de usuario"
+  QED_PDF_UserFontName "Tipo de letra usuario"
+  QED_PDF_UserFontColor "Color letra"
+  QED_PDF_UserFontSize "Tamaño letra"
+  QED_PDF_UserFontBold "Negrita"
+  QED_PDF_UserFontItalic "Cursiva"
+
+  // ODS
+  QED_ODS_Title "Opciones ODS"
+  QED_ODS_Header "Cabecera"
+  QED_ODS_CaptionRow "Etiqueta_fila"
+  QED_ODS_Data "Datos"
+  QED_ODS_Footer "Pie"
+  QED_ODS_StripStyle "Strip_Style_"
+  QED_ODS_StandardSheetName "Hoja1"
+  QED_ODS_FontColor "Color texto"
+  QED_ODS_Bold "Negrita"
+  QED_ODS_Italic "Cursiva"
+  QED_ODS_StrikeOut "Tachada"
+  QED_ODS_Underline "Subrayado simple"
+  QED_ODS_LeftAlgmt "Alineación horizontal izquierda"
+  QED_ODS_CenterAlgmt "Alineación horizontal centrado"
+  QED_ODS_RightAlgmt "Alineación horizontal derecha"
+  QED_ODS_JustifyAlgmt "Alineación horizontal justificado"
+  QED_ODS_TopAlgmt "Alineación vertical arriba"
+  QED_ODS_MiddleAlgmt "Alineación vertical medio"
+  QED_ODS_BottomAlgmt "Alineación vertical abajo"
+  QED_ODS_BackgroundCaption "Habilitar fondo"
+  QED_ODS_BackgroundColor "Color fondo"
+  QED_ODS_SheetName "Nombre hoja"
+  QED_ODS_Options "Opciones"
+  QED_ODS_StripStyles "Estilos"
+  QED_ODS_SStyleAdd "Añadir nuevo estilo strip"
+  QED_ODS_SStyleRemove "Borrar estilo strip seleccionado"
+  QED_ODS_SStyleUp "Mover estilo strip seleccionado arriba"
+  QED_ODS_SStyleDown "Mover estilo strip seleccionado abajo"
+  QED_ODS_UseBorder "Habilitar bordes"
+  QED_ODS_BorderColor "Color bordes"
+  QED_ODS_BorderWidth "Ancho bordes"
+  QED_ODS_SampleText "Texto de muestra"
+  QED_ODS_FontName "Tipo letra"
+  QED_ODS_FontSize "Tamaño"
+  QED_ODS_StripType "Tipo strip"
+  QED_ODS_StripNone "Ninguno"
+  QED_ODS_StripColumn "Columna"
+  QED_ODS_StripRow "Fila"
+  QED_ODS_SaveStyle "Guardar estilos strip"
+  QED_ODS_LoadStyle "Cargar estilos trip"
+  //dee
+  QED_ODS_Borders_Title "Bordes"
+  QED_ODS_Font_Title "Tipo letra"
+
+  // ODT
+  QED_ODT_Title "Opciones ODT"
+  QED_ODT_Header "Cabecera"
+  QED_ODT_CaptionRow "Etiqueta_fila"
+  QED_ODT_Data "Datos"
+  QED_ODT_Footer "Pie"
+  QED_ODT_StripStyle "Estilo_strip_"
+  QED_ODT_StandardTableName "Tabla1"
+  QED_ODT_TableName "Nombre Tabla"
+  QED_ODT_SStyleAdd "Añadir nuevo estilo strip"
+  QED_ODT_SStyleRemove "Borrar estilo strip seleccionado"
+  QED_ODT_SStyleUp "Mover estilo strip seleccionado arriba"
+  QED_ODT_SStyleDown "Mover estilo strip seleccionado abajo"
+  QED_ODT_StripType "Tipo strip"
+  QED_ODT_StripNone "Ninguno"
+  QED_ODT_StripColumn "Columna"
+  QED_ODT_StripRow "Fila"
+  QED_ODT_UseBorder "Habilitar bordes"
+  QED_ODT_BorderColor "Color bordes"
+  QED_ODT_BorderWidth "Ancho bordes"
+  QED_ODT_FontName "Tipo letra"
+  QED_ODT_FontSize "Tamaño"
+  QED_ODT_FontColor "Color texto"
+  QED_ODT_Bold "Negrita"
+  QED_ODT_Italic "Cursiva"
+  QED_ODT_StrikeOut "Tachada"
+  QED_ODT_Underline "Subrayado simple"
+  QED_ODT_LeftAlgmt "Alineación horizontal izquierda"
+  QED_ODT_CenterAlgmt "Alineación horizontal centrado"
+  QED_ODT_RightAlgmt "Alineación horizontal derecha"
+  QED_ODT_JustifyAlgmt "Alineación horizontal justificado"
+  QED_ODT_TopAlgmt "Alineación vertical arriba"
+  QED_ODT_MiddleAlgmt "Alineación vertical medio"
+  QED_ODT_BottomAlgmt "Alineación vertical abajo"
+  QED_ODT_UseBackground "Habilitar fondo"
+  QED_ODT_BackgroundColor "Color fondo"
+  QED_ODT_UseHighlight "Habilitar resaltar"
+  QED_ODT_HighlightColor "Color resaltar"
+  QED_ODT_SampleText "Muestra de texto"
+  QED_ODT_SaveStyle "Guardad estilos strip"
+  QED_ODT_LoadStyle "Cargar estilos strip"
+  //dee
+  QED_ODT_Borders_Title "Bordes"
+  QED_ODT_Options_Title "Opciones"
+  QED_ODT_Styles_Title "Estilos"
+  QED_ODT_Font_Title "Tipos letra"
+
+  // XLSX
+  QED_XLSX_Title "Opciones Excel 2007"
+  QED_XLSX_Header "Cabecera"
+  QED_XLSX_CaptionRow "Etiqueta fila"
+  QED_XLSX_Data "Datos"
+  QED_XLSX_Footer "Pie"
+  QED_XLSX_StripStyle "Estilo strip "
+  QED_XLSX_StandardSheetName "Hoja1"
+  QED_XLSX_FontColor "Color letra"
+  QED_XLSX_Bold "Negrita"
+  QED_XLSX_Italic "Cursiva"
+  QED_XLSX_Underline "Subrayado simple"
+  QED_XLSX_LeftAlgmt "Alineación horizontal izquierda"
+  QED_XLSX_CenterAlgmt "Alineación horizontal centrado"
+  QED_XLSX_RightAlgmt "Alineación horizontal derecha"
+  QED_XLSX_JustifyAlgmt "Alineación horizontal justificada"
+  QED_XLSX_TopAlgmt "Alineación vertical arriba"
+  QED_XLSX_MiddleAlgmt "Alineación vertical enmedio"
+  QED_XLSX_BottomAlgmt "Alineación vertical abajo"
+  QED_XLSX_BackgroundCaption "Utilizar fondo"
+  QED_XLSX_BackgroundColor "Color de fondo"
+  QED_XLSX_SheetName "Nombre hojas"
+  QED_XLSX_Options "Opciones"
+  QED_XLSX_StripStyles "Estilos"
+  QED_XLSX_SStyleAdd "Añadir nuevo estilo strip"
+  QED_XLSX_SStyleRemove "Quitar estilo strip seleccionado"
+  QED_XLSX_SStyleUp "Mover estilo strip seleccionado arriba"
+  QED_XLSX_SStyleDown "Mover estilo strip seleccionado abajo"
+  QED_XLSX_UseBorder "Habilitar bordes"
+  QED_XLSX_BorderColor "Color bordes"
+  QED_XLSX_BorderWidth "Ancho bordes"
+  QED_XLSX_SampleText "Muestra de texto"
+  QED_XLSX_FontName "Tipo de letra"
+  QED_XLSX_FontSize "Tamaño"
+  QED_XLSX_StripType "Tipo Strip"
+  QED_XLSX_StripNone "Ninguno"
+  QED_XLSX_StripColumn "Columna"
+  QED_XLSX_StripRow "Fila"
+  //dee
+  QED_XLSX_Borders_Title "Bordes"
+  QED_XLSX_Font_Title "Tipo de letra"
+  QED_XLSX_BorderStyle "Estilo bordes"
+
+  // DOCX
+  QED_DOCX_Title "Opciones Word 2007"
+  QED_DOCX_Header "Cabecera"
+  QED_DOCX_CaptionRow "Etiqueta filas"
+  QED_DOCX_Data "Datos"
+  QED_DOCX_Footer "Pie"
+  QED_DOCX_StripStyle "Estilo Strip "
+  QED_DOCX_StandardTableName "Tabla1"
+  QED_DOCX_TableName "Nombre tabla"
+  QED_DOCX_SStyleAdd "Añadir nuevo estilo strip"
+  QED_DOCX_SStyleRemove "Borrar estilo strip seleccionado"
+  QED_DOCX_SStyleUp "Mover estilo strip seleccionado arriba"
+  QED_DOCX_SStyleDown "Mover estilo strip seleccionado abajo"
+  QED_DOCX_StripType "Tipo Strip"
+  QED_DOCX_StripNone "Ninguno"
+  QED_DOCX_StripColumn "Columna"
+  QED_DOCX_StripRow "Fila"
+  QED_DOCX_UseBorder "Habilitar bordes"
+  QED_DOCX_BorderColor "Color bordes"
+  QED_DOCX_BorderWidth "Ancho bordes"
+  QED_DOCX_FontName "Fuente"
+  QED_DOCX_FontSize "Tamaño"
+  QED_DOCX_FontColor "Color texto"
+  QED_DOCX_Bold "Negrite"
+  QED_DOCX_Italic "Cursiva"
+  QED_DOCX_StrikeOut "Tachada"
+  QED_DOCX_Underline "Subrayado simple"
+  QED_DOCX_LeftAlgmt "Alineación horizontal izquierda"
+  QED_DOCX_CenterAlgmt "Alineación horizontal centrado"
+  QED_DOCX_RightAlgmt "Alineación horizontal derecha"
+  QED_DOCX_JustifyAlgmt "Alineación horizontal justficado"
+  QED_DOCX_UseBackground "Habilitar fondo"
+  QED_DOCX_BackgroundColor "Color fondo"
+  QED_DOCX_UseHighlight "Habilitar destacado"
+  QED_DOCX_HighlightColor "Color destacado"
+  QED_DOCX_SampleText "Muestra de texto"
+  //dee
+  QED_DOCX_Borders_Title "Bordes"
+  QED_DOCX_Options_Title "Opciones"
+  QED_DOCX_Styles_Title "Estilos"
+  QED_DOCX_Font_Title "Tipo letra"
+  QED_DOCX_BorderStyle "Estilo bordes"
+
+  // Progress
+  QEDP_Caption  "Exportando..."
+  QEDP_Status  "Estado"
+  QEDP_Time  "Duración"
+  QEDP_Speed  "Velocidad"
+  QEDP_Preparing  "Preparando..."
+  QEDP_Skipping  "Omitiendo..."
+  QEDP_Skipped  "Omitidos"
+  QEDP_Exporting  "Exportando..."
+  QEDP_Exported  "Exportados"
+  QEDP_Fetching  "Obteniendo..."
+  QEDP_Fetched  "Obtenidos"
+  QEDP_Pause  "Pausar"
+  QEDP_Cancel  "Cancelar"
+  QEDP_OK  "OK"
+  QEDP_Aborted  "Abortardos"
+  QEDP_Finished  "Completados"
+  QEDP_RowsPerSec  "%d filas/seg"
+  QEDP_TimeFormat  "h:nn:ss"
+
+  QED_TXT_Encoding "Codificación"
+
+END

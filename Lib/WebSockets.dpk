@@ -1,0 +1,335 @@
+package WebSockets;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'WebSockets'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+{$I sgcWebSockets\Source\sgcVer.inc}
+
+requires
+  rtl
+  ,dbrtl
+  {$IFNDEF MACOS}
+  {$IFNDEF ANDROID}
+  {$IFNDEF LINUX}
+  ,vcl
+  ,vclx
+  ,vclimg
+  ,RESTComponents
+  {$IFDEF SGC_IW_15}
+  ,Intraweb_15_D12
+  {$ELSE}
+  ,dbrtl
+  {$ENDIF}
+  {$ENDIF}
+  {$ENDIF}
+  {$ENDIF}
+  {$IFNDEF ANDROID}
+  ,inet
+  {$ENDIF}
+
+  ;
+
+contains
+   sgcJSON in 'sgcWebSockets\Source\sgcJSON.pas',
+  {$IFNDEF MACOS}
+  {$IFNDEF ANDROID}
+  sgcIWWebSocket in 'sgcWebSockets\Source\sgcIWWebSocket.pas',
+  sgcIWWebSocket_Client in 'sgcWebSockets\Source\sgcIWWebSocket_Client.pas',
+  sgcIWWebSocket_Protocol_Base in 'sgcWebSockets\Source\sgcIWWebSocket_Protocol_Base.pas',
+  sgcIWWebSocket_Protocol_Dataset_Client in 'sgcWebSockets\Source\sgcIWWebSocket_Protocol_Dataset_Client.pas',
+  sgcIWWebSocket_Protocol_sgc_Client in 'sgcWebSockets\Source\sgcIWWebSocket_Protocol_sgc_Client.pas',
+  sgcIWWebSocket_Protocols in 'sgcWebSockets\Source\sgcIWWebSocket_Protocols.pas',
+  {$ENDIF}
+  {$ENDIF}
+  {$IFDEF SGC_CUSTOM_INDY}sgcIdSSLOpenSSLHeaders_static in 'sgcWebSockets\Source\sgcIdSSLOpenSSLHeaders_static.pas',{$ENDIF}
+  sgcWebSocket_Protocols in 'sgcWebSockets\Source\sgcWebSocket_Protocols.pas',
+  sgcWebSocket_Classes in 'sgcWebSockets\Source\sgcWebSocket_Classes.pas',
+  sgcWebSocket_Client in 'sgcWebSockets\Source\sgcWebSocket_Client.pas',
+  sgcWebSocket_Classes_HTTP2 in 'sgcWebSockets\Source\sgcWebSocket_Classes_HTTP2.pas',
+  sgcWebSocket_Const in 'sgcWebSockets\Source\sgcWebSocket_Const.pas',
+  sgcWebSocket_CustomClient in 'sgcWebSockets\Source\sgcWebSocket_CustomClient.pas',
+  sgcWebSocket_CustomServer in 'sgcWebSockets\Source\sgcWebSocket_CustomServer.pas',
+  sgcWebSocket_Extensions in 'sgcWebSockets\Source\sgcWebSocket_Extensions.pas',
+  sgcWebSocket_Extension_Base in 'sgcWebSockets\Source\sgcWebSocket_Extension_Base.pas',
+  sgcWebSocket_Extension_DeflateFrame in 'sgcWebSockets\Source\sgcWebSocket_Extension_DeflateFrame.pas',
+  sgcWebSocket_Extension_PerMessage_Deflate in 'sgcWebSockets\Source\sgcWebSocket_Extension_PerMessage_Deflate.pas',
+  sgcWebSocket_Helpers in 'sgcWebSockets\Source\sgcWebSocket_Helpers.pas',
+  sgcWebSocket_HTTPResponse in 'sgcWebSockets\Source\sgcWebSocket_HTTPResponse.pas',
+  sgcWebSocket_LoadBalancer_Client in 'sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Client.pas',
+  sgcWebSocket_LoadBalancer_Message in 'sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Message.pas',
+  sgcWebSocket_LoadBalancer_Server in 'sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Server.pas',
+  sgcWebSocket_Protocol_Base_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Message.pas',
+  sgcWebSocket_Protocol_Broker_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Client.pas',
+  sgcWebSocket_Protocol_Broker_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Message.pas',
+  sgcWebSocket_Protocol_Broker_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Server.pas',
+  sgcWebSocket_Protocol_Dataset_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Client.pas',
+  sgcWebSocket_Protocol_Dataset_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Message.pas',
+  sgcWebSocket_Protocol_Dataset_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Server.pas',
+  sgcWebSocket_Protocol_Files_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Client.pas',
+  sgcWebSocket_Protocol_Files_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Message.pas',
+  sgcWebSocket_Protocol_Files_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Server.pas',
+  sgcWebSocket_Protocol_sgc_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Client.pas',
+  sgcWebSocket_Protocol_sgc_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Message.pas',
+  sgcWebSocket_Protocol_sgc_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Server.pas',
+  sgcWebSocket_Protocol_WebRTC_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Message.pas',
+  sgcWebSocket_Protocol_WebRTC_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Server.pas',
+  sgcWebSocket_Protocol_WAMP_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Client.pas',
+  sgcWebSocket_Protocol_WAMP_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Message.pas',
+  sgcWebSocket_Protocol_WAMP_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Server.pas',
+  sgcWebSocket_Protocol_MQTT_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Client.pas',
+  sgcWebSocket_Protocol_MQTT_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Message.pas',
+  sgcWebSocket_Protocol_WAMP2_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Client.pas',
+  sgcWebSocket_Protocol_WAMP2_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Message.pas',
+  sgcWebSocket_Server in 'sgcWebSockets\Source\sgcWebSocket_Server.pas',
+  sgcWebSocket_Server_Proxy in 'sgcWebSockets\Source\sgcWebSocket_Server_Proxy.pas',
+  sgcWebSocket_Types in 'sgcWebSockets\Source\sgcWebSocket_Types.pas',
+  sgcWebSocket_Protocol_Base_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Client.pas',
+  sgcWebSocket_Protocol_Base_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Server.pas',
+  sgcWebSocket_Resources in 'sgcWebSockets\Source\sgcWebSocket_Resources.pas',
+  sgcWebSocket in 'sgcWebSockets\Source\sgcWebSocket.pas',
+  sgcWebSocket_Client_WinHTTP in 'sgcWebSockets\Source\sgcWebSocket_Client_WinHTTP.pas',
+  sgcWebSocket_Classes_WinHTTP in 'sgcWebSockets\Source\sgcWebSocket_Classes_WinHTTP.pas',
+  sgcWebSocket_WinAPI in 'sgcWebSockets\Source\sgcWebSocket_WinAPI.pas',
+  sgcWebSocket_Classes_HTTPAPI in 'sgcWebSockets\Source\sgcWebSocket_Classes_HTTPAPI.pas',
+  sgcWebSocket_HTTPAPI in 'sgcWebSockets\Source\sgcWebSocket_HTTPAPI.pas',
+  sgcWebSocket_HTTPAPI_Server in 'sgcWebSockets\Source\sgcWebSocket_HTTPAPI_Server.pas',
+  sgcWebSocket_Server_HTTPAPI in 'sgcWebSockets\Source\sgcWebSocket_Server_HTTPAPI.pas',
+  sgcWebSocket_SRWLock in 'sgcWebSockets\Source\sgcWebSocket_SRWLock.pas',
+  sgcWebSocket_Classes_Indy in 'sgcWebSockets\Source\sgcWebSocket_Classes_Indy.pas',
+  sgcWebSocket_API_Bitfinex in 'sgcWebSockets\Source\sgcWebSocket_API_Bitfinex.pas',
+  sgcWebSocket_API_Blockchain in 'sgcWebSockets\Source\sgcWebSocket_API_Blockchain.pas',
+  sgcWebSocket_API_Pusher in 'sgcWebSockets\Source\sgcWebSocket_API_Pusher.pas',
+  sgcWebSocket_API_SignalR in 'sgcWebSockets\Source\sgcWebSocket_API_SignalR.pas',
+  sgcWebSocket_Classes_Threads in 'sgcWebSockets\Source\sgcWebSocket_Classes_Threads.pas',
+  sgcWebSocket_API_SocketIO in 'sgcWebSockets\Source\sgcWebSocket_API_SocketIO.pas',
+  sgcWebSocket_API_Binance in 'sgcWebSockets\Source\sgcWebSocket_API_Binance.pas',
+  sgcWebSocket_API_Bitstamp in 'sgcWebSockets\Source\sgcWebSocket_API_Bitstamp.pas',
+  sgcWebSocket_APIs in 'sgcWebSockets\Source\sgcWebSocket_APIs.pas',
+  sgcSTOMP in 'sgcWebSockets\Source\sgcSTOMP.pas',
+  sgcWebSocket_Protocol_STOMP_ActiveMQ_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_ActiveMQ_Client.pas',
+  sgcWebSocket_Protocol_STOMP_Broker_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Broker_Client.pas',
+  sgcWebSocket_Protocol_STOMP_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Client.pas',
+  sgcWebSocket_Protocol_STOMP_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Message.pas',
+  sgcWebSocket_Protocol_STOMP_RabbitMQ_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_RabbitMQ_Client.pas',
+  sgcWebSocket_Classes_Sockets in 'sgcWebSockets\Source\sgcWebSocket_Classes_Sockets.pas',
+  sgcWebSocket_Server_Base in 'sgcWebSockets\Source\sgcWebSocket_Server_Base.pas',
+  sgcHTTP in 'sgcWebSockets\Source\sgcHTTP.pas',
+  sgcTCP_Classes_Indy in 'sgcWebSockets\Source\sgcTCP_Classes_Indy.pas',
+  sgcIndy_IOHandler_IO_Engine in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Engine.pas',
+  sgcIndy_IOHandler_IO_Classes in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Classes.pas',
+  sgcWebSocket_API_Bybit in 'sgcWebSockets\Source\sgcWebSocket_API_Bybit.pas',
+  sgcHTTP_API_Bybit in 'sgcWebSockets\Source\sgcHTTP_API_Bybit.pas',
+  sgcHTTP_Const in 'sgcWebSockets\Source\sgcHTTP_Const.pas',
+  sgcIndy_IOHandler_IO_Server in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server.pas',
+  sgcIndy_IOHandler_IO_Classes_OpenSSL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Classes_OpenSSL.pas',
+  sgcWebSocket_API_Huobi in 'sgcWebSockets\Source\sgcWebSocket_API_Huobi.pas',
+  sgcIndy_IOHandler_IO_WorkOpThread in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_WorkOpThread.pas',
+  sgcHTTP_OAuth_Client in 'sgcWebSockets\Source\sgcHTTP_OAuth_Client.pas',
+  sgcHTTP_OAuth2_Client in 'sgcWebSockets\Source\sgcHTTP_OAuth2_Client.pas',
+  sgcHTTP_Classes in 'sgcWebSockets\Source\sgcHTTP_Classes.pas',
+  sgcHTTP_Helpers in 'sgcWebSockets\Source\sgcHTTP_Helpers.pas',
+  sgcWebSocket_API_Cex in 'sgcWebSockets\Source\sgcWebSocket_API_Cex.pas',
+  sgcWebSocket_Protocol_AppRTC_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_AppRTC_Server.pas',
+  sgcWebSocket_Protocol_Presence_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Client.pas',
+  sgcWebSocket_Protocol_Presence_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Message.pas',
+  sgcWebSocket_Protocol_Presence_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Server.pas',
+  sgcWebSocket_API_Bitmex in 'sgcWebSockets\Source\sgcWebSocket_API_Bitmex.pas',
+  sgcWebSocket_Classes_SyncObjs in 'sgcWebSockets\Source\sgcWebSocket_Classes_SyncObjs.pas',
+  sgcWebSocket_Classes_Queues in 'sgcWebSockets\Source\sgcWebSocket_Classes_Queues.pas',
+  sgcWebSocket_API_SignalRCore in 'sgcWebSockets\Source\sgcWebSocket_API_SignalRCore.pas',
+  sgcWebSocket_API_Kraken in 'sgcWebSockets\Source\sgcWebSocket_API_Kraken.pas',
+  sgcBase_Classes in 'sgcWebSockets\Source\sgcBase_Classes.pas',
+  sgcBase_Const in 'sgcWebSockets\Source\sgcBase_Const.pas',
+  sgcBase_Helpers in 'sgcWebSockets\Source\sgcBase_Helpers.pas',
+  sgcTCP_Classes in 'sgcWebSockets\Source\sgcTCP_Classes.pas',
+  sgcBase_Sync in 'sgcWebSockets\Source\sgcBase_Sync.pas',
+  sgcP2P_ICE_Client in 'sgcWebSockets\Source\sgcP2P_ICE_Client.pas',
+  sgcTCP_Client in 'sgcWebSockets\Source\sgcTCP_Client.pas',
+  sgcP2P_ICE_Types in 'sgcWebSockets\Source\sgcP2P_ICE_Types.pas',
+  sgcIoT in 'sgcWebSockets\Source\sgcIoT.pas',
+  sgcIoT_Classes in 'sgcWebSockets\Source\sgcIoT_Classes.pas',
+  sgcHTTP_API_Coinbase in 'sgcWebSockets\Source\sgcHTTP_API_Coinbase.pas',
+  sgcIoT_Client in 'sgcWebSockets\Source\sgcIoT_Client.pas',
+  sgcIoT_MQTT_Client in 'sgcWebSockets\Source\sgcIoT_MQTT_Client.pas',
+  sgcIoT_Amazon_MQTT_Client in 'sgcWebSockets\Source\sgcIoT_Amazon_MQTT_Client.pas',
+  sgcIoT_Azure_MQTT_Client in 'sgcWebSockets\Source\sgcIoT_Azure_MQTT_Client.pas',
+  sgcWebSocket_API_Coinbase in 'sgcWebSockets\Source\sgcWebSocket_API_Coinbase.pas',
+  sgcWebSocket_API_FXCM in 'sgcWebSockets\Source\sgcWebSocket_API_FXCM.pas',
+  sgcSSL_SChannel in 'sgcWebSockets\Source\sgcSSL_SChannel.pas',
+  sgcSSL_SChannel_Indy in 'sgcWebSockets\Source\sgcSSL_SChannel_Indy.pas',
+  sgcSSL_WinSSPI in 'sgcWebSockets\Source\sgcSSL_WinSSPI.pas',
+  sgcHTTP_Client in 'sgcWebSockets\Source\sgcHTTP_Client.pas',
+  sgcHTTP_Amazon_AWS in 'sgcWebSockets\Source\sgcHTTP_Amazon_AWS.pas',
+  sgcHTTP_Amazon_SQS in 'sgcWebSockets\Source\sgcHTTP_Amazon_SQS.pas',
+  sgcHTTP_Amazon_AWS_Signature in 'sgcWebSockets\Source\sgcHTTP_Amazon_AWS_Signature.pas',
+  sgcWebSocket_API_Discord in 'sgcWebSockets\Source\sgcWebSocket_API_Discord.pas',
+  sgcHTTP_API_Binance in 'sgcWebSockets\Source\sgcHTTP_API_Binance.pas',
+  sgcHTTP_API in 'sgcWebSockets\Source\sgcHTTP_API.pas',
+  sgcHTTP_Google_Cloud in 'sgcWebSockets\Source\sgcHTTP_Google_Cloud.pas',
+  sgcHTTP_Google_PubSub in 'sgcWebSockets\Source\sgcHTTP_Google_PubSub.pas',
+  sgcHTTP_Google_Calendar in 'sgcWebSockets\Source\sgcHTTP_Google_Calendar.pas',
+  sgcHTTP_API_Kraken in 'sgcWebSockets\Source\sgcHTTP_API_Kraken.pas',
+  sgcLib_Telegram in 'sgcWebSockets\Source\sgcLib_Telegram.pas',
+  sgcLib_Telegram_Client in 'sgcWebSockets\Source\sgcLib_Telegram_Client.pas',
+  sgcHTTP2_Classes in 'sgcWebSockets\Source\sgcHTTP2_Classes.pas',
+  sgcHTTP2_Classes_Indy in 'sgcWebSockets\Source\sgcHTTP2_Classes_Indy.pas',
+  sgcHTTP2_Client in 'sgcWebSockets\Source\sgcHTTP2_Client.pas',
+  sgcHTTP2_Const in 'sgcWebSockets\Source\sgcHTTP2_Const.pas',
+  sgcHTTP2_Frame in 'sgcWebSockets\Source\sgcHTTP2_Frame.pas',
+  sgcHTTP2_Helpers in 'sgcWebSockets\Source\sgcHTTP2_Helpers.pas',
+  sgcHTTP2_HPACK in 'sgcWebSockets\Source\sgcHTTP2_HPACK.pas',
+  sgcHTTP2_Types in 'sgcWebSockets\Source\sgcHTTP2_Types.pas',
+  sgcHTTP_OAuth_Server in 'sgcWebSockets\Source\sgcHTTP_OAuth_Server.pas',
+  sgcHTTP_OAuth2_Server in 'sgcWebSockets\Source\sgcHTTP_OAuth2_Server.pas',
+  sgcUDP_Classes in 'sgcWebSockets\Source\sgcUDP_Classes.pas',
+  sgcUDP_Client in 'sgcWebSockets\Source\sgcUDP_Client.pas',
+  sgcP2P_ICE_Classes in 'sgcWebSockets\Source\sgcP2P_ICE_Classes.pas',
+  sgcP2P in 'sgcWebSockets\Source\sgcP2P.pas',
+  sgcUDP_Server in 'sgcWebSockets\Source\sgcUDP_Server.pas',
+  sgcUDP_Classes_Indy in 'sgcWebSockets\Source\sgcUDP_Classes_Indy.pas',
+  sgcHTTP_OpenAPI_Client_Amazon in 'sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Amazon.pas',
+  sgcSocket_Classes in 'sgcWebSockets\Source\sgcSocket_Classes.pas',
+  sgcSocket_Classes_Indy in 'sgcWebSockets\Source\sgcSocket_Classes_Indy.pas',
+  sgcSocket_Const in 'sgcWebSockets\Source\sgcSocket_Const.pas',
+  sgcHTTP_MultipartFormData in 'sgcWebSockets\Source\sgcHTTP_MultipartFormData.pas',
+  sgcP2P_STUN_Classes in 'sgcWebSockets\Source\sgcP2P_STUN_Classes.pas',
+  sgcP2P_STUN_Client in 'sgcWebSockets\Source\sgcP2P_STUN_Client.pas',
+  sgcP2P_STUN_Helpers in 'sgcWebSockets\Source\sgcP2P_STUN_Helpers.pas',
+  sgcP2P_STUN_Server in 'sgcWebSockets\Source\sgcP2P_STUN_Server.pas',
+  sgcP2P_STUN_Types in 'sgcWebSockets\Source\sgcP2P_STUN_Types.pas',
+  sgcP2P_TURN_Classes in 'sgcWebSockets\Source\sgcP2P_TURN_Classes.pas',
+  sgcP2P_TURN_Client in 'sgcWebSockets\Source\sgcP2P_TURN_Client.pas',
+  sgcP2P_TURN_Helpers in 'sgcWebSockets\Source\sgcP2P_TURN_Helpers.pas',
+  sgcP2P_TURN_Server in 'sgcWebSockets\Source\sgcP2P_TURN_Server.pas',
+  sgcP2P_TURN_Types in 'sgcWebSockets\Source\sgcP2P_TURN_Types.pas',
+  sgcHTTP_API_OpenAI in 'sgcWebSockets\Source\sgcHTTP_API_OpenAI.pas',
+  sgcSSL_EC in 'sgcWebSockets\Source\sgcSSL_EC.pas',
+  sgcLib_RCON_Client in 'sgcWebSockets\Source\sgcLib_RCON_Client.pas',
+  sgcHTTP_API_Cryptohopper in 'sgcWebSockets\Source\sgcHTTP_API_Cryptohopper.pas',
+  sgcLibs in 'sgcWebSockets\Source\sgcLibs.pas',
+  sgcHTTP_JWT_HMAC in 'sgcWebSockets\Source\sgcHTTP_JWT_HMAC.pas',
+  sgcHTTP_JWT_ES in 'sgcWebSockets\Source\sgcHTTP_JWT_ES.pas',
+  sgcHTTP_JWT_Classes in 'sgcWebSockets\Source\sgcHTTP_JWT_Classes.pas',
+  sgcHTTP_JWT_Client in 'sgcWebSockets\Source\sgcHTTP_JWT_Client.pas',
+  sgcHTTP_JWT_RSA in 'sgcWebSockets\Source\sgcHTTP_JWT_RSA.pas',
+  sgcHTTP_JWT_Helpers in 'sgcWebSockets\Source\sgcHTTP_JWT_Helpers.pas',
+  sgcHTTP_JWT_Server in 'sgcWebSockets\Source\sgcHTTP_JWT_Server.pas',
+  sgcHTTP_JWT_Types in 'sgcWebSockets\Source\sgcHTTP_JWT_Types.pas',
+  sgcWebSocket_API_ThreeCommas in 'sgcWebSockets\Source\sgcWebSocket_API_ThreeCommas.pas',
+  sgcHTTP_API_ThreeCommas in 'sgcWebSockets\Source\sgcHTTP_API_ThreeCommas.pas',
+  sgcWebSocket_Server_API_RTCMultiConnection in 'sgcWebSockets\Source\sgcWebSocket_Server_API_RTCMultiConnection.pas',
+  sgcWebSocket_Server_API_Base in 'sgcWebSockets\Source\sgcWebSocket_Server_API_Base.pas',
+  sgcWebSocket_Server_API_SocketIO in 'sgcWebSockets\Source\sgcWebSocket_Server_API_SocketIO.pas',
+  sgcWebSocket_Server_APIs in 'sgcWebSockets\Source\sgcWebSocket_Server_APIs.pas',
+  sgcAMQP in 'sgcWebSockets\Source\sgcAMQP.pas',
+  sgcAMQP_Classes in 'sgcWebSockets\Source\sgcAMQP_Classes.pas',
+  sgcAMQP_Const in 'sgcWebSockets\Source\sgcAMQP_Const.pas',
+  sgcAMQP_Helpers in 'sgcWebSockets\Source\sgcAMQP_Helpers.pas',
+  sgcAMQP_Client in 'sgcWebSockets\Source\sgcAMQP_Client.pas',
+  sgcHTTP_API_Bitmex in 'sgcWebSockets\Source\sgcHTTP_API_Bitmex.pas',
+  sgcWebSocket_Protocol_AMQP_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Client.pas',
+  sgcWebSocket_Protocol_AMQP_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Message.pas',
+  sgcWebSocket_API_Kucoin in 'sgcWebSockets\Source\sgcWebSocket_API_Kucoin.pas',
+  sgcHTTP_API_Kucoin in 'sgcWebSockets\Source\sgcHTTP_API_Kucoin.pas',
+  sgcHTTP_OpenAPI_Client in 'sgcWebSockets\Source\sgcHTTP_OpenAPI_Client.pas',
+  sgcHTTP_OpenAPI_Client_Google in 'sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Google.pas',
+  sgcHTTP_OpenAPI_Client_Microsoft in 'sgcWebSockets\Source\sgcHTTP_OpenAPI_Client_Microsoft.pas',
+  sgcHTTP_OAuth2_Client_Google in 'sgcWebSockets\Source\sgcHTTP_OAuth2_Client_Google.pas',
+  sgcHTTP_OAuth2_Client_Microsoft in 'sgcWebSockets\Source\sgcHTTP_OAuth2_Client_Microsoft.pas',
+  sgcLib_WhatsApp in 'sgcWebSockets\Source\sgcLib_WhatsApp.pas',
+  sgcLib_WhatsApp_Client in 'sgcWebSockets\Source\sgcLib_WhatsApp_Client.pas',
+  sgcLib_WhatsApp_Server in 'sgcWebSockets\Source\sgcLib_WhatsApp_Server.pas',
+  sgcWebSocket_API_OKX in 'sgcWebSockets\Source\sgcWebSocket_API_OKX.pas',
+  sgcWebSocket_API_XTB in 'sgcWebSockets\Source\sgcWebSocket_API_XTB.pas',
+  sgcP2P_RTCPeerConnection in 'sgcWebSockets\Source\sgcP2P_RTCPeerConnection.pas',
+  sgcWebSocket_Protocol_RTCPeerConnection_Server in 'sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Server.pas',
+  sgcWebSocket_Protocol_RTCPeerConnection_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Client.pas',
+  sgcWebSocket_Protocol_RTCPeerConnection_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_RTCPeerConnection_Message.pas',
+  sgcSSL_DTLS in 'sgcWebSockets\Source\sgcSSL_DTLS.pas',
+  sgcP2P_SDP in 'sgcWebSockets\Source\sgcP2P_SDP.pas',
+  sgcIndy_IOHandler_IO in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO.pas',
+  sgcIndy_IOHandler_IO_EPOLL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_EPOLL.pas',
+  sgcIndy_IOHandler_IO_Server_EPOLL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_EPOLL.pas',
+  sgcIndy_IOHandler_IO_OpenSSL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL.pas',
+  sgcIndy_IOHandler_IO_OpenSSL_EPOLL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL_EPOLL.pas',
+  sgcIndy_IOHandler_IO_Server_OpenSSL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL.pas',
+  sgcIndy_Scheduler_IO in 'sgcWebSockets\Source\sgcIndy_Scheduler_IO.pas',
+  sgcEPOLL in 'sgcWebSockets\Source\sgcEPOLL.pas',
+  sgcIndy_IOHandler_IO_Server_OpenSSL_EPOLL in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL_EPOLL.pas',
+  sgcIndy_IOHandler_IO_IOCP in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_IOCP.pas',
+  sgcIndy_IOHandler_IO_OpenSSL_IOCP in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_OpenSSL_IOCP.pas',
+  sgcIndy_IOHandler_IO_Server_IOCP in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_IOCP.pas',
+  sgcIndy_IOHandler_IO_Server_OpenSSL_IOCP in 'sgcWebSockets\Source\sgcIndy_IOHandler_IO_Server_OpenSSL_IOCP.pas',
+  sgcSSL_UDP in 'sgcWebSockets\Source\sgcSSL_UDP.pas',
+  sgcWebSocket_Server_Groups in 'sgcWebSockets\Source\sgcWebSocket_Server_Groups.pas',
+  sgcHTTP_OAuth_Types in 'sgcWebSockets\Source\sgcHTTP_OAuth_Types.pas',
+  sgcHTTP_API_WebPush in 'sgcWebSockets\Source\sgcHTTP_API_WebPush.pas',
+  sgcSSL_HKDF in 'sgcWebSockets\Source\sgcSSL_HKDF.pas',
+  sgcWebSocket_Server_API_WebPush in 'sgcWebSockets\Source\sgcWebSocket_Server_API_WebPush.pas',
+  sgcAI in 'sgcWebSockets\Source\sgcAI.pas',
+  sgcAI_AudioPlayer in 'sgcWebSockets\Source\sgcAI_AudioPlayer.pas',
+  sgcAI_AudioPlayer_MCI in 'sgcWebSockets\Source\sgcAI_AudioPlayer_MCI.pas',
+  sgcAI_AudioRecorder in 'sgcWebSockets\Source\sgcAI_AudioRecorder.pas',
+  sgcAI_AudioRecorder_MCI in 'sgcWebSockets\Source\sgcAI_AudioRecorder_MCI.pas',
+  sgcAI_OpenAI in 'sgcWebSockets\Source\sgcAI_OpenAI.pas',
+  sgcAI_OpenAI_Audio in 'sgcWebSockets\Source\sgcAI_OpenAI_Audio.pas',
+  sgcAI_OpenAI_Audio_ChatBot in 'sgcWebSockets\Source\sgcAI_OpenAI_Audio_ChatBot.pas',
+  sgcAI_OpenAI_Audio_Translator in 'sgcWebSockets\Source\sgcAI_OpenAI_Audio_Translator.pas',
+  sgcAI_SpeechToText in 'sgcWebSockets\Source\sgcAI_SpeechToText.pas',
+  sgcAI_TextToSpeech in 'sgcWebSockets\Source\sgcAI_TextToSpeech.pas',
+  sgcAI_TextToSpeech_Amazon in 'sgcWebSockets\Source\sgcAI_TextToSpeech_Amazon.pas',
+  sgcAI_TextToSpeech_Google in 'sgcWebSockets\Source\sgcAI_TextToSpeech_Google.pas',
+  sgcAI_TextToSpeech_System in 'sgcWebSockets\Source\sgcAI_TextToSpeech_System.pas',
+  sgcAI_OpenAI_Embeddings in 'sgcWebSockets\Source\sgcAI_OpenAI_Embeddings.pas',
+  sgcAI_DB_Vector in 'sgcWebSockets\Source\sgcAI_DB_Vector.pas',
+  sgcAI_DB_Vector_File in 'sgcWebSockets\Source\sgcAI_DB_Vector_File.pas',
+  sgcHTTP_API_Pinecone in 'sgcWebSockets\Source\sgcHTTP_API_Pinecone.pas',
+  sgcHelper_WebBrowser in 'sgcWebSockets\Source\sgcHelper_WebBrowser.pas',
+  sgcAI_DB_Vector_Pinecone in 'sgcWebSockets\Source\sgcAI_DB_Vector_Pinecone.pas',
+  sgcAI_Helpers in 'sgcWebSockets\Source\sgcAI_Helpers.pas',
+  sgcWebSocket_Protocol_AMQP1_Client in 'sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP1_Client.pas',
+  sgcAMQP1_Classes in 'sgcWebSockets\Source\sgcAMQP1_Classes.pas',
+  sgcAMQP1_Client in 'sgcWebSockets\Source\sgcAMQP1_Client.pas',
+  sgcAMQP1_Helpers in 'sgcWebSockets\Source\sgcAMQP1_Helpers.pas',
+  sgcAMQP1_Const in 'sgcWebSockets\Source\sgcAMQP1_Const.pas',
+  sgcAMQP1 in 'sgcWebSockets\Source\sgcAMQP1.pas',
+  sgcWebSocket_Protocol_AMQP1_Message in 'sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP1_Message.pas',
+  sgcAMQP_ReadWrite in 'sgcWebSockets\Source\sgcAMQP_ReadWrite.pas',
+  sgcHTTP_API_Bitstamp in 'sgcWebSockets\Source\sgcHTTP_API_Bitstamp.pas',
+  sgcByte_Classes in 'sgcWebSockets\Source\sgcByte_Classes.pas',
+  sgcAMQP1_Frames in 'sgcWebSockets\Source\sgcAMQP1_Frames.pas',
+  sgcAMQP1_Descriptors in 'sgcWebSockets\Source\sgcAMQP1_Descriptors.pas',
+  sgcWebSocket_API_CexPlus in 'sgcWebSockets\Source\sgcWebSocket_API_CexPlus.pas',
+  sgcAMQP1_Message in 'sgcWebSockets\Source\sgcAMQP1_Message.pas',
+  sgcAMQP1_Session in 'sgcWebSockets\Source\sgcAMQP1_Session.pas',
+  sgcDebug in 'sgcWebSockets\Source\sgcDebug.pas'
+  ;
+
+end.
+
+

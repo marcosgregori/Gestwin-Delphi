@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appearance>
+	<Version>1.0.0</Version>
+	<Enabled>true</Enabled>
+	<ShowNotifications>true</ShowNotifications>
+	<Kind>2</Kind>
+	<NativeStyle>true</NativeStyle>
+	<ScrollbarMode>0</ScrollbarMode>
+	<ScrollMode>0</ScrollMode>
+	<SkinName/>
+	<RenderMode>0</RenderMode>
+	<TouchMode>false</TouchMode>
+	<FormCorners>0</FormCorners>
+	<SkinPaletteName/>
+	<ShowFormShadow>2</ShowFormShadow>
+	<UseSkins>true</UseSkins>
+	<UseImageSet>0</UseImageSet>
+	<UseSkinsInPopupMenus>true</UseSkinsInPopupMenus>
+	<LightStyleMode>3</LightStyleMode>
+	<UseGlobalSkin>true</UseGlobalSkin>
+	<Skins>
+		<dxSkinBasic>false</dxSkinBasic>
+		<dxSkinDevExpressDarkStyle>false</dxSkinDevExpressDarkStyle>
+		<dxSkinDevExpressStyle>false</dxSkinDevExpressStyle>
+		<dxSkinFoggy>false</dxSkinFoggy>
+		<GestwinSkin>false</GestwinSkin>
+		<GestwinWhiteSkin>false</GestwinWhiteSkin>
+		<dxSkinPumpkin>false</dxSkinPumpkin>
+		<dxSkinSeven>false</dxSkinSeven>
+		<dxSkinSpringTime>false</dxSkinSpringTime>
+		<dxSkinSummer2008>false</dxSkinSummer2008>
+		<dxSkinValentine>false</dxSkinValentine>
+		<dxSkinXmas2008Blue>false</dxSkinXmas2008Blue>
+	</Skins>
+</Appearance>

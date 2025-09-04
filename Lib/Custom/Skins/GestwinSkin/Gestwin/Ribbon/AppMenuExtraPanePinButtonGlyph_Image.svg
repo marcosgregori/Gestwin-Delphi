@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 10 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<path d="M4, 7L9, 7L9, 2L4, 2L4, 1L3, 1L3, 4L0, 4L0, 5L3, 5L3, 8L4, 8L4, 7zM4, 3L8, 3L8, 4L4, 4L4, 3z" fill="#707070" class="Mask" tag="Mask"/>
+	<g transform="translate(0, 10)">
+		<path d="M8, 6L8, 1L3, 1L3, 6L2, 6L2, 7L5, 7L5, 10L6, 10L6, 7L9, 7L9, 6L8, 6zM4, 6L4, 2L5, 2L5, 6L4, 6z" fill="#707070" class="Mask" tag="Mask"/>
+	</g>
+</svg>

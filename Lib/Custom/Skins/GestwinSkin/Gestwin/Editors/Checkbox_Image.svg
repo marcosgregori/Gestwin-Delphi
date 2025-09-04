@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" viewBox="0 0 16 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g>
+		<rect x="0" y="0" width="16" height="16" rx="0" ry="0" fill="#AFAFAF" class="st0" tag="st0"/>
+		<path d="M0, 0L0, 16L16, 16L16, 0L0, 0zM15, 15L1, 15L1, 1L15, 1L15, 15z" fill="#707070" class="st1" tag="st1"/>
+	</g>
+	<g transform="translate(0, 16)">
+		<rect x="0" y="0" width="16" height="16" rx="0" ry="0" fill="#AFAFAF" class="st0" tag="st0"/>
+		<path d="M0, 0L0, 16L16, 16L16, 0L0, 0zM15, 15L1, 15L1, 1L15, 1L15, 15z" fill="#707070" class="st1" tag="st1"/>
+		<polygon points="11,4 12,4 7,12 4,8 5,8 7,10.1  " fill="#707070" class="Mask" tag="Mask"/>
+	</g>
+	<g transform="translate(0, 32)">
+		<rect x="0" y="0" width="16" height="16" rx="0" ry="0" fill="#AFAFAF" class="st0" tag="st0"/>
+		<path d="M0, 0L0, 16L16, 16L16, 0L0, 0zM15, 15L1, 15L1, 1L15, 1L15, 15z" fill="#707070" class="st1" tag="st1"/>
+		<rect x="5" y="5" width="6" height="6" rx="0" ry="0" fill="#707070" class="Mask" tag="st0"/>
+	</g>
+</svg>

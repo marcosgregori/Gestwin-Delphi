@@ -1,0 +1,49 @@
+=================================================
+ Welcome to TeeChart Pro Full Source Code !
+
+ Steema Software
+ www.steema.com
+==================================================
+ Copyright (c) 1995-2018 by Steema Software. 
+ All Rights Reserved.
+==================================================
+
+INSTALL.TXT contains installation information.
+
+LICENSE.TXT contains License and Disclaimer issues.
+
+RELEASE.TXT contains technical information.
+
+Online Resources:
+=================
+
+What's New?
+ http://www.steema.com/linkIn/WhatsNewVCL
+
+Wishes and Bugs Database:
+  http://bugs.teechart.net
+
+Online API Help / Reference:
+  http://wiki.teechart.net/index.php?title=TeeChart_for_VCL   
+
+Customer Support Forums:
+  http://support.steema.com
+
+Peer Support at StackOverflow:
+  http://stackoverflow.com/questions/tagged/teechart
+
+Demo Examples at GitHub:
+  https://github.com/Steema
+
+Keep visiting our web site and the private sections 
+for upgrades, new announcements, examples, 
+technical information and 
+Frequently Asked Questions.
+
+Thank You Very Much for TeeCharting !
+
+ ----------------------------------------------------------------
+ Steema Software
+ www.steema.com
+ Copyright (c) 1995-2018 by Steema Software. All Rights Reserved.
+ ----------------------------------------------------------------

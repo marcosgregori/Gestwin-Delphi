@@ -1,0 +1,1316 @@
+<XmlTransformation Version="1.0"><Transform Direction="ToCds" DataEncoding="UTF-8"><SelectEach dest="DATAPACKET\ROWDATA\ROW" from="\fe:Facturae"><SelectEach dest="Tax\ROWTax" from="\Invoices\Invoice"><Select dest="@_TaxTypeCode1" from="\TaxesOutputs\Tax\TaxTypeCode"/><Select dest="@_TaxRate1" from="\TaxesOutputs\Tax\TaxRate"/><Select dest="@TaxableBase_TotalAmount1" from="\TaxesOutputs\Tax\TaxableBase\TotalAmount"/><Select dest="@TaxAmount_TotalAmount1" from="\TaxesOutputs\Tax\TaxAmount\TotalAmount"/><Select dest="@_EquivalenceSurcharge1" from="\TaxesOutputs\Tax\EquivalenceSurcharge"/><Select dest="@TotalAmount1" from="\TaxesOutputs\Tax\EquivalenceSurchargeAmount\TotalAmount"/><Select dest="@_TaxTypeCode2" from="\TaxesWithheld\Tax\TaxTypeCode"/><Select dest="@_TaxRate2" from="\TaxesWithheld\Tax\TaxRate"/><Select dest="@TaxableBase_TotalAmount2" from="\TaxesWithheld\Tax\TaxableBase\TotalAmount"/><Select dest="@TaxAmount_TotalAmount2" from="\TaxesWithheld\Tax\TaxAmount\TotalAmount"/><Select dest="@_EquivalenceSurcharge2" from="\TaxesWithheld\Tax\EquivalenceSurcharge"/><Select dest="@TotalAmount2" from="\TaxesWithheld\Tax\EquivalenceSurchargeAmount\TotalAmount"/></SelectEach><SelectEach dest="InvoiceLine\ROWInvoiceLine" from="\Invoices\Invoice\Items\InvoiceLine"><SelectEach dest="DeliveryNote\ROWDeliveryNote" from="\DeliveryNotesReferences\DeliveryNote"><Select dest="@DeliveryNoteNumber" from="\DeliveryNoteNumber"/><Select dest="@DeliveryNoteDate" from="\DeliveryNoteDate"/></SelectEach><Select dest="@IssuerContractReference" from="\IssuerContractReference"/><Select dest="@IssuerContractDate" from="\IssuerContractDate"/><Select dest="@IssuerTransactionReference" from="\IssuerTransactionReference"/><Select dest="@IssuerTransactionDate" from="\IssuerTransactionDate"/><Select dest="@ReceiverContractReference" from="\ReceiverContractReference"/><Select dest="@ReceiverContractDate" from="\ReceiverContractDate"/><Select dest="@ReceiverTransactionReference" from="\ReceiverTransactionReference"/><Select dest="@ReceiverTransactionDate" from="\ReceiverTransactionDate"/><Select dest="@FileReference" from="\FileReference"/><Select dest="@FileDate" from="\FileDate"/><Select dest="@SequenceNumber" from="\SequenceNumber"/><Select dest="@ItemDescription" from="\ItemDescription"/><Select dest="@Quantity" from="\Quantity"/><Select dest="@UnitOfMeasure" from="\UnitOfMeasure"/><Select dest="@UnitPriceWithoutTax" from="\UnitPriceWithoutTax"/><Select dest="@TotalCost" from="\TotalCost"/><Select dest="@DiscountReason" from="\DiscountsAndRebates\Discount\DiscountReason"/><Select dest="@DiscountRate" from="\DiscountsAndRebates\Discount\DiscountRate"/><Select dest="@DiscountAmount" from="\DiscountsAndRebates\Discount\DiscountAmount"/><Select dest="@ChargeReason" from="\Charges\Charge\ChargeReason"/><Select dest="@ChargeAmount" from="\Charges\Charge\ChargeAmount"/><Select dest="@GrossAmount" from="\GrossAmount"/><Select dest="@AdditionalLineItemInformation" from="\AdditionalLineItemInformation"/><Select dest="@SpecialTaxableEventCode" from="\SpecialTaxableEvent\SpecialTaxableEventCode"/><Select dest="@SpecialTaxableEventReason" from="\SpecialTaxableEvent\SpecialTaxableEventReason"/><Select dest="@ArticleCode" from="\ArticleCode"/><SelectEach dest="Tax\ROWTax" from=""><Select dest="@_TaxTypeCode1" from="\TaxesOutputs\Tax\TaxTypeCode"/><Select dest="@_TaxRate1" from="\TaxesOutputs\Tax\TaxRate"/><Select dest="@TaxableBase_TotalAmount1" from="\TaxesOutputs\Tax\TaxableBase\TotalAmount"/><Select dest="@TaxAmount_TotalAmount1" from="\TaxesOutputs\Tax\TaxAmount\TotalAmount"/><Select dest="@_EquivalenceSurcharge1" from="\TaxesOutputs\Tax\EquivalenceSurcharge"/><Select dest="@TotalAmount1" from="\TaxesOutputs\Tax\EquivalenceSurchargeAmount\TotalAmount"/><Select dest="@_TaxTypeCode2" from="\TaxesWithheld\Tax\TaxTypeCode"/><Select dest="@_TaxRate2" from="\TaxesWithheld\Tax\TaxRate"/><Select dest="@TaxableBase_TotalAmount2" from="\TaxesWithheld\Tax\TaxableBase\TotalAmount"/><Select dest="@TaxAmount_TotalAmount2" from="\TaxesWithheld\Tax\TaxAmount\TotalAmount"/><Select dest="@_EquivalenceSurcharge2" from="\TaxesWithheld\Tax\EquivalenceSurcharge"/><Select dest="@TotalAmount2" from="\TaxesWithheld\Tax\EquivalenceSurchargeAmount\TotalAmount"/></SelectEach></SelectEach><Select dest="@ds" from="@xmlns:ds"/><Select dest="@fe" from="@xmlns:fe"/><Select dest="@SchemaVersion" from="\FileHeader\SchemaVersion"/><Select dest="@Modality" from="\FileHeader\Modality"/><Select dest="@InvoiceIssuerType" from="\FileHeader\InvoiceIssuerType"/><Select dest="@BatchIdentifier" from="\FileHeader\Batch\BatchIdentifier"/><Select dest="@InvoicesCount" from="\FileHeader\Batch\InvoicesCount"/><Select dest="@TotalAmount1" from="\FileHeader\Batch\TotalInvoicesAmount\TotalAmount"/><Select dest="@TotalAmount2" from="\FileHeader\Batch\TotalOutstandingAmount\TotalAmount"/><Select dest="@TotalAmount3" from="\FileHeader\Batch\TotalExecutableAmount\TotalAmount"/><Select dest="@InvoiceCurrencyCode1" from="\FileHeader\Batch\InvoiceCurrencyCode"/><Select dest="@PersonTypeCode1" from="\Parties\SellerParty\TaxIdentification\PersonTypeCode"/><Select dest="@ResidenceTypeCode1" from="\Parties\SellerParty\TaxIdentification\ResidenceTypeCode"/><Select dest="@TaxIdentificationNumber1" from="\Parties\SellerParty\TaxIdentification\TaxIdentificationNumber"/><Select dest="@CorporateName" from="\Parties\SellerParty\LegalEntity\CorporateName"/><Select dest="@TradeName" from="\Parties\SellerParty\LegalEntity\TradeName"/><Select dest="@Book" from="\Parties\SellerParty\LegalEntity\RegistrationData\Book"/><Select dest="@RegisterOfCompaniesLocation" from="\Parties\SellerParty\LegalEntity\RegistrationData\RegisterOfCompaniesLocation"/><Select dest="@Sheet" from="\Parties\SellerParty\LegalEntity\RegistrationData\Sheet"/><Select dest="@Folio" from="\Parties\SellerParty\LegalEntity\RegistrationData\Folio"/><Select dest="@Section" from="\Parties\SellerParty\LegalEntity\RegistrationData\Section"/><Select dest="@Volume" from="\Parties\SellerParty\LegalEntity\RegistrationData\Volume"/><Select dest="@AdditionalRegistrationData" from="\Parties\SellerParty\LegalEntity\RegistrationData\AdditionalRegistrationData"/><Select dest="@AddressInSpain_Address" from="\Parties\SellerParty\LegalEntity\AddressInSpain\Address"/><Select dest="@AddressInSpain_PostCode" from="\Parties\SellerParty\LegalEntity\AddressInSpain\PostCode"/><Select dest="@Town" from="\Parties\SellerParty\LegalEntity\AddressInSpain\Town"/><Select dest="@AddressInSpain_Province" from="\Parties\SellerParty\LegalEntity\AddressInSpain\Province"/><Select dest="@AddressInSpain_CountryCode" from="\Parties\SellerParty\LegalEntity\AddressInSpain\CountryCode"/><Select dest="@ContactDetails_Telephone1" from="\Parties\SellerParty\LegalEntity\ContactDetails\Telephone"/><Select dest="@ContactDetails_TeleFax1" from="\Parties\SellerParty\LegalEntity\ContactDetails\TeleFax"/><Select dest="@ContactDetails_WebAddress1" from="\Parties\SellerParty\LegalEntity\ContactDetails\WebAddress"/><Select dest="@ContactDetails_ElectronicMail1" from="\Parties\SellerParty\LegalEntity\ContactDetails\ElectronicMail"/><Select dest="@ContactDetails_ContactPersons1" from="\Parties\SellerParty\LegalEntity\ContactDetails\ContactPersons"/><Select dest="@ContactDetails_CnoCnae1" from="\Parties\SellerParty\LegalEntity\ContactDetails\CnoCnae"/><Select dest="@ContactDetails_INETownCode1" from="\Parties\SellerParty\LegalEntity\ContactDetails\INETownCode"/><Select dest="@AdditionalContactDetails1" from="\Parties\SellerParty\LegalEntity\ContactDetails\AdditionalContactDetails"/><Select dest="@PersonTypeCode2" from="\Parties\BuyerParty\TaxIdentification\PersonTypeCode"/><Select dest="@ResidenceTypeCode2" from="\Parties\BuyerParty\TaxIdentification\ResidenceTypeCode"/><Select dest="@TaxIdentificationNumber2" from="\Parties\BuyerParty\TaxIdentification\TaxIdentificationNumber"/><Select dest="@CentreCode" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\CentreCode"/><Select dest="@RoleTypeCode" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\RoleTypeCode"/><Select dest="@Name1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\Name"/><Select dest="@FirstSurname1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\FirstSurname"/><Select dest="@Address1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\OverseasAddress\Address"/><Select dest="@PostCodeAndTown1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\OverseasAddress\PostCodeAndTown"/><Select dest="@Province1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\OverseasAddress\Province"/><Select dest="@CountryCode1" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\OverseasAddress\CountryCode"/><Select dest="@CentreDescription" from="\Parties\BuyerParty\AdministrativeCentres\AdministrativeCentre\CentreDescription"/><Select dest="@Name2" from="\Parties\BuyerParty\Individual\Name"/><Select dest="@FirstSurname2" from="\Parties\BuyerParty\Individual\FirstSurname"/><Select dest="@OverseasAddress_Address" from="\Parties\BuyerParty\Individual\OverseasAddress\Address"/><Select dest="@PostCodeAndTown2" from="\Parties\BuyerParty\Individual\OverseasAddress\PostCodeAndTown"/><Select dest="@OverseasAddress_Province" from="\Parties\BuyerParty\Individual\OverseasAddress\Province"/><Select dest="@OverseasAddress_CountryCode" from="\Parties\BuyerParty\Individual\OverseasAddress\CountryCode"/><Select dest="@ContactDetails_Telephone2" from="\Parties\BuyerParty\Individual\ContactDetails\Telephone"/><Select dest="@ContactDetails_TeleFax2" from="\Parties\BuyerParty\Individual\ContactDetails\TeleFax"/><Select dest="@ContactDetails_WebAddress2" from="\Parties\BuyerParty\Individual\ContactDetails\WebAddress"/><Select dest="@ContactDetails_ElectronicMail2" from="\Parties\BuyerParty\Individual\ContactDetails\ElectronicMail"/><Select dest="@ContactDetails_ContactPersons2" from="\Parties\BuyerParty\Individual\ContactDetails\ContactPersons"/><Select dest="@ContactDetails_CnoCnae2" from="\Parties\BuyerParty\Individual\ContactDetails\CnoCnae"/><Select dest="@ContactDetails_INETownCode2" from="\Parties\BuyerParty\Individual\ContactDetails\INETownCode"/><Select dest="@AdditionalContactDetails2" from="\Parties\BuyerParty\Individual\ContactDetails\AdditionalContactDetails"/><Select dest="@InvoiceNumber" from="\Invoices\Invoice\InvoiceHeader\InvoiceNumber"/><Select dest="@InvoiceSeriesCode" from="\Invoices\Invoice\InvoiceHeader\InvoiceSeriesCode"/><Select dest="@InvoiceDocumentType" from="\Invoices\Invoice\InvoiceHeader\InvoiceDocumentType"/><Select dest="@InvoiceClass" from="\Invoices\Invoice\InvoiceHeader\InvoiceClass"/><Select dest="@IssueDate" from="\Invoices\Invoice\InvoiceIssueData\IssueDate"/><Select dest="@OperationDate" from="\Invoices\Invoice\InvoiceIssueData\OperationDate"/><Select dest="@PlaceOfIssue_PostCode" from="\Invoices\Invoice\InvoiceIssueData\PlaceOfIssue\PostCode"/><Select dest="@PlaceOfIssueDescription" from="\Invoices\Invoice\InvoiceIssueData\PlaceOfIssue\PlaceOfIssueDescription"/><Select dest="@StartDate" from="\Invoices\Invoice\InvoiceIssueData\InvoicingPeriod\StartDate"/><Select dest="@EndDate" from="\Invoices\Invoice\InvoiceIssueData\InvoicingPeriod\EndDate"/><Select dest="@InvoiceCurrencyCode2" from="\Invoices\Invoice\InvoiceIssueData\InvoiceCurrencyCode"/><Select dest="@TaxCurrencyCode" from="\Invoices\Invoice\InvoiceIssueData\TaxCurrencyCode"/><Select dest="@LanguageName" from="\Invoices\Invoice\InvoiceIssueData\LanguageName"/><Select dest="@TotalGrossAmount" from="\Invoices\Invoice\InvoiceTotals\TotalGrossAmount"/><Select dest="@TotalGeneralDiscounts" from="\Invoices\Invoice\InvoiceTotals\TotalGeneralDiscounts"/><Select dest="@TotalGeneralSurcharges" from="\Invoices\Invoice\InvoiceTotals\TotalGeneralSurcharges"/><Select dest="@TotalGrossAmountBeforeTaxes" from="\Invoices\Invoice\InvoiceTotals\TotalGrossAmountBeforeTaxes"/><Select dest="@TotalTaxOutputs" from="\Invoices\Invoice\InvoiceTotals\TotalTaxOutputs"/><Select dest="@TotalTaxesWithheld" from="\Invoices\Invoice\InvoiceTotals\TotalTaxesWithheld"/><Select dest="@InvoiceTotal" from="\Invoices\Invoice\InvoiceTotals\InvoiceTotal"/><Select dest="@TotalAmount4" from="\Invoices\Invoice\InvoiceTotals\TotalOutstandingAmount\TotalAmount"/><Select dest="@TotalAmount5" from="\Invoices\Invoice\InvoiceTotals\TotalExecutableAmount\TotalAmount"/><Select dest="@InstallmentDueDate" from="\Invoices\Invoice\PaymentDetails\Installment\InstallmentDueDate"/><Select dest="@InstallmentAmount" from="\Invoices\Invoice\PaymentDetails\Installment\InstallmentAmount"/><Select dest="@PaymentMeans" from="\Invoices\Invoice\PaymentDetails\Installment\PaymentMeans"/><Select dest="@AccountToBeCredited_IBAN" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\IBAN"/><Select dest="@AccountToBeCredited_BankCode" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\BankCode"/><Select dest="@AccountToBeCredited_BranchCode" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\BranchCode"/><Select dest="@Address2" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\OverseasBranchAddress\Address"/><Select dest="@PostCodeAndTown3" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\OverseasBranchAddress\PostCodeAndTown"/><Select dest="@Province2" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\OverseasBranchAddress\Province"/><Select dest="@CountryCode2" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeCredited\OverseasBranchAddress\CountryCode"/><Select dest="@PaymentReconciliationReference" from="\Invoices\Invoice\PaymentDetails\Installment\PaymentReconciliationReference"/><Select dest="@AccountToBeDebited_IBAN" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeDebited\IBAN"/><Select dest="@AccountToBeDebited_BankCode" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeDebited\BankCode"/><Select dest="@AccountToBeDebited_BranchCode" from="\Invoices\Invoice\PaymentDetails\Installment\AccountToBeDebited\BranchCode"/><Select dest="@DebitReconciliationReference" from="\Invoices\Invoice\PaymentDetails\Installment\DebitReconciliationReference"/><Select dest="@SignatureValue" from="\ds:Signature\ds:SignatureValue"/><Select dest="@X509Certificate" from="\ds:Signature\ds:KeyInfo\ds:X509Data\ds:X509Certificate"/><Select dest="@Modulus" from="\ds:Signature\ds:KeyInfo\ds:KeyValue\ds:RSAKeyValue\ds:Modulus"/><Select dest="@Exponent" from="\ds:Signature\ds:KeyInfo\ds:KeyValue\ds:RSAKeyValue\ds:Exponent"/><Select dest="@SigningTime" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SigningTime"/><Select dest="@DigestValue1" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SigningCertificate\etsi:Cert\etsi:CertDigest\ds:DigestValue"/><Select dest="@X509IssuerName" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SigningCertificate\etsi:Cert\etsi:IssuerSerial\ds:X509IssuerName"/><Select dest="@X509SerialNumber" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SigningCertificate\etsi:Cert\etsi:IssuerSerial\ds:X509SerialNumber"/><Select dest="@Identifier" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SignaturePolicyIdentifier\etsi:SignaturePolicyId\etsi:SigPolicyId\etsi:Identifier"/><Select dest="@Description" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SignaturePolicyIdentifier\etsi:SignaturePolicyId\etsi:SigPolicyId\etsi:Description"/><Select dest="@DigestValue2" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SignaturePolicyIdentifier\etsi:SignaturePolicyId\etsi:SigPolicyHash\ds:DigestValue"/><Select dest="@ClaimedRole" from="\ds:Signature\ds:Object\etsi:QualifyingProperties\etsi:SignedProperties\etsi:SignedSignatureProperties\etsi:SignerRole\etsi:ClaimedRoles\etsi:ClaimedRole"/><SelectEach dest="Reference\ROWReference" from="\ds:Signature\ds:SignedInfo\ds:Reference"><Select dest="@DigestValue" from="\ds:DigestValue"/></SelectEach></SelectEach></Transform><XmlSchema RootName="Facturae"><![CDATA[<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="schema" type="schemaType"/>
+  <xs:complexType name="schemaType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:import" type="xs:importType"/>
+      <xs:element name="xs:element" type="xs:elementType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:simpleType" type="xs:simpleTypeType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <xs:attribute name="xmlns:ds" type="xs:string"/>
+    <xs:attribute name="xmlns:xs" type="xs:string"/>
+    <xs:attribute name="xmlns" type="xs:string"/>
+    <xs:attribute name="targetNamespace" type="xs:string"/>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="import" type="importType"/>
+  <xs:complexType name="importType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="namespace" type="xs:string"/>
+    <xs:attribute name="schemaLocation" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="documentation" type="documentationType"/>
+  <xs:complexType name="documentationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+  </xs:complexType>
+  <xs:element name="complexType" type="complexTypeType"/>
+  <xs:complexType name="complexTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:sequence" type="xs:sequenceType"/>
+      <xs:element name="xs:complexContent" type="xs:complexContentType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="sequence" type="sequenceType"/>
+  <xs:complexType name="sequenceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:element" type="xs:elementType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:choice" type="xs:choiceType"/>
+      <xs:element name="xs:any" type="xs:anyType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+    <xs:attribute name="ref" type="xs:string"/>
+    <xs:attribute name="default" type="xs:string"/>
+    <xs:attribute name="maxOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="complexType" type="complexTypeType"/>
+  <xs:complexType name="complexTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:sequence" type="xs:sequenceType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="choice" type="choiceType"/>
+  <xs:complexType name="choiceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:element" type="xs:elementType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="complexContent" type="complexContentType"/>
+  <xs:complexType name="complexContentType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:extension" type="xs:extensionType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="extension" type="extensionType"/>
+  <xs:complexType name="extensionType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="base" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="simpleType" type="simpleTypeType"/>
+  <xs:complexType name="simpleTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:restriction" type="xs:restrictionType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="restriction" type="restrictionType"/>
+  <xs:complexType name="restrictionType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:enumeration" type="xs:enumerationType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:length" type="xs:lengthType"/>
+      <xs:element name="xs:pattern" type="xs:patternType"/>
+      <xs:element name="xs:maxLength" type="xs:maxLengthType"/>
+      <xs:element name="xs:minLength" type="xs:minLengthType"/>
+    </sequence>
+    <xs:attribute name="base" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="enumeration" type="enumerationType"/>
+  <xs:complexType name="enumerationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="any" type="xs:anyType"/>
+  <xs:complexType name="anyType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="namespace" type="xs:string"/>
+    <xs:attribute name="processContents" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+    <xs:attribute name="maxOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="length" type="lengthType"/>
+  <xs:complexType name="lengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="pattern" type="patternType"/>
+  <xs:complexType name="patternType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="maxLength" type="maxLengthType"/>
+  <xs:complexType name="maxLengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="minLength" type="minLengthType"/>
+  <xs:complexType name="minLengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Facturae" type="FacturaeType"/>
+  <xs:complexType name="FacturaeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="FileHeader" type="FileHeaderType"/>
+      <xs:element name="Parties" type="PartiesType"/>
+      <xs:element name="Invoices" type="InvoicesType"/>
+      <xs:element name="ds:Signature" type="ds:SignatureType"/>
+    </sequence>
+    <xs:attribute name="xmlns:ds" type="xs:string"/>
+    <xs:attribute name="xmlns:fe" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="FileHeader" type="FileHeaderType"/>
+  <xs:complexType name="FileHeaderType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SchemaVersion" type="SchemaVersionType"/>
+      <xs:element name="Modality" type="ModalityType"/>
+      <xs:element name="InvoiceIssuerType" type="InvoiceIssuerTypeType"/>
+      <xs:element name="Batch" type="BatchType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SchemaVersion" type="SchemaVersionType"/>
+  <xs:simpleType name="SchemaVersionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Modality" type="ModalityType"/>
+  <xs:simpleType name="ModalityType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceIssuerType" type="InvoiceIssuerTypeType"/>
+  <xs:simpleType name="InvoiceIssuerTypeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Batch" type="BatchType"/>
+  <xs:complexType name="BatchType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="BatchIdentifier" type="BatchIdentifierType"/>
+      <xs:element name="InvoicesCount" type="InvoicesCountType"/>
+      <xs:element name="TotalInvoicesAmount" type="TotalInvoicesAmountType"/>
+      <xs:element name="TotalOutstandingAmount" type="TotalOutstandingAmountType"/>
+      <xs:element name="TotalExecutableAmount" type="TotalExecutableAmountType"/>
+      <xs:element name="InvoiceCurrencyCode" type="InvoiceCurrencyCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="BatchIdentifier" type="BatchIdentifierType"/>
+  <xs:simpleType name="BatchIdentifierType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoicesCount" type="InvoicesCountType"/>
+  <xs:simpleType name="InvoicesCountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalInvoicesAmount" type="TotalInvoicesAmountType"/>
+  <xs:complexType name="TotalInvoicesAmountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalOutstandingAmount" type="TotalOutstandingAmountType"/>
+  <xs:complexType name="TotalOutstandingAmountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalExecutableAmount" type="TotalExecutableAmountType"/>
+  <xs:complexType name="TotalExecutableAmountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceCurrencyCode" type="InvoiceCurrencyCodeType"/>
+  <xs:simpleType name="InvoiceCurrencyCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Parties" type="PartiesType"/>
+  <xs:complexType name="PartiesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SellerParty" type="SellerPartyType"/>
+      <xs:element name="BuyerParty" type="BuyerPartyType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SellerParty" type="SellerPartyType"/>
+  <xs:complexType name="SellerPartyType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TaxIdentification" type="TaxIdentificationType"/>
+      <xs:element name="LegalEntity" type="LegalEntityType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TaxIdentification" type="TaxIdentificationType"/>
+  <xs:complexType name="TaxIdentificationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="PersonTypeCode" type="PersonTypeCodeType"/>
+      <xs:element name="ResidenceTypeCode" type="ResidenceTypeCodeType"/>
+      <xs:element name="TaxIdentificationNumber" type="TaxIdentificationNumberType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="PersonTypeCode" type="PersonTypeCodeType"/>
+  <xs:simpleType name="PersonTypeCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ResidenceTypeCode" type="ResidenceTypeCodeType"/>
+  <xs:simpleType name="ResidenceTypeCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxIdentificationNumber" type="TaxIdentificationNumberType"/>
+  <xs:simpleType name="TaxIdentificationNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LegalEntity" type="LegalEntityType"/>
+  <xs:complexType name="LegalEntityType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CorporateName" type="CorporateNameType"/>
+      <xs:element name="TradeName" type="TradeNameType"/>
+      <xs:element name="RegistrationData" type="RegistrationDataType"/>
+      <xs:element name="AddressInSpain" type="AddressInSpainType"/>
+      <xs:element name="ContactDetails" type="ContactDetailsType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="CorporateName" type="CorporateNameType"/>
+  <xs:simpleType name="CorporateNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeName" type="TradeNameType"/>
+  <xs:simpleType name="TradeNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="RegistrationData" type="RegistrationDataType"/>
+  <xs:complexType name="RegistrationDataType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Book" type="BookType"/>
+      <xs:element name="RegisterOfCompaniesLocation" type="RegisterOfCompaniesLocationType"/>
+      <xs:element name="Sheet" type="SheetType"/>
+      <xs:element name="Folio" type="FolioType"/>
+      <xs:element name="Section" type="SectionType"/>
+      <xs:element name="Volume" type="VolumeType"/>
+      <xs:element name="AdditionalRegistrationData" type="AdditionalRegistrationDataType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Book" type="BookType"/>
+  <xs:simpleType name="BookType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="RegisterOfCompaniesLocation" type="RegisterOfCompaniesLocationType"/>
+  <xs:simpleType name="RegisterOfCompaniesLocationType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Sheet" type="SheetType"/>
+  <xs:simpleType name="SheetType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Folio" type="FolioType"/>
+  <xs:simpleType name="FolioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Section" type="SectionType"/>
+  <xs:simpleType name="SectionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Volume" type="VolumeType"/>
+  <xs:simpleType name="VolumeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="AdditionalRegistrationData" type="AdditionalRegistrationDataType"/>
+  <xs:simpleType name="AdditionalRegistrationDataType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="AddressInSpain" type="AddressInSpainType"/>
+  <xs:complexType name="AddressInSpainType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Address" type="AddressType"/>
+      <xs:element name="PostCode" type="PostCodeType"/>
+      <xs:element name="Town" type="TownType"/>
+      <xs:element name="Province" type="ProvinceType"/>
+      <xs:element name="CountryCode" type="CountryCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Address" type="AddressType"/>
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PostCode" type="PostCodeType"/>
+  <xs:simpleType name="PostCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Town" type="TownType"/>
+  <xs:simpleType name="TownType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Province" type="ProvinceType"/>
+  <xs:simpleType name="ProvinceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CountryCode" type="CountryCodeType"/>
+  <xs:simpleType name="CountryCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ContactDetails" type="ContactDetailsType"/>
+  <xs:complexType name="ContactDetailsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Telephone" type="TelephoneType"/>
+      <xs:element name="TeleFax" type="TeleFaxType"/>
+      <xs:element name="WebAddress" type="WebAddressType"/>
+      <xs:element name="ElectronicMail" type="ElectronicMailType"/>
+      <xs:element name="ContactPersons" type="ContactPersonsType"/>
+      <xs:element name="CnoCnae" type="CnoCnaeType"/>
+      <xs:element name="INETownCode" type="INETownCodeType"/>
+      <xs:element name="AdditionalContactDetails" type="AdditionalContactDetailsType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Telephone" type="TelephoneType"/>
+  <xs:simpleType name="TelephoneType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TeleFax" type="TeleFaxType"/>
+  <xs:simpleType name="TeleFaxType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="WebAddress" type="WebAddressType"/>
+  <xs:simpleType name="WebAddressType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ElectronicMail" type="ElectronicMailType"/>
+  <xs:simpleType name="ElectronicMailType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ContactPersons" type="ContactPersonsType"/>
+  <xs:simpleType name="ContactPersonsType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CnoCnae" type="CnoCnaeType"/>
+  <xs:simpleType name="CnoCnaeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="INETownCode" type="INETownCodeType"/>
+  <xs:simpleType name="INETownCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="AdditionalContactDetails" type="AdditionalContactDetailsType"/>
+  <xs:simpleType name="AdditionalContactDetailsType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BuyerParty" type="BuyerPartyType"/>
+  <xs:complexType name="BuyerPartyType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TaxIdentification" type="TaxIdentificationType"/>
+      <xs:element name="AdministrativeCentres" type="AdministrativeCentresType"/>
+      <xs:element name="Individual" type="IndividualType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TaxIdentification" type="TaxIdentificationType"/>
+  <xs:complexType name="TaxIdentificationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="PersonTypeCode" type="PersonTypeCodeType"/>
+      <xs:element name="ResidenceTypeCode" type="ResidenceTypeCodeType"/>
+      <xs:element name="TaxIdentificationNumber" type="TaxIdentificationNumberType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="AdministrativeCentres" type="AdministrativeCentresType"/>
+  <xs:complexType name="AdministrativeCentresType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AdministrativeCentre" type="AdministrativeCentreType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="AdministrativeCentre" type="AdministrativeCentreType"/>
+  <xs:complexType name="AdministrativeCentreType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CentreCode" type="CentreCodeType"/>
+      <xs:element name="RoleTypeCode" type="RoleTypeCodeType"/>
+      <xs:element name="Name" type="NameType"/>
+      <xs:element name="FirstSurname" type="FirstSurnameType"/>
+      <xs:element name="OverseasAddress" type="OverseasAddressType"/>
+      <xs:element name="CentreDescription" type="CentreDescriptionType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="CentreCode" type="CentreCodeType"/>
+  <xs:simpleType name="CentreCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="RoleTypeCode" type="RoleTypeCodeType"/>
+  <xs:simpleType name="RoleTypeCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Name" type="NameType"/>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="FirstSurname" type="FirstSurnameType"/>
+  <xs:simpleType name="FirstSurnameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OverseasAddress" type="OverseasAddressType"/>
+  <xs:complexType name="OverseasAddressType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Address" type="AddressType"/>
+      <xs:element name="PostCodeAndTown" type="PostCodeAndTownType"/>
+      <xs:element name="Province" type="ProvinceType"/>
+      <xs:element name="CountryCode" type="CountryCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Address" type="AddressType"/>
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PostCodeAndTown" type="PostCodeAndTownType"/>
+  <xs:simpleType name="PostCodeAndTownType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Province" type="ProvinceType"/>
+  <xs:simpleType name="ProvinceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CountryCode" type="CountryCodeType"/>
+  <xs:simpleType name="CountryCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CentreDescription" type="CentreDescriptionType"/>
+  <xs:simpleType name="CentreDescriptionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Individual" type="IndividualType"/>
+  <xs:complexType name="IndividualType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Name" type="NameType"/>
+      <xs:element name="FirstSurname" type="FirstSurnameType"/>
+      <xs:element name="OverseasAddress" type="OverseasAddressType"/>
+      <xs:element name="ContactDetails" type="ContactDetailsType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Name" type="NameType"/>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="FirstSurname" type="FirstSurnameType"/>
+  <xs:simpleType name="FirstSurnameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OverseasAddress" type="OverseasAddressType"/>
+  <xs:complexType name="OverseasAddressType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Address" type="AddressType"/>
+      <xs:element name="PostCodeAndTown" type="PostCodeAndTownType"/>
+      <xs:element name="Province" type="ProvinceType"/>
+      <xs:element name="CountryCode" type="CountryCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="ContactDetails" type="ContactDetailsType"/>
+  <xs:complexType name="ContactDetailsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Telephone" type="TelephoneType"/>
+      <xs:element name="TeleFax" type="TeleFaxType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Invoices" type="InvoicesType"/>
+  <xs:complexType name="InvoicesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Invoice" type="InvoiceType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" type="InvoiceType"/>
+  <xs:complexType name="InvoiceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InvoiceHeader" type="InvoiceHeaderType"/>
+      <xs:element name="InvoiceIssueData" type="InvoiceIssueDataType"/>
+      <xs:element name="TaxesOutputs" type="TaxesOutputsType"/>
+      <xs:element name="TaxesWithheld" type="TaxesWithheldType"/>
+      <xs:element name="InvoiceTotals" type="InvoiceTotalsType"/>
+      <xs:element name="Items" type="ItemsType"/>
+      <xs:element name="PaymentDetails" type="PaymentDetailsType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceHeader" type="InvoiceHeaderType"/>
+  <xs:complexType name="InvoiceHeaderType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InvoiceNumber" type="InvoiceNumberType"/>
+      <xs:element name="InvoiceSeriesCode" type="InvoiceSeriesCodeType"/>
+      <xs:element name="InvoiceDocumentType" type="InvoiceDocumentTypeType"/>
+      <xs:element name="InvoiceClass" type="InvoiceClassType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceNumber" type="InvoiceNumberType"/>
+  <xs:simpleType name="InvoiceNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceSeriesCode" type="InvoiceSeriesCodeType"/>
+  <xs:simpleType name="InvoiceSeriesCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceDocumentType" type="InvoiceDocumentTypeType"/>
+  <xs:simpleType name="InvoiceDocumentTypeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceClass" type="InvoiceClassType"/>
+  <xs:simpleType name="InvoiceClassType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceIssueData" type="InvoiceIssueDataType"/>
+  <xs:complexType name="InvoiceIssueDataType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="IssueDate" type="IssueDateType"/>
+      <xs:element name="OperationDate" type="OperationDateType"/>
+      <xs:element name="PlaceOfIssue" type="PlaceOfIssueType"/>
+      <xs:element name="InvoicingPeriod" type="InvoicingPeriodType"/>
+      <xs:element name="InvoiceCurrencyCode" type="InvoiceCurrencyCodeType"/>
+      <xs:element name="TaxCurrencyCode" type="TaxCurrencyCodeType"/>
+      <xs:element name="LanguageName" type="LanguageNameType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="IssueDate" type="IssueDateType"/>
+  <xs:simpleType name="IssueDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OperationDate" type="OperationDateType"/>
+  <xs:simpleType name="OperationDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PlaceOfIssue" type="PlaceOfIssueType"/>
+  <xs:complexType name="PlaceOfIssueType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="PostCode" type="PostCodeType"/>
+      <xs:element name="PlaceOfIssueDescription" type="PlaceOfIssueDescriptionType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="PostCode" type="PostCodeType"/>
+  <xs:simpleType name="PostCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PlaceOfIssueDescription" type="PlaceOfIssueDescriptionType"/>
+  <xs:simpleType name="PlaceOfIssueDescriptionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoicingPeriod" type="InvoicingPeriodType"/>
+  <xs:complexType name="InvoicingPeriodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="StartDate" type="StartDateType"/>
+      <xs:element name="EndDate" type="EndDateType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="StartDate" type="StartDateType"/>
+  <xs:simpleType name="StartDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="EndDate" type="EndDateType"/>
+  <xs:simpleType name="EndDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceCurrencyCode" type="InvoiceCurrencyCodeType"/>
+  <xs:simpleType name="InvoiceCurrencyCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxCurrencyCode" type="TaxCurrencyCodeType"/>
+  <xs:simpleType name="TaxCurrencyCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LanguageName" type="LanguageNameType"/>
+  <xs:simpleType name="LanguageNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxesOutputs" type="TaxesOutputsType"/>
+  <xs:complexType name="TaxesOutputsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Tax" type="TaxType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Tax" type="TaxType"/>
+  <xs:complexType name="TaxType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TaxTypeCode" type="TaxTypeCodeType"/>
+      <xs:element name="TaxRate" type="TaxRateType"/>
+      <xs:element name="TaxableBase" type="TaxableBaseType"/>
+      <xs:element name="TaxAmount" type="TaxAmountType"/>
+      <xs:element name="EquivalenceSurcharge" type="EquivalenceSurchargeType"/>
+      <xs:element name="EquivalenceSurchargeAmount" type="EquivalenceSurchargeAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TaxTypeCode" type="TaxTypeCodeType"/>
+  <xs:simpleType name="TaxTypeCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxRate" type="TaxRateType"/>
+  <xs:simpleType name="TaxRateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxableBase" type="TaxableBaseType"/>
+  <xs:complexType name="TaxableBaseType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxAmount" type="TaxAmountType"/>
+  <xs:complexType name="TaxAmountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="EquivalenceSurcharge" type="EquivalenceSurchargeType"/>
+  <xs:simpleType name="EquivalenceSurchargeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="EquivalenceSurchargeAmount" type="EquivalenceSurchargeAmountType"/>
+  <xs:complexType name="EquivalenceSurchargeAmountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalAmount" type="TotalAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalAmount" type="TotalAmountType"/>
+  <xs:simpleType name="TotalAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxesWithheld" type="TaxesWithheldType"/>
+  <xs:complexType name="TaxesWithheldType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Tax" type="TaxType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Tax" type="TaxType"/>
+  <xs:complexType name="TaxType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TaxTypeCode" type="TaxTypeCodeType"/>
+      <xs:element name="TaxRate" type="TaxRateType"/>
+      <xs:element name="TaxableBase" type="TaxableBaseType"/>
+      <xs:element name="TaxAmount" type="TaxAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceTotals" type="InvoiceTotalsType"/>
+  <xs:complexType name="InvoiceTotalsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TotalGrossAmount" type="TotalGrossAmountType"/>
+      <xs:element name="TotalGeneralDiscounts" type="TotalGeneralDiscountsType"/>
+      <xs:element name="TotalGeneralSurcharges" type="TotalGeneralSurchargesType"/>
+      <xs:element name="TotalGrossAmountBeforeTaxes" type="TotalGrossAmountBeforeTaxesType"/>
+      <xs:element name="TotalTaxOutputs" type="TotalTaxOutputsType"/>
+      <xs:element name="TotalTaxesWithheld" type="TotalTaxesWithheldType"/>
+      <xs:element name="InvoiceTotal" type="InvoiceTotalType"/>
+      <xs:element name="TotalOutstandingAmount" type="TotalOutstandingAmountType"/>
+      <xs:element name="TotalExecutableAmount" type="TotalExecutableAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="TotalGrossAmount" type="TotalGrossAmountType"/>
+  <xs:simpleType name="TotalGrossAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalGeneralDiscounts" type="TotalGeneralDiscountsType"/>
+  <xs:simpleType name="TotalGeneralDiscountsType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalGeneralSurcharges" type="TotalGeneralSurchargesType"/>
+  <xs:simpleType name="TotalGeneralSurchargesType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalGrossAmountBeforeTaxes" type="TotalGrossAmountBeforeTaxesType"/>
+  <xs:simpleType name="TotalGrossAmountBeforeTaxesType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalTaxOutputs" type="TotalTaxOutputsType"/>
+  <xs:simpleType name="TotalTaxOutputsType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalTaxesWithheld" type="TotalTaxesWithheldType"/>
+  <xs:simpleType name="TotalTaxesWithheldType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InvoiceTotal" type="InvoiceTotalType"/>
+  <xs:simpleType name="InvoiceTotalType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalOutstandingAmount" type="TotalOutstandingAmountType"/>
+  <xs:simpleType name="TotalOutstandingAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalExecutableAmount" type="TotalExecutableAmountType"/>
+  <xs:simpleType name="TotalExecutableAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Items" type="ItemsType"/>
+  <xs:complexType name="ItemsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InvoiceLine" type="InvoiceLineType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceLine" type="InvoiceLineType"/>
+  <xs:complexType name="InvoiceLineType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="IssuerContractReference" type="IssuerContractReferenceType"/>
+      <xs:element name="IssuerContractDate" type="IssuerContractDateType"/>
+      <xs:element name="IssuerTransactionReference" type="IssuerTransactionReferenceType"/>
+      <xs:element name="IssuerTransactionDate" type="IssuerTransactionDateType"/>
+      <xs:element name="ReceiverContractReference" type="ReceiverContractReferenceType"/>
+      <xs:element name="ReceiverContractDate" type="ReceiverContractDateType"/>
+      <xs:element name="ReceiverTransactionReference" type="ReceiverTransactionReferenceType"/>
+      <xs:element name="ReceiverTransactionDate" type="ReceiverTransactionDateType"/>
+      <xs:element name="FileReference" type="FileReferenceType"/>
+      <xs:element name="FileDate" type="FileDateType"/>
+      <xs:element name="SequenceNumber" type="SequenceNumberType"/>
+      <xs:element name="DeliveryNotesReferences" type="DeliveryNotesReferencesType"/>
+      <xs:element name="ItemDescription" type="ItemDescriptionType"/>
+      <xs:element name="Quantity" type="QuantityType"/>
+      <xs:element name="UnitOfMeasure" type="UnitOfMeasureType"/>
+      <xs:element name="UnitPriceWithoutTax" type="UnitPriceWithoutTaxType"/>
+      <xs:element name="TotalCost" type="TotalCostType"/>
+      <xs:element name="DiscountsAndRebates" type="DiscountsAndRebatesType"/>
+      <xs:element name="Charges" type="ChargesType"/>
+      <xs:element name="GrossAmount" type="GrossAmountType"/>
+      <xs:element name="TaxesOutputs" type="TaxesOutputsType"/>
+      <xs:element name="AdditionalLineItemInformation" type="AdditionalLineItemInformationType"/>
+      <xs:element name="SpecialTaxableEvent" type="SpecialTaxableEventType"/>
+      <xs:element name="ArticleCode" type="ArticleCodeType"/>
+      <xs:element name="TaxesWithheld" type="TaxesWithheldType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="IssuerContractReference" type="IssuerContractReferenceType"/>
+  <xs:simpleType name="IssuerContractReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="IssuerContractDate" type="IssuerContractDateType"/>
+  <xs:simpleType name="IssuerContractDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="IssuerTransactionReference" type="IssuerTransactionReferenceType"/>
+  <xs:simpleType name="IssuerTransactionReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="IssuerTransactionDate" type="IssuerTransactionDateType"/>
+  <xs:simpleType name="IssuerTransactionDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ReceiverContractReference" type="ReceiverContractReferenceType"/>
+  <xs:simpleType name="ReceiverContractReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ReceiverContractDate" type="ReceiverContractDateType"/>
+  <xs:simpleType name="ReceiverContractDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ReceiverTransactionReference" type="ReceiverTransactionReferenceType"/>
+  <xs:simpleType name="ReceiverTransactionReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ReceiverTransactionDate" type="ReceiverTransactionDateType"/>
+  <xs:simpleType name="ReceiverTransactionDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="FileReference" type="FileReferenceType"/>
+  <xs:simpleType name="FileReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="FileDate" type="FileDateType"/>
+  <xs:simpleType name="FileDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SequenceNumber" type="SequenceNumberType"/>
+  <xs:simpleType name="SequenceNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DeliveryNotesReferences" type="DeliveryNotesReferencesType"/>
+  <xs:complexType name="DeliveryNotesReferencesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="DeliveryNote" type="DeliveryNoteType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryNote" type="DeliveryNoteType"/>
+  <xs:complexType name="DeliveryNoteType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="DeliveryNoteNumber" type="DeliveryNoteNumberType"/>
+      <xs:element name="DeliveryNoteDate" type="DeliveryNoteDateType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryNoteNumber" type="DeliveryNoteNumberType"/>
+  <xs:simpleType name="DeliveryNoteNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DeliveryNoteDate" type="DeliveryNoteDateType"/>
+  <xs:simpleType name="DeliveryNoteDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ItemDescription" type="ItemDescriptionType"/>
+  <xs:simpleType name="ItemDescriptionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Quantity" type="QuantityType"/>
+  <xs:simpleType name="QuantityType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="UnitOfMeasure" type="UnitOfMeasureType"/>
+  <xs:simpleType name="UnitOfMeasureType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="UnitPriceWithoutTax" type="UnitPriceWithoutTaxType"/>
+  <xs:simpleType name="UnitPriceWithoutTaxType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TotalCost" type="TotalCostType"/>
+  <xs:simpleType name="TotalCostType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DiscountsAndRebates" type="DiscountsAndRebatesType"/>
+  <xs:complexType name="DiscountsAndRebatesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Discount" type="DiscountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Discount" type="DiscountType"/>
+  <xs:complexType name="DiscountType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="DiscountReason" type="DiscountReasonType"/>
+      <xs:element name="DiscountRate" type="DiscountRateType"/>
+      <xs:element name="DiscountAmount" type="DiscountAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="DiscountReason" type="DiscountReasonType"/>
+  <xs:simpleType name="DiscountReasonType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DiscountRate" type="DiscountRateType"/>
+  <xs:simpleType name="DiscountRateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DiscountAmount" type="DiscountAmountType"/>
+  <xs:simpleType name="DiscountAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Charges" type="ChargesType"/>
+  <xs:complexType name="ChargesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Charge" type="ChargeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Charge" type="ChargeType"/>
+  <xs:complexType name="ChargeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ChargeReason" type="ChargeReasonType"/>
+      <xs:element name="ChargeAmount" type="ChargeAmountType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="ChargeReason" type="ChargeReasonType"/>
+  <xs:simpleType name="ChargeReasonType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ChargeAmount" type="ChargeAmountType"/>
+  <xs:simpleType name="ChargeAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="GrossAmount" type="GrossAmountType"/>
+  <xs:simpleType name="GrossAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxesOutputs" type="TaxesOutputsType"/>
+  <xs:complexType name="TaxesOutputsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Tax" type="TaxType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalLineItemInformation" type="AdditionalLineItemInformationType"/>
+  <xs:simpleType name="AdditionalLineItemInformationType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SpecialTaxableEvent" type="SpecialTaxableEventType"/>
+  <xs:complexType name="SpecialTaxableEventType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SpecialTaxableEventCode" type="SpecialTaxableEventCodeType"/>
+      <xs:element name="SpecialTaxableEventReason" type="SpecialTaxableEventReasonType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SpecialTaxableEventCode" type="SpecialTaxableEventCodeType"/>
+  <xs:simpleType name="SpecialTaxableEventCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SpecialTaxableEventReason" type="SpecialTaxableEventReasonType"/>
+  <xs:simpleType name="SpecialTaxableEventReasonType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ArticleCode" type="ArticleCodeType"/>
+  <xs:simpleType name="ArticleCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TaxesWithheld" type="TaxesWithheldType"/>
+  <xs:complexType name="TaxesWithheldType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Tax" type="TaxType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="PaymentDetails" type="PaymentDetailsType"/>
+  <xs:complexType name="PaymentDetailsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Installment" type="InstallmentType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Installment" type="InstallmentType"/>
+  <xs:complexType name="InstallmentType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InstallmentDueDate" type="InstallmentDueDateType"/>
+      <xs:element name="InstallmentAmount" type="InstallmentAmountType"/>
+      <xs:element name="PaymentMeans" type="PaymentMeansType"/>
+      <xs:element name="AccountToBeCredited" type="AccountToBeCreditedType"/>
+      <xs:element name="PaymentReconciliationReference" type="PaymentReconciliationReferenceType"/>
+      <xs:element name="AccountToBeDebited" type="AccountToBeDebitedType"/>
+      <xs:element name="DebitReconciliationReference" type="DebitReconciliationReferenceType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="InstallmentDueDate" type="InstallmentDueDateType"/>
+  <xs:simpleType name="InstallmentDueDateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="InstallmentAmount" type="InstallmentAmountType"/>
+  <xs:simpleType name="InstallmentAmountType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PaymentMeans" type="PaymentMeansType"/>
+  <xs:simpleType name="PaymentMeansType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="AccountToBeCredited" type="AccountToBeCreditedType"/>
+  <xs:complexType name="AccountToBeCreditedType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="IBAN" type="IBANType"/>
+      <xs:element name="BankCode" type="BankCodeType"/>
+      <xs:element name="BranchCode" type="BranchCodeType"/>
+      <xs:element name="OverseasBranchAddress" type="OverseasBranchAddressType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="IBAN" type="IBANType"/>
+  <xs:simpleType name="IBANType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BankCode" type="BankCodeType"/>
+  <xs:simpleType name="BankCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BranchCode" type="BranchCodeType"/>
+  <xs:simpleType name="BranchCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OverseasBranchAddress" type="OverseasBranchAddressType"/>
+  <xs:complexType name="OverseasBranchAddressType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Address" type="AddressType"/>
+      <xs:element name="PostCodeAndTown" type="PostCodeAndTownType"/>
+      <xs:element name="Province" type="ProvinceType"/>
+      <xs:element name="CountryCode" type="CountryCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Address" type="AddressType"/>
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PostCodeAndTown" type="PostCodeAndTownType"/>
+  <xs:simpleType name="PostCodeAndTownType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Province" type="ProvinceType"/>
+  <xs:simpleType name="ProvinceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CountryCode" type="CountryCodeType"/>
+  <xs:simpleType name="CountryCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PaymentReconciliationReference" type="PaymentReconciliationReferenceType"/>
+  <xs:simpleType name="PaymentReconciliationReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="AccountToBeDebited" type="AccountToBeDebitedType"/>
+  <xs:complexType name="AccountToBeDebitedType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="IBAN" type="IBANType"/>
+      <xs:element name="BankCode" type="BankCodeType"/>
+      <xs:element name="BranchCode" type="BranchCodeType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="IBAN" type="IBANType"/>
+  <xs:simpleType name="IBANType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BankCode" type="BankCodeType"/>
+  <xs:simpleType name="BankCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BranchCode" type="BranchCodeType"/>
+  <xs:simpleType name="BranchCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DebitReconciliationReference" type="DebitReconciliationReferenceType"/>
+  <xs:simpleType name="DebitReconciliationReferenceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Signature" type="SignatureType"/>
+  <xs:complexType name="SignatureType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:SignedInfo" type="ds:SignedInfoType"/>
+      <xs:element name="ds:SignatureValue" type="ds:SignatureValueType"/>
+      <xs:element name="ds:KeyInfo" type="ds:KeyInfoType"/>
+      <xs:element name="ds:Object" type="ds:ObjectType"/>
+    </sequence>
+    <xs:attribute name="xmlns:etsi" type="xs:string"/>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="SignedInfo" type="SignedInfoType"/>
+  <xs:complexType name="SignedInfoType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:CanonicalizationMethod" type="ds:CanonicalizationMethodType"/>
+      <xs:element name="ds:SignatureMethod" type="ds:SignatureMethodType"/>
+      <xs:element name="ds:Reference" type="ds:ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="CanonicalizationMethod" type="CanonicalizationMethodType"/>
+  <xs:complexType name="CanonicalizationMethodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="SignatureMethod" type="SignatureMethodType"/>
+  <xs:complexType name="SignatureMethodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="Reference" type="ReferenceType"/>
+  <xs:complexType name="ReferenceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:DigestMethod" type="ds:DigestMethodType"/>
+      <xs:element name="ds:DigestValue" type="ds:DigestValueType"/>
+      <xs:element name="ds:Transforms" type="ds:TransformsType"/>
+    </sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+    <xs:attribute name="Type" type="xs:string"/>
+    <xs:attribute name="URI" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="DigestMethod" type="DigestMethodType"/>
+  <xs:complexType name="DigestMethodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="DigestValue" type="DigestValueType"/>
+  <xs:simpleType name="DigestValueType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Transforms" type="TransformsType"/>
+  <xs:complexType name="TransformsType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:Transform" type="ds:TransformType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Transform" type="TransformType"/>
+  <xs:complexType name="TransformType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="SignatureValue" type="SignatureValueType"/>
+  <xs:complexType name="SignatureValueType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="KeyInfo" type="KeyInfoType"/>
+  <xs:complexType name="KeyInfoType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:X509Data" type="ds:X509DataType"/>
+      <xs:element name="ds:KeyValue" type="ds:KeyValueType"/>
+    </sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="X509Data" type="X509DataType"/>
+  <xs:complexType name="X509DataType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:X509Certificate" type="ds:X509CertificateType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="X509Certificate" type="X509CertificateType"/>
+  <xs:simpleType name="X509CertificateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="KeyValue" type="KeyValueType"/>
+  <xs:complexType name="KeyValueType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:RSAKeyValue" type="ds:RSAKeyValueType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="RSAKeyValue" type="RSAKeyValueType"/>
+  <xs:complexType name="RSAKeyValueType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:Modulus" type="ds:ModulusType"/>
+      <xs:element name="ds:Exponent" type="ds:ExponentType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Modulus" type="ModulusType"/>
+  <xs:simpleType name="ModulusType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Exponent" type="ExponentType"/>
+  <xs:simpleType name="ExponentType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Object" type="ObjectType"/>
+  <xs:complexType name="ObjectType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:QualifyingProperties" type="etsi:QualifyingPropertiesType"/>
+    </sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="QualifyingProperties" type="QualifyingPropertiesType"/>
+  <xs:complexType name="QualifyingPropertiesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:SignedProperties" type="etsi:SignedPropertiesType"/>
+    </sequence>
+    <xs:attribute name="Target" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="SignedProperties" type="SignedPropertiesType"/>
+  <xs:complexType name="SignedPropertiesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:SignedSignatureProperties" type="etsi:SignedSignaturePropertiesType"/>
+    </sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="SignedSignatureProperties" type="SignedSignaturePropertiesType"/>
+  <xs:complexType name="SignedSignaturePropertiesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:SigningTime" type="etsi:SigningTimeType"/>
+      <xs:element name="etsi:SigningCertificate" type="etsi:SigningCertificateType"/>
+      <xs:element name="etsi:SignaturePolicyIdentifier" type="etsi:SignaturePolicyIdentifierType"/>
+      <xs:element name="etsi:SignerRole" type="etsi:SignerRoleType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SigningTime" type="SigningTimeType"/>
+  <xs:simpleType name="SigningTimeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SigningCertificate" type="SigningCertificateType"/>
+  <xs:complexType name="SigningCertificateType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:Cert" type="etsi:CertType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Cert" type="CertType"/>
+  <xs:complexType name="CertType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:CertDigest" type="etsi:CertDigestType"/>
+      <xs:element name="etsi:IssuerSerial" type="etsi:IssuerSerialType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="CertDigest" type="CertDigestType"/>
+  <xs:complexType name="CertDigestType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:DigestMethod" type="ds:DigestMethodType"/>
+      <xs:element name="ds:DigestValue" type="ds:DigestValueType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="DigestMethod" type="DigestMethodType"/>
+  <xs:complexType name="DigestMethodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="DigestValue" type="DigestValueType"/>
+  <xs:simpleType name="DigestValueType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="IssuerSerial" type="IssuerSerialType"/>
+  <xs:complexType name="IssuerSerialType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:X509IssuerName" type="ds:X509IssuerNameType"/>
+      <xs:element name="ds:X509SerialNumber" type="ds:X509SerialNumberType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="X509IssuerName" type="X509IssuerNameType"/>
+  <xs:simpleType name="X509IssuerNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="X509SerialNumber" type="X509SerialNumberType"/>
+  <xs:simpleType name="X509SerialNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SignaturePolicyIdentifier" type="SignaturePolicyIdentifierType"/>
+  <xs:complexType name="SignaturePolicyIdentifierType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:SignaturePolicyId" type="etsi:SignaturePolicyIdType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SignaturePolicyId" type="SignaturePolicyIdType"/>
+  <xs:complexType name="SignaturePolicyIdType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:SigPolicyId" type="etsi:SigPolicyIdType"/>
+      <xs:element name="etsi:SigPolicyHash" type="etsi:SigPolicyHashType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="SigPolicyId" type="SigPolicyIdType"/>
+  <xs:complexType name="SigPolicyIdType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:Identifier" type="etsi:IdentifierType"/>
+      <xs:element name="etsi:Description" type="etsi:DescriptionType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="Identifier" type="IdentifierType"/>
+  <xs:simpleType name="IdentifierType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Description" type="DescriptionType"/>
+  <xs:simpleType name="DescriptionType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SigPolicyHash" type="SigPolicyHashType"/>
+  <xs:complexType name="SigPolicyHashType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ds:DigestMethod" type="ds:DigestMethodType"/>
+      <xs:element name="ds:DigestValue" type="ds:DigestValueType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="DigestMethod" type="DigestMethodType"/>
+  <xs:complexType name="DigestMethodType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="Algorithm" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="DigestValue" type="DigestValueType"/>
+  <xs:simpleType name="DigestValueType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SignerRole" type="SignerRoleType"/>
+  <xs:complexType name="SignerRoleType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:ClaimedRoles" type="etsi:ClaimedRolesType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="ClaimedRoles" type="ClaimedRolesType"/>
+  <xs:complexType name="ClaimedRolesType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="etsi:ClaimedRole" type="etsi:ClaimedRoleType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="ClaimedRole" type="ClaimedRoleType"/>
+  <xs:simpleType name="ClaimedRoleType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>]]></XmlSchema><CdsSkeleton/><XslTransform/><Skeleton><![CDATA[<?xml version="1.0"?><DATAPACKET Version="2.0"><METADATA><FIELDS><FIELD attrname="ds" fieldtype="string" WIDTH="34"/><FIELD attrname="fe" fieldtype="string" WIDTH="50"/><FIELD attrname="SchemaVersion" fieldtype="string" WIDTH="3"/><FIELD attrname="Modality" fieldtype="string" WIDTH="1"/><FIELD attrname="InvoiceIssuerType" fieldtype="string" WIDTH="2"/><FIELD attrname="BatchIdentifier" fieldtype="string" WIDTH="13"/><FIELD attrname="InvoicesCount" fieldtype="string" WIDTH="1"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount3" fieldtype="string" WIDTH="5"/><FIELD attrname="InvoiceCurrencyCode1" fieldtype="string" WIDTH="3"/><FIELD attrname="PersonTypeCode1" fieldtype="string" WIDTH="1"/><FIELD attrname="ResidenceTypeCode1" fieldtype="string" WIDTH="1"/><FIELD attrname="TaxIdentificationNumber1" fieldtype="string" WIDTH="11"/><FIELD attrname="CorporateName" fieldtype="string" WIDTH="15"/><FIELD attrname="TradeName" fieldtype="string" WIDTH="4"/><FIELD attrname="Book" fieldtype="string" WIDTH="1"/><FIELD attrname="RegisterOfCompaniesLocation" fieldtype="string" WIDTH="6"/><FIELD attrname="Sheet" fieldtype="string" WIDTH="1"/><FIELD attrname="Folio" fieldtype="string" WIDTH="2"/><FIELD attrname="Section" fieldtype="string" WIDTH="1"/><FIELD attrname="Volume" fieldtype="string" WIDTH="2"/><FIELD attrname="AdditionalRegistrationData" fieldtype="string" WIDTH="9"/><FIELD attrname="AddressInSpain_Address" fieldtype="string" WIDTH="18"/><FIELD attrname="AddressInSpain_PostCode" fieldtype="string" WIDTH="5"/><FIELD attrname="Town" fieldtype="string" WIDTH="19"/><FIELD attrname="AddressInSpain_Province" fieldtype="string" WIDTH="11"/><FIELD attrname="AddressInSpain_CountryCode" fieldtype="string" WIDTH="3"/><FIELD attrname="ContactDetails_Telephone1" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_TeleFax1" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_WebAddress1" fieldtype="string" WIDTH="15"/><FIELD attrname="ContactDetails_ElectronicMail1" fieldtype="string" WIDTH="17"/><FIELD attrname="ContactDetails_ContactPersons1" fieldtype="string" WIDTH="8"/><FIELD attrname="ContactDetails_CnoCnae1" fieldtype="string" WIDTH="5"/><FIELD attrname="ContactDetails_INETownCode1" fieldtype="string" WIDTH="7"/><FIELD attrname="AdditionalContactDetails1" fieldtype="string" WIDTH="11"/><FIELD attrname="PersonTypeCode2" fieldtype="string" WIDTH="1"/><FIELD attrname="ResidenceTypeCode2" fieldtype="string" WIDTH="1"/><FIELD attrname="TaxIdentificationNumber2" fieldtype="string" WIDTH="11"/><FIELD attrname="CentreCode" fieldtype="string" WIDTH="1"/><FIELD attrname="RoleTypeCode" fieldtype="string" WIDTH="2"/><FIELD attrname="Name1" fieldtype="string" WIDTH="4"/><FIELD attrname="FirstSurname1" fieldtype="string" WIDTH="7"/><FIELD attrname="Address1" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown1" fieldtype="string" WIDTH="18"/><FIELD attrname="Province1" fieldtype="string" WIDTH="11"/><FIELD attrname="CountryCode1" fieldtype="string" WIDTH="3"/><FIELD attrname="CentreDescription" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Name2" fieldtype="string" WIDTH="4"/><FIELD attrname="FirstSurname2" fieldtype="string" WIDTH="7"/><FIELD attrname="OverseasAddress_Address" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown2" fieldtype="string" WIDTH="18"/><FIELD attrname="OverseasAddress_Province" fieldtype="string" WIDTH="11"/><FIELD attrname="OverseasAddress_CountryCode" fieldtype="string" WIDTH="3"/><FIELD attrname="ContactDetails_Telephone2" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_TeleFax2" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_WebAddress2" fieldtype="string" WIDTH="15"/><FIELD attrname="ContactDetails_ElectronicMail2" fieldtype="string" WIDTH="17"/><FIELD attrname="ContactDetails_ContactPersons2" fieldtype="string" WIDTH="8"/><FIELD attrname="ContactDetails_CnoCnae2" fieldtype="string" WIDTH="5"/><FIELD attrname="ContactDetails_INETownCode2" fieldtype="string" WIDTH="7"/><FIELD attrname="AdditionalContactDetails2" fieldtype="string" WIDTH="11"/><FIELD attrname="InvoiceNumber" fieldtype="string" WIDTH="2"/><FIELD attrname="InvoiceSeriesCode" fieldtype="string" WIDTH="32"/><FIELD attrname="InvoiceDocumentType" fieldtype="string" WIDTH="2"/><FIELD attrname="InvoiceClass" fieldtype="string" WIDTH="2"/><FIELD attrname="IssueDate" fieldtype="string" WIDTH="10"/><FIELD attrname="OperationDate" fieldtype="string" WIDTH="10"/><FIELD attrname="PlaceOfIssue_PostCode" fieldtype="string" WIDTH="5"/><FIELD attrname="PlaceOfIssueDescription" fieldtype="string" WIDTH="7"/><FIELD attrname="StartDate" fieldtype="string" WIDTH="10"/><FIELD attrname="EndDate" fieldtype="string" WIDTH="10"/><FIELD attrname="InvoiceCurrencyCode2" fieldtype="string" WIDTH="3"/><FIELD attrname="TaxCurrencyCode" fieldtype="string" WIDTH="3"/><FIELD attrname="LanguageName" fieldtype="string" WIDTH="2"/><FIELD attrname="TotalGrossAmount" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalGeneralDiscounts" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalGeneralSurcharges" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalGrossAmountBeforeTaxes" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalTaxOutputs" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalTaxesWithheld" fieldtype="string" WIDTH="4"/><FIELD attrname="InvoiceTotal" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount4" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount5" fieldtype="string" WIDTH="5"/><FIELD attrname="InstallmentDueDate" fieldtype="string" WIDTH="10"/><FIELD attrname="InstallmentAmount" fieldtype="string" WIDTH="5"/><FIELD attrname="PaymentMeans" fieldtype="string" WIDTH="2"/><FIELD attrname="AccountToBeCredited_IBAN" fieldtype="string" WIDTH="23"/><FIELD attrname="AccountToBeCredited_BankCode" fieldtype="string" WIDTH="4"/><FIELD attrname="AccountToBeCredited_BranchCode" fieldtype="string" WIDTH="4"/><FIELD attrname="Address2" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown3" fieldtype="string" WIDTH="18"/><FIELD attrname="Province2" fieldtype="string" WIDTH="11"/><FIELD attrname="CountryCode2" fieldtype="string" WIDTH="3"/><FIELD attrname="PaymentReconciliationReference" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="AccountToBeDebited_IBAN" fieldtype="string" WIDTH="23"/><FIELD attrname="AccountToBeDebited_BankCode" fieldtype="string" WIDTH="4"/><FIELD attrname="AccountToBeDebited_BranchCode" fieldtype="string" WIDTH="4"/><FIELD attrname="DebitReconciliationReference" fieldtype="string" WIDTH="5"/><FIELD attrname="SignatureValue" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="X509Certificate" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Modulus" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Exponent" fieldtype="string" WIDTH="4"/><FIELD attrname="SigningTime" fieldtype="string" WIDTH="25"/><FIELD attrname="DigestValue1" fieldtype="string" WIDTH="28"/><FIELD attrname="X509IssuerName" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="X509SerialNumber" fieldtype="string" WIDTH="3"/><FIELD attrname="Identifier" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Description" fieldtype="string" WIDTH="10"/><FIELD attrname="DigestValue2" fieldtype="string" WIDTH="28"/><FIELD attrname="ClaimedRole" fieldtype="string" WIDTH="6"/><FIELD attrname="Tax" fieldtype="nested"><FIELDS><FIELD attrname="_TaxTypeCode1" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge1" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_TaxTypeCode2" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge2" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/></FIELDS><PARAMS/></FIELD><FIELD attrname="InvoiceLine" fieldtype="nested"><FIELDS><FIELD attrname="IssuerContractReference" fieldtype="string" WIDTH="8"/><FIELD attrname="IssuerContractDate" fieldtype="string" WIDTH="10"/><FIELD attrname="IssuerTransactionReference" fieldtype="string" WIDTH="8"/><FIELD attrname="IssuerTransactionDate" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverContractReference" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverContractDate" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverTransactionReference" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverTransactionDate" fieldtype="string" WIDTH="10"/><FIELD attrname="FileReference" fieldtype="string" WIDTH="9"/><FIELD attrname="FileDate" fieldtype="string" WIDTH="10"/><FIELD attrname="SequenceNumber" fieldtype="string" WIDTH="3"/><FIELD attrname="ItemDescription" fieldtype="string" WIDTH="6"/><FIELD attrname="Quantity" fieldtype="string" WIDTH="3"/><FIELD attrname="UnitOfMeasure" fieldtype="string" WIDTH="2"/><FIELD attrname="UnitPriceWithoutTax" fieldtype="string" WIDTH="9"/><FIELD attrname="TotalCost" fieldtype="string" WIDTH="9"/><FIELD attrname="DiscountReason" fieldtype="string" WIDTH="9"/><FIELD attrname="DiscountRate" fieldtype="string" WIDTH="6"/><FIELD attrname="DiscountAmount" fieldtype="string" WIDTH="8"/><FIELD attrname="ChargeReason" fieldtype="string" WIDTH="5"/><FIELD attrname="ChargeAmount" fieldtype="string" WIDTH="9"/><FIELD attrname="GrossAmount" fieldtype="string" WIDTH="9"/><FIELD attrname="AdditionalLineItemInformation" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="SpecialTaxableEventCode" fieldtype="string" WIDTH="2"/><FIELD attrname="SpecialTaxableEventReason" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="ArticleCode" fieldtype="string" WIDTH="3"/><FIELD attrname="DeliveryNote" fieldtype="nested"><FIELDS><FIELD attrname="DeliveryNoteNumber" fieldtype="string" WIDTH="9"/><FIELD attrname="DeliveryNoteDate" fieldtype="string" WIDTH="10"/></FIELDS><PARAMS/></FIELD><FIELD attrname="Tax" fieldtype="nested"><FIELDS><FIELD attrname="_TaxTypeCode1" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge1" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_TaxTypeCode2" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge2" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></FIELD><FIELD attrname="Reference" fieldtype="nested"><FIELDS><FIELD attrname="DigestValue" fieldtype="string" WIDTH="28"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></METADATA><ROWDATA/><METADATA><FIELDS><FIELD attrname="ds" fieldtype="string" WIDTH="34"/><FIELD attrname="fe" fieldtype="string" WIDTH="50"/><FIELD attrname="SchemaVersion" fieldtype="string" WIDTH="3"/><FIELD attrname="Modality" fieldtype="string" WIDTH="1"/><FIELD attrname="InvoiceIssuerType" fieldtype="string" WIDTH="2"/><FIELD attrname="BatchIdentifier" fieldtype="string" WIDTH="13"/><FIELD attrname="InvoicesCount" fieldtype="string" WIDTH="1"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount3" fieldtype="string" WIDTH="5"/><FIELD attrname="InvoiceCurrencyCode1" fieldtype="string" WIDTH="3"/><FIELD attrname="PersonTypeCode1" fieldtype="string" WIDTH="1"/><FIELD attrname="ResidenceTypeCode1" fieldtype="string" WIDTH="1"/><FIELD attrname="TaxIdentificationNumber1" fieldtype="string" WIDTH="11"/><FIELD attrname="CorporateName" fieldtype="string" WIDTH="15"/><FIELD attrname="TradeName" fieldtype="string" WIDTH="4"/><FIELD attrname="Book" fieldtype="string" WIDTH="1"/><FIELD attrname="RegisterOfCompaniesLocation" fieldtype="string" WIDTH="6"/><FIELD attrname="Sheet" fieldtype="string" WIDTH="1"/><FIELD attrname="Folio" fieldtype="string" WIDTH="2"/><FIELD attrname="Section" fieldtype="string" WIDTH="1"/><FIELD attrname="Volume" fieldtype="string" WIDTH="2"/><FIELD attrname="AdditionalRegistrationData" fieldtype="string" WIDTH="9"/><FIELD attrname="AddressInSpain_Address" fieldtype="string" WIDTH="18"/><FIELD attrname="AddressInSpain_PostCode" fieldtype="string" WIDTH="5"/><FIELD attrname="Town" fieldtype="string" WIDTH="19"/><FIELD attrname="AddressInSpain_Province" fieldtype="string" WIDTH="11"/><FIELD attrname="AddressInSpain_CountryCode" fieldtype="string" WIDTH="3"/><FIELD attrname="ContactDetails_Telephone1" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_TeleFax1" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_WebAddress1" fieldtype="string" WIDTH="15"/><FIELD attrname="ContactDetails_ElectronicMail1" fieldtype="string" WIDTH="17"/><FIELD attrname="ContactDetails_ContactPersons1" fieldtype="string" WIDTH="8"/><FIELD attrname="ContactDetails_CnoCnae1" fieldtype="string" WIDTH="5"/><FIELD attrname="ContactDetails_INETownCode1" fieldtype="string" WIDTH="7"/><FIELD attrname="AdditionalContactDetails1" fieldtype="string" WIDTH="11"/><FIELD attrname="PersonTypeCode2" fieldtype="string" WIDTH="1"/><FIELD attrname="ResidenceTypeCode2" fieldtype="string" WIDTH="1"/><FIELD attrname="TaxIdentificationNumber2" fieldtype="string" WIDTH="11"/><FIELD attrname="CentreCode" fieldtype="string" WIDTH="1"/><FIELD attrname="RoleTypeCode" fieldtype="string" WIDTH="2"/><FIELD attrname="Name1" fieldtype="string" WIDTH="4"/><FIELD attrname="FirstSurname1" fieldtype="string" WIDTH="7"/><FIELD attrname="Address1" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown1" fieldtype="string" WIDTH="18"/><FIELD attrname="Province1" fieldtype="string" WIDTH="11"/><FIELD attrname="CountryCode1" fieldtype="string" WIDTH="3"/><FIELD attrname="CentreDescription" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Name2" fieldtype="string" WIDTH="4"/><FIELD attrname="FirstSurname2" fieldtype="string" WIDTH="7"/><FIELD attrname="OverseasAddress_Address" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown2" fieldtype="string" WIDTH="18"/><FIELD attrname="OverseasAddress_Province" fieldtype="string" WIDTH="11"/><FIELD attrname="OverseasAddress_CountryCode" fieldtype="string" WIDTH="3"/><FIELD attrname="ContactDetails_Telephone2" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_TeleFax2" fieldtype="string" WIDTH="11"/><FIELD attrname="ContactDetails_WebAddress2" fieldtype="string" WIDTH="15"/><FIELD attrname="ContactDetails_ElectronicMail2" fieldtype="string" WIDTH="17"/><FIELD attrname="ContactDetails_ContactPersons2" fieldtype="string" WIDTH="8"/><FIELD attrname="ContactDetails_CnoCnae2" fieldtype="string" WIDTH="5"/><FIELD attrname="ContactDetails_INETownCode2" fieldtype="string" WIDTH="7"/><FIELD attrname="AdditionalContactDetails2" fieldtype="string" WIDTH="11"/><FIELD attrname="InvoiceNumber" fieldtype="string" WIDTH="2"/><FIELD attrname="InvoiceSeriesCode" fieldtype="string" WIDTH="32"/><FIELD attrname="InvoiceDocumentType" fieldtype="string" WIDTH="2"/><FIELD attrname="InvoiceClass" fieldtype="string" WIDTH="2"/><FIELD attrname="IssueDate" fieldtype="string" WIDTH="10"/><FIELD attrname="OperationDate" fieldtype="string" WIDTH="10"/><FIELD attrname="PlaceOfIssue_PostCode" fieldtype="string" WIDTH="5"/><FIELD attrname="PlaceOfIssueDescription" fieldtype="string" WIDTH="7"/><FIELD attrname="StartDate" fieldtype="string" WIDTH="10"/><FIELD attrname="EndDate" fieldtype="string" WIDTH="10"/><FIELD attrname="InvoiceCurrencyCode2" fieldtype="string" WIDTH="3"/><FIELD attrname="TaxCurrencyCode" fieldtype="string" WIDTH="3"/><FIELD attrname="LanguageName" fieldtype="string" WIDTH="2"/><FIELD attrname="TotalGrossAmount" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalGeneralDiscounts" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalGeneralSurcharges" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalGrossAmountBeforeTaxes" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalTaxOutputs" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalTaxesWithheld" fieldtype="string" WIDTH="4"/><FIELD attrname="InvoiceTotal" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount4" fieldtype="string" WIDTH="5"/><FIELD attrname="TotalAmount5" fieldtype="string" WIDTH="5"/><FIELD attrname="InstallmentDueDate" fieldtype="string" WIDTH="10"/><FIELD attrname="InstallmentAmount" fieldtype="string" WIDTH="5"/><FIELD attrname="PaymentMeans" fieldtype="string" WIDTH="2"/><FIELD attrname="AccountToBeCredited_IBAN" fieldtype="string" WIDTH="23"/><FIELD attrname="AccountToBeCredited_BankCode" fieldtype="string" WIDTH="4"/><FIELD attrname="AccountToBeCredited_BranchCode" fieldtype="string" WIDTH="4"/><FIELD attrname="Address2" fieldtype="string" WIDTH="18"/><FIELD attrname="PostCodeAndTown3" fieldtype="string" WIDTH="18"/><FIELD attrname="Province2" fieldtype="string" WIDTH="11"/><FIELD attrname="CountryCode2" fieldtype="string" WIDTH="3"/><FIELD attrname="PaymentReconciliationReference" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="AccountToBeDebited_IBAN" fieldtype="string" WIDTH="23"/><FIELD attrname="AccountToBeDebited_BankCode" fieldtype="string" WIDTH="4"/><FIELD attrname="AccountToBeDebited_BranchCode" fieldtype="string" WIDTH="4"/><FIELD attrname="DebitReconciliationReference" fieldtype="string" WIDTH="5"/><FIELD attrname="SignatureValue" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="X509Certificate" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Modulus" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Exponent" fieldtype="string" WIDTH="4"/><FIELD attrname="SigningTime" fieldtype="string" WIDTH="25"/><FIELD attrname="DigestValue1" fieldtype="string" WIDTH="28"/><FIELD attrname="X509IssuerName" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="X509SerialNumber" fieldtype="string" WIDTH="3"/><FIELD attrname="Identifier" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="Description" fieldtype="string" WIDTH="10"/><FIELD attrname="DigestValue2" fieldtype="string" WIDTH="28"/><FIELD attrname="ClaimedRole" fieldtype="string" WIDTH="6"/><FIELD attrname="Tax" fieldtype="nested"><FIELDS><FIELD attrname="_TaxTypeCode1" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge1" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_TaxTypeCode2" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge2" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/></FIELDS><PARAMS/></FIELD><FIELD attrname="InvoiceLine" fieldtype="nested"><FIELDS><FIELD attrname="IssuerContractReference" fieldtype="string" WIDTH="8"/><FIELD attrname="IssuerContractDate" fieldtype="string" WIDTH="10"/><FIELD attrname="IssuerTransactionReference" fieldtype="string" WIDTH="8"/><FIELD attrname="IssuerTransactionDate" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverContractReference" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverContractDate" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverTransactionReference" fieldtype="string" WIDTH="10"/><FIELD attrname="ReceiverTransactionDate" fieldtype="string" WIDTH="10"/><FIELD attrname="FileReference" fieldtype="string" WIDTH="9"/><FIELD attrname="FileDate" fieldtype="string" WIDTH="10"/><FIELD attrname="SequenceNumber" fieldtype="string" WIDTH="3"/><FIELD attrname="ItemDescription" fieldtype="string" WIDTH="6"/><FIELD attrname="Quantity" fieldtype="string" WIDTH="3"/><FIELD attrname="UnitOfMeasure" fieldtype="string" WIDTH="2"/><FIELD attrname="UnitPriceWithoutTax" fieldtype="string" WIDTH="9"/><FIELD attrname="TotalCost" fieldtype="string" WIDTH="9"/><FIELD attrname="DiscountReason" fieldtype="string" WIDTH="9"/><FIELD attrname="DiscountRate" fieldtype="string" WIDTH="6"/><FIELD attrname="DiscountAmount" fieldtype="string" WIDTH="8"/><FIELD attrname="ChargeReason" fieldtype="string" WIDTH="5"/><FIELD attrname="ChargeAmount" fieldtype="string" WIDTH="9"/><FIELD attrname="GrossAmount" fieldtype="string" WIDTH="9"/><FIELD attrname="AdditionalLineItemInformation" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="SpecialTaxableEventCode" fieldtype="string" WIDTH="2"/><FIELD attrname="SpecialTaxableEventReason" fieldtype="bin.hex" SUBTYPE="Text"/><FIELD attrname="ArticleCode" fieldtype="string" WIDTH="3"/><FIELD attrname="DeliveryNote" fieldtype="nested"><FIELDS><FIELD attrname="DeliveryNoteNumber" fieldtype="string" WIDTH="9"/><FIELD attrname="DeliveryNoteDate" fieldtype="string" WIDTH="10"/></FIELDS><PARAMS/></FIELD><FIELD attrname="Tax" fieldtype="nested"><FIELDS><FIELD attrname="_TaxTypeCode1" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge1" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount1" fieldtype="string" WIDTH="5"/><FIELD attrname="_TaxTypeCode2" fieldtype="string" WIDTH="2"/><FIELD attrname="_TaxRate2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxableBase_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="TaxAmount_TotalAmount2" fieldtype="string" WIDTH="5"/><FIELD attrname="_EquivalenceSurcharge2" fieldtype="string" WIDTH="4"/><FIELD attrname="TotalAmount2" fieldtype="string" WIDTH="5"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></FIELD><FIELD attrname="Reference" fieldtype="nested"><FIELDS><FIELD attrname="DigestValue" fieldtype="string" WIDTH="28"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></METADATA><ROWDATA/></DATAPACKET>
+]]></Skeleton></XmlTransformation>

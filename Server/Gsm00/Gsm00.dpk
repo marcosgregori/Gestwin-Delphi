@@ -1,0 +1,47 @@
+package Gsm00;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE VCL}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  VCLMainLib;
+
+contains
+  dm_cdi in 'dm_cdi.pas' {divisaModule: TServerDataModule},
+  dm_cnd in 'dm_cnd.pas' {ContadoresModule: TServerDataModule},
+  dm_cop in 'dm_cop.pas' {CodigoPostalModule: TServerDataModule},
+  dm_emp in 'dm_emp.pas' {EmpresaModule: TServerDataModule},
+  dm_pai in 'dm_pai.pas' {PaisModule: TServerDataModule},
+  dm_pga in 'dm_pga.pas' {ConfiguracionModule: TServerDataModule},
+  dm_prv in 'dm_prv.pas' {ProvinciaModule: TServerDataModule},
+  dm_sch in 'dm_sch.pas' {SchedulerModule: TServerDataModule},
+  Gsm00Dm in 'Gsm00Dm.pas' {DataModule00: TServerDataModule},
+  Gim00Fields in '..\..\Interface\Gim00\Gim00Fields.pas';
+
+end.

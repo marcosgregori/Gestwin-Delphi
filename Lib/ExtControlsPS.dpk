@@ -1,0 +1,316 @@
+package ExtControlsPS;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DevExpress - ExtControls PS'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  vclie,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  ExtControls,
+  ExtControlsEE,
+  ExtControlsNC,
+  ExtControlsCC;
+
+contains
+
+  // Express Charts
+
+  dxChartCore,
+  dxChartData,
+  dxChartSimpleDiagram,
+  dxChartXYDiagram,
+  dxChartXYSeriesLineView,
+  dxChartXYSeriesAreaView,
+  dxChartXYSeriesBarView,
+  dxChartColorScheme,
+  dxChartControl,
+  dxChartDBData,
+  dxChartLegend,
+  dxChartMarkers,
+  dxChartStrs,
+  dxChartDesigner,
+  dxChartCrosshair,
+  dxChartRectanglesLayoutAlgorithm,
+  dxChartPalette,
+
+  // Gantt control
+
+  dxGanttControl,
+  dxGanttControlAssignments,
+  dxGanttControlCalendars,
+  dxGanttControlCommands,
+  dxGanttControlCursors,
+  dxGanttControlCustomClasses,
+  dxGanttControlCustomDataModel,
+  dxGanttControlCustomSheet,
+  dxGanttControlCustomView,
+  dxGanttControlDataModel,
+  dxGanttControlExtendedAttributes,
+  dxGanttControlImages,
+  dxGanttControlOutlineCodes,
+  dxGanttControlResourceCommands,
+  dxGanttControlResources,
+  dxGanttControlResourceSheetColumns,
+  dxGanttControlSplitter,
+  dxGanttControlStrs,
+  dxGanttControlTaskCommands,
+  dxGanttControlTaskDependencyDialog,
+  dxGanttControlTaskInformationDialog,
+  dxGanttControlTasks,
+  dxGanttControlUtils,
+  dxGanttControlViewChart,
+  dxGanttControlViewChartSheetColumns,
+  dxGanttControlViewCommands,
+  dxGanttControlViewResourceSheet,
+  dxGanttControlViewTimeLine,
+  dxGanttControlXMLExporter,
+  dxGanttControlXMLImporter,
+  dxGanttControlSheetColumns,
+  dxGanttControlSheetChooseDetailsDialog,
+  dxGanttControlRecurringTaskInformationDialog,
+  dxGanttControlDialogUtils,
+  dxGanttControlExtendedAttributeCommands,
+  dxGanttControlGraphicExporters,
+  dxGanttControlExporter,
+  dxGanttControlImporter,
+
+  {
+  dxCustomData
+  dxDBData
+  }
+
+  // PDF Viewer
+
+  dxFontFile,
+  dxJBIG2,
+  dxPDFCharacterMapping,
+  dxPDFColorSpace,
+  dxPDFCommand,
+  dxPDFCommandInterpreter,
+  dxPDFCore,
+  dxPDFBase,
+  dxPDFDocument,
+  dxPDFFont,
+  dxPDFFontEncoding,
+  dxPDFFontUtils,
+  dxPDFFunction,
+  dxPDFParser,
+  dxPDFPostScript,
+  dxPDFShading,
+  dxPDFStreamFilter,
+  dxPDFType1Font,
+  dxPDFTypes,
+  dxPDFUtils,
+  dxPDFViewer,
+  dxPDFViewerActions,
+  dxPDFViewerActionsStrs,
+  dxPDFViewerPopupMenu,
+  dxPDFViewerPasswordDialog,
+  dxPDFSelection,
+  dxPDFViewerDocumentPropertiesDialog,
+  dxPDFViewerDialogsStrs,
+  dxPDFDocumentStrs,
+  dxPDFEncryption,
+  dxPDFDocumentViewer,
+  dxPDFRecognizedObject,
+  dxPDFCommandConstructor,
+  dxPDFInteractivity,
+  dxPDFText,
+  dxJPX,
+  dxPDFViewerRotatePagesDialog,
+  dxPDFAppearanceBuilder,
+  dxPDFFlateLZW,
+  dxPDFImageInterpolator,
+  dxPDFFormData,
+  dxPDFImageToXObjectConverter,
+  dxPDFDestination,
+  dxPDFContext,
+  dxPDFSignature,
+  dxPDFInteractiveFormField,
+  dxPDFAnnotation,
+  dxPDFImageUtils,
+  dxPDFWIC,
+  dxPDFDCTDecoder,
+  dxPDFPathAnnotationAppearanceBuilder,
+  dxPDFInteractiveFormFieldAppearanceBuilder,
+  dxPDFForm,
+  dxPDFDocumentState,
+  dxPDFViewerEditors,
+  dxPDFViewerAnnotations,
+  dxPDFPathAnnotation,
+  dxPDFTextMarkupAnnotation,
+
+  { PS Core }
+
+  dxWrap,
+  dxBkGnd,
+  dxBrhDlg,
+  dxExtCtrls,
+  dxExtCtrlsStrs,
+  dxFEFDlg,
+  dxfmChFN,
+  dxfmClr,
+  dxfmDfnStl,
+  dxfmDTFmt,
+  dxfmMnPg,
+  dxfmPNFmt,
+  dxfmZoom,
+  dxPcPrVw,
+  dxPgsDlg,
+  dxPSHFLibrary,
+  dxPpAttr,
+  dxPreVw,
+  dxPrnDev,
+  dxPrnDlg,
+  dxPrnPg,
+  dxPSfmFootnotes,
+  dxPSAutoHFTextMnuBld,
+  dxPSCompsProvider,
+  dxPSCore,
+  dxPSCPDsg,
+  dxPSEdgePatterns,
+  dxPSEngn,
+  dxPSESys,
+  dxPSEvnt,
+  dxPSExcelEdgePatterns,
+  dxPSExcelFillPatterns,
+  dxPSFillPatterns,
+  dxPSfmAutoHFTextFmt,
+  dxPSfmCompositionAdd,
+  dxPSfmCompositionDsg,
+  dxPSfmEditDesc,
+  dxPSfmLnkAdd,
+  dxPSfmTtl,
+  dxPSForm,
+  dxPSGlbl,
+  dxPSGraphicLnk,
+  dxPSHFToolBarBld,
+  dxPSImgs,
+  dxPSPgsMnuBld,
+  dxPSPopupMan,
+  dxPSPrVw,
+  dxPSPrVwOpt,
+  dxPSPrVwStd,
+  dxPSPrVwAdv,
+  dxPSRes,
+  dxPSSngltn,
+  dxPSUtl,
+  dxBase,
+  dxPSBaseGridLnk,
+  dxPSContainerLnk,
+  dxPSDBBasedXplorer,
+  dxPSExtDlgs,
+  dxPSFileBasedXplorer,
+  dxPSfmReportProperties,
+  dxPSShapes,
+  dxPSTextLnk,
+  dxPSStandardFillPatterns,
+  dxPSXplorerTreeView,
+  dxPSPDFStrings,
+  dxPSPDFExport,
+  dxPSReportRenderCanvas,
+  dxPSPDFExportCore,
+  dxPSPDFFonts,
+  dxPSTrueTypeFont,
+  dxPSPDFMetaFileParser,
+  dxPSPDFExportDialog,
+  dxPScxCommon,
+  dxPScxDBEditorLnks,
+  dxPScxEditorLnks,
+  dxPScxEditorProducers,
+  dxPScxImgLnk,
+  dxPScxListBoxLnk,
+  dxPSGrLnks,
+  dxPSLbxLnk,
+  dxPSReportLinkDesignWindow,
+  VCL.Shell.ShellConsts,
+  VCL.Shell.ShellCtrls,
+
+ { PScxExtCommon }
+
+  dxPScxCheckListBoxLnk,
+  dxPScxExtComCtrlsLnk,
+  dxPScxExtCommon,
+  dxPScxExtDBEditorLnks,
+  dxPScxExtEditorProducers,
+  dxPScxMCListBoxLnk,
+  dxPScxGridLnk,
+  dxPScxGridLayoutViewLnk,
+  dxPScxPivotGridLnk,
+  dxPScxVGridLnk,
+  dxPSPrVwRibbon,
+  dxPSPrVwRibbonStrs,
+  dxPScxPageControlProducer,
+
+  dxPScxSchedulerLnk,
+
+  dxPSRELnk,
+  dxPSLVLnk,
+  dxPSTVLnk,
+
+  // dxPScxSSLnk,
+
+  dxPScxTLLnk,
+
+  // dxPSTCLnk,
+
+  // dxPSDBTCLnk,
+
+  // dxPSdxDBOCLnk,
+
+  dxPSdxDBTVLnk,
+
+  // dxPSdxFCLnk,
+
+  dxPSdxLCLnk,
+
+  // dxPSdxOCLnk,
+
+  dxPSdxSpreadSheetLnk,
+
+  dxPSdxPDFViewerLnk,
+  dxPSdxPDFViewerPrintDialog,
+  dxPSdxSpreadSheetDocumentBasedLnk,
+  dxPSdxSpreadSheetLnkCore,
+
+  dxPSActions;
+
+end.
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg x="0px" y="0px" version="1.1" viewBox="0 0 11 44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g>
+		<g>
+			<path d="M2.5, 4L8.5, 4C9.3, 4 10, 4.7 10, 5.5L10, 5.5C10, 6.3 9.3, 7 8.5, 7L2.5, 7C1.7, 7 1, 6.3 1, 5.5L1, 5.5C1, 4.7 1.7, 4 2.5, 4z" fill="#707070" class="st0" tag="st0"/>
+		</g>
+	</g>
+	<g transform="translate(0 11)">
+		<g>
+			<path d="M2.5, 4L8.5, 4C9.3, 4 10, 4.7 10, 5.5L10, 5.5C10, 6.3 9.3, 7 8.5, 7L2.5, 7C1.7, 7 1, 6.3 1, 5.5L1, 5.5C1, 4.7 1.7, 4 2.5, 4z" fill="#707070" class="st1" tag="st0"/>
+		</g>
+	</g>
+	<g transform="translate(0 22)">
+		<g>
+			<path d="M2.5, 4L8.5, 4C9.3, 4 10, 4.7 10, 5.5L10, 5.5C10, 6.3 9.3, 7 8.5, 7L2.5, 7C1.7, 7 1, 6.3 1, 5.5L1, 5.5C1, 4.7 1.7, 4 2.5, 4z" fill="#707070" class="st2" tag="st0"/>
+		</g>
+	</g>
+	<g transform="translate(0 33)">
+		<g>
+			<path d="M2.5, 4L8.5, 4C9.3, 4 10, 4.7 10, 5.5L10, 5.5C10, 6.3 9.3, 7 8.5, 7L2.5, 7C1.7, 7 1, 6.3 1, 5.5L1, 5.5C1, 4.7 1.7, 4 2.5, 4z" fill="#707070" class="st3" tag="st0"/>
+		</g>
+	</g>
+</svg>

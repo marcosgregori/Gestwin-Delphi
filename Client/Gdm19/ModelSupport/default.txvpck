@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet>
+  <view uin="wh1xtwppq_v">
+    <property name="$name" value="default" />
+    <property name="$defaultDiagram" value="True" />
+    <property name="$metaclass" value="Package Diagram" />
+    <reference referencedUin="design:view:::f01aufozi_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:gdm19:l_lgc.TrptLgcForm" />
+    </reference>
+    <reference referencedUin="design:view:::001nrwsmg_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="107,1,91,98" />
+      <reference referencedUin="delphi:e_class:src:gdm19:b_abo.TAboutForm" />
+    </reference>
+    <reference referencedUin="design:view:::kh1l4tj8f_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="213,1,113,98" />
+      <reference referencedUin="delphi:e_class:src:gdm19:b_test01.TboxTest01Form" />
+    </reference>
+    <reference referencedUin="design:view:::z917po0mg_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="90,210,99,98" />
+      <reference referencedUin="delphi:e_class:src:gdm19:b_sdd.TboxSddForm" />
+    </reference>
+    <reference referencedUin="design:view:::t91nl2jul_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds_setted_by_user" value="True" />
+      <property name="bounds" value="240,180,190,180" />
+      <reference referencedUin="delphi:e_class:src:gdm19:a_odu.TmntOduForm" />
+    </reference>
+    <reference referencedUin="design:view:::n91z69gln_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="330,310,99,98" />
+      <reference referencedUin="delphi:e_class:src:gdm19:a_pde.TboxPdeForm" />
+    </reference>
+    <reference referencedUin="design:view:::qh1wbkx8o_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="420,0,111,98" />
+      <reference referencedUin="delphi:e_class:src:gdm19:b_export.TboxExportForm" />
+    </reference>
+  </view>
+</nodeSet>

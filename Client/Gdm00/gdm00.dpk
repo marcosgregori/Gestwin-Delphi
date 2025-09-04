@@ -1,0 +1,125 @@
+package gdm00;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsPS,
+  MainLib,
+  Reports,
+  ExtControlsNC,
+  GdLib,
+  ExtControlsRE,
+  InetSecurity,
+  Security;
+
+contains
+  a_acc in 'a_acc.pas' {mntAccForm},
+  a_cdi in 'a_cdi.pas' {mntCdiForm},
+  a_cop in 'a_cop.pas' {mntCopForm},
+  a_ddc in 'a_ddc.pas' {mntDdcForm},
+  a_efx in 'a_efx.pas' {MntEfxForm},
+  a_fic in 'a_fic.pas' {mntFicForm},
+  a_imp in 'a_imp.pas' {mntImpForm},
+  a_ine in 'a_ine.pas' {mntIneForm},
+  a_pai in 'a_pai.pas' {mntPaiForm},
+  a_pga in 'a_pga.pas' {mntPgaForm},
+  a_prv in 'a_prv.pas' {mntPrvForm},
+  a_tca in 'a_tca.pas' {mntTcaForm},
+  a_usr in 'a_usr.pas' {mntUsrForm},
+  b_afr in 'b_afr.pas' {mntAfrForm},
+  b_cda in 'b_cda.pas' {controlAccesosForm},
+  b_efm in 'b_efm.pas' {boxEfmForm},
+  b_mail in 'b_mail.pas' {mailForm},
+  b_rdf in 'b_rdf.pas' {mntRdfForm},
+  b_uee in 'b_uee.pas' {boxUeeForm},
+  B_upd in 'B_upd.pas' {BoxUpdForm},
+  dm_cdi in 'dm_cdi.pas' {divisaModule: TDataModule},
+  dm_cnd in 'dm_cnd.pas' {contadoresModule: TDataModule},
+  dm_cop in 'dm_cop.pas' {codigoPostalModule: TDataModule},
+  dm_efi in 'dm_efi.pas' {estructuraFicheroModule: TDataModule},
+  dm_emp in 'dm_emp.pas' {empresaModule: TDataModule},
+  dm_iex in 'dm_iex.pas' {exportImportModule: TDataModule},
+  dm_ine in 'dm_ine.pas' {informeExternoModule: TDataModule},
+  dm_pai in 'dm_pai.pas' {paisModule: TDataModule},
+  dm_pga in 'dm_pga.pas' {configuracionModule: TDataModule},
+  dm_plg in 'dm_plg.pas' {graficoModule: TDataModule},
+  dm_prv in 'dm_prv.pas' {provinciaModule: TDataModule},
+  dm_tca in 'dm_tca.pas' {tipoCambioModule: TDataModule},
+  dm_usr in 'dm_usr.pas' {usuarioModule: TDataModule},
+  dm_reg in 'dm_reg.pas' {RegistroModule: TDataModule},
+  Gdm00Dm in 'Gdm00Dm.pas' {DataModule00: TDataModule},
+  gdm00Frm in 'gdm00Frm.pas' {gds00Frm: TFrame},
+  l_cdi in 'l_cdi.pas' {rptCdiForm},
+  l_cop in 'l_cop.pas' {rptCopForm},
+  l_ddc in 'l_ddc.pas' {rptDdcForm},
+  l_ddp in 'l_ddp.pas' {rptDdpForm},
+  l_emp in 'l_emp.pas' {rptEmpForm},
+  l_pai in 'l_pai.pas' {rptPaiForm},
+  l_prv in 'l_prv.pas' {rptPrvForm},
+  l_tca in 'l_tca.pas' {rptTcaForm},
+  l_usr in 'l_usr.pas' {rptUsrForm},
+  scheduler in 'scheduler.pas',
+  a_emp in 'a_emp.pas' {MntEmpForm},
+  b_bck in 'b_bck.pas' {BoxBckForm},
+  b_ddp in 'b_ddp.pas' {mntDdpForm},
+  b_sdd in 'b_sdd.pas' {boxSddForm},
+  dm_ddc in 'dm_ddc.pas' {direccionModule: TDataModule},
+  cx_cdi in 'cx_cdi.pas' {cxCdiForm},
+  cx_cop in 'cx_cop.pas' {CxCopForm},
+  cx_ddc in 'cx_ddc.pas' {cxDdcForm},
+  cx_efi in 'cx_efi.pas' {cxEfiForm},
+  cx_emp in 'cx_emp.pas' {CxEmpForm},
+  cx_imp in 'cx_imp.pas' {cxImpForm},
+  cx_ine in 'cx_ine.pas' {cxIneForm},
+  cx_pai in 'cx_pai.pas' {cxPaiForm},
+  cx_plg in 'cx_plg.pas' {CxPlgForm},
+  cx_prv in 'cx_prv.pas' {CxPrvForm},
+  cx_usr in 'cx_usr.pas' {cxUsrForm},
+  Presentacion in 'Presentacion.pas' {PresentacionForm},
+  cx_enf,
+  dm_enf,
+  l_enf,
+  a_enf,
+  l_ine,
+  l_imp,
+  dm_upd,
+  a_cer in 'a_cer.pas' {MntCerForm: TgxForm},
+  dmi_cnd in '..\..\Interface\Gim00\dmi_cnd.pas',
+  Gim00Fields in '..\..\Interface\Gim00\Gim00Fields.pas',
+  p_gph in 'p_gph.pas' {GphTemplateForm: TgxForm},
+  dmi_pga in '..\..\Interface\Gim00\dmi_pga.pas',
+  dmi_iex in '..\..\Interface\Gim00\dmi_iex.pas',
+  b_ice in 'b_ice.pas' {BoxIceForm: TgxForm},
+  f_dsb_cbl in 'f_dsb_cbl.pas' {DashboardChartBarLineFrame: TFrame},
+  f_dsb_cdo in 'f_dsb_cdo.pas' {DashboardChartDonutFrame: TFrame},
+  f_dsb_prb in 'f_dsb_prb.pas' {DashboardProgressLineFrame: TFrame};
+
+end.

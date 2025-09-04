@@ -1,0 +1,204 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8b0efa1f-9be0-4bd0-aae1-3675b549e56d}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dclWebSockets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclDBEngine.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclSecurity.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclInetSecurity.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclRemote.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControlsEE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControlsNC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControlsCC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControlsRE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclExtControlsPS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclMainLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclReports.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclMainServerLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclTouchMainLib.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dclWebSockets">
+        <MSBuild Projects="dclWebSockets.dproj"/>
+    </Target>
+    <Target Name="dclWebSockets:Clean">
+        <MSBuild Projects="dclWebSockets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclWebSockets:Make">
+        <MSBuild Projects="dclWebSockets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclDBEngine">
+        <MSBuild Projects="dclDBEngine.dproj"/>
+    </Target>
+    <Target Name="dclDBEngine:Clean">
+        <MSBuild Projects="dclDBEngine.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclDBEngine:Make">
+        <MSBuild Projects="dclDBEngine.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSecurity">
+        <MSBuild Projects="dclSecurity.dproj"/>
+    </Target>
+    <Target Name="dclSecurity:Clean">
+        <MSBuild Projects="dclSecurity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSecurity:Make">
+        <MSBuild Projects="dclSecurity.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclInetSecurity">
+        <MSBuild Projects="dclInetSecurity.dproj"/>
+    </Target>
+    <Target Name="dclInetSecurity:Clean">
+        <MSBuild Projects="dclInetSecurity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclInetSecurity:Make">
+        <MSBuild Projects="dclInetSecurity.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclRemote">
+        <MSBuild Projects="dclRemote.dproj"/>
+    </Target>
+    <Target Name="dclRemote:Clean">
+        <MSBuild Projects="dclRemote.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclRemote:Make">
+        <MSBuild Projects="dclRemote.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControls">
+        <MSBuild Projects="dclExtControls.dproj"/>
+    </Target>
+    <Target Name="dclExtControls:Clean">
+        <MSBuild Projects="dclExtControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControls:Make">
+        <MSBuild Projects="dclExtControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControlsEE">
+        <MSBuild Projects="dclExtControlsEE.dproj"/>
+    </Target>
+    <Target Name="dclExtControlsEE:Clean">
+        <MSBuild Projects="dclExtControlsEE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControlsEE:Make">
+        <MSBuild Projects="dclExtControlsEE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControlsNC">
+        <MSBuild Projects="dclExtControlsNC.dproj"/>
+    </Target>
+    <Target Name="dclExtControlsNC:Clean">
+        <MSBuild Projects="dclExtControlsNC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControlsNC:Make">
+        <MSBuild Projects="dclExtControlsNC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControlsCC">
+        <MSBuild Projects="dclExtControlsCC.dproj"/>
+    </Target>
+    <Target Name="dclExtControlsCC:Clean">
+        <MSBuild Projects="dclExtControlsCC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControlsCC:Make">
+        <MSBuild Projects="dclExtControlsCC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControlsRE">
+        <MSBuild Projects="dclExtControlsRE.dproj"/>
+    </Target>
+    <Target Name="dclExtControlsRE:Clean">
+        <MSBuild Projects="dclExtControlsRE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControlsRE:Make">
+        <MSBuild Projects="dclExtControlsRE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclExtControlsPS">
+        <MSBuild Projects="dclExtControlsPS.dproj"/>
+    </Target>
+    <Target Name="dclExtControlsPS:Clean">
+        <MSBuild Projects="dclExtControlsPS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclExtControlsPS:Make">
+        <MSBuild Projects="dclExtControlsPS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclMainLib">
+        <MSBuild Projects="dclMainLib.dproj"/>
+    </Target>
+    <Target Name="dclMainLib:Clean">
+        <MSBuild Projects="dclMainLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclMainLib:Make">
+        <MSBuild Projects="dclMainLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclReports">
+        <MSBuild Projects="dclReports.dproj"/>
+    </Target>
+    <Target Name="dclReports:Clean">
+        <MSBuild Projects="dclReports.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclReports:Make">
+        <MSBuild Projects="dclReports.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclMainServerLib">
+        <MSBuild Projects="dclMainServerLib.dproj"/>
+    </Target>
+    <Target Name="dclMainServerLib:Clean">
+        <MSBuild Projects="dclMainServerLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclMainServerLib:Make">
+        <MSBuild Projects="dclMainServerLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclTouchMainLib">
+        <MSBuild Projects="dclTouchMainLib.dproj"/>
+    </Target>
+    <Target Name="dclTouchMainLib:Clean">
+        <MSBuild Projects="dclTouchMainLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclTouchMainLib:Make">
+        <MSBuild Projects="dclTouchMainLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dclWebSockets;dclDBEngine;dclSecurity;dclInetSecurity;dclRemote;dclExtControls;dclExtControlsEE;dclExtControlsNC;dclExtControlsCC;dclExtControlsRE;dclExtControlsPS;dclMainLib;dclReports;dclMainServerLib;dclTouchMainLib"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dclWebSockets:Clean;dclDBEngine:Clean;dclSecurity:Clean;dclInetSecurity:Clean;dclRemote:Clean;dclExtControls:Clean;dclExtControlsEE:Clean;dclExtControlsNC:Clean;dclExtControlsCC:Clean;dclExtControlsRE:Clean;dclExtControlsPS:Clean;dclMainLib:Clean;dclReports:Clean;dclMainServerLib:Clean;dclTouchMainLib:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dclWebSockets:Make;dclDBEngine:Make;dclSecurity:Make;dclInetSecurity:Make;dclRemote:Make;dclExtControls:Make;dclExtControlsEE:Make;dclExtControlsNC:Make;dclExtControlsCC:Make;dclExtControlsRE:Make;dclExtControlsPS:Make;dclMainLib:Make;dclReports:Make;dclMainServerLib:Make;dclTouchMainLib:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

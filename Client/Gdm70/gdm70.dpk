@@ -1,0 +1,130 @@
+package gdm70;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DBEngine,
+  ExtControls,
+  ExtControlsNC,
+  ExtControlsPS,
+  Security,
+  MainLib,
+  Reports,
+  gdm00,
+  gdm30,
+  gdm10,
+  gdm40;
+
+contains
+  l_lmp in 'l_lmp.pas' {RptLmpForm: TgxForm},
+  l_lmp1 in 'l_lmp1.pas' {RptLmp1Form: TgxForm},
+  l_mat in 'l_mat.pas' {RptMatForm: TgxForm},
+  l_nfa in 'l_nfa.pas' {RptNfaForm: TgxForm},
+  l_opc in 'l_opc.pas' {RptOpcForm: TgxForm},
+  l_opt in 'l_opt.pas' {RptOptForm: TgxForm},
+  l_tur in 'l_tur.pas' {RptTurForm: TgxForm},
+  r_odf in 'r_odf.pas' {RptOdfForm: TgxForm},
+  dmi_ccf in '..\..\Interface\Gim70\dmi_ccf.pas',
+  dmi_cla in '..\..\Interface\Gim70\dmi_cla.pas',
+  dmi_cpr in '..\..\Interface\Gim70\dmi_cpr.pas',
+  dmi_idf in '..\..\Interface\Gim70\dmi_idf.pas',
+  dmi_lmp in '..\..\Interface\Gim70\dmi_lmp.pas',
+  dmi_maq in '..\..\Interface\Gim70\dmi_maq.pas',
+  dmi_odf in '..\..\Interface\Gim70\dmi_odf.pas',
+  dmi_rdip in '..\..\Interface\Gim70\dmi_rdip.pas',
+  Gim70Fields in '..\..\Interface\Gim70\Gim70Fields.pas',
+  InformeFabricacionIntf in '..\..\Interface\Gim70\InformeFabricacionIntf.pas',
+  OrdenFabricacionIntf in '..\..\Interface\Gim70\OrdenFabricacionIntf.pas',
+  a_cdc in 'a_cdc.pas' {mntCdcForm: TgxForm},
+  a_coe in 'a_coe.pas' {MntCoeForm: TgxForm},
+  a_def in 'a_def.pas' {MntDefForm: TgxForm},
+  a_idf in 'a_idf.pas' {MntIdfForm: TgxForm},
+  a_inc in 'a_inc.pas' {MntIncForm: TgxForm},
+  a_lmp in 'a_lmp.pas' {MntLmpForm: TgxForm},
+  a_maq in 'a_maq.pas' {MntMaqForm: TgxForm},
+  a_mat in 'a_mat.pas' {MntMatForm: TgxForm},
+  a_odf in 'a_odf.pas' {MntOdfForm: TgxForm},
+  a_opc in 'a_opc.pas' {mntOpcForm: TgxForm},
+  a_opm in 'a_opm.pas' {MntOpmForm: TgxForm},
+  a_opr in 'a_opr.pas' {MntOprForm: TgxForm},
+  a_opt in 'a_opt.pas' {MntOptForm: TgxForm},
+  a_pde7 in 'a_pde7.pas' {MntPde7Form: TgxForm},
+  a_tur in 'a_tur.pas' {MntTurForm: TgxForm},
+  b_ccf in 'b_ccf.pas' {BoxCcfForm: TgxForm},
+  b_cla in 'b_cla.pas' {BoxClaForm: TgxForm},
+  b_eom in 'b_eom.pas' {BoxEomForm: TgxForm},
+  b_lan in 'b_lan.pas' {BoxLanForm: TgxForm},
+  b_odf in 'b_odf.pas' {BoxOdfForm: TgxForm},
+  b_odf_1 in 'b_odf_1.pas' {BoxOdf1Frame: TFrame},
+  b_odp in 'b_odp.pas' {BoxOdpForm: TgxForm},
+  b_rdi in 'b_rdi.pas' {BoxRdiForm: TgxForm},
+  b_rof in 'b_rof.pas' {BoxRofForm: TgxForm},
+  b_tdj in 'b_tdj.pas' {BoxTdjForm: TgxForm},
+  b_tof in 'b_tof.pas' {BoxTofForm: TgxForm},
+  cx_cdc in 'cx_cdc.pas' {cxCdcForm: TgxForm},
+  cx_def in 'cx_def.pas' {CxDefForm: TgxForm},
+  cx_inc in 'cx_inc.pas' {CxIncForm: TgxForm},
+  cx_lmp in 'cx_lmp.pas' {CxLmpForm: TgxForm},
+  cx_maq in 'cx_maq.pas' {CxMaqForm: TgxForm},
+  cx_mat in 'cx_mat.pas' {CxMatForm: TgxForm},
+  cx_odf in 'cx_odf.pas' {CxOdfForm: TgxForm},
+  cx_opc in 'cx_opc.pas' {CxOpcForm: TgxForm},
+  cx_opr in 'cx_opr.pas' {CxOprForm: TgxForm},
+  cx_opt in 'cx_opt.pas' {CxOptForm: TgxForm},
+  cx_tof in 'cx_tof.pas' {CxTofForm: TgxForm},
+  cx_tur in 'cx_tur.pas' {cxTurForm: TgxForm},
+  dm_ccf in 'dm_ccf.pas' {CierreCicloFabricacionModule: TDataModule},
+  dm_cdc in 'dm_cdc.pas' {CodigoCosteModule: TDataModule},
+  dm_cla in 'dm_cla.pas' {CalendarioModule: TDataModule},
+  dm_cpr in 'dm_cpr.pas' {ContenedorModule: TDataModule},
+  dm_def in 'dm_def.pas' {DefectoModule: TDataModule},
+  dm_idf in 'dm_idf.pas' {InformeFabricacionModule: TDataModule},
+  dm_inc in 'dm_inc.pas' {IncidenciaModule: TDataModule},
+  dm_lmp in 'dm_lmp.pas' {ListaMaterialesProcesosModule: TDataModule},
+  dm_maq in 'dm_maq.pas' {MaquinaModule: TDataModule},
+  dm_mat in 'dm_mat.pas' {MaquinaTipoModule: TDataModule},
+  dm_odf in 'dm_odf.pas' {OrdenFabricacionModule: TDataModule},
+  dm_opc in 'dm_opc.pas' {OperacionModule: TDataModule},
+  dm_opt in 'dm_opt.pas' {OperarioTipoModule: TDataModule},
+  dm_rdip in 'dm_rdip.pas' {ReconstruccionDatosInternosModule: TDataModule},
+  dm_tur in 'dm_tur.pas' {TurnoModule: TDataModule},
+  f_cnf70 in 'f_cnf70.pas' {ProduccionModule: TDataModule},
+  Gdm70Dm in 'Gdm70Dm.pas' {DataModule70: TDataModule},
+  Gdm70Frm in 'Gdm70Frm.pas' {Gds70Frm: TFrame},
+  l_ccf in 'l_ccf.pas' {RptCcfForm: TgxForm},
+  l_cdc in 'l_cdc.pas' {RptCdcForm: TgxForm},
+  l_def in 'l_def.pas' {RptDefForm: TgxForm},
+  l_dnf in 'l_dnf.pas' {RptDnfForm: TgxForm},
+  l_edn in 'l_edn.pas' {RptEdnForm: TgxForm},
+  l_eom in 'l_eom.pas' {RptEomForm: TgxForm},
+  l_inc in 'l_inc.pas' {RptIncForm: TgxForm},
+  l_tpe in 'l_tpe.pas' {RptTpeForm: TgxForm},
+  cx_plp in 'cx_plp.pas' {CxPlpForm: TgxForm};
+
+end.
+

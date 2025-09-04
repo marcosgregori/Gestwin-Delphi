@@ -1,0 +1,53 @@
+package dclMainLib;
+
+{$R *.res}
+{$R '..\ZipForge\Source\ZipForge.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 2}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE NOUSE_BDE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Libreria de componentes VCL para GESTWIN 11'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  Designide,
+  DBEngine,
+  ExtControls,
+  ExtControlsNC,
+  Remote,
+  MainLib,
+  dclExtControls,
+  dclExtControlsNC;
+
+contains
+  ZFReg,
+  MainLibReg,
+  CPortReg,
+  CPortAbout {,
+  dxServerModeNexusDBDataSourceReg,
+  dxServerModeNexusDBSQLAdapter };
+
+end.
+
+

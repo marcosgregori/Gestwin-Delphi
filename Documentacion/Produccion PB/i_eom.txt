@@ -1,0 +1,316 @@
+	Crystal Report Professional v14.0 (32-bit) - Report Definition
+
+1.0 File Information
+
+	Report File: 
+	Version: 8.0
+
+2.0 Record Sort Fields
+	A - {Report1.ValorEntero4}
+
+3.0 Group Sort Fields
+
+4.0 Formulas
+
+4.1 Record Selection Formula
+	
+
+4.2 Group Selection Formula
+	
+
+4.3 Other Formulas
+
+	Name: {@CabeceraEmpresa}
+	Formula: {@Empresa_Codigo} + ' - '  + {@Empresa_Nombre} + ' - ' + ToText( {@Ejercicio},0 ) 
+
+	Name: {@Hora}
+	Formula: CurrentTime
+
+	Name: {@Usuario_Codigo}
+	Formula: '02'
+
+	Name: {@TextoTiempo}
+	Formula: WSRFDurationToText( {Report1.Hora1} , 0 );
+	
+
+5.0 Sectional Information
+
+5.1 Page Header Section
+	Visible
+
+	{@CabeceraEmpresa}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together
+
+
+	PrintDate
+		Date, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Windows Default Type: Not Using Windows Defaults, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: Long, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ', '
+
+
+	{@Hora}
+		Time, Visible, Right Alignment, Top Alignment, 
+		Keep Together, Time Base: 24 Hour, AM/PM Type: AM/PM After, Hour Type: Numeric, Minute Type: Numeric, Second Type: None, AM String: ' AM', PM String: ' PM', Hour Minute Separator: ':', Minute  Second Separator: ':'
+
+
+	{@Usuario_Codigo}
+		String, Visible, Right Alignment, Top Alignment, 
+		Keep Together
+
+
+	Entrada de órdenes en máquinas
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	PARTE DE FABRICACION
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+5.2 Page Footer Section
+	Visible, New Page After, Print At Bottom of Page
+
+	GESTWIN
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Página
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	PageNumber
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, 
+		Leading Minus, No Leading Zero, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.3 Report Header Section
+	Hidden, New Page Before
+
+5.4 Report Footer Section
+	Hidden, New Page After
+
+5.5 Group Header Section #1
+	Hidden
+
+5.6 Group Footer Section #1
+	Hidden
+
+5.7 Group Header Section #2
+	Hidden
+
+5.8 Group Footer Section #2
+	Hidden
+
+5.9 Group Header Section #3
+	Visible
+
+	{Maquina.Descripcion}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	Pedido
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cliente
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Artículo
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Nº Orden
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Proc.
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	a fabricar
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cantidad
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	estimado
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Tiempo
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	inicio
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Hora de
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	finalización
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Hora de
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	fabricada
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Cantidad
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Fecha
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	Turno
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+	{Report1.ValorTexto1}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{Report1.Fecha1}
+		Date, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Windows Default Type: Use Windows Long Date, Date Order: Day Month Year, Year Type: Long, Month Type: Long Month Name, Day Type: Numeric Day, Leading Day Type: Long, First Separator: ' de ', Second Separator: ' de ', Leading Day Separator: ', '
+
+
+	{Report1.ValorEntero3}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+5.10 Group Footer Section #3
+	Visible, Print At Bottom of Page
+
+	Pie del parte
+		String, Visible, Left Alignment, Top Alignment, 
+		Keep Together
+
+
+
+5.11 Details Section
+	Visible
+
+	Subsection.1 
+		Visible
+
+	{Articulo.Descripcion}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{OrdenFabricacion.CodigoArticulo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{OrdenFabricacion.CodigoClaseA}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{OrdenFabricacion.CodigoClaseB}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{@TextoTiempo}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Word Wrap
+
+
+	{Cliente.Nombre}
+		String, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Word Wrap
+
+
+	{OrdenFabricacion.NroPedido}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, Suppress If Zero, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	{OrdenFabricacion.NroOrden}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	{Report1.ValorEntero2}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 0 Decimal Places, Rounding: 1, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	{Report1.ValorNumerico1}
+		Numeric, Visible, Default Alignment, Top Alignment, 
+		Keep Together, Using System Default Formatting, 
+		Leading Minus, 2 Decimal Places, Rounding: 0.01, 
+		Thousands Symbol: '.', Decimal Symbol: ','
+
+
+	Numeric Format Formulas -
+		 Decimal Places: {@DecCantidadCompras}
+		Rounding Type: {@DecCantidadCompras}
+		

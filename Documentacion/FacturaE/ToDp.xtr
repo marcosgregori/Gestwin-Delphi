@@ -1,0 +1,170 @@
+<XmlTransformation Version="1.0"><Transform Direction="ToCds" DataEncoding="UTF-8"><SelectEach dest="DATAPACKET\ROWDATA\ROW" from="\xs:schema"><SelectEach dest="element\ROWelement" from="\xs:element"><Select dest="@documentation" from="\xs:annotation\xs:documentation"/></SelectEach><Select dest="@ds" from="@xmlns:ds"/><Select dest="@xs" from="@xmlns:xs"/><Select dest="@targetNamespace" from="@targetNamespace"/><Select dest="@version" from="@version"/><SelectEach dest="simpleType\ROWsimpleType" from="\xs:simpleType"><Select dest="@documentation" from="\xs:restriction\xs:pattern\xs:annotation\xs:documentation"/><SelectEach dest="enumeration\ROWenumeration" from="\xs:restriction\xs:enumeration"><Select dest="@documentation" from="\xs:annotation\xs:documentation"/></SelectEach></SelectEach></SelectEach></Transform><XmlSchema RootName="schema"><![CDATA[<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="schema" type="schemaType"/>
+  <xs:complexType name="schemaType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:import" type="xs:importType"/>
+      <xs:element name="xs:element" type="xs:elementType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:simpleType" type="xs:simpleTypeType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <xs:attribute name="xmlns:ds" type="xs:string"/>
+    <xs:attribute name="xmlns:xs" type="xs:string"/>
+    <xs:attribute name="xmlns" type="xs:string"/>
+    <xs:attribute name="targetNamespace" type="xs:string"/>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="import" type="importType"/>
+  <xs:complexType name="importType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="namespace" type="xs:string"/>
+    <xs:attribute name="schemaLocation" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="documentation" type="documentationType"/>
+  <xs:complexType name="documentationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+  </xs:complexType>
+  <xs:element name="complexType" type="complexTypeType"/>
+  <xs:complexType name="complexTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:sequence" type="xs:sequenceType"/>
+      <xs:element name="xs:complexContent" type="xs:complexContentType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="sequence" type="sequenceType"/>
+  <xs:complexType name="sequenceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:element" type="xs:elementType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:choice" type="xs:choiceType"/>
+      <xs:element name="xs:any" type="xs:anyType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+      <xs:element name="xs:complexType" type="xs:complexTypeType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+    <xs:attribute name="ref" type="xs:string"/>
+    <xs:attribute name="default" type="xs:string"/>
+    <xs:attribute name="maxOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="complexType" type="complexTypeType"/>
+  <xs:complexType name="complexTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:sequence" type="xs:sequenceType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="choice" type="choiceType"/>
+  <xs:complexType name="choiceType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:element" type="xs:elementType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="element" type="elementType"/>
+  <xs:complexType name="elementType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="complexContent" type="complexContentType"/>
+  <xs:complexType name="complexContentType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:extension" type="xs:extensionType"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="extension" type="extensionType"/>
+  <xs:complexType name="extensionType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="base" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="simpleType" type="simpleTypeType"/>
+  <xs:complexType name="simpleTypeType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:restriction" type="xs:restrictionType"/>
+    </sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="restriction" type="restrictionType"/>
+  <xs:complexType name="restrictionType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:enumeration" type="xs:enumerationType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="xs:length" type="xs:lengthType"/>
+      <xs:element name="xs:pattern" type="xs:patternType"/>
+      <xs:element name="xs:maxLength" type="xs:maxLengthType"/>
+      <xs:element name="xs:minLength" type="xs:minLengthType"/>
+    </sequence>
+    <xs:attribute name="base" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="enumeration" type="enumerationType"/>
+  <xs:complexType name="enumerationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="any" type="xs:anyType"/>
+  <xs:complexType name="anyType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="namespace" type="xs:string"/>
+    <xs:attribute name="processContents" type="xs:string"/>
+    <xs:attribute name="minOccurs" type="xs:string"/>
+    <xs:attribute name="maxOccurs" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="length" type="lengthType"/>
+  <xs:complexType name="lengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="pattern" type="patternType"/>
+  <xs:complexType name="patternType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:annotation" type="xs:annotationType"/>
+    </sequence>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:element name="maxLength" type="maxLengthType"/>
+  <xs:complexType name="maxLengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="minLength" type="minLengthType"/>
+  <xs:complexType name="minLengthType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="annotation" type="annotationType"/>
+  <xs:complexType name="annotationType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="xs:documentation" type="xs:documentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+</xs:schema>]]></XmlSchema><CdsSkeleton/><XslTransform/><Skeleton><![CDATA[<?xml version="1.0"?><DATAPACKET Version="2.0"><METADATA><FIELDS><FIELD attrname="ds" fieldtype="string" WIDTH="34"/><FIELD attrname="xs" fieldtype="string" WIDTH="32"/><FIELD attrname="targetNamespace" fieldtype="string" WIDTH="63"/><FIELD attrname="version" fieldtype="string" WIDTH="5"/><FIELD attrname="element" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/></FIELDS><PARAMS/></FIELD><FIELD attrname="simpleType" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/><FIELD attrname="enumeration" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></METADATA><ROWDATA/><METADATA><FIELDS><FIELD attrname="ds" fieldtype="string" WIDTH="34"/><FIELD attrname="xs" fieldtype="string" WIDTH="32"/><FIELD attrname="targetNamespace" fieldtype="string" WIDTH="63"/><FIELD attrname="version" fieldtype="string" WIDTH="5"/><FIELD attrname="element" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/></FIELDS><PARAMS/></FIELD><FIELD attrname="simpleType" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/><FIELD attrname="enumeration" fieldtype="nested"><FIELDS><FIELD attrname="documentation" fieldtype="string" WIDTH="1227"/></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></FIELD></FIELDS><PARAMS/></METADATA><ROWDATA/></DATAPACKET>
+]]></Skeleton></XmlTransformation>

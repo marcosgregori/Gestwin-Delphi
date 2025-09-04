@@ -1,0 +1,204 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2d4a7d67-f0da-4676-aeb3-07da7a6f7040}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="WebSockets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBEngine.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Security.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="InetSecurity.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Remote.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControlsEE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControlsNC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControlsCC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControlsRE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExtControlsPS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MainLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Reports.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MainServerLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TouchMainLib.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WebSockets">
+        <MSBuild Projects="WebSockets.dproj"/>
+    </Target>
+    <Target Name="WebSockets:Clean">
+        <MSBuild Projects="WebSockets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebSockets:Make">
+        <MSBuild Projects="WebSockets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DBEngine">
+        <MSBuild Projects="DBEngine.dproj"/>
+    </Target>
+    <Target Name="DBEngine:Clean">
+        <MSBuild Projects="DBEngine.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBEngine:Make">
+        <MSBuild Projects="DBEngine.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Security">
+        <MSBuild Projects="Security.dproj"/>
+    </Target>
+    <Target Name="Security:Clean">
+        <MSBuild Projects="Security.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Security:Make">
+        <MSBuild Projects="Security.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="InetSecurity">
+        <MSBuild Projects="InetSecurity.dproj"/>
+    </Target>
+    <Target Name="InetSecurity:Clean">
+        <MSBuild Projects="InetSecurity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="InetSecurity:Make">
+        <MSBuild Projects="InetSecurity.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Remote">
+        <MSBuild Projects="Remote.dproj"/>
+    </Target>
+    <Target Name="Remote:Clean">
+        <MSBuild Projects="Remote.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Remote:Make">
+        <MSBuild Projects="Remote.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControls">
+        <MSBuild Projects="ExtControls.dproj"/>
+    </Target>
+    <Target Name="ExtControls:Clean">
+        <MSBuild Projects="ExtControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControls:Make">
+        <MSBuild Projects="ExtControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControlsEE">
+        <MSBuild Projects="ExtControlsEE.dproj"/>
+    </Target>
+    <Target Name="ExtControlsEE:Clean">
+        <MSBuild Projects="ExtControlsEE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControlsEE:Make">
+        <MSBuild Projects="ExtControlsEE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControlsNC">
+        <MSBuild Projects="ExtControlsNC.dproj"/>
+    </Target>
+    <Target Name="ExtControlsNC:Clean">
+        <MSBuild Projects="ExtControlsNC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControlsNC:Make">
+        <MSBuild Projects="ExtControlsNC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControlsCC">
+        <MSBuild Projects="ExtControlsCC.dproj"/>
+    </Target>
+    <Target Name="ExtControlsCC:Clean">
+        <MSBuild Projects="ExtControlsCC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControlsCC:Make">
+        <MSBuild Projects="ExtControlsCC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControlsRE">
+        <MSBuild Projects="ExtControlsRE.dproj"/>
+    </Target>
+    <Target Name="ExtControlsRE:Clean">
+        <MSBuild Projects="ExtControlsRE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControlsRE:Make">
+        <MSBuild Projects="ExtControlsRE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtControlsPS">
+        <MSBuild Projects="ExtControlsPS.dproj"/>
+    </Target>
+    <Target Name="ExtControlsPS:Clean">
+        <MSBuild Projects="ExtControlsPS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtControlsPS:Make">
+        <MSBuild Projects="ExtControlsPS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MainLib">
+        <MSBuild Projects="MainLib.dproj"/>
+    </Target>
+    <Target Name="MainLib:Clean">
+        <MSBuild Projects="MainLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MainLib:Make">
+        <MSBuild Projects="MainLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Reports">
+        <MSBuild Projects="Reports.dproj"/>
+    </Target>
+    <Target Name="Reports:Clean">
+        <MSBuild Projects="Reports.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Reports:Make">
+        <MSBuild Projects="Reports.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MainServerLib">
+        <MSBuild Projects="MainServerLib.dproj"/>
+    </Target>
+    <Target Name="MainServerLib:Clean">
+        <MSBuild Projects="MainServerLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MainServerLib:Make">
+        <MSBuild Projects="MainServerLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TouchMainLib">
+        <MSBuild Projects="TouchMainLib.dproj"/>
+    </Target>
+    <Target Name="TouchMainLib:Clean">
+        <MSBuild Projects="TouchMainLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TouchMainLib:Make">
+        <MSBuild Projects="TouchMainLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WebSockets;DBEngine;Security;InetSecurity;Remote;ExtControls;ExtControlsEE;ExtControlsNC;ExtControlsCC;ExtControlsRE;ExtControlsPS;MainLib;Reports;MainServerLib;TouchMainLib"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WebSockets:Clean;DBEngine:Clean;Security:Clean;InetSecurity:Clean;Remote:Clean;ExtControls:Clean;ExtControlsEE:Clean;ExtControlsNC:Clean;ExtControlsCC:Clean;ExtControlsRE:Clean;ExtControlsPS:Clean;MainLib:Clean;Reports:Clean;MainServerLib:Clean;TouchMainLib:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WebSockets:Make;DBEngine:Make;Security:Make;InetSecurity:Make;Remote:Make;ExtControls:Make;ExtControlsEE:Make;ExtControlsNC:Make;ExtControlsCC:Make;ExtControlsRE:Make;ExtControlsPS:Make;MainLib:Make;Reports:Make;MainServerLib:Make;TouchMainLib:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
